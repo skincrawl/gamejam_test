@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://bjqgn8eaev75p"]
+
+[ext_resource type="Script" path="res://Scripts/bubbles.gd" id="1_hivhj"]
+[ext_resource type="Texture2D" uid="uid://tx31hjphh50w" path="res://Assets/Art/ball.png" id="2_gydgv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t1ttk"]
+radius = 12.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dje4g"]
+atlas = ExtResource("2_gydgv")
+region = Rect2(0, 0, 30, 30)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qw7yh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dje4g")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="bubbles" type="RigidBody2D"]
+collision_layer = 2
+gravity_scale = 0.0
+script = ExtResource("1_hivhj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_t1ttk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_qw7yh")
