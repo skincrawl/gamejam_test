@@ -1,3 +1,12 @@
-[gd_scene format=3 uid="uid://djjt8ypwl2hcj"]
+[gd_scene load_steps=3 format=3 uid="uid://djjt8ypwl2hcj"]
+
+[ext_resource type="PackedScene" uid="uid://cyrnm4f53gk0a" path="res://Scenes/wall.tscn" id="1_6girk"]
+[ext_resource type="PackedScene" uid="uid://bjqgn8eaev75p" path="res://Scenes/bubbles.tscn" id="2_wgd0a"]
 
 [node name="game" type="Node2D"]
+
+[node name="wall" parent="." instance=ExtResource("1_6girk")]
+position = Vector2(481, 216)
+
+[node name="bubbles" parent="." instance=ExtResource("2_wgd0a")]
+position = Vector2(220, 85)
