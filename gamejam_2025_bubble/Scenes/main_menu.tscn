@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://b5gigobueilix"]
+[gd_scene load_steps=6 format=3 uid="uid://b5gigobueilix"]
 
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_oinqm"]
 [ext_resource type="FontFile" uid="uid://behuf74h25j5t" path="res://GameAssets/DynaPuff/DynaPuff-VariableFont_wdth,wght.ttf" id="1_ugjs1"]
+[ext_resource type="AudioStream" uid="uid://beeiwn868koah" path="res://Assets/Music/MainMenu_Theme_FGJ25.mp3" id="3_1t2la"]
 
 [sub_resource type="Theme" id="Theme_avieb"]
 Button/fonts/font = ExtResource("1_ugjs1")
@@ -96,6 +97,9 @@ theme_override_font_sizes/font_size = 60
 action_mode = 0
 text = "Quit"
 icon_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_1t2la")
 
 [connection signal="pressed" from="VBoxContainer/Start_game" to="." method="_on_start_game_pressed"]
 [connection signal="pressed" from="VBoxContainer/How_to_play" to="." method="_on_how_to_play_pressed"]

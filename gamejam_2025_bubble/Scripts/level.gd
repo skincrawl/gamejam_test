@@ -18,12 +18,10 @@ func _ready() -> void:
 
 
 func _process(_delta:float) -> void:
+	
 	var screen_in_game:Rect2 = get_viewport().get_visible_rect()
 	var mouse_pos:Vector2 = get_viewport().get_mouse_position()
-	# var mouse_pos:Vector2 = DisplayServer.mouse_get_position()
 	
-	# var mouse_pos:Vector2 = get_viewport().get_mouse_position()
-	# print("mouse pos: ", mouse_pos)
 	$banana_mouse.global_position = mouse_pos + $Bubbles.position - 0.5 * screen_in_game.size
 
 
@@ -31,6 +29,7 @@ func hit_wall() -> void:
 	
 	$Bubbles.set_deferred("freeze", true)
 	
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	$CanvasLayer/lose_text.show()
 	$CanvasLayer/lose_bg.show()
 	
