@@ -8,17 +8,23 @@ var collected_bananas:int = 0
 func _ready() -> void:
 	
 	Globals.level = self
-	
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
 	
 	$CanvasLayer/lose_text.hide()
 	$CanvasLayer/lose_bg.hide()
 	$CanvasLayer/lose_bg.size = DisplayServer.window_get_size()
+	
+	$Bubbles.position = $spawn_pos.position
 
 
 func _process(_delta:float) -> void:
+	var screen_in_game:Rect2 = get_viewport().get_visible_rect()
 	var mouse_pos:Vector2 = get_viewport().get_mouse_position()
-	$banana_mouse.position = $Bubbles.global_position + mouse_pos
+	# var mouse_pos:Vector2 = DisplayServer.mouse_get_position()
+	
+	# var mouse_pos:Vector2 = get_viewport().get_mouse_position()
+	print("mouse pos: ", mouse_pos)
+	$banana_mouse.global_position = mouse_pos + $Bubbles.position - 0.5 * screen_in_game.size
 
 
 func hit_wall() -> void:

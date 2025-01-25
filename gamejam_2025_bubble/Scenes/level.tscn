@@ -14,7 +14,7 @@ tile_size = Vector2i(128, 128)
 script = ExtResource("1_etyro")
 
 [node name="Bubbles" parent="." instance=ExtResource("2_12vdd")]
-position = Vector2(312, 318)
+position = Vector2(576, 324)
 
 [node name="wall" parent="." instance=ExtResource("1_tmsxg")]
 position = Vector2(809, 91)
@@ -46,6 +46,7 @@ rotation = -1.61196
 tile_set = SubResource("TileSet_1hxkd")
 
 [node name="spawn_pos" type="Marker2D" parent="."]
+position = Vector2(79, 392)
 
 [node name="goal" parent="." instance=ExtResource("3_ot183")]
 position = Vector2(1352, 321)
@@ -77,3 +78,4 @@ offset_bottom = 23.0
 text = "Bananas: "
 
 [node name="banana_mouse" parent="." instance=ExtResource("6_tlr06")]
+position = Vector2(354, 368)
