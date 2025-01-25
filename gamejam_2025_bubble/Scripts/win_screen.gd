@@ -3,6 +3,7 @@ extends Node2D
 
 func _ready() -> void:
 	
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	$CanvasLayer/Button.grab_focus()
 
 

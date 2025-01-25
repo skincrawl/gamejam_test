@@ -3,8 +3,8 @@ extends RigidBody2D
 class_name Bubbles
 
 
-const MIN_BLOW_STRENGTH:float = 10.0
-const MAX_BLOW_STRENGTH:float = 100.0
+const MIN_BLOW_STRENGTH:float = 1.0
+const MAX_BLOW_STRENGTH:float = 70.0
 
 const MAX_SPEED:float = 300.0
 
@@ -12,6 +12,9 @@ const MAX_CONTROL_DISTANCE:float = 500.0
 # Making a little area outside the bubble, where the strength doesn't increase
 const CONTROL_MARGIN:float = 1.1
 
+const MAX_MONKEY_SPIN_SPEED:float = 30.0
+
+var monkey_spin_speed:float = 0.0
 
 func _ready() -> void:
 	$AnimatedSprite2D.play("rolling")
@@ -20,6 +23,8 @@ func _ready() -> void:
 
 func _process(_delta:float) -> void:
 	
+	var monkey_spin_speed = (linear_velocity.length() / MAX_SPEED) * MAX_MONKEY_SPIN_SPEED
+	$Bubbles.rotation += deg_to_rad(monkey_spin_speed) * _delta
 	
 	if not Input.is_action_pressed("blowing"):
 		return

@@ -23,7 +23,7 @@ func _process(_delta:float) -> void:
 	# var mouse_pos:Vector2 = DisplayServer.mouse_get_position()
 	
 	# var mouse_pos:Vector2 = get_viewport().get_mouse_position()
-	print("mouse pos: ", mouse_pos)
+	# print("mouse pos: ", mouse_pos)
 	$banana_mouse.global_position = mouse_pos + $Bubbles.position - 0.5 * screen_in_game.size
 
 
