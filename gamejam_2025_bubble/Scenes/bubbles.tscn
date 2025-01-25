@@ -1,20 +1,20 @@
 [gd_scene load_steps=6 format=3 uid="uid://bjqgn8eaev75p"]
 
 [ext_resource type="Script" path="res://Scripts/bubbles.gd" id="1_hivhj"]
-[ext_resource type="Texture2D" uid="uid://tx31hjphh50w" path="res://Assets/Art/ball.png" id="2_gydgv"]
+[ext_resource type="Texture2D" uid="uid://bl2w81x8qxwpi" path="res://Assets/Art/Bubble128.png" id="2_ntofy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_t1ttk"]
-radius = 12.0
+radius = 52.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dje4g"]
-atlas = ExtResource("2_gydgv")
-region = Rect2(0, 0, 30, 30)
+[sub_resource type="AtlasTexture" id="AtlasTexture_uqfqc"]
+atlas = ExtResource("2_ntofy")
+region = Rect2(0, 0, 128, 128)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qw7yh"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_dje4g")
+"texture": SubResource("AtlasTexture_uqfqc")
 }],
 "loop": true,
 "name": &"default",
@@ -30,4 +30,5 @@ script = ExtResource("1_hivhj")
 shape = SubResource("CircleShape2D_t1ttk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_qw7yh")
