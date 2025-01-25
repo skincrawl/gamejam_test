@@ -1,0 +1,8 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://cfuny4aqpg8r2"]
+
+[ext_resource type="FontFile" uid="uid://rao2pten5a5c" path="res://Assets/Fonts/DynaPuff-VariableFont_wdth,wght.ttf" id="1_ggmkk"]
+
+[resource]
+Label/colors/font_color = Color(0.88721, 0.908673, 0.0295685, 1)
+Label/font_sizes/font_size = 34
+Label/fonts/font = ExtResource("1_ggmkk")
