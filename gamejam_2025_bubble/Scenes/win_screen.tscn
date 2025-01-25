@@ -1,10 +1,23 @@
-[gd_scene load_steps=2 format=3 uid="uid://b1nk0of7fw0au"]
+[gd_scene load_steps=3 format=3 uid="uid://b1nk0of7fw0au"]
 
 [ext_resource type="Texture2D" uid="uid://cvr0v85pmymh1" path="res://Assets/Art/win_screen_temp.png" id="1_j6q8t"]
+[ext_resource type="Script" path="res://Scripts/win_screen.gd" id="1_yact1"]
 
 [node name="win_screen" type="Node2D"]
+script = ExtResource("1_yact1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(580, 320)
 scale = Vector2(0.598958, 0.598148)
 texture = ExtResource("1_j6q8t")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_left = 478.0
+offset_top = 437.0
+offset_right = 606.0
+offset_bottom = 496.0
+text = "Again?"
+
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]

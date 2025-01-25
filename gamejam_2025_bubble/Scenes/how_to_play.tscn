@@ -1,0 +1,103 @@
+[gd_scene load_steps=6 format=3 uid="uid://cfx55rek8u1kn"]
+
+[ext_resource type="Script" path="res://Scripts/how_to_play.gd" id="1_nd7su"]
+[ext_resource type="FontFile" uid="uid://behuf74h25j5t" path="res://GameAssets/DynaPuff/DynaPuff-VariableFont_wdth,wght.ttf" id="1_sujcp"]
+
+[sub_resource type="Theme" id="Theme_avieb"]
+Button/fonts/font = ExtResource("1_sujcp")
+Label/fonts/font = ExtResource("1_sujcp")
+
+[sub_resource type="Theme" id="Theme_gnr1q"]
+
+[sub_resource type="GDScript" id="GDScript_t48tm"]
+script/source = "extends Button
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[node name="HowToPlay" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_avieb")
+script = ExtResource("1_nd7su")
+
+[node name="BackgroundColor" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.168627, 0.811765, 1, 1)
+
+[node name="TextBoxAnchoring" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -700.0
+offset_top = 100.0
+offset_right = 700.0
+offset_bottom = 800.0
+grow_horizontal = 2
+
+[node name="TextBoxColor" type="ColorRect" parent="TextBoxAnchoring"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0714, 0.33866, 0.42, 1)
+
+[node name="Instructions" type="Label" parent="TextBoxAnchoring"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Blow the bubble to the goal without dropping the monkey onto the jungle floor."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -150.0
+offset_top = -300.0
+offset_right = 150.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="Return" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_gnr1q")
+theme_override_font_sizes/font_size = 60
+action_mode = 0
+text = "Return"
+icon_alignment = 1
+script = SubResource("GDScript_t48tm")
+
+[connection signal="pressed" from="VBoxContainer/Return" to="." method="_on_return_pressed"]

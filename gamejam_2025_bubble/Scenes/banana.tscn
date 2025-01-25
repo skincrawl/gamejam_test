@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://cunyvm8bl614t"]
+
+[ext_resource type="Script" path="res://Scripts/banana.gd" id="1_tkajb"]
+[ext_resource type="Texture2D" uid="uid://bcp66k6r2syon" path="res://Assets/Art/Banana_Sheet.png" id="1_ycuah"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r6nxe"]
+radius = 12.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c8f0q"]
+atlas = ExtResource("1_ycuah")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4uk0"]
+atlas = ExtResource("1_ycuah")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c3ios"]
+atlas = ExtResource("1_ycuah")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ogi3s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c8f0q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y4uk0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c3ios")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="banana" type="Area2D"]
+script = ExtResource("1_tkajb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_r6nxe")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-3, -3)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_ogi3s")
+frame = 1
+frame_progress = 0.657028
