@@ -3,6 +3,8 @@ extends Node2D
 class_name Level
 
 
+const LOSE_TIME:float = 3.0
+
 var screen_size:Vector2
 var collected_bananas:int = 0
 
@@ -13,8 +15,9 @@ func _ready() -> void:
 	screen_size = DisplayServer.window_get_size()
 	
 	Globals.level = self
-	# Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
+	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 	
+	$bananas.show()
 	$CanvasLayer/lose_text.hide()
 	$CanvasLayer/lose_bg.hide()
 	$CanvasLayer/lose_bg.size = DisplayServer.window_get_size()
@@ -41,13 +44,15 @@ func lose() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	$CanvasLayer/lose_text.show()
 	$CanvasLayer/lose_bg.show()
+	$bananas.hide()
 	
-	await get_tree().create_timer(4.0).timeout
+	await get_tree().create_timer(LOSE_TIME).timeout
 	get_tree().reload_current_scene()
 
 
-func banana_collected() -> void:
+func banana_collected(_banana:Banana) -> void:
 	
+	# _banana.destination = $bananas.
 	collected_bananas += 1
 	$CanvasLayer/bananas.text = "bananas: " + str(collected_bananas)
 

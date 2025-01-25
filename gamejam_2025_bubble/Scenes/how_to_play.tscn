@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/how_to_play.gd" id="1_nd7su"]
 [ext_resource type="FontFile" uid="uid://behuf74h25j5t" path="res://GameAssets/DynaPuff/DynaPuff-VariableFont_wdth,wght.ttf" id="1_sujcp"]
-[ext_resource type="Texture2D" uid="uid://v2dy2him4e0l" path="res://Assets/Art/BG_Space.jpg" id="3_4oi1x"]
+[ext_resource type="Texture2D" uid="uid://8pntxcrwopv7" path="res://Assets/Art/BG_Space.jpg" id="3_4oi1x"]
 
 [sub_resource type="Theme" id="Theme_avieb"]
 Button/fonts/font = ExtResource("1_sujcp")

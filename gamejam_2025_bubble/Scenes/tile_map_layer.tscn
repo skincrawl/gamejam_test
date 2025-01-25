@@ -1,0 +1,393 @@
+[gd_scene load_steps=5 format=4 uid="uid://byumagq3gh8y"]
+
+[ext_resource type="Texture2D" uid="uid://dtdiw24i417j3" path="res://Assets/Art/gray_box.png" id="1_v0o5s"]
+[ext_resource type="PackedScene" uid="uid://7j70are14236" path="res://Scenes/hazard.tscn" id="2_hxdk4"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ak2j2"]
+texture = ExtResource("1_v0o5s")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+
+[sub_resource type="TileSet" id="TileSet_1hxkd"]
+tile_size = Vector2i(128, 128)
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 2
+sources/0 = SubResource("TileSetAtlasSource_ak2j2")
+
+[node name="TileMapLayer" type="TileMapLayer"]
+tile_map_data = PackedByteArray("AAD9/wcAAAAAAAAAAAD+/wcAAAAAAAAAAAD//wcAAAAAAAAAAAAAAAcAAAAAAAAAAAABAAcAAAAAAAAAAAACAAcAAAAAAAAAAAADAAcAAAAAAAAAAAAEAAcAAAAAAAAAAAD9//7/AAAAAAAAAAD+//7/AAAAAAAAAAD///7/AAAAAAAAAAAAAP7/AAAAAAAAAAABAP7/AAAAAAAAAAACAP7/AAAAAAAAAAADAP7/AAAAAAAAAAAEAP7/AAAAAAAAAAAFAP7/AAAAAAAAAAD8/wcAAAAAAAAAAAD8/wAAAAAAAAAAAAD8/wYAAAAAAAAAAAD8/wIAAAAAAAAAAAD8/wEAAAAAAAAAAAD8/wQAAAAAAAAAAAD8/wMAAAAAAAAAAAD8/wUAAAAAAAAAAAD8//7/AAAAAAAAAAD8////AAAAAAAAAAAFAAcAAAAAAAAAAAAGAAcAAAAAAAAAAAAHAAcAAAAAAAAAAAAIAAcAAAAAAAAAAAAJAAcAAAAAAAAAAAAKAAcAAAAAAAAAAAALAAcAAAAAAAAAAAAMAAcAAAAAAAAAAAANAAcAAAAAAAAAAAAOAAcAAAAAAAAAAAAPAAcAAAAAAAAAAAAQAAcAAAAAAAAAAAAGAP7/AAAAAAAAAAAHAP7/AAAAAAAAAAAIAP7/AAAAAAAAAAAJAP7/AAAAAAAAAAAKAP7/AAAAAAAAAAALAP7/AAAAAAAAAAAMAP7/AAAAAAAAAAANAP7/AAAAAAAAAAAOAP7/AAAAAAAAAAAPAP7/AAAAAAAAAAARAAcAAAAAAAAAAAASAAcAAAAAAAAAAAATAAcAAAAAAAAAAAAUAAcAAAAAAAAAAAAQAP7/AAAAAAAAAAARAP7/AAAAAAAAAAAVAAcAAAAAAAAAAAAWAAcAAAAAAAAAAAAXAAcAAAAAAAAAAAAYAAcAAAAAAAAAAAAZAAcAAAAAAAAAAAAaAAcAAAAAAAAAAAAaAPr/AAAAAAAAAAAaAPv/AAAAAAAAAAAaAPz/AAAAAAAAAAAaAP3/AAAAAAAAAAAaAP7/AAAAAAAAAAAaAP//AAAAAAAAAAAaAAAAAAAAAAAAAAAaAAEAAAAAAAAAAAAaAAIAAAAAAAAAAAAaAAMAAAAAAAAAAAAaAAQAAAAAAAAAAAAaAAUAAAAAAAAAAAAaAAYAAAAAAAAAAAAaAPf/AAAAAAAA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")
+tile_set = SubResource("TileSet_1hxkd")
+
+[node name="hazard" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(1139, -3978)
+rotation = 3.14159
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard2" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(1483, -4026)
+rotation = 3.14159
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard3" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(1369, -4026)
+rotation = 3.14159
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard4" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(1253, -4026)
+rotation = 3.14159
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard5" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(1598, -4026)
+rotation = 3.14159
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard8" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(1712, -4026)
+rotation = 3.14159
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard13" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(2468, -2634)
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard14" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(2812, -2634)
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard15" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(2698, -2634)
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard16" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(2582, -2634)
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard17" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(2927, -2634)
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard18" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(3041, -2634)
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard31" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(3155, -2634)
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard32" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(3269, -2634)
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard33" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(4749, -2632)
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard34" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(4863, -2632)
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard19" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(4063, -2631)
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard20" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(4407, -2631)
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard21" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(4293, -2631)
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard22" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(4177, -2631)
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard23" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(4522, -2631)
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard24" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(4636, -2631)
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard69" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(7637, 1593)
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard70" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(7751, 1593)
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard72" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(7295, 1594)
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard73" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(7181, 1594)
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard74" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(7065, 1594)
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard75" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(7410, 1594)
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard76" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(7524, 1594)
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard71" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(8207, 1592)
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard77" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(8321, 1592)
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard78" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(7865, 1593)
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard79" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(7980, 1593)
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard80" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(8094, 1593)
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard81" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(8662, 1591)
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard82" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(8776, 1591)
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard83" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(8435, 1592)
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard84" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(8549, 1592)
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard25" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(5348, -4019)
+rotation = 3.14159
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard26" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(5692, -4019)
+rotation = 3.14159
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard27" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(5578, -4019)
+rotation = 3.14159
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard28" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(5462, -4019)
+rotation = 3.14159
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard29" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(5807, -4019)
+rotation = 3.14159
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard30" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(5921, -4019)
+rotation = 3.14159
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard35" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(6625, -2632)
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard41" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(6513, -2632)
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard36" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(6984, -2505)
+rotation = 1.5708
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard37" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(6855, -2632)
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard38" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(6739, -2632)
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard39" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(6985, -2384)
+rotation = 1.5708
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard40" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(6984, -2264)
+rotation = 1.5708
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard42" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(6984, -2148)
+rotation = 1.5708
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard43" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(6985, -2027)
+rotation = 1.5708
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard44" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(6984, -1907)
+rotation = 1.5708
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard45" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(8377, -1860)
+rotation = -1.5708
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard46" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(8378, -1739)
+rotation = -1.5708
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard47" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(8377, -1619)
+rotation = -1.5708
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard48" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(8377, -1503)
+rotation = -1.5708
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard49" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(8378, -1382)
+rotation = -1.5708
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard50" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(8377, -1262)
+rotation = -1.5708
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard51" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(6985, -563.001)
+rotation = 1.5708
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard52" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(6986, -442)
+rotation = 1.5708
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard53" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(6985, -322)
+rotation = 1.5708
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard54" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(6985, -206.001)
+rotation = 1.5708
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard55" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(6986, -85.0005)
+rotation = 1.5708
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard56" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(6985, 34.9995)
+rotation = 1.5708
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard57" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(6985, 1037)
+rotation = 1.5708
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard58" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(6986, 1158)
+rotation = 1.5708
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard59" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(6985, 1278)
+rotation = 1.5708
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard60" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(6985, 1394)
+rotation = 1.5708
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard61" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(6986, 1515)
+rotation = 1.5708
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard63" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(8378, -696.001)
+rotation = -1.5708
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard64" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(8379, -575)
+rotation = -1.5708
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard65" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(8378, -455)
+rotation = -1.5708
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard66" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(8378, -339)
+rotation = -1.5708
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard67" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(8379, -218)
+rotation = -1.5708
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard68" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(8378, -98.0004)
+rotation = -1.5708
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard6" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(255, -2632)
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard7" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(599, -2632)
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard9" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(485, -2632)
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard10" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(369, -2632)
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard11" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(714, -2632)
+scale = Vector2(1.4, 1.4)
+
+[node name="hazard12" parent="." instance=ExtResource("2_hxdk4")]
+position = Vector2(828, -2632)
+scale = Vector2(1.4, 1.4)
