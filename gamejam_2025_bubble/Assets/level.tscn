@@ -1,0 +1,100 @@
+[gd_scene load_steps=10 format=4 uid="uid://djjt8ypwl2hcj"]
+
+[ext_resource type="Script" path="res://Scripts/level.gd" id="1_etyro"]
+[ext_resource type="PackedScene" uid="uid://cyrnm4f53gk0a" path="res://Scenes/wall.tscn" id="1_tmsxg"]
+[ext_resource type="PackedScene" uid="uid://bjqgn8eaev75p" path="res://Scenes/bubbles.tscn" id="2_12vdd"]
+[ext_resource type="PackedScene" uid="uid://c4h04nltkk8mx" path="res://Scenes/goal.tscn" id="3_ot183"]
+[ext_resource type="Texture2D" uid="uid://dtdiw24i417j3" path="res://Assets/Art/gray_box.png" id="4_5c327"]
+[ext_resource type="Texture2D" uid="uid://1w1c41sg8wr1" path="res://Assets/Art/lose_text.png" id="5_gt1ue"]
+[ext_resource type="PackedScene" uid="uid://7o3ladlt1r1i" path="res://Scenes/banana_mouse.tscn" id="6_tlr06"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ak2j2"]
+texture = ExtResource("4_5c327")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_1hxkd"]
+tile_size = Vector2i(128, 128)
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 2
+sources/0 = SubResource("TileSetAtlasSource_ak2j2")
+
+[node name="level" type="Node2D"]
+script = ExtResource("1_etyro")
+
+[node name="Bubbles" parent="." instance=ExtResource("2_12vdd")]
+position = Vector2(576, 324)
+
+[node name="walls_obsolete" type="Node2D" parent="."]
+visible = false
+
+[node name="wall" parent="walls_obsolete" instance=ExtResource("1_tmsxg")]
+position = Vector2(809, 91)
+monitoring = false
+
+[node name="wall8" parent="walls_obsolete" instance=ExtResource("1_tmsxg")]
+position = Vector2(1279, 74)
+monitoring = false
+
+[node name="wall2" parent="walls_obsolete" instance=ExtResource("1_tmsxg")]
+position = Vector2(369, 95)
+monitoring = false
+
+[node name="wall3" parent="walls_obsolete" instance=ExtResource("1_tmsxg")]
+position = Vector2(309, 726)
+monitoring = false
+
+[node name="wall4" parent="walls_obsolete" instance=ExtResource("1_tmsxg")]
+position = Vector2(773, 735)
+monitoring = false
+
+[node name="wall5" parent="walls_obsolete" instance=ExtResource("1_tmsxg")]
+position = Vector2(1252, 739)
+monitoring = false
+
+[node name="wall6" parent="walls_obsolete" instance=ExtResource("1_tmsxg")]
+position = Vector2(1596, 601)
+rotation = -1.61196
+monitoring = false
+
+[node name="wall7" parent="walls_obsolete" instance=ExtResource("1_tmsxg")]
+position = Vector2(1579, 131)
+rotation = -1.61196
+monitoring = false
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAP7/AAAAAAAAAAABAP7/AAAAAAAAAAACAP7/AAAAAAAAAAADAP7/AAAAAAAAAAAEAP7/AAAAAAAAAAAFAP7/AAAAAAAAAAAGAP7/AAAAAAAAAAAHAP7/AAAAAAAAAAAIAP7/AAAAAAAAAAAJAP7/AAAAAAAAAAAKAP7/AAAAAAAAAAALAP7/AAAAAAAAAAAMAP7/AAAAAAAAAAANAP7/AAAAAAAAAAAOAP7/AAAAAAAAAAAOAP3/AAAAAAAAAAANAP3/AAAAAAAAAAAMAP3/AAAAAAAAAAALAP3/AAAAAAAAAAAKAP3/AAAAAAAAAAAJAP3/AAAAAAAAAAAIAP3/AAAAAAAAAAAHAP3/AAAAAAAAAAAGAP3/AAAAAAAAAAAFAP3/AAAAAAAAAAAEAP3/AAAAAAAAAAADAP3/AAAAAAAAAAACAP3/AAAAAAAAAAABAP3/AAAAAAAAAAAAAP3/AAAAAAAAAAD///3/AAAAAAAAAAD///7/AAAAAAAAAAD+//3/AAAAAAAAAAD9//3/AAAAAAAAAAD8//3/AAAAAAAAAAD8//7/AAAAAAAAAAD8////AAAAAAAAAAD8/wAAAAAAAAAAAAD8/wEAAAAAAAAAAAD8/wIAAAAAAAAAAAD8/wMAAAAAAAAAAAD8/wQAAAAAAAAAAAD8/wUAAAAAAAAAAAD9/wUAAAAAAAAAAAD9/wYAAAAAAAAAAAD9/wcAAAAAAAAAAAD+/wcAAAAAAAAAAAD//wcAAAAAAAAAAAAAAAcAAAAAAAAAAAABAAcAAAAAAAAAAAACAAcAAAAAAAAAAAADAAcAAAAAAAAAAAAEAAcAAAAAAAAAAAAFAAcAAAAAAAAAAAAGAAcAAAAAAAAAAAAHAAcAAAAAAAAAAAAIAAcAAAAAAAAAAAAJAAcAAAAAAAAAAAAKAAcAAAAAAAAAAAALAAcAAAAAAAAAAAAMAAcAAAAAAAAAAAANAAcAAAAAAAAAAAAOAAcAAAAAAAAAAAAPAAcAAAAAAAAAAAAQAAcAAAAAAAAAAAAQAAYAAAAAAAAAAAAQAAUAAAAAAAAAAAAQAAQAAAAAAAAAAAAQAAMAAAAAAAAAAAAQAAIAAAAAAAAAAAAQAAEAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAP//AAAAAAAAAAAQAP7/AAAAAAAAAAAQAP3/AAAAAAAAAAAPAP3/AAAAAAAAAAAPAP7/AAAAAAAAAAD8/wYAAAAAAAAAAAD8/wcAAAAAAAAAAAANABEAAAAAAAAAAAAOABAAAAAAAAAAAAAOAA8AAAAAAAAAAAAOAA4AAAAAAAAAAAAPAA4AAAAAAAAAAAAPAA0AAAAAAAAAAAAPAAwAAAAAAAAAAAAQAAwAAAAAAAAAAAAQAA0AAAAAAAAAAAAQAA4AAAAAAAAAAAARAA4AAAAAAAAAAAARAA8AAAAAAAAAAAASAA8AAAAAAAAAAAASAA4AAAAAAAAAAAATAA4AAAAAAAAAAAATAA0AAAAAAAAAAAATAAwAAAAAAAAAAAAUAAwAAAAAAAAAAAAUAAsAAAAAAAAAAAAVAAwAAAAAAAAAAAAVAA0AAAAAAAAAAAAVAA4AAAAAAAAAAAAVAA8AAAAAAAAAAAAVABAAAAAAAAAAAAAWABAAAAAAAAAAAAAWABEAAAAAAAAAAAAWABIAAAAAAAAAAAAbAA4AAAAAAAAAAAAaAA4AAAAAAAAAAAAZAA4AAAAAAAAAAAAZAA8AAAAAAAAAAAAZABAAAAAAAAAAAAAZABEAAAAAAAAAAAAZABIAAAAAAAAAAAAaABIAAAAAAAAAAAAbABIAAAAAAAAAAAAbABMAAAAAAAAAAAAcABMAAAAAAAAAAAAcABIAAAAAAAAAAAAdABIAAAAAAAAAAAAdABEAAAAAAAAAAAAeABEAAAAAAAAAAAAeABAAAAAAAAAAAAAeAA8AAAAAAAAAAAAdAA8AAAAAAAAAAAAdAA4AAAAAAAAAAAAcAA4AAAAAAAAAAAAbAA0AAAAAAAAAAAAaAA0AAAAAAAAAAAAiAA4AAAAAAAAAAAAiAA8AAAAAAAAAAAAjAA8AAAAAAAAAAAAjABAAAAAAAAAAAAAjABEAAAAAAAAAAAAjABIAAAAAAAAAAAAjABMAAAAAAAAAAAAkABMAAAAAAAAAAAAhAAsAAAAAAAAAAAAmAAoAAAAAAAAAAAAmAAsAAAAAAAAAAAAmAAwAAAAAAAAAAAAnAA0AAAAAAAAAAAAnAA4AAAAAAAAAAAAnAA8AAAAAAAAAAAAnABAAAAAAAAAAAAAoABAAAAAAAAAAAAAoABEAAAAAAAAAAAAoABQAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_1hxkd")
+collision_enabled = false
+
+[node name="spawn_pos" type="Marker2D" parent="."]
+position = Vector2(79, 392)
+
+[node name="goal" parent="." instance=ExtResource("3_ot183")]
+position = Vector2(1352, 321)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="lose_text" type="TextureRect" parent="CanvasLayer"]
+visible = false
+z_index = 5
+offset_left = -258.0
+offset_top = -83.0
+offset_right = 1662.01
+offset_bottom = 997.0
+scale = Vector2(0.685, 0.685)
+texture = ExtResource("5_gt1ue")
+
+[node name="lose_bg" type="ColorRect" parent="CanvasLayer"]
+z_index = -5
+offset_right = 514.0
+offset_bottom = 285.0
+color = Color(0, 0, 0, 1)
+
+[node name="bananas" type="Label" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Bananas: "
+
+[node name="banana_mouse" parent="." instance=ExtResource("6_tlr06")]
+position = Vector2(354, 368)
