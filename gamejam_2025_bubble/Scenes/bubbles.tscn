@@ -1,14 +1,28 @@
-[gd_scene load_steps=6 format=3 uid="uid://bjqgn8eaev75p"]
+[gd_scene load_steps=11 format=3 uid="uid://bjqgn8eaev75p"]
 
 [ext_resource type="Script" path="res://Scripts/bubbles.gd" id="1_hivhj"]
 [ext_resource type="Texture2D" uid="uid://bl2w81x8qxwpi" path="res://Assets/Art/Bubble128.png" id="2_ntofy"]
+[ext_resource type="Texture2D" uid="uid://c4mgs6y8y43he" path="res://Assets/Art/ActualBubble_Sheet.png" id="3_w0ptm"]
+[ext_resource type="Texture2D" uid="uid://cuxs0jdep2tjs" path="res://Assets/Art/BubbleBGTexture.png" id="4_k04fe"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_t1ttk"]
-radius = 52.0
+radius = 25.02
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uqfqc"]
 atlas = ExtResource("2_ntofy")
 region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r65vc"]
+atlas = ExtResource("3_w0ptm")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mytr1"]
+atlas = ExtResource("3_w0ptm")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7232g"]
+atlas = ExtResource("3_w0ptm")
+region = Rect2(256, 0, 128, 128)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qw7yh"]
 animations = [{
@@ -18,6 +32,20 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r65vc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mytr1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7232g")
+}],
+"loop": true,
+"name": &"rolling",
 "speed": 5.0
 }]
 
@@ -30,5 +58,13 @@ script = ExtResource("1_hivhj")
 shape = SubResource("CircleShape2D_t1ttk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-texture_filter = 1
+scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_qw7yh")
+animation = &"rolling"
+
+[node name="bubble_bg_Sprite" type="Sprite2D" parent="."]
+z_index = -1
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_k04fe")
+
+[node name="Camera2D" type="Camera2D" parent="."]
