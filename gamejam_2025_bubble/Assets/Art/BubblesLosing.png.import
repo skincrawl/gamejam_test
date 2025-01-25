@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://tx31hjphh50w"
-path="res://.godot/imported/ball.png-aae2d930f90146a9bc2887c17a8108c6.ctex"
+uid="uid://c6wfjd1ywcc80"
+path="res://.godot/imported/BubblesLosing.png-de687c19b8d559e628c99ac805283f17.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/ball.png"
-dest_files=["res://.godot/imported/ball.png-aae2d930f90146a9bc2887c17a8108c6.ctex"]
+source_file="res://Assets/Art/BubblesLosing.png"
+dest_files=["res://.godot/imported/BubblesLosing.png-de687c19b8d559e628c99ac805283f17.ctex"]
 
 [params]
 

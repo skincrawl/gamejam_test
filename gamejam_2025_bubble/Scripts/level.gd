@@ -3,12 +3,17 @@ extends Node2D
 class_name Level
 
 
+var screen_size:Vector2
 var collected_bananas:int = 0
 
 func _ready() -> void:
 	
+	get_viewport().size_changed.connect(viewport_size_changed)
+	
+	screen_size = DisplayServer.window_get_size()
+	
 	Globals.level = self
-	Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
+	# Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
 	
 	$CanvasLayer/lose_text.hide()
 	$CanvasLayer/lose_bg.hide()
@@ -21,6 +26,9 @@ func _process(_delta:float) -> void:
 	
 	var screen_in_game:Rect2 = get_viewport().get_visible_rect()
 	var mouse_pos:Vector2 = get_viewport().get_mouse_position()
+	
+	# print("screen in game: ", screen_in_game)
+	print("mouse_pos: ", mouse_pos)
 	
 	$banana_mouse.global_position = mouse_pos + $Bubbles.position - 0.5 * screen_in_game.size
 
@@ -41,3 +49,9 @@ func banana_collected() -> void:
 	
 	collected_bananas += 1
 	$CanvasLayer/bananas.text = "bananas: " + str(collected_bananas)
+
+
+func viewport_size_changed() -> void:
+	
+	print("screen size changed")
+	screen_size = DisplayServer.window_get_size()
