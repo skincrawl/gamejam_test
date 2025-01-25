@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://b5gigobueilix"]
+[gd_scene load_steps=7 format=3 uid="uid://b5gigobueilix"]
 
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_oinqm"]
 [ext_resource type="FontFile" uid="uid://behuf74h25j5t" path="res://GameAssets/DynaPuff/DynaPuff-VariableFont_wdth,wght.ttf" id="1_ugjs1"]
+[ext_resource type="AudioStream" uid="uid://beeiwn868koah" path="res://Assets/Music/MainMenu_Theme_FGJ25.mp3" id="3_1t2la"]
+[ext_resource type="Texture2D" uid="uid://8pntxcrwopv7" path="res://Assets/Art/BG_Space.jpg" id="3_8bard"]
 
 [sub_resource type="Theme" id="Theme_avieb"]
 Button/fonts/font = ExtResource("1_ugjs1")
@@ -19,14 +21,19 @@ grow_vertical = 2
 theme = SubResource("Theme_avieb")
 script = ExtResource("1_oinqm")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="TextBoxColor" type="TextureRect" parent="."]
+show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -1344.0
+offset_top = -756.0
+offset_right = 1344.0
+offset_bottom = 756.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.168627, 0.811765, 1, 1)
+texture = ExtResource("3_8bard")
 
 [node name="Title" type="Label" parent="."]
 layout_mode = 1
@@ -154,6 +161,9 @@ action_mode = 0
 text = "Quit"
 icon_alignment = 1
 expand_icon = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_1t2la")
 
 [connection signal="pressed" from="VBoxContainer/Start_game" to="." method="_on_start_game_pressed"]
 [connection signal="pressed" from="VBoxContainer2/How_to_play" to="." method="_on_how_to_play_pressed"]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://6lgt51fk3khg"]
+[gd_scene load_steps=10 format=3 uid="uid://6lgt51fk3khg"]
 
 [ext_resource type="Script" path="res://Scripts/options_menu.gd" id="1_in42w"]
+[ext_resource type="Texture2D" uid="uid://8pntxcrwopv7" path="res://Assets/Art/BG_Space.jpg" id="2_htsm4"]
 [ext_resource type="FontFile" uid="uid://behuf74h25j5t" path="res://GameAssets/DynaPuff/DynaPuff-VariableFont_wdth,wght.ttf" id="2_m52pm"]
 
 [sub_resource type="Theme" id="Theme_avieb"]
@@ -43,14 +44,19 @@ grow_vertical = 2
 theme = SubResource("Theme_avieb")
 script = ExtResource("1_in42w")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="TextBoxColor" type="TextureRect" parent="."]
+show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -1344.0
+offset_top = -756.0
+offset_right = 1344.0
+offset_bottom = 756.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.168627, 0.811765, 1, 1)
+texture = ExtResource("2_htsm4")
 
 [node name="Options" type="Label" parent="."]
 layout_mode = 1

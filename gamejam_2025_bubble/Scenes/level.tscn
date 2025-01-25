@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://djjt8ypwl2hcj"]
+[gd_scene load_steps=11 format=4 uid="uid://djjt8ypwl2hcj"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_etyro"]
 [ext_resource type="PackedScene" uid="uid://cyrnm4f53gk0a" path="res://Scenes/wall.tscn" id="1_tmsxg"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dtdiw24i417j3" path="res://Assets/Art/gray_box.png" id="4_5c327"]
 [ext_resource type="Texture2D" uid="uid://1w1c41sg8wr1" path="res://Assets/Art/lose_text.png" id="5_gt1ue"]
 [ext_resource type="PackedScene" uid="uid://7o3ladlt1r1i" path="res://Scenes/banana_mouse.tscn" id="6_tlr06"]
+[ext_resource type="PackedScene" uid="uid://7j70are14236" path="res://Scenes/hazard.tscn" id="8_2qrbe"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ak2j2"]
 texture = ExtResource("4_5c327")
@@ -24,6 +25,7 @@ sources/0 = SubResource("TileSetAtlasSource_ak2j2")
 script = ExtResource("1_etyro")
 
 [node name="Bubbles" parent="." instance=ExtResource("2_12vdd")]
+z_index = 1
 position = Vector2(576, 324)
 collision_layer = 1
 
@@ -72,7 +74,7 @@ tile_set = SubResource("TileSet_1hxkd")
 position = Vector2(79, 392)
 
 [node name="goal" parent="." instance=ExtResource("3_ot183")]
-position = Vector2(1352, 321)
+position = Vector2(10150, 999)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -99,3 +101,7 @@ text = "Bananas: "
 
 [node name="banana_mouse" parent="." instance=ExtResource("6_tlr06")]
 position = Vector2(354, 368)
+
+[node name="hazard" parent="." instance=ExtResource("8_2qrbe")]
+position = Vector2(828, -78)
+rotation = 3.14159

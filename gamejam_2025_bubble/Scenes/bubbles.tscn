@@ -1,13 +1,30 @@
-[gd_scene load_steps=18 format=3 uid="uid://bjqgn8eaev75p"]
+[gd_scene load_steps=40 format=3 uid="uid://bjqgn8eaev75p"]
 
 [ext_resource type="Script" path="res://Scripts/bubbles.gd" id="1_hivhj"]
+[ext_resource type="Texture2D" uid="uid://b61eeh6fi5m8d" path="res://Assets/Art/ABubbleExplode.png" id="2_18lce"]
 [ext_resource type="Texture2D" uid="uid://c4mgs6y8y43he" path="res://Assets/Art/ActualBubble_Sheet.png" id="3_w0ptm"]
 [ext_resource type="Texture2D" uid="uid://cuxs0jdep2tjs" path="res://Assets/Art/BubbleBGTexture.png" id="4_k04fe"]
 [ext_resource type="Texture2D" uid="uid://bdhg7svrwcatl" path="res://Assets/Art/BubblesAction_Sheet.png" id="5_vn4g0"]
+[ext_resource type="Texture2D" uid="uid://c6wfjd1ywcc80" path="res://Assets/Art/BubblesLosing.png" id="6_cuxmu"]
 [ext_resource type="Texture2D" uid="uid://gbmwr3ji3ra3" path="res://Assets/Art/BubblesSheet.png" id="6_unr71"]
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gqpca"]
+bounce = 0.5
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_t1ttk"]
-radius = 25.02
+radius = 51.1566
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m7fjj"]
+atlas = ExtResource("2_18lce")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n1vls"]
+atlas = ExtResource("2_18lce")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vaxd3"]
+atlas = ExtResource("2_18lce")
+region = Rect2(256, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6htxg"]
 atlas = ExtResource("3_w0ptm")
@@ -23,6 +40,20 @@ region = Rect2(256, 0, 128, 128)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pok7r"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m7fjj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n1vls")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vaxd3")
+}],
+"loop": false,
+"name": &"burst",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_6htxg")
@@ -62,6 +93,70 @@ region = Rect2(0, 128, 128, 128)
 atlas = ExtResource("6_unr71")
 region = Rect2(0, 256, 128, 128)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_aivif"]
+atlas = ExtResource("6_cuxmu")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gdvka"]
+atlas = ExtResource("6_cuxmu")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ugcka"]
+atlas = ExtResource("6_cuxmu")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8sidg"]
+atlas = ExtResource("6_cuxmu")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bafal"]
+atlas = ExtResource("6_cuxmu")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ymwcb"]
+atlas = ExtResource("6_cuxmu")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r6rk4"]
+atlas = ExtResource("6_cuxmu")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xxilw"]
+atlas = ExtResource("6_cuxmu")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uovtc"]
+atlas = ExtResource("6_cuxmu")
+region = Rect2(256, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lht83"]
+atlas = ExtResource("6_cuxmu")
+region = Rect2(384, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5s6ju"]
+atlas = ExtResource("6_cuxmu")
+region = Rect2(512, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b24v7"]
+atlas = ExtResource("6_cuxmu")
+region = Rect2(640, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jgkn1"]
+atlas = ExtResource("6_cuxmu")
+region = Rect2(768, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cet05"]
+atlas = ExtResource("6_cuxmu")
+region = Rect2(0, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a3r3b"]
+atlas = ExtResource("6_cuxmu")
+region = Rect2(128, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_212a3"]
+atlas = ExtResource("6_cuxmu")
+region = Rect2(256, 256, 128, 128)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_agujd"]
 animations = [{
 "frames": [{
@@ -74,7 +169,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_744ag")
 }],
-"loop": true,
+"loop": false,
 "name": &"blink",
 "speed": 5.0
 }, {
@@ -91,10 +186,64 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aivif")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gdvka")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ugcka")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8sidg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bafal")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ymwcb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r6rk4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xxilw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uovtc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lht83")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5s6ju")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b24v7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jgkn1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cet05")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a3r3b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_212a3")
+}],
+"loop": false,
+"name": &"lose",
+"speed": 8.0
 }]
 
 [node name="bubbles" type="RigidBody2D"]
 collision_layer = 2
+physics_material_override = SubResource("PhysicsMaterial_gqpca")
 gravity_scale = 0.0
 script = ExtResource("1_hivhj")
 
@@ -103,19 +252,20 @@ shape = SubResource("CircleShape2D_t1ttk")
 
 [node name="bubble_top_layer" type="AnimatedSprite2D" parent="."]
 z_index = 1
-scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_pok7r")
-animation = &"rolling"
+animation = &"burst"
 
 [node name="bubble_bg_Sprite" type="Sprite2D" parent="."]
 z_index = -1
-scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_k04fe")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Bubbles" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -3)
-scale = Vector2(0.39, 0.39)
+scale = Vector2(0.68, 0.68)
 sprite_frames = SubResource("SpriteFrames_agujd")
-frame_progress = 0.747947
+animation = &"blink"
+offset = Vector2(0, -6.405)
+
+[connection signal="animation_finished" from="bubble_top_layer" to="." method="_on_bubble_top_layer_animation_finished"]
+[connection signal="animation_finished" from="Bubbles" to="." method="_on_bubbles_animation_finished"]

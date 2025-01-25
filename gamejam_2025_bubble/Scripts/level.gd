@@ -28,14 +28,15 @@ func _process(_delta:float) -> void:
 	var mouse_pos:Vector2 = get_viewport().get_mouse_position()
 	
 	# print("screen in game: ", screen_in_game)
-	print("mouse_pos: ", mouse_pos)
+	# print("mouse_pos: ", mouse_pos)
 	
 	$banana_mouse.global_position = mouse_pos + $Bubbles.position - 0.5 * screen_in_game.size
 
 
-func hit_wall() -> void:
+func lose() -> void:
 	
 	$Bubbles.set_deferred("freeze", true)
+	$Bubbles.death()
 	
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	$CanvasLayer/lose_text.show()
