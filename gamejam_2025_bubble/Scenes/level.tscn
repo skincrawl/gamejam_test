@@ -1,0 +1,71 @@
+[gd_scene load_steps=7 format=3 uid="uid://djjt8ypwl2hcj"]
+
+[ext_resource type="Script" path="res://Scripts/level.gd" id="1_etyro"]
+[ext_resource type="PackedScene" uid="uid://cyrnm4f53gk0a" path="res://Scenes/wall.tscn" id="1_tmsxg"]
+[ext_resource type="PackedScene" uid="uid://bjqgn8eaev75p" path="res://Scenes/bubbles.tscn" id="2_12vdd"]
+[ext_resource type="PackedScene" uid="uid://c4h04nltkk8mx" path="res://Scenes/goal.tscn" id="3_ot183"]
+[ext_resource type="Texture2D" uid="uid://1w1c41sg8wr1" path="res://Assets/Art/lose_text.png" id="5_gt1ue"]
+
+[sub_resource type="TileSet" id="TileSet_1hxkd"]
+tile_size = Vector2i(128, 128)
+
+[node name="level" type="Node2D"]
+script = ExtResource("1_etyro")
+
+[node name="Bubbles" parent="." instance=ExtResource("2_12vdd")]
+position = Vector2(312, 318)
+
+[node name="wall" parent="." instance=ExtResource("1_tmsxg")]
+position = Vector2(809, 91)
+
+[node name="wall8" parent="." instance=ExtResource("1_tmsxg")]
+position = Vector2(1279, 74)
+
+[node name="wall2" parent="." instance=ExtResource("1_tmsxg")]
+position = Vector2(369, 95)
+
+[node name="wall3" parent="." instance=ExtResource("1_tmsxg")]
+position = Vector2(309, 726)
+
+[node name="wall4" parent="." instance=ExtResource("1_tmsxg")]
+position = Vector2(773, 735)
+
+[node name="wall5" parent="." instance=ExtResource("1_tmsxg")]
+position = Vector2(1252, 739)
+
+[node name="wall6" parent="." instance=ExtResource("1_tmsxg")]
+position = Vector2(1596, 601)
+rotation = -1.61196
+
+[node name="wall7" parent="." instance=ExtResource("1_tmsxg")]
+position = Vector2(1579, 131)
+rotation = -1.61196
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_set = SubResource("TileSet_1hxkd")
+
+[node name="spawn_pos" type="Marker2D" parent="."]
+
+[node name="goal" parent="." instance=ExtResource("3_ot183")]
+position = Vector2(1352, 321)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="lose_text" type="TextureRect" parent="CanvasLayer"]
+visible = false
+z_index = 5
+offset_left = -258.0
+offset_top = -83.0
+offset_right = 1662.01
+offset_bottom = 997.0
+scale = Vector2(0.685, 0.685)
+texture = ExtResource("5_gt1ue")
+
+[node name="lose_bg" type="ColorRect" parent="CanvasLayer"]
+visible = false
+z_index = -5
+offset_left = 9.0
+offset_top = 9.0
+offset_right = 523.0
+offset_bottom = 294.0
+color = Color(0, 0, 0, 1)
