@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://djjt8ypwl2hcj"]
+[gd_scene load_steps=8 format=3 uid="uid://djjt8ypwl2hcj"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_etyro"]
 [ext_resource type="PackedScene" uid="uid://cyrnm4f53gk0a" path="res://Scenes/wall.tscn" id="1_tmsxg"]
 [ext_resource type="PackedScene" uid="uid://bjqgn8eaev75p" path="res://Scenes/bubbles.tscn" id="2_12vdd"]
 [ext_resource type="PackedScene" uid="uid://c4h04nltkk8mx" path="res://Scenes/goal.tscn" id="3_ot183"]
 [ext_resource type="Texture2D" uid="uid://1w1c41sg8wr1" path="res://Assets/Art/lose_text.png" id="5_gt1ue"]
+[ext_resource type="PackedScene" uid="uid://7o3ladlt1r1i" path="res://Scenes/banana_mouse.tscn" id="6_tlr06"]
 
 [sub_resource type="TileSet" id="TileSet_1hxkd"]
 tile_size = Vector2i(128, 128)
@@ -69,3 +70,10 @@ offset_top = 9.0
 offset_right = 523.0
 offset_bottom = 294.0
 color = Color(0, 0, 0, 1)
+
+[node name="bananas" type="Label" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Bananas: "
+
+[node name="banana_mouse" parent="." instance=ExtResource("6_tlr06")]
