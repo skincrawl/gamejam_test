@@ -47,7 +47,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 2.0
 }]
 
 [node name="level" type="Node2D"]
@@ -126,8 +126,9 @@ autoplay = true
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_mirroring = Vector2(1920, 1080)
-metadata/_edit_lock_ = true
-metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(959, 536)
 sprite_frames = SubResource("SpriteFrames_gpyhd")
+frame = 1
+frame_progress = 0.808977

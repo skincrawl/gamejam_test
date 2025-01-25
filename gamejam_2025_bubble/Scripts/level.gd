@@ -17,6 +17,7 @@ func _ready() -> void:
 	Globals.level = self
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 	
+	$bananas.show()
 	$CanvasLayer/lose_text.hide()
 	$CanvasLayer/lose_bg.hide()
 	$CanvasLayer/lose_bg.size = DisplayServer.window_get_size()
@@ -43,6 +44,7 @@ func lose() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	$CanvasLayer/lose_text.show()
 	$CanvasLayer/lose_bg.show()
+	$bananas.hide()
 	
 	await get_tree().create_timer(LOSE_TIME).timeout
 	get_tree().reload_current_scene()
