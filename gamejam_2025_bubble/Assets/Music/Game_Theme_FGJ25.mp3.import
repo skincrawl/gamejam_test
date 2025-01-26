@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/Game_Theme_FGJ25.mp3-549df1ace6f0395bde087d8a
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

@@ -8,6 +8,10 @@ const LOSE_TIME:float = 3.0
 var screen_size:Vector2
 var collected_bananas:int = 0
 
+var mouse_pos:Vector2
+
+var game_music:AudioStream = preload("res://Assets/Music/Game_Theme_FGJ25.mp3")
+
 func _ready() -> void:
 	
 	get_viewport().size_changed.connect(viewport_size_changed)
@@ -24,17 +28,29 @@ func _ready() -> void:
 	$GUI/lose_bg.size = DisplayServer.window_get_size()
 	
 	$Bubbles.position = $level_objects/spawn_pos.position
+	
+	$music.stream = game_music
+	$music.play()
+
+
+func _input(_event:InputEvent) -> void:
+	
+	if _event is InputEventMouseMotion:
+		mouse_pos = _event.position
+		# print("mouse at: ", _event.position)
 
 
 func _process(_delta:float) -> void:
 	
 	var screen_in_game:Rect2 = get_viewport().get_visible_rect()
-	var mouse_pos:Vector2 = get_viewport().get_mouse_position()
+	# mouse_pos = get_global_mouse_position()
+	# var mouse_pos:Vector2 = get_viewport().get_mouse_position()
 	
 	# print("screen in game: ", screen_in_game)
 	# print("mouse_pos: ", mouse_pos)
 	
-	$banana_mouse.global_position = mouse_pos + $Bubbles.position - 0.5 * screen_in_game.size
+	$banana_mouse.global_position = $Bubbles.position + mouse_pos - 0.5 * screen_size
+	# $banana_mouse.global_position = mouse_pos + $Bubbles.position - 0.5 * screen_in_game.size
 
 
 func lose() -> void:
@@ -60,5 +76,5 @@ func banana_collected(_banana:Banana) -> void:
 
 func viewport_size_changed() -> void:
 	
-	print("screen size changed")
+	# print("screen size changed")
 	screen_size = DisplayServer.window_get_size()

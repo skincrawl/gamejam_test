@@ -20,7 +20,7 @@ tile_map_data = PackedByteArray("AAD9/wcAAAAAAAAAAAD+/wcAAAAAAAAAAAD//wcAAAAAAAA
 tile_set = SubResource("TileSet_1hxkd")
 
 [node name="hazard" parent="." instance=ExtResource("2_hxdk4")]
-position = Vector2(1139, -3978)
+position = Vector2(1139, -4027)
 rotation = 3.14159
 scale = Vector2(1.4, 1.4)
 
