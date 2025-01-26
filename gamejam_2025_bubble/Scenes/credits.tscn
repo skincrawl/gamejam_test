@@ -1,9 +1,9 @@
 [gd_scene load_steps=19 format=3 uid="uid://ctvomw1cn28kf"]
 
-[ext_resource type="Script" path="res://Scenes/credits.gd" id="1_5ijot"]
+[ext_resource type="Script" path="res://Scripts/credits.gd" id="1_5ijot"]
 [ext_resource type="Texture2D" uid="uid://8pntxcrwopv7" path="res://Assets/Art/BG_Space.jpg" id="1_hv55c"]
-[ext_resource type="AudioStream" uid="uid://cliqi057lxak6" path="res://Assets/Music/MainMenuTheme_Ilman_Introa.mp3" id="2_vpogk"]
-[ext_resource type="Texture2D" uid="uid://hl3oxmki0uo4" path="res://Assets/Art/BananaPlanetSheet.png" id="3_61wri"]
+[ext_resource type="AudioStream" uid="uid://cliqi057lxak6" path="res://Assets/Audio/Music/MainMenuTheme_Ilman_Introa.mp3" id="2_vpogk"]
+[ext_resource type="Texture2D" uid="uid://b80qx1ag8nbsd" path="res://Assets/Art/BananaPlanetSheet.png" id="3_61wri"]
 [ext_resource type="Texture2D" uid="uid://gbmwr3ji3ra3" path="res://Assets/Art/BubblesSheet.png" id="4_dubdn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_72cta"]
@@ -324,6 +324,7 @@ vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="VBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
 offset_left = 716.0
 offset_top = 873.0
 offset_right = 1543.0
