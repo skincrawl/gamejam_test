@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://djjt8ypwl2hcj"]
+[gd_scene load_steps=20 format=3 uid="uid://djjt8ypwl2hcj"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_etyro"]
 [ext_resource type="PackedScene" uid="uid://bjqgn8eaev75p" path="res://Scenes/bubbles.tscn" id="2_12vdd"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://niau0ovrklso" path="res://Scenes/asteroid_2.tscn" id="6_qwbp7"]
 [ext_resource type="PackedScene" uid="uid://7o3ladlt1r1i" path="res://Scenes/banana_mouse.tscn" id="6_tlr06"]
 [ext_resource type="PackedScene" uid="uid://7hbodbdwusp3" path="res://Scenes/asteroid_3.tscn" id="7_646y3"]
+[ext_resource type="PackedScene" uid="uid://cxvn1s67oyllh" path="res://Scenes/fan.tscn" id="9_gvrl2"]
 [ext_resource type="AudioStream" uid="uid://lw32l7566psy" path="res://Assets/Music/Game_Theme_FGJ25.mp3" id="9_lxykr"]
 [ext_resource type="Texture2D" uid="uid://8pntxcrwopv7" path="res://Assets/Art/BG_Space.jpg" id="10_iyc58"]
 [ext_resource type="PackedScene" uid="uid://crp07ccl85rm6" path="res://Scenes/asteroid_1.tscn" id="10_ld734"]
@@ -50,47 +51,53 @@ animations = [{
 "speed": 2.0
 }]
 
-[node name="level" type="Node2D"]
+[node name="level_1" type="Node2D"]
 script = ExtResource("1_etyro")
 
 [node name="Bubbles" parent="." instance=ExtResource("2_12vdd")]
 z_index = 1
 position = Vector2(576, 324)
 
-[node name="bananas" type="Node2D" parent="."]
+[node name="level_objects" type="Node2D" parent="."]
 
-[node name="banana" parent="bananas" instance=ExtResource("11_5o2m4")]
+[node name="bananas" type="Node2D" parent="level_objects"]
+
+[node name="banana" parent="level_objects/bananas" instance=ExtResource("11_5o2m4")]
 position = Vector2(864, 200)
 
-[node name="banana2" parent="bananas" instance=ExtResource("11_5o2m4")]
+[node name="banana2" parent="level_objects/bananas" instance=ExtResource("11_5o2m4")]
 position = Vector2(1110, 281)
 
-[node name="TileMapLayer" parent="." instance=ExtResource("4_3ayk1")]
+[node name="TileMapLayer" parent="level_objects" instance=ExtResource("4_3ayk1")]
 scale = Vector2(0.5, 0.5)
 
-[node name="asteroids" type="Node2D" parent="."]
+[node name="asteroids" type="Node2D" parent="level_objects"]
 
-[node name="asteroid_1" parent="asteroids" instance=ExtResource("10_ld734")]
+[node name="asteroid_1" parent="level_objects/asteroids" instance=ExtResource("10_ld734")]
 position = Vector2(1480, 219)
 scale = Vector2(0.5, 0.5)
 
-[node name="asteroid_2" parent="asteroids" instance=ExtResource("6_qwbp7")]
+[node name="asteroid_2" parent="level_objects/asteroids" instance=ExtResource("6_qwbp7")]
 position = Vector2(184, -929)
 scale = Vector2(0.5, 0.5)
 
-[node name="asteroid_3" parent="asteroids/asteroid_2" instance=ExtResource("7_646y3")]
+[node name="asteroid_3" parent="level_objects/asteroids/asteroid_2" instance=ExtResource("7_646y3")]
 position = Vector2(6008, -1786)
 scale = Vector2(0.5, 0.5)
 
-[node name="spawn_pos" type="Marker2D" parent="."]
+[node name="spawn_pos" type="Marker2D" parent="level_objects"]
 position = Vector2(79, 392)
 
-[node name="goal" parent="." instance=ExtResource("3_ot183")]
+[node name="goal" parent="level_objects" instance=ExtResource("3_ot183")]
 position = Vector2(4909, 424)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="fan" parent="level_objects" instance=ExtResource("9_gvrl2")]
+position = Vector2(1371, -593)
+push_distance_multiplier = 0.1
 
-[node name="lose_text" type="TextureRect" parent="CanvasLayer"]
+[node name="GUI" type="CanvasLayer" parent="."]
+
+[node name="lose_text" type="TextureRect" parent="GUI"]
 visible = false
 z_index = 5
 offset_left = -258.0
@@ -100,13 +107,13 @@ offset_bottom = 997.0
 scale = Vector2(0.685, 0.685)
 texture = ExtResource("5_gt1ue")
 
-[node name="lose_bg" type="ColorRect" parent="CanvasLayer"]
+[node name="lose_bg" type="ColorRect" parent="GUI"]
 z_index = -5
 offset_right = 514.0
 offset_bottom = 285.0
 color = Color(0, 0, 0, 1)
 
-[node name="bananas" type="Label" parent="CanvasLayer"]
+[node name="bananas_label" type="Label" parent="GUI"]
 offset_left = 32.0
 offset_top = 30.0
 offset_right = 108.0
@@ -126,6 +133,7 @@ autoplay = true
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_mirroring = Vector2(1920, 1080)
+metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="ParallaxBackground/ParallaxLayer"]
 position = Vector2(960, 540)
