@@ -1,0 +1,308 @@
+[gd_scene load_steps=28 format=3 uid="uid://b5gigobueilix"]
+
+[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_oinqm"]
+[ext_resource type="FontFile" uid="uid://behuf74h25j5t" path="res://GameAssets/DynaPuff/DynaPuff-VariableFont_wdth,wght.ttf" id="1_ugjs1"]
+[ext_resource type="AudioStream" uid="uid://beeiwn868koah" path="res://Assets/Music/MainMenu_Theme_FGJ25.mp3" id="3_1t2la"]
+[ext_resource type="Texture2D" uid="uid://58hkgo1s8li0" path="res://Assets/Art/Title_Sheet.png" id="3_gd26k"]
+[ext_resource type="Texture2D" uid="uid://8pntxcrwopv7" path="res://Assets/Art/BG_Space.jpg" id="4_fkcl2"]
+[ext_resource type="Texture2D" uid="uid://cuxs0jdep2tjs" path="res://Assets/Art/BubbleBGTexture.png" id="5_0po1p"]
+[ext_resource type="Texture2D" uid="uid://c4mgs6y8y43he" path="res://Assets/Art/ActualBubble_Sheet.png" id="6_hdol0"]
+[ext_resource type="Texture2D" uid="uid://gbmwr3ji3ra3" path="res://Assets/Art/BubblesSheet.png" id="7_rxy3h"]
+[ext_resource type="Script" path="res://Scripts/bubbles.gd" id="8_12rqq"]
+
+[sub_resource type="Theme" id="Theme_avieb"]
+Button/fonts/font = ExtResource("1_ugjs1")
+Label/fonts/font = ExtResource("1_ugjs1")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xnhm3"]
+atlas = ExtResource("4_fkcl2")
+region = Rect2(0, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tl8ur"]
+atlas = ExtResource("4_fkcl2")
+region = Rect2(1920, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e55il"]
+atlas = ExtResource("4_fkcl2")
+region = Rect2(0, 1080, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fosgl"]
+atlas = ExtResource("4_fkcl2")
+region = Rect2(1920, 1080, 1920, 1080)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y8dsa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xnhm3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tl8ur")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e55il")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fosgl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t8ox7"]
+atlas = ExtResource("3_gd26k")
+region = Rect2(0, 0, 630, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s2scx"]
+atlas = ExtResource("3_gd26k")
+region = Rect2(630, 0, 630, 500)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8f88d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t8ox7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s2scx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_68v2j"]
+atlas = ExtResource("7_rxy3h")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pyr0n"]
+atlas = ExtResource("7_rxy3h")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_64lv3"]
+atlas = ExtResource("7_rxy3h")
+region = Rect2(0, 256, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3aow6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_68v2j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pyr0n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_64lv3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_58nmk"]
+atlas = ExtResource("6_hdol0")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ctnhm"]
+atlas = ExtResource("6_hdol0")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f5850"]
+atlas = ExtResource("6_hdol0")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hg3ym"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_58nmk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ctnhm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f5850")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Theme" id="Theme_gnr1q"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_avieb")
+script = ExtResource("1_oinqm")
+
+[node name="Background" type="AnimatedSprite2D" parent="."]
+z_index = -2
+position = Vector2(960, 542)
+scale = Vector2(1.00937, 1.02222)
+sprite_frames = SubResource("SpriteFrames_y8dsa")
+autoplay = "default"
+frame_progress = 0.989598
+
+[node name="GameTitle" type="AnimatedSprite2D" parent="."]
+position = Vector2(508, 358)
+scale = Vector2(1.425, 1.425)
+sprite_frames = SubResource("SpriteFrames_8f88d")
+autoplay = "default"
+frame_progress = 0.915013
+
+[node name="BubblesMainMenu" type="Node2D" parent="."]
+position = Vector2(1476, 477)
+metadata/_edit_group_ = true
+
+[node name="ApinaBubbles" type="AnimatedSprite2D" parent="BubblesMainMenu"]
+position = Vector2(0, -8)
+scale = Vector2(2.265, 2.265)
+sprite_frames = SubResource("SpriteFrames_3aow6")
+autoplay = "default"
+script = ExtResource("8_12rqq")
+metadata/_edit_group_ = true
+
+[node name="Bubble" type="Sprite2D" parent="."]
+position = Vector2(1476, 477)
+scale = Vector2(2.94, 2.94)
+texture = ExtResource("5_0po1p")
+metadata/_edit_group_ = true
+
+[node name="BubbleOutline" type="AnimatedSprite2D" parent="."]
+z_index = 1
+position = Vector2(1476.16, 471.16)
+scale = Vector2(2.94, 2.94)
+sprite_frames = SubResource("SpriteFrames_hg3ym")
+autoplay = "default"
+metadata/_edit_group_ = true
+
+[node name="VBoxContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 517.0
+offset_top = 68.9999
+offset_right = 870.0
+offset_bottom = 152.0
+grow_vertical = 2
+rotation = -0.10472
+scale = Vector2(1.83, 1.83)
+
+[node name="Start_game" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme = SubResource("Theme_gnr1q")
+theme_override_font_sizes/font_size = 40
+action_mode = 0
+text = "Start game"
+icon_alignment = 1
+expand_icon = true
+
+[node name="VBoxContainer2" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 691.0
+offset_top = 324.0
+offset_right = 941.0
+offset_bottom = 424.0
+grow_vertical = 2
+rotation = -0.122173
+scale = Vector2(1.1, 1.1)
+
+[node name="How_to_play" type="Button" parent="VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme = SubResource("Theme_gnr1q")
+theme_override_font_sizes/font_size = 40
+action_mode = 0
+text = "How to play"
+icon_alignment = 1
+expand_icon = true
+
+[node name="VBoxContainer3" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 152.0
+offset_top = 382.0
+offset_right = 402.0
+offset_bottom = 487.0
+grow_vertical = 2
+rotation = -0.146608
+scale = Vector2(1.1, 1.1)
+
+[node name="About_us" type="Button" parent="VBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = SubResource("Theme_gnr1q")
+theme_override_font_sizes/font_size = 40
+action_mode = 0
+text = "About us"
+icon_alignment = 1
+expand_icon = true
+
+[node name="VBoxContainer4" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 147.0
+offset_top = 120.0
+offset_right = 397.0
+offset_bottom = 220.0
+grow_vertical = 2
+rotation = 0.0698132
+scale = Vector2(1.15, 1.15)
+
+[node name="Options" type="Button" parent="VBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme = SubResource("Theme_gnr1q")
+theme_override_font_sizes/font_size = 40
+action_mode = 0
+text = "Settings"
+icon_alignment = 1
+expand_icon = true
+
+[node name="VBoxContainer5" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 1034.0
+offset_top = 371.0
+offset_right = 1469.0
+offset_bottom = 471.0
+grow_vertical = 2
+rotation = -0.0349066
+scale = Vector2(1.1, 1.1)
+
+[node name="Quit" type="Button" parent="VBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = SubResource("Theme_gnr1q")
+theme_override_font_sizes/font_size = 40
+action_mode = 0
+text = "Quit"
+icon_alignment = 1
+expand_icon = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_1t2la")
+
+[connection signal="pressed" from="VBoxContainer/Start_game" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="VBoxContainer2/How_to_play" to="." method="_on_how_to_play_pressed"]
+[connection signal="pressed" from="VBoxContainer3/About_us" to="." method="_on_about_us_pressed"]
+[connection signal="pressed" from="VBoxContainer4/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="VBoxContainer5/Quit" to="." method="_on_quit_pressed"]

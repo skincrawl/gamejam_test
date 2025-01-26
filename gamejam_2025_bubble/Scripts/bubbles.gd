@@ -9,7 +9,7 @@ const MAX_BLOW_STRENGTH:float = 70.0
 const MAX_SPEED:float = 900.0
 
 const MAX_CONTROL_DISTANCE:float = 500.0
-# Making a little area outside the bubble, where the strength doesn't increase
+# Making a little area where blowing air doesn't work
 const CONTROL_MARGIN:float = 1.1
 
 const MAX_MONKEY_SPIN_SPEED:float = 30.0
@@ -33,6 +33,7 @@ func _physics_process(_delta:float) -> void:
 	monkey_rotation += deg_to_rad(monkey_spin_speed) * _delta
 	$Bubbles.rotation += monkey_rotation
 	
+	# Bouncy monkey
 	# var monkey_reset_speed:float = 50.0
 	# var reset_dir:Vector2 = position - $Bubbles.position
 	# $Bubbles.position = $Bubbles.position.move_toward(position, 3.0)
