@@ -1,6 +1,6 @@
 extends Control
 
-var menu_music:AudioStream = preload("res://Assets/Music/MainMenu_Theme_FGJ25.mp3")
+var menu_music:AudioStream = preload("res://Assets/Music/MainMenuTheme_Ilman_Introa.mp3")
 
 func _ready():
 	
@@ -14,6 +14,7 @@ func _ready():
 
 
 func _on_start_game_pressed():
+	Globals.music_spot = $music.get_playback_position()
 	get_tree().change_scene_to_file("res://Scenes/narrative_screen.tscn")
 
 func _on_how_to_play_pressed():

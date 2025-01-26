@@ -16,15 +16,17 @@ collision_mask = 2
 script = ExtResource("1_05gsd")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("1_ibktf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(-1, 1)
 shape = SubResource("RectangleShape2D_24xb5")
+disabled = true
 metadata/_edit_lock_ = true
 
 [node name="Area2D" type="Area2D" parent="."]
-position = Vector2(0, 22)
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
@@ -34,7 +36,7 @@ shape = SubResource("RectangleShape2D_epecg")
 [node name="Part" parent="." instance=ExtResource("2_2prwu")]
 
 [node name="push_area" type="Sprite2D" parent="."]
-position = Vector2(-2, 552)
+position = Vector2(0, 532.715)
 scale = Vector2(1, 1.06)
 texture = ExtResource("3_aif7d")
 

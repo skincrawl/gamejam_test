@@ -25,6 +25,7 @@ var push_strength:float
 
 
 func _ready() -> void:
+	$Part/Node2D/CPUParticles2D.emitting = true
 	push_distance_multiplier = 0.5
 	push_strength_multiplier = 0.5
 

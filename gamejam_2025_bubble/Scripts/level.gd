@@ -10,7 +10,7 @@ var collected_bananas:int = 0
 
 var mouse_pos:Vector2
 
-var game_music:AudioStream = preload("res://Assets/Music/Game_Theme_FGJ25.mp3")
+var game_music:AudioStream = preload("res://Assets/Music/PeliTheme.mp3")
 
 func _ready() -> void:
 	

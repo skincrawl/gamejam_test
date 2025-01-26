@@ -10,10 +10,10 @@
 [ext_resource type="PackedScene" uid="uid://7o3ladlt1r1i" path="res://Scenes/banana_mouse.tscn" id="6_tlr06"]
 [ext_resource type="PackedScene" uid="uid://7hbodbdwusp3" path="res://Scenes/asteroid_3.tscn" id="7_646y3"]
 [ext_resource type="PackedScene" uid="uid://cxvn1s67oyllh" path="res://Scenes/fan.tscn" id="9_gvrl2"]
-[ext_resource type="AudioStream" uid="uid://lw32l7566psy" path="res://Assets/Music/Game_Theme_FGJ25.mp3" id="9_lxykr"]
 [ext_resource type="Texture2D" uid="uid://8pntxcrwopv7" path="res://Assets/Art/BG_Space.jpg" id="10_iyc58"]
 [ext_resource type="PackedScene" uid="uid://crp07ccl85rm6" path="res://Scenes/asteroid_1.tscn" id="10_ld734"]
 [ext_resource type="PackedScene" uid="uid://cunyvm8bl614t" path="res://Scenes/banana.tscn" id="11_5o2m4"]
+[ext_resource type="AudioStream" uid="uid://bhkee0n6kldbe" path="res://Assets/Music/PeliTheme.mp3" id="13_cdon3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b1ypm"]
 atlas = ExtResource("10_iyc58")
@@ -125,7 +125,7 @@ text = "Bananas: 0"
 position = Vector2(354, 368)
 
 [node name="music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("9_lxykr")
+stream = ExtResource("13_cdon3")
 volume_db = -12.0
 autoplay = true
 
