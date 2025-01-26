@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://8pntxcrwopv7" path="res://Assets/Art/BG_Space.jpg" id="10_iyc58"]
 [ext_resource type="PackedScene" uid="uid://crp07ccl85rm6" path="res://Scenes/asteroid_1.tscn" id="10_ld734"]
 [ext_resource type="PackedScene" uid="uid://cunyvm8bl614t" path="res://Scenes/banana.tscn" id="11_5o2m4"]
-[ext_resource type="AudioStream" uid="uid://bhkee0n6kldbe" path="res://Assets/Music/PeliTheme.mp3" id="13_cdon3"]
+[ext_resource type="AudioStream" uid="uid://bhkee0n6kldbe" path="res://Assets/Audio/Music/PeliTheme.mp3" id="13_cdon3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b1ypm"]
 atlas = ExtResource("10_iyc58")

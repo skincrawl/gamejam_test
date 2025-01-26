@@ -10,7 +10,7 @@ var collected_bananas:int = 0
 
 var mouse_pos:Vector2
 
-var game_music:AudioStream = preload("res://Assets/Music/PeliTheme.mp3")
+var game_music:AudioStream = preload("res://Assets/Audio/Music/PeliTheme.mp3")
 
 func _ready() -> void:
 	
@@ -29,8 +29,9 @@ func _ready() -> void:
 	
 	$Bubbles.position = $level_objects/spawn_pos.position
 	
-	$music.stream = game_music
-	$music.play()
+	if Globals.sound_on:
+		$music.stream = game_music
+		$music.play(Globals.music_spot)
 
 
 func _input(_event:InputEvent) -> void:
@@ -42,7 +43,7 @@ func _input(_event:InputEvent) -> void:
 
 func _process(_delta:float) -> void:
 	
-	var screen_in_game:Rect2 = get_viewport().get_visible_rect()
+	# var screen_in_game:Rect2 = get_viewport().get_visible_rect()
 	# mouse_pos = get_global_mouse_position()
 	# var mouse_pos:Vector2 = get_viewport().get_mouse_position()
 	
@@ -54,6 +55,8 @@ func _process(_delta:float) -> void:
 
 
 func lose() -> void:
+	
+	Globals.music_spot = $music.get_playback_position()
 	
 	$Bubbles.set_deferred("freeze", true)
 	$Bubbles.death()

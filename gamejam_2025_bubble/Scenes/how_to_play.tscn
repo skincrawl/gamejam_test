@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://cfx55rek8u1kn"]
+[gd_scene load_steps=8 format=3 uid="uid://cfx55rek8u1kn"]
 
 [ext_resource type="Script" path="res://Scripts/how_to_play.gd" id="1_nd7su"]
 [ext_resource type="FontFile" uid="uid://behuf74h25j5t" path="res://GameAssets/DynaPuff/DynaPuff-VariableFont_wdth,wght.ttf" id="1_sujcp"]
 [ext_resource type="Texture2D" uid="uid://8pntxcrwopv7" path="res://Assets/Art/BG_Space.jpg" id="3_4oi1x"]
+[ext_resource type="AudioStream" uid="uid://cliqi057lxak6" path="res://Assets/Audio/Music/MainMenuTheme_Ilman_Introa.mp3" id="4_7cef3"]
 
 [sub_resource type="Theme" id="Theme_avieb"]
 Button/fonts/font = ExtResource("1_sujcp")
@@ -12,16 +13,6 @@ Label/fonts/font = ExtResource("1_sujcp")
 
 [sub_resource type="GDScript" id="GDScript_t48tm"]
 script/source = "extends Button
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 "
 
 [node name="HowToPlay" type="Control"]
@@ -33,6 +24,20 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_avieb")
 script = ExtResource("1_nd7su")
+
+[node name="TextBoxColor2" type="TextureRect" parent="."]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1344.0
+offset_top = -805.0
+offset_right = 1344.0
+offset_bottom = 707.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_4oi1x")
 
 [node name="TextBoxAnchoring" type="Panel" parent="."]
 layout_mode = 1
@@ -82,18 +87,9 @@ text = "Return"
 icon_alignment = 1
 script = SubResource("GDScript_t48tm")
 
-[node name="TextBoxColor2" type="TextureRect" parent="."]
-show_behind_parent = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -1344.0
-offset_top = -805.0
-offset_right = 1344.0
-offset_bottom = 707.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("3_4oi1x")
+[node name="music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_7cef3")
+volume_db = -12.0
+autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/Return" to="." method="_on_return_pressed"]
