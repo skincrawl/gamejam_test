@@ -922,7 +922,7 @@ position = Vector2(3188, -1822)
 scale = Vector2(0.25, 0.25)
 
 [node name="spawn_pos" type="Marker2D" parent="level_objects"]
-position = Vector2(4861, 616)
+position = Vector2(82, 199)
 
 [node name="goal" parent="level_objects" instance=ExtResource("3_ot183")]
 position = Vector2(4839, -18)

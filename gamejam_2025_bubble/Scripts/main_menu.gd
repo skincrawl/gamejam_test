@@ -8,6 +8,7 @@ func _ready():
 	
 	if Globals.sound_on:
 		$music.stream = menu_music
+		$music.volume_db = Globals.sound_volume
 		$music.play(Globals.music_spot)
 	
 	await get_tree().create_timer(1.01).timeout
