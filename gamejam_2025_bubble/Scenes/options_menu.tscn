@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://6lgt51fk3khg"]
+[gd_scene load_steps=11 format=3 uid="uid://6lgt51fk3khg"]
 
 [ext_resource type="Script" path="res://Scripts/options_menu.gd" id="1_in42w"]
 [ext_resource type="Texture2D" uid="uid://8pntxcrwopv7" path="res://Assets/Art/BG_Space.jpg" id="2_htsm4"]
 [ext_resource type="FontFile" uid="uid://behuf74h25j5t" path="res://GameAssets/DynaPuff/DynaPuff-VariableFont_wdth,wght.ttf" id="2_m52pm"]
+[ext_resource type="AudioStream" uid="uid://cliqi057lxak6" path="res://Assets/Music/MainMenuTheme_Ilman_Introa.mp3" id="4_pfqjf"]
 
 [sub_resource type="Theme" id="Theme_avieb"]
 
@@ -166,5 +167,10 @@ theme = SubResource("Theme_o0vlm")
 theme_override_font_sizes/font_size = 40
 text = "Return
 "
+
+[node name="music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_pfqjf")
+volume_db = -12.0
+autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/Return" to="." method="_on_return_pressed"]

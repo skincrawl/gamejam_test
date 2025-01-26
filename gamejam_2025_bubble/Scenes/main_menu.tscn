@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_oinqm"]
 [ext_resource type="FontFile" uid="uid://behuf74h25j5t" path="res://GameAssets/DynaPuff/DynaPuff-VariableFont_wdth,wght.ttf" id="1_ugjs1"]
-[ext_resource type="AudioStream" uid="uid://beeiwn868koah" path="res://Assets/Music/MainMenu_Theme_FGJ25.mp3" id="3_1t2la"]
 [ext_resource type="Texture2D" uid="uid://8pntxcrwopv7" path="res://Assets/Art/BG_Space.jpg" id="3_8bard"]
 [ext_resource type="Texture2D" uid="uid://yv20cwmhlpwh" path="res://Assets/Art/MenuBubble.png" id="5_84j0t"]
 [ext_resource type="Texture2D" uid="uid://58hkgo1s8li0" path="res://Assets/Art/Title_Sheet.png" id="5_styjg"]
 [ext_resource type="Theme" uid="uid://cfuny4aqpg8r2" path="res://Resources/default_theme.tres" id="6_actju"]
+[ext_resource type="AudioStream" uid="uid://cliqi057lxak6" path="res://Assets/Music/MainMenuTheme_Ilman_Introa.mp3" id="7_s2nx6"]
 
 [sub_resource type="Theme" id="Theme_avieb"]
 Button/fonts/font = ExtResource("1_ugjs1")
@@ -297,7 +297,7 @@ theme = ExtResource("6_actju")
 text = "Start game!"
 
 [node name="music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_1t2la")
+stream = ExtResource("7_s2nx6")
 volume_db = -12.0
 autoplay = true
 
