@@ -819,7 +819,6 @@ scale = Vector2(2.2, 1.94)
 
 [node name="fan" parent="level_objects/fans" instance=ExtResource("9_gvrl2")]
 push_distance_multiplier = 0.1
-push_strength_multiplier = 0.5
 
 [node name="fan2" parent="level_objects/fans" instance=ExtResource("9_gvrl2")]
 position = Vector2(-639.091, 792.784)
