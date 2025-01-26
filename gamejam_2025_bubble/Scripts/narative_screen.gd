@@ -3,8 +3,10 @@ extends Control
 
 func _ready() -> void:
 	
-	$music.stream = Globals.audio_stream
-	$music.play(Globals.music_spot)
+	if Globals.sound_on:
+		$music.stream = Globals.audio_stream
+		$music.volume_db = Globals.sound_volume
+		$music.play(Globals.music_spot)
 
 
 func _on_return_pressed() -> void:

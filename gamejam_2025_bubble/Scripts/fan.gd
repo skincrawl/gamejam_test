@@ -34,7 +34,7 @@ func _on_area_2d_body_entered(_body: Node2D) -> void:
 	
 	var dir:Vector2 = Vector2.DOWN.rotated(rotation)
 	var push_force:Vector2 = -dir.normalized() * push_strength
-	print("push_force: ", push_force)
+	# print("push_force: ", push_force)
 	if _body.name == "Bubbles":
 		_body.add_constant_central_force(push_force)
 

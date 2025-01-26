@@ -31,9 +31,12 @@ func _ready() -> void:
 	
 	$Bubbles.position = $level_objects/spawn_pos.position
 	
-	if Globals.sound_on:
-		$music.stream = game_music
-		$music.play(Globals.music_spot)
+	if not Globals.sound_on:
+		$music.stop()
+		return
+	$music.stream = game_music
+	$music.volume_db = Globals.sound_volume
+	$music.play(Globals.music_spot)
 
 
 func _input(_event:InputEvent) -> void:
