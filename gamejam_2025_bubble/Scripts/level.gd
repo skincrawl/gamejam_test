@@ -15,6 +15,7 @@ func _ready() -> void:
 	screen_size = DisplayServer.window_get_size()
 	
 	Globals.level = self
+	Globals.bubbles = $Bubbles
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 	
 	$bananas.show()

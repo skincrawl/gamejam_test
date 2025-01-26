@@ -128,7 +128,7 @@ autoplay = true
 motion_mirroring = Vector2(1920, 1080)
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(959, 536)
+position = Vector2(960, 540)
 sprite_frames = SubResource("SpriteFrames_gpyhd")
 frame = 1
 frame_progress = 0.808977

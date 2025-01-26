@@ -1,15 +1,74 @@
-[gd_scene load_steps=7 format=3 uid="uid://b5gigobueilix"]
+[gd_scene load_steps=16 format=3 uid="uid://b5gigobueilix"]
 
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_oinqm"]
 [ext_resource type="FontFile" uid="uid://behuf74h25j5t" path="res://GameAssets/DynaPuff/DynaPuff-VariableFont_wdth,wght.ttf" id="1_ugjs1"]
 [ext_resource type="AudioStream" uid="uid://beeiwn868koah" path="res://Assets/Music/MainMenu_Theme_FGJ25.mp3" id="3_1t2la"]
 [ext_resource type="Texture2D" uid="uid://8pntxcrwopv7" path="res://Assets/Art/BG_Space.jpg" id="3_8bard"]
+[ext_resource type="Texture2D" uid="uid://58hkgo1s8li0" path="res://Assets/Art/Title_Sheet.png" id="5_styjg"]
 
 [sub_resource type="Theme" id="Theme_avieb"]
 Button/fonts/font = ExtResource("1_ugjs1")
 Label/fonts/font = ExtResource("1_ugjs1")
 
 [sub_resource type="Theme" id="Theme_gnr1q"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_72cta"]
+atlas = ExtResource("3_8bard")
+region = Rect2(0, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8p14s"]
+atlas = ExtResource("3_8bard")
+region = Rect2(1920, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ejipe"]
+atlas = ExtResource("3_8bard")
+region = Rect2(0, 1080, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e4y81"]
+atlas = ExtResource("3_8bard")
+region = Rect2(1920, 1080, 1920, 1080)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_chcqr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_72cta")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8p14s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ejipe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e4y81")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u7ehx"]
+atlas = ExtResource("5_styjg")
+region = Rect2(0, 0, 630, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qba2m"]
+atlas = ExtResource("5_styjg")
+region = Rect2(630, 0, 630, 500)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a3r2e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u7ehx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qba2m")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -21,21 +80,8 @@ grow_vertical = 2
 theme = SubResource("Theme_avieb")
 script = ExtResource("1_oinqm")
 
-[node name="TextBoxColor" type="TextureRect" parent="."]
-show_behind_parent = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -1344.0
-offset_top = -756.0
-offset_right = 1344.0
-offset_bottom = 756.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("3_8bard")
-
 [node name="Title" type="Label" parent="."]
+visible = false
 layout_mode = 1
 offset_left = 10.0
 offset_top = 10.0
@@ -164,6 +210,20 @@ expand_icon = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_1t2la")
+volume_db = -12.0
+autoplay = true
+
+[node name="bg" type="AnimatedSprite2D" parent="."]
+z_index = -10
+position = Vector2(960, 540)
+sprite_frames = SubResource("SpriteFrames_chcqr")
+frame = 2
+frame_progress = 0.481552
+
+[node name="title" type="AnimatedSprite2D" parent="."]
+position = Vector2(277, 219)
+scale = Vector2(0.785, 0.785)
+sprite_frames = SubResource("SpriteFrames_a3r2e")
 
 [connection signal="pressed" from="VBoxContainer/Start_game" to="." method="_on_start_game_pressed"]
 [connection signal="pressed" from="VBoxContainer2/How_to_play" to="." method="_on_how_to_play_pressed"]
