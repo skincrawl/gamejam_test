@@ -1,23 +1,183 @@
-[gd_scene load_steps=3 format=3 uid="uid://b1nk0of7fw0au"]
+[gd_scene load_steps=19 format=3 uid="uid://b1nk0of7fw0au"]
 
-[ext_resource type="Texture2D" uid="uid://cvr0v85pmymh1" path="res://Assets/Art/win_screen_temp.png" id="1_j6q8t"]
 [ext_resource type="Script" path="res://Scripts/win_screen.gd" id="1_yact1"]
+[ext_resource type="Texture2D" uid="uid://8pntxcrwopv7" path="res://Assets/Art/BG_Space.jpg" id="2_tn11s"]
+[ext_resource type="AudioStream" uid="uid://cliqi057lxak6" path="res://Assets/Audio/Music/MainMenuTheme_Ilman_Introa.mp3" id="3_d6pyg"]
+[ext_resource type="Texture2D" uid="uid://b80qx1ag8nbsd" path="res://Assets/Art/BananaPlanetSheet.png" id="4_nuwg6"]
+[ext_resource type="Texture2D" uid="uid://gbmwr3ji3ra3" path="res://Assets/Art/BubblesSheet.png" id="5_3y2cb"]
 
-[node name="win_screen" type="Node2D"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_72cta"]
+atlas = ExtResource("2_tn11s")
+region = Rect2(0, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8p14s"]
+atlas = ExtResource("2_tn11s")
+region = Rect2(1920, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ejipe"]
+atlas = ExtResource("2_tn11s")
+region = Rect2(0, 1080, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e4y81"]
+atlas = ExtResource("2_tn11s")
+region = Rect2(1920, 1080, 1920, 1080)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pjhnb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_72cta")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8p14s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ejipe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e4y81")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[sub_resource type="Theme" id="Theme_1mlce"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_py8pq"]
+atlas = ExtResource("4_nuwg6")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lsym1"]
+atlas = ExtResource("4_nuwg6")
+region = Rect2(512, 0, 512, 512)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nqkf6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_py8pq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lsym1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xwdvu"]
+atlas = ExtResource("5_3y2cb")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j42i2"]
+atlas = ExtResource("5_3y2cb")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q424r"]
+atlas = ExtResource("5_3y2cb")
+region = Rect2(0, 256, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x5hm7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xwdvu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j42i2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q424r")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="win_screen" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_yact1")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(580, 320)
-scale = Vector2(0.598958, 0.598148)
-texture = ExtResource("1_j6q8t")
+[node name="bg" type="AnimatedSprite2D" parent="."]
+z_index = -10
+position = Vector2(970, 548)
+sprite_frames = SubResource("SpriteFrames_pjhnb")
+autoplay = "default"
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="TextBoxAnchoring" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 218.0
+offset_top = 299.0
+offset_right = 1094.0
+offset_bottom = 710.0
+grow_horizontal = 2
 
-[node name="Button" type="Button" parent="CanvasLayer"]
-offset_left = 478.0
-offset_top = 437.0
-offset_right = 606.0
-offset_bottom = 496.0
-text = "Again?"
+[node name="WinNarrative" type="Label" parent="TextBoxAnchoring"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 167.0
+offset_top = 121.0
+offset_right = -119.0
+offset_bottom = -147.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/line_spacing = 25
+theme_override_font_sizes/font_size = 43
+text = "WELL DONE! You've succesfully escorted Bubbles to yellower pastures"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
 
-[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
+[node name="VBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+offset_left = 230.0
+offset_top = 879.0
+offset_right = 1057.0
+offset_bottom = 970.0
+theme_override_constants/separation = 40
+alignment = 1
+metadata/_edit_group_ = true
+
+[node name="Credits" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme = SubResource("Theme_1mlce")
+theme_override_font_sizes/font_size = 60
+action_mode = 0
+text = "Credits"
+icon_alignment = 1
+
+[node name="Menu" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme = SubResource("Theme_1mlce")
+theme_override_font_sizes/font_size = 60
+action_mode = 0
+text = "  Menu"
+icon_alignment = 1
+
+[node name="music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_d6pyg")
+volume_db = -12.0
+autoplay = true
+
+[node name="BananaLandSprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(1496, 546)
+scale = Vector2(1.85156, 1.87305)
+sprite_frames = SubResource("SpriteFrames_nqkf6")
+
+[node name="Bubbles_Sprite" type="AnimatedSprite2D" parent="BananaLandSprite"]
+position = Vector2(-139.882, 58.2322)
+rotation = 0.698132
+scale = Vector2(0.749387, 0.745782)
+sprite_frames = SubResource("SpriteFrames_x5hm7")
+
+[connection signal="pressed" from="VBoxContainer/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="VBoxContainer/Menu" to="." method="_on_menu_pressed"]

@@ -1,36 +1,36 @@
-[gd_scene load_steps=22 format=4 uid="uid://djjt8ypwl2hcj"]
+[gd_scene load_steps=22 format=4 uid="uid://bpbrkbu8hhdl3"]
 
-[ext_resource type="Script" path="res://Scripts/level.gd" id="1_etyro"]
-[ext_resource type="PackedScene" uid="uid://bjqgn8eaev75p" path="res://Scenes/bubbles.tscn" id="2_12vdd"]
-[ext_resource type="PackedScene" uid="uid://c4h04nltkk8mx" path="res://Scenes/goal.tscn" id="3_ot183"]
-[ext_resource type="PackedScene" uid="uid://byumagq3gh8y" path="res://Scenes/tile_map_layer.tscn" id="4_3ayk1"]
-[ext_resource type="Texture2D" uid="uid://1w1c41sg8wr1" path="res://Assets/Art/lose_text.png" id="5_gt1ue"]
-[ext_resource type="PackedScene" uid="uid://7j70are14236" path="res://Scenes/hazard.tscn" id="5_soaiy"]
-[ext_resource type="Theme" uid="uid://cfuny4aqpg8r2" path="res://Resources/default_theme.tres" id="6_cx770"]
-[ext_resource type="PackedScene" uid="uid://niau0ovrklso" path="res://Scenes/asteroid_2.tscn" id="6_qwbp7"]
-[ext_resource type="PackedScene" uid="uid://7o3ladlt1r1i" path="res://Scenes/banana_mouse.tscn" id="6_tlr06"]
-[ext_resource type="PackedScene" uid="uid://7hbodbdwusp3" path="res://Scenes/asteroid_3.tscn" id="7_646y3"]
-[ext_resource type="PackedScene" uid="uid://cxvn1s67oyllh" path="res://Scenes/fan.tscn" id="9_gvrl2"]
-[ext_resource type="Texture2D" uid="uid://8pntxcrwopv7" path="res://Assets/Art/BG_Space.jpg" id="10_iyc58"]
-[ext_resource type="PackedScene" uid="uid://crp07ccl85rm6" path="res://Scenes/asteroid_1.tscn" id="10_ld734"]
-[ext_resource type="PackedScene" uid="uid://cunyvm8bl614t" path="res://Scenes/banana.tscn" id="11_5o2m4"]
-[ext_resource type="PackedScene" uid="uid://cack0icu3bcjc" path="res://Scenes/dart_gun.tscn" id="11_p3shj"]
-[ext_resource type="AudioStream" uid="uid://bhkee0n6kldbe" path="res://Assets/Audio/Music/PeliTheme.mp3" id="13_cdon3"]
+[ext_resource type="Script" path="res://Scripts/level.gd" id="1_gbsu1"]
+[ext_resource type="PackedScene" uid="uid://bjqgn8eaev75p" path="res://Scenes/bubbles.tscn" id="2_nh8on"]
+[ext_resource type="PackedScene" uid="uid://cunyvm8bl614t" path="res://Scenes/banana.tscn" id="3_6l21p"]
+[ext_resource type="PackedScene" uid="uid://7j70are14236" path="res://Scenes/hazard.tscn" id="4_rdkk3"]
+[ext_resource type="PackedScene" uid="uid://byumagq3gh8y" path="res://Scenes/tile_map_layer.tscn" id="5_ensgp"]
+[ext_resource type="PackedScene" uid="uid://cxvn1s67oyllh" path="res://Scenes/fan.tscn" id="6_s4o32"]
+[ext_resource type="PackedScene" uid="uid://crp07ccl85rm6" path="res://Scenes/asteroid_1.tscn" id="7_qbao6"]
+[ext_resource type="PackedScene" uid="uid://niau0ovrklso" path="res://Scenes/asteroid_2.tscn" id="8_aaytu"]
+[ext_resource type="PackedScene" uid="uid://7hbodbdwusp3" path="res://Scenes/asteroid_3.tscn" id="9_vqsyj"]
+[ext_resource type="PackedScene" uid="uid://c4h04nltkk8mx" path="res://Scenes/goal.tscn" id="10_r6a1t"]
+[ext_resource type="PackedScene" uid="uid://cack0icu3bcjc" path="res://Scenes/dart_gun.tscn" id="11_384sp"]
+[ext_resource type="Texture2D" uid="uid://1w1c41sg8wr1" path="res://Assets/Art/lose_text.png" id="12_egdxv"]
+[ext_resource type="Theme" uid="uid://cfuny4aqpg8r2" path="res://Resources/default_theme.tres" id="13_cwt65"]
+[ext_resource type="PackedScene" uid="uid://7o3ladlt1r1i" path="res://Scenes/banana_mouse.tscn" id="14_1woat"]
+[ext_resource type="AudioStream" uid="uid://bhkee0n6kldbe" path="res://Assets/Audio/Music/PeliTheme.mp3" id="15_1rsb5"]
+[ext_resource type="Texture2D" uid="uid://8pntxcrwopv7" path="res://Assets/Art/BG_Space.jpg" id="16_q2i1u"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b1ypm"]
-atlas = ExtResource("10_iyc58")
+atlas = ExtResource("16_q2i1u")
 region = Rect2(0, 0, 1920, 1080)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_52scj"]
-atlas = ExtResource("10_iyc58")
+atlas = ExtResource("16_q2i1u")
 region = Rect2(1920, 0, 1920, 1080)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ka1dl"]
-atlas = ExtResource("10_iyc58")
+atlas = ExtResource("16_q2i1u")
 region = Rect2(0, 1080, 1920, 1080)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ng86i"]
-atlas = ExtResource("10_iyc58")
+atlas = ExtResource("16_q2i1u")
 region = Rect2(1920, 1080, 1920, 1080)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gpyhd"]
@@ -54,885 +54,923 @@ animations = [{
 }]
 
 [node name="level_1" type="Node2D"]
-script = ExtResource("1_etyro")
+script = ExtResource("1_gbsu1")
 
-[node name="Bubbles" parent="." instance=ExtResource("2_12vdd")]
+[node name="Bubbles" parent="." instance=ExtResource("2_nh8on")]
 z_index = 1
 position = Vector2(576, 324)
 
-[node name="level_objects" type="Node2D" parent="."]
+[node name="level_objects2" type="Node2D" parent="."]
 
-[node name="bananas" type="Node2D" parent="level_objects"]
+[node name="bananas" type="Node2D" parent="level_objects2"]
 
-[node name="banana" parent="level_objects/bananas" instance=ExtResource("11_5o2m4")]
+[node name="banana" parent="level_objects2/bananas" instance=ExtResource("3_6l21p")]
 position = Vector2(864, 200)
 
-[node name="banana2" parent="level_objects/bananas" instance=ExtResource("11_5o2m4")]
+[node name="banana2" parent="level_objects2/bananas" instance=ExtResource("3_6l21p")]
 position = Vector2(1110, 281)
 
-[node name="hazards" type="Node2D" parent="level_objects/bananas"]
+[node name="hazards" type="Node2D" parent="level_objects2/bananas"]
 
-[node name="hazard96" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard96" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(6265, -740)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard97" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard97" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(6322, -740)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard98" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard98" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(5922, -739.5)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard99" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard99" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(6094, -739.5)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard100" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard100" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(6037, -739.5)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard101" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard101" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(5979, -739.5)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard102" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard102" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(6151.5, -739.5)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard103" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard103" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(6208.5, -739.5)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard129" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard129" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(8657, -1189)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard130" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard130" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(8714, -1189)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard131" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard131" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(8314, -1188.5)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard132" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard132" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(8486, -1188.5)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard133" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard133" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(8429, -1188.5)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard134" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard134" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(8371, -1188.5)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard135" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard135" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(8543.5, -1188.5)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard136" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard136" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(8600.5, -1188.5)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard151" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard151" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(8690, -613)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard152" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard152" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(8747, -613)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard153" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard153" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(8347, -612.5)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard154" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard154" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(8519, -612.5)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard155" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard155" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(8462, -612.5)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard156" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard156" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(8404, -612.5)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard157" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard157" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(8576.5, -612.5)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard158" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard158" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(8633.5, -612.5)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard159" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard159" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(9571, -1053)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard160" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard160" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(9628, -1053)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard161" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard161" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(9228, -1052.5)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard162" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard162" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(9400, -1052.5)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard163" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard163" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(9343, -1052.5)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard164" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard164" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(9285, -1052.5)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard165" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard165" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(9457.5, -1052.5)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard166" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard166" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(9514.5, -1052.5)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard167" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard167" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(9656, 2212)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard168" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard168" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(9713, 2212)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard169" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard169" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(9313, 2212.5)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard170" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard170" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(9485, 2212.5)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard171" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard171" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(9428, 2212.5)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard172" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard172" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(9370, 2212.5)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard173" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard173" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(9542.5, 2212.5)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard174" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard174" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(9599.5, 2212.5)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard205" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard205" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(9656, 1053)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard206" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard206" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(9713, 1053)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard207" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard207" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(9313, 1053.5)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard208" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard208" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(9485, 1053.5)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard209" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard209" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(9428, 1053.5)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard210" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard210" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(9370, 1053.5)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard211" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard211" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(9542.5, 1053.5)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard212" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard212" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(9599.5, 1053.5)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard215" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard215" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(9769, 1053.5)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard175" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard175" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(10113, 2212)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard176" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard176" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(10170, 2212)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard177" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard177" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(9770, 2212.5)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard178" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard178" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(9942, 2212.5)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard179" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard179" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(9885, 2212.5)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard180" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard180" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(9827, 2212.5)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard181" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard181" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(9999.5, 2212.5)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard182" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard182" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(10056.5, 2212.5)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard185" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard185" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(10228, 2212.5)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard186" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard186" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(10400, 2212.5)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard187" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard187" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(10343, 2212.5)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard188" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard188" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(10285, 2212.5)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard85" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard85" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(4103.5, 796)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard86" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard86" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(4160.5, 796)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard87" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard87" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(4331, 795.5)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard88" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard88" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(4388, 795.5)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard89" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard89" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(4217.5, 796)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard90" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard90" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(4274.5, 796)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard62" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard62" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(7331, -3419)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard128" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard128" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(7968, -1562)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard91" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard91" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(7503, -3419)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard92" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard92" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(7446, -3419)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard93" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard93" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(7388, -3419)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard94" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard94" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(7560.5, -3419)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard95" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard95" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(7617.5, -3419)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard140" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard140" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(7329, -1820)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard141" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard141" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(7501, -1820)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard142" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard142" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(7444, -1820)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard143" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard143" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(7386, -1820)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard144" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard144" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(7558.5, -1820)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard145" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard145" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(7615.5, -1820)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard146" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard146" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(7673, -1820)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard147" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard147" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(7845, -1820)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard148" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard148" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(7788, -1820)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard149" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard149" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(7730, -1820)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard150" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard150" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(7902.5, -1820)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard104" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard104" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(9149, -2395)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard105" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard105" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(9321, -2395)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard106" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard106" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(9264, -2395)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard107" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard107" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(9206, -2395)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard108" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard108" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(9378.5, -2395)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard109" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard109" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(9435.5, -2395)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard110" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard110" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(9493, -2395)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard111" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard111" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(9665, -2395)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard112" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard112" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(9608, -2395)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard113" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard113" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(9550, -2395)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard114" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard114" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(9722.5, -2395)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard115" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard115" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(9779.5, -2395)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard116" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard116" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(9837, -2395)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard117" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard117" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(10009, -2395)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard118" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard118" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(9952, -2395)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard119" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard119" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(9894, -2395)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard120" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard120" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(10066.5, -2395)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard121" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard121" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(10123.5, -2395)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard122" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard122" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(10182, -2395)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard124" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard124" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(10297, -2395)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard125" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard125" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(10239, -2395)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard183" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard183" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(9244, 1843)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard184" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard184" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(9244.5, 1903.5)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard189" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard189" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(9244, 1963.5)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard190" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard190" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(9244, 2021.5)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard191" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard191" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(9244.5, 2082)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard192" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard192" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(9244, 2142)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard193" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard193" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(9244, 1483)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard194" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard194" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(9244.5, 1543.5)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard195" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard195" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(9244, 1603.5)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard196" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard196" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(9244, 1661.5)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard197" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard197" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(9244.5, 1722)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard198" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard198" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(9244, 1782)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard199" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard199" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(9244, 1123)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard200" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard200" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(9244.5, 1183.5)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard201" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard201" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(9244, 1243.5)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard202" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard202" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(9244, 1301.5)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard203" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard203" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(9244.5, 1362)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard204" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard204" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(9244, 1422)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard213" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard213" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(10331, -335.999)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard214" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard214" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(10331.5, -275.499)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard216" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard216" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(10331, -215.501)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard217" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard217" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(10331, -157.499)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard218" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard218" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(10331.5, -97)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard219" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard219" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(10331, -37.0014)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard220" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard220" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(10331, -696)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard221" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard221" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(10331.5, -635.5)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard222" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard222" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(10331, -575.5)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard223" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard223" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(10331, -517.5)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard224" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard224" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(10331.5, -457.001)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard225" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard225" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(10331, -397)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard226" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard226" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(10331, -1056)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard227" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard227" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(10331.5, -995.5)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard228" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard228" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(10331, -935.5)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard229" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard229" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(10331, -877.5)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard230" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard230" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(10331.5, -817)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard231" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard231" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(10331, -757)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard238" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard238" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(10331, 384)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard244" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard244" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(10331, 24)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard245" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard245" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(10331.5, 84.5)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard246" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard246" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(10331, 144.499)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard247" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard247" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(10331, 202.5)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard248" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard248" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(10331.5, 263)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard249" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard249" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(10331, 323)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard123" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard123" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(10332, -2361)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard126" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard126" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(10332.5, -2300.5)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard127" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard127" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(10332, -2240.5)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard137" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard137" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(9052, -1322)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard138" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard138" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(9052.5, -1261.5)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard139" parent="level_objects/bananas/hazards" instance=ExtResource("5_soaiy")]
+[node name="hazard139" parent="level_objects2/bananas/hazards" instance=ExtResource("4_rdkk3")]
 position = Vector2(9052, -1201.5)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="TileMapLayer" parent="level_objects" instance=ExtResource("4_3ayk1")]
+[node name="TileMapLayer" parent="level_objects2" instance=ExtResource("5_ensgp")]
 scale = Vector2(0.5, 0.5)
 tile_map_data = PackedByteArray("AAD9/wcAAAAAAAAAAAD+/wcAAAAAAAAAAAD//wcAAAAAAAAAAAAAAAcAAAAAAAAAAAABAAcAAAAAAAAAAAACAAcAAAAAAAAAAAADAAcAAAAAAAAAAAAEAAcAAAAAAAAAAAD9//7/AAAAAAAAAAD+//7/AAAAAAAAAAD///7/AAAAAAAAAAAAAP7/AAAAAAAAAAABAP7/AAAAAAAAAAACAP7/AAAAAAAAAAADAP7/AAAAAAAAAAAEAP7/AAAAAAAAAAAFAP7/AAAAAAAAAAD8/wcAAAAAAAAAAAD8/wAAAAAAAAAAAAD8/wYAAAAAAAAAAAD8/wIAAAAAAAAAAAD8/wEAAAAAAAAAAAD8/wQAAAAAAAAAAAD8/wMAAAAAAAAAAAD8/wUAAAAAAAAAAAD8//7/AAAAAAAAAAD8////AAAAAAAAAAAFAAcAAAAAAAAAAAAGAAcAAAAAAAAAAAAHAAcAAAAAAAAAAAAIAAcAAAAAAAAAAAAJAAcAAAAAAAAAAAAKAAcAAAAAAAAAAAALAAcAAAAAAAAAAAAMAAcAAAAAAAAAAAANAAcAAAAAAAAAAAAOAAcAAAAAAAAAAAAPAAcAAAAAAAAAAAAQAAcAAAAAAAAAAAAGAP7/AAAAAAAAAAAHAP7/AAAAAAAAAAAIAP7/AAAAAAAAAAAJAP7/AAAAAAAAAAAKAP7/AAAAAAAAAAALAP7/AAAAAAAAAAAMAP7/AAAAAAAAAAANAP7/AAAAAAAAAAAOAP7/AAAAAAAAAAAPAP7/AAAAAAAAAAARAAcAAAAAAAAAAAASAAcAAAAAAAAAAAATAAcAAAAAAAAAAAAUAAcAAAAAAAAAAAAQAP7/AAAAAAAAAAARAP7/AAAAAAAAAAAVAAcAAAAAAAAAAAAWAAcAAAAAAAAAAAAXAAcAAAAAAAAAAAAYAAcAAAAAAAAAAAAZAAcAAAAAAAAAAAAaAAcAAAAAAAAAAAAaAPr/AAAAAAAAAAAaAPv/AAAAAAAAAAAaAPz/AAAAAAAAAAAaAP3/AAAAAAAAAAAaAP7/AAAAAAAAAAAaAP//AAAAAAAAAAAaAAAAAAAAAAAAAAAaAAEAAAAAAAAAAAAaAAIAAAAAAAAAAAAaAAMAAAAAAAAAAAAaAAQAAAAAAAAAAAAaAAUAAAAAAAAAAAAaAAYAAAAAAAAAAAAaAPf/AAAAAAAA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AABmAOf/AAAAAAAAAABmAOj/AAAAAAAAAABmAOn/AAAAAAAAAABmAOr/AAAAAAAAAABmAOv/AAAAAAAAAABvANX/AAAAAAAAAABvANb/AAAAAAAAAABvANf/AAAAAAAAAABvANj/AAAAAAAAAABvANn/AAAAAAAAAABvANr/AAAAAAAAAABvANv/AAAAAAAAAABvANz/AAAAAAAAAABvAN3/AAAAAAAAAABvAN7/AAAAAAAAAABvAN//AAAAAAAAAABvAOD/AAAAAAAAAABvAOH/AAAAAAAAAABvAOL/AAAAAAAAAABvAOP/AAAAAAAAAABvAOT/AAAAAAAAAABvAOX/AAAAAAAAAABvAOb/AAAAAAAAAABvAOf/AAAAAAAAAABvAOj/AAAAAAAAAABvAOn/AAAAAAAAAABvAOr/AAAAAAAAAABvAOv/AAAAAAAAAABmAMn/AAAAAAAAAABmAMr/AAAAAAAAAABmAMv/AAAAAAAAAABmAMz/AAAAAAAAAABmAM3/AAAAAAAAAABmAM7/AAAAAAAAAABmAM//AAAAAAAAAABmAND/AAAAAAAAAABmANH/AAAAAAAAAABmANL/AAAAAAAAAABmANP/AAAAAAAAAABmANT/AAAAAAAAAABnAMn/AAAAAAAAAABoAMn/AAAAAAAAAABpAMn/AAAAAAAAAABqAMn/AAAAAAAAAABrAMn/AAAAAAAAAABsAMn/AAAAAAAAAABtAMn/AAAAAAAAAABuAMn/AAAAAAAAAABvAMn/AAAAAAAAAABwAMn/AAAAAAAAAABvANL/AAAAAAAAAABvANP/AAAAAAAAAABvANT/AAAAAAAAAABwANL/AAAAAAAAAABxANL/AAAAAAAAAAByANL/AAAAAAAAAABzANL/AAAAAAAAAAB0ANL/AAAAAAAAAAB1ANL/AAAAAAAAAAB2ANL/AAAAAAAAAAB3ANL/AAAAAAAAAAB4ANL/AAAAAAAAAABxAMn/AAAAAAAAAAByAMn/AAAAAAAAAABzAMn/AAAAAAAAAAB0AMn/AAAAAAAAAAB1AMn/AAAAAAAAAAB2AMn/AAAAAAAAAAB3AMn/AAAAAAAAAAB4AMn/AAAAAAAAAAB5AMn/AAAAAAAAAAB6AMn/AAAAAAAAAAB7AMn/AAAAAAAAAAB8AMn/AAAAAAAAAAB9AMn/AAAAAAAAAAB5ANL/AAAAAAAAAAB6ANL/AAAAAAAAAAB7ANL/AAAAAAAAAAB8ANL/AAAAAAAAAAB9ANL/AAAAAAAAAAB+ANL/AAAAAAAAAAB/ANL/AAAAAAAAAAB+AMn/AAAAAAAAAAB/AMn/AAAAAAAAAACAAMn/AAAAAAAAAACBAMn/AAAAAAAAAACCAMn/AAAAAAAAAACAANL/AAAAAAAAAACBANL/AAAAAAAAAACEAMn/AAAAAAAAAACFAMn/AAAAAAAAAACGAMn/AAAAAAAAAACDAMn/AAAAAAAAAACIAMn/AAAAAAAAAACJAMn/AAAAAAAAAACLAMr/AAAAAAAAAACHAMn/AAAAAAAAAACKAMn/AAAAAAAAAACLAMn/AAAAAAAAAACLAMv/AAAAAAAAAACLAMz/AAAAAAAAAACLAM3/AAAAAAAAAACLAM7/AAAAAAAAAACLAM//AAAAAAAAAACLAND/AAAAAAAAAACLANH/AAAAAAAAAACLANL/AAAAAAAAAACLANP/AAAAAAAAAACLANT/AAAAAAAAAACLANX/AAAAAAAAAACLANb/AAAAAAAAAACLANf/AAAAAAAAAACLANj/AAAAAAAAAACLANn/AAAAAAAAAACCANL/AAAAAAAAAACCANP/AAAAAAAAAACCANT/AAAAAAAAAACCANX/AAAAAAAAAACCANb/AAAAAAAAAACCANf/AAAAAAAAAACCANj/AAAAAAAAAACCANn/AAAAAAAAAACCANr/AAAAAAAAAACCANv/AAAAAAAAAACCANz/AAAAAAAAAACCAN3/AAAAAAAAAACCAN7/AAAAAAAAAACCAN//AAAAAAAAAACCAOD/AAAAAAAAAACCAOH/AAAAAAAAAACCAOL/AAAAAAAAAACDAOL/AAAAAAAAAACEAOL/AAAAAAAAAACFAOL/AAAAAAAAAACGAOL/AAAAAAAAAACHAOL/AAAAAAAAAACIAOL/AAAAAAAAAACJAOL/AAAAAAAAAACKAOL/AAAAAAAAAACLAOL/AAAAAAAAAACMAOL/AAAAAAAAAACNAOL/AAAAAAAAAACOAOL/AAAAAAAAAACPAOL/AAAAAAAAAACQAOL/AAAAAAAAAACRAOL/AAAAAAAAAACSAOL/AAAAAAAAAACTAOL/AAAAAAAAAACUAOL/AAAAAAAAAACVAOL/AAAAAAAA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AACIABYAAAAAAAAAAACIABcAAAAAAAAAAACIABgAAAAAAAAAAACIABkAAAAAAAAAAACIABoAAAAAAAAAAACIABsAAAAAAAAAAACIABwAAAAAAAAAAACIAB0AAAAAAAAAAACIAB4AAAAAAAAAAACIAB8AAAAAAAAAAACIACAAAAAAAAAAAACIACEAAAAAAAAAAACIACIAAAAAAAAAAACIACMAAAAAAAAAAACIACQAAAAAAAAAAACIACUAAAAAAAAAAACIACYAAAAAAAAAAACIACcAAAAAAAAAAACIACgAAAAAAAAAAACIACkAAAAAAAAAAACIACoAAAAAAAAAAACJACoAAAAAAAAAAACKACoAAAAAAAAAAACLACoAAAAAAAAAAACMACoAAAAAAAAAAACNACoAAAAAAAAAAACOACoAAAAAAAAAAACPACoAAAAAAAAAAACQACoAAAAAAAAAAACRABEAAAAAAAAAAACRABIAAAAAAAAAAACRABMAAAAAAAAAAACRABQAAAAAAAAAAACRABUAAAAAAAAAAACRABYAAAAAAAAAAACRABcAAAAAAAAAAACRABgAAAAAAAAAAACRABkAAAAAAAAAAACRABoAAAAAAAAAAACRABsAAAAAAAAAAACRABwAAAAAAAAAAACRAB0AAAAAAAAAAACRAB4AAAAAAAAAAACRAB8AAAAAAAAAAACRACAAAAAAAAAAAACRACEAAAAAAAAAAACRACoAAAAAAAAAAACSABEAAAAAAAAAAACSACEAAAAAAAAAAACSACoAAAAAAAAAAACTABEAAAAAAAAAAACTACEAAAAAAAAAAACTACoAAAAAAAAAAACUABEAAAAAAAAAAACUACEAAAAAAAAAAACUACoAAAAAAAAAAACVABEAAAAAAAAAAACVACEAAAAAAAAAAACVACoAAAAAAAAAAACWABEAAAAAAAAAAACWACEAAAAAAAAAAACWACoAAAAAAAAAAACXABEAAAAAAAAAAACXACEAAAAAAAAAAACXACoAAAAAAAAAAACYABEAAAAAAAAAAACYACEAAAAAAAAAAACYACoAAAAAAAAAAACZABEAAAAAAAAAAACZACEAAAAAAAAAAACZACoAAAAAAAAAAACaABEAAAAAAAAAAACaACEAAAAAAAAAAACaACoAAAAAAAAAAACbABEAAAAAAAAAAACbACEAAAAAAAAAAACbACoAAAAAAAAAAACcABEAAAAAAAAAAACcACEAAAAAAAAAAACcACoAAAAAAAAAAACdABEAAAAAAAAAAACdACEAAAAAAAAAAACdACoAAAAAAAAAAACeABEAAAAAAAAAAACeACEAAAAAAAAAAACeACoAAAAAAAAAAACfABEAAAAAAAAAAACfACEAAAAAAAAAAACfACoAAAAAAAAAAACgABEAAAAAAAAAAACgACEAAAAAAAAAAACgACoAAAAAAAAAAAChABEAAAAAAAAAAAChACEAAAAAAAAAAAChACoAAAAAAAAAAACiAAgAAAAAAAAAAACiABEAAAAAAAAAAACiABIAAAAAAAAAAACiABMAAAAAAAAAAACiABQAAAAAAAAAAACiABUAAAAAAAAAAACiABYAAAAAAAAAAACiABcAAAAAAAAAAACiABgAAAAAAAAAAACiABkAAAAAAAAAAACiABoAAAAAAAAAAACiABsAAAAAAAAAAACiABwAAAAAAAAAAACiAB0AAAAAAAAAAACiAB4AAAAAAAAAAACiAB8AAAAAAAAAAACiACAAAAAAAAAAAACiACEAAAAAAAAAAACiACoAAAAAAAAAAACjAAgAAAAAAAAAAACjACoAAAAAAAAAAACkAAgAAAAAAAAAAACkACoAAAAAAAAAAAClAAgAAAAAAAAAAAClACoAAAAAAAAAAACmAAgAAAAAAAAAAACmACoAAAAAAAAAAACnAAgAAAAAAAAAAACnACoAAAAAAAAAAACoAAgAAAAAAAAAAACoACoAAAAAAAAAAACpAAgAAAAAAAAAAACpACoAAAAAAAAAAACqAAgAAAAAAAAAAACqACoAAAAAAAAAAACrAAgAAAAAAAAAAACrAAkAAAAAAAAAAACrAAoAAAAAAAAAAACrAAsAAAAAAAAAAACrAAwAAAAAAAAAAACrAA0AAAAAAAAAAACrAA4AAAAAAAAAAACrAA8AAAAAAAAAAACrABAAAAAAAAAAAACrABEAAAAAAAAAAACrABIAAAAAAAAAAACrABMAAAAAAAAAAACrABQAAAAAAAAAAACrABUAAAAAAAAAAACrABYAAAAAAAAAAACrABcAAAAAAAAAAACrABgAAAAAAAAAAACrABkAAAAAAAAAAACrABoAAAAAAAAAAACrABsAAAAAAAAAAACrABwAAAAAAAAAAACrAB0AAAAAAAAAAACrAB4AAAAAAAAAAACrAB8AAAAAAAAAAACrACAAAAAAAAAAAACrACEAAAAAAAAAAACrACIAAAAAAAAAAACrACMAAAAAAAAAAACrACQAAAAAAAAAAACrACUAAAAAAAAAAACrACYAAAAAAAAAAACrACcAAAAAAAAAAACrACgAAAAAAAAAAACrACkAAAAAAAAAAACrACoAAAAAAAAAAACZAAcAAAAAAAAAAACZAAgAAAAAAAAAAACiAAcAAAAAAAAAAACIAAgAAAAAAAAAAACJAAgAAAAAAAAAAACKAAgAAAAAAAAAAACLAAgAAAAAAAAAAACMAAgAAAAAAAAAAACNAAgAAAAAAAAAAACOAAgAAAAAAAAAAACPAAgAAAAAAAAAAACQAAgAAAAAAAAAAACQAP//AAAAAAAAAACRAP//AAAAAAAAAACSAP//AAAAAAAAAACTAP//AAAAAAAAAACUAP//AAAAAAAAAACVAP//AAAAAAAAAACWAP//AAAAAAAAAACXAP//AAAAAAAAAACYAP//AAAAAAAAAAB/AP//AAAAAAAAAACAAP//AAAAAAAAAACBAP//AAAAAAAAAACCAP//AAAAAAAAAACDAP//AAAAAAAAAACEAP//AAAAAAAAAACFAP//AAAAAAAAAACGAP//AAAAAAAAAACHAP//AAAAAAAAAACIAP//AAAAAAAAAACJAP//AAAAAAAAAACKAP//AAAAAAAAAACLAP//AAAAAAAAAACMAP//AAAAAAAAAACNAP//AAAAAAAAAACOAP//AAAAAAAAAACPAP//AAAAAAAAAAB/AAAAAAAAAAAAAAB/AAEAAAAAAAAAAAB/AAIAAAAAAAAAAAB/AAMAAAAAAAAAAAB/AAQAAAAAAAAAAAB/AAUAAAAAAAAAAAB/AAYAAAAAAAAAAAB/AAcAAAAAAAAAAAB/AAgAAAAAAAAAAAB/AAkAAAAAAAAAAAB/AAoAAAAAAAAAAAB/AAsAAAAAAAAAAAB/AAwAAAAAAAAAAAB/AA0AAAAAAAAAAAB/AA4AAAAAAAAAAAB/AA8AAAAAAAAAAAB/ABAAAAAAAAAAAAB/ABEAAAAAAAAAAAB/ABIAAAAAAAAAAAB/ABMAAAAAAAAAAAB/ABQAAAAAAAAAAAB/ABUAAAAAAAAAAAB/ABYAAAAAAAAAAAB/ABcAAAAAAAAAAAA=")
 
-[node name="fans" type="Node2D" parent="level_objects"]
+[node name="fans" type="Node2D" parent="level_objects2"]
 position = Vector2(5441, 836)
 rotation = -3.14159
 scale = Vector2(2.2, 1.94)
 
-[node name="fan" parent="level_objects/fans" instance=ExtResource("9_gvrl2")]
+[node name="fan" parent="level_objects2/fans" instance=ExtResource("6_s4o32")]
 push_distance_multiplier = 0.1
-push_strength_multiplier = 0.5
+push_strength_multiplier = 1.0
 
-[node name="fan2" parent="level_objects/fans" instance=ExtResource("9_gvrl2")]
+[node name="fan2" parent="level_objects2/fans" instance=ExtResource("6_s4o32")]
 position = Vector2(-639.091, 792.784)
 scale = Vector2(1, 1.35309)
 push_distance_multiplier = 0.1
 push_strength_multiplier = 1.0
 
-[node name="fan9" parent="level_objects/fans" instance=ExtResource("9_gvrl2")]
+[node name="fan9" parent="level_objects2/fans" instance=ExtResource("6_s4o32")]
 position = Vector2(-1812.27, 727.835)
 scale = Vector2(1, 0.248)
 push_distance_multiplier = 0.1
 push_strength_multiplier = 1.0
 
-[node name="fan7" parent="level_objects/fans" instance=ExtResource("9_gvrl2")]
+[node name="fan7" parent="level_objects2/fans" instance=ExtResource("6_s4o32")]
 position = Vector2(-937.273, 725.773)
 scale = Vector2(0.775, 0.628)
 push_distance_multiplier = 0.1
 push_strength_multiplier = 1.0
 
-[node name="fan3" parent="level_objects/fans" instance=ExtResource("9_gvrl2")]
+[node name="fan3" parent="level_objects2/fans" instance=ExtResource("6_s4o32")]
 position = Vector2(-1454.09, 2212.89)
 rotation = 3.14159
 scale = Vector2(1, 0.758)
 push_distance_multiplier = 0.1
 push_strength_multiplier = 1.0
 
-[node name="fan8" parent="level_objects/fans" instance=ExtResource("9_gvrl2")]
+[node name="fan8" parent="level_objects2/fans" instance=ExtResource("6_s4o32")]
 position = Vector2(-1412.27, 990.722)
 rotation = 3.14159
 scale = Vector2(1, 0.248)
 push_distance_multiplier = 0.1
 push_strength_multiplier = 1.0
 
-[node name="fan4" parent="level_objects/fans" instance=ExtResource("9_gvrl2")]
+[node name="fan4" parent="level_objects2/fans" instance=ExtResource("6_s4o32")]
 position = Vector2(-1336.74, 1548.28)
 rotation = 1.5708
 scale = Vector2(1.195, 0.853)
 push_distance_multiplier = 0.1
 push_strength_multiplier = 1.0
 
-[node name="fan10" parent="level_objects/fans" instance=ExtResource("9_gvrl2")]
+[node name="fan10" parent="level_objects2/fans" instance=ExtResource("6_s4o32")]
 position = Vector2(-2123.18, 993.299)
 rotation = 3.14159
 scale = Vector2(1.165, 0.81)
 push_distance_multiplier = 0.1
 push_strength_multiplier = 1.0
 
-[node name="fan11" parent="level_objects/fans" instance=ExtResource("9_gvrl2")]
+[node name="fan11" parent="level_objects2/fans" instance=ExtResource("6_s4o32")]
 position = Vector2(-1509.79, 2.12305)
 rotation = 1.5708
 scale = Vector2(1.33, 0.938)
 push_distance_multiplier = 0.1
 push_strength_multiplier = 1.0
 
-[node name="fan13" parent="level_objects/fans" instance=ExtResource("9_gvrl2")]
+[node name="fan13" parent="level_objects2/fans" instance=ExtResource("6_s4o32")]
 position = Vector2(-2385, 139.176)
 rotation = 3.14159
 scale = Vector2(1.16, 1.033)
 push_distance_multiplier = 0.1
 push_strength_multiplier = 1.0
 
-[node name="fan14" parent="level_objects/fans" instance=ExtResource("9_gvrl2")]
+[node name="fan14" parent="level_objects2/fans" instance=ExtResource("6_s4o32")]
 position = Vector2(-1628.64, -957.732)
 scale = Vector2(1.16, 1.033)
 push_distance_multiplier = 0.1
 push_strength_multiplier = 1.0
 
-[node name="fan12" parent="level_objects/fans" instance=ExtResource("9_gvrl2")]
+[node name="fan12" parent="level_objects2/fans" instance=ExtResource("6_s4o32")]
 position = Vector2(-2503.97, -823.501)
 rotation = -1.5708
 scale = Vector2(1.33, 0.938)
 push_distance_multiplier = 0.1
 push_strength_multiplier = 1.0
 
-[node name="fan5" parent="level_objects/fans" instance=ExtResource("9_gvrl2")]
+[node name="fan5" parent="level_objects2/fans" instance=ExtResource("6_s4o32")]
 position = Vector2(-1685.45, 1105.15)
 rotation = 1.5708
 scale = Vector2(0.675, 0.523)
 push_distance_multiplier = 0.1
 push_strength_multiplier = 1.0
 
-[node name="fan6" parent="level_objects/fans" instance=ExtResource("9_gvrl2")]
+[node name="fan6" parent="level_objects2/fans" instance=ExtResource("6_s4o32")]
 position = Vector2(-1162.54, 1318.74)
 rotation = 1.5708
 scale = Vector2(0.575, 0.39)
 push_distance_multiplier = 0.1
 push_strength_multiplier = 1.0
 
-[node name="asteroids" type="Node2D" parent="level_objects"]
+[node name="asteroids" type="Node2D" parent="level_objects2"]
 
-[node name="asteroid_1" parent="level_objects/asteroids" instance=ExtResource("10_ld734")]
+[node name="asteroid_1" parent="level_objects2/asteroids" instance=ExtResource("7_qbao6")]
 position = Vector2(1480, 219)
 scale = Vector2(0.5, 0.5)
 
-[node name="asteroid_2" parent="level_objects/asteroids" instance=ExtResource("6_qwbp7")]
+[node name="asteroid_2" parent="level_objects2/asteroids" instance=ExtResource("8_aaytu")]
 position = Vector2(184, -929)
 scale = Vector2(0.5, 0.5)
 
-[node name="asteroid_3" parent="level_objects/asteroids" instance=ExtResource("7_646y3")]
+[node name="asteroid_3" parent="level_objects2/asteroids" instance=ExtResource("9_vqsyj")]
 position = Vector2(3188, -1822)
 scale = Vector2(0.25, 0.25)
 
-[node name="spawn_pos" type="Marker2D" parent="level_objects"]
-position = Vector2(4861, 616)
+[node name="spawn_pos" type="Marker2D" parent="level_objects2"]
+position = Vector2(79, 392)
 
-[node name="goal" parent="level_objects" instance=ExtResource("3_ot183")]
+[node name="goal" parent="level_objects2" instance=ExtResource("10_r6a1t")]
 position = Vector2(4839, -18)
 
-[node name="dart_guns" type="Node2D" parent="level_objects"]
+[node name="dart_guns" type="Node2D" parent="level_objects2"]
 
-[node name="dart_gun" parent="level_objects/dart_guns" instance=ExtResource("11_p3shj")]
+[node name="dart_gun" parent="level_objects2/dart_guns" instance=ExtResource("11_384sp")]
 position = Vector2(1565, -485)
 rotation = 1.79594
+
+[node name="level_objects" type="Node2D" parent="."]
+visible = false
+
+[node name="bananas" type="Node2D" parent="level_objects"]
+
+[node name="banana" parent="level_objects/bananas" instance=ExtResource("3_6l21p")]
+position = Vector2(864, 200)
+
+[node name="banana2" parent="level_objects/bananas" instance=ExtResource("3_6l21p")]
+position = Vector2(1110, 281)
+
+[node name="TileMapLayer" parent="level_objects" instance=ExtResource("5_ensgp")]
+scale = Vector2(0.5, 0.5)
+
+[node name="asteroids" type="Node2D" parent="level_objects"]
+
+[node name="asteroid_1" parent="level_objects/asteroids" instance=ExtResource("7_qbao6")]
+position = Vector2(1480, 219)
+scale = Vector2(0.5, 0.5)
+
+[node name="asteroid_2" parent="level_objects/asteroids" instance=ExtResource("8_aaytu")]
+position = Vector2(184, -929)
+scale = Vector2(0.5, 0.5)
+
+[node name="asteroid_3" parent="level_objects/asteroids/asteroid_2" instance=ExtResource("9_vqsyj")]
+position = Vector2(6008, -1786)
+scale = Vector2(0.5, 0.5)
+
+[node name="spawn_pos" type="Marker2D" parent="level_objects"]
+position = Vector2(79, 392)
+
+[node name="goal" parent="level_objects" instance=ExtResource("10_r6a1t")]
+position = Vector2(4909, 424)
+
+[node name="fan" parent="level_objects" instance=ExtResource("6_s4o32")]
+position = Vector2(1371, -593)
+push_distance_multiplier = 0.1
 
 [node name="GUI" type="CanvasLayer" parent="."]
 
@@ -944,7 +982,7 @@ offset_top = -83.0
 offset_right = 1662.01
 offset_bottom = 997.0
 scale = Vector2(0.685, 0.685)
-texture = ExtResource("5_gt1ue")
+texture = ExtResource("12_egdxv")
 
 [node name="lose_bg" type="ColorRect" parent="GUI"]
 z_index = -5
@@ -957,14 +995,14 @@ offset_left = 32.0
 offset_top = 30.0
 offset_right = 108.0
 offset_bottom = 53.0
-theme = ExtResource("6_cx770")
+theme = ExtResource("13_cwt65")
 text = "Bananas: 0"
 
-[node name="banana_mouse" parent="." instance=ExtResource("6_tlr06")]
+[node name="banana_mouse" parent="." instance=ExtResource("14_1woat")]
 position = Vector2(354, 368)
 
 [node name="music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("13_cdon3")
+stream = ExtResource("15_1rsb5")
 volume_db = -12.0
 autoplay = true
 
@@ -973,7 +1011,6 @@ autoplay = true
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_mirroring = Vector2(1920, 1080)
 metadata/_edit_lock_ = true
-metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="ParallaxBackground/ParallaxLayer"]
 position = Vector2(960, 540)
@@ -982,4 +1019,4 @@ autoplay = "default"
 frame = 1
 frame_progress = 0.808977
 
-[editable path="level_objects/TileMapLayer"]
+[editable path="level_objects2/TileMapLayer"]

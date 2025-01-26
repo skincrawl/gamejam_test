@@ -3,6 +3,8 @@ extends Node2D
 class_name Level
 
 
+var dart_packed:PackedScene = preload("res://Scenes/dart.tscn")
+
 const LOSE_TIME:float = 3.0
 
 var screen_size:Vector2
@@ -68,6 +70,14 @@ func lose() -> void:
 	
 	await get_tree().create_timer(LOSE_TIME).timeout
 	get_tree().reload_current_scene()
+
+
+func dart_spawned(_dart_gun:DartGun) -> void:
+	var dart:Dart = dart_packed.instantiate()
+	dart.global_transform = _dart_gun.global_transform
+	# dart.velocity = dart.velocity.rotated(_dart_gun.rotation)
+	
+	add_child(dart)
 
 
 func banana_collected(_banana:Banana) -> void:
