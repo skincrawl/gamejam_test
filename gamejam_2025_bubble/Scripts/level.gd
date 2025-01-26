@@ -81,8 +81,12 @@ func dart_spawned(_dart_gun:DartGun) -> void:
 	dart.global_transform = _dart_gun.global_transform
 	dart.global_position = _dart_gun.get_node("dart_spawn").global_position
 	# print("_dart_gun.rotation: ", _dart_gun.rotation)
-	dart.velocity = dart.speed * dart.velocity.rotated(dart.rotation)
-	print("velocity: ", dart.velocity)
+	dart.velocity = Vector2.RIGHT * dart.speed
+	dart.velocity = dart.velocity.rotated(dart.rotation)
+	
+	print("dart veloc: ", dart.speed)
+	# print("dart speed: ", dart.speed)
+	# print("velocity: ", dart.velocity)
 	
 	add_child(dart)
 

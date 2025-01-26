@@ -3,7 +3,7 @@ extends CharacterBody2D
 class_name Dart
 
 
-var speed:float = 300.0
+var speed:float = 500.0
 var shooting_cannon:DartGun
 
 func _ready() -> void:
@@ -12,6 +12,7 @@ func _ready() -> void:
 
 
 func _process(_delta:float):
+	# print("velocity: ", velocity)
 	move_and_slide()
 
 
