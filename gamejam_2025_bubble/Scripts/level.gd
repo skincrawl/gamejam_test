@@ -77,8 +77,12 @@ func lose() -> void:
 
 func dart_spawned(_dart_gun:DartGun) -> void:
 	var dart:Dart = dart_packed.instantiate()
+	dart.shooting_cannon = _dart_gun
 	dart.global_transform = _dart_gun.global_transform
-	# dart.velocity = dart.velocity.rotated(_dart_gun.rotation)
+	dart.global_position = _dart_gun.get_node("dart_spawn").global_position
+	# print("_dart_gun.rotation: ", _dart_gun.rotation)
+	dart.velocity = dart.speed * dart.velocity.rotated(dart.rotation)
+	print("velocity: ", dart.velocity)
 	
 	add_child(dart)
 

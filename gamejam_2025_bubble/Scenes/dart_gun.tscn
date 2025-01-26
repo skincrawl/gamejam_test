@@ -1,24 +1,26 @@
 [gd_scene load_steps=4 format=3 uid="uid://cack0icu3bcjc"]
 
 [ext_resource type="Script" path="res://Scripts/dart_gun.gd" id="1_4nog1"]
-[ext_resource type="Texture2D" uid="uid://b5onqj43yv0da" path="res://Assets/Art/DartCannon.png" id="1_vikch"]
+[ext_resource type="Texture2D" uid="uid://bqp7i3jcatmpx" path="res://Assets/Art/Cannon_2_1.png" id="2_uhmxj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3m0ck"]
-size = Vector2(277, 50)
+size = Vector2(87, 16)
 
 [node name="dart_gun" type="StaticBody2D"]
+collision_layer = 4
 script = ExtResource("1_4nog1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("1_vikch")
+texture = ExtResource("2_uhmxj")
 
 [node name="dart_spawn" type="Marker2D" parent="."]
-position = Vector2(142, 0)
+position = Vector2(102, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(5.5, 4)
+position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_3m0ck")
+metadata/_edit_lock_ = true
 
 [node name="shoot_timer" type="Timer" parent="."]
 autostart = true

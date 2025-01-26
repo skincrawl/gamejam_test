@@ -4,9 +4,11 @@ class_name Dart
 
 
 var speed:float = 300.0
+var shooting_cannon:DartGun
 
 func _ready() -> void:
-	velocity = speed * Vector2.RIGHT
+	pass
+	# velocity = speed * Vector2.RIGHT
 
 
 func _process(_delta:float):
@@ -14,6 +16,9 @@ func _process(_delta:float):
 
 
 func _on_body_entered(_body: Node2D) -> void:
+	
+	if _body == shooting_cannon:
+		return
 	
 	if _body.name == "Bubbles":
 		Globals.bubbles.death()
