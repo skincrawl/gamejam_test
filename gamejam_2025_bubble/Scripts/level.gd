@@ -62,16 +62,6 @@ func _process(_delta:float) -> void:
 func lose() -> void:
 	
 	Globals.music_spot = $music.get_playback_position()
-	
-	$Bubbles.set_deferred("freeze", true)
-	$Bubbles.death()
-	
-	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-	$GUI/lose_text.show()
-	$GUI/lose_bg.show()
-	$GUI/bananas_label.hide()
-	
-	await get_tree().create_timer(LOSE_TIME).timeout
 	get_tree().reload_current_scene()
 
 
