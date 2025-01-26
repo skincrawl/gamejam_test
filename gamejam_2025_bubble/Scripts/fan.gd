@@ -23,6 +23,7 @@ const MAX_PUSH_STRENGTH:float = 500.0
 var push_distance:float
 var push_strength:float
 
+var bubbles:Bubbles = null
 
 func _ready() -> void:
 	$Part/Node2D/CPUParticles2D.emitting = true
@@ -30,15 +31,23 @@ func _ready() -> void:
 	# push_strength_multiplier = 0.5
 
 
-func _on_area_2d_body_entered(_body: Node2D) -> void:
+func _physics_process(delta: float) -> void:
+	
+	if not bubbles:
+		return
 	
 	var dir:Vector2 = Vector2.DOWN.rotated(rotation)
 	var push_force:Vector2 = -dir.normalized() * push_strength
+	bubbles.apply_central_force(push_force)
+
+
+func _on_area_2d_body_entered(_body: Node2D) -> void:
+	
 	# print("push_force: ", push_force)
 	if _body.name == "Bubbles":
-		_body.add_constant_central_force(push_force)
+		bubbles = _body
 
 
 func _on_area_2d_body_exited(_body: Node2D) -> void:
 	if _body.name == "Bubbles":
-		_body.constant_force = Vector2.ZERO
+		bubbles = null

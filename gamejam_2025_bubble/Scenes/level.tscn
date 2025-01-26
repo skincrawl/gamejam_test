@@ -1,10 +1,9 @@
-[gd_scene load_steps=22 format=4 uid="uid://djjt8ypwl2hcj"]
+[gd_scene load_steps=21 format=4 uid="uid://djjt8ypwl2hcj"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_etyro"]
 [ext_resource type="PackedScene" uid="uid://bjqgn8eaev75p" path="res://Scenes/bubbles.tscn" id="2_12vdd"]
 [ext_resource type="PackedScene" uid="uid://c4h04nltkk8mx" path="res://Scenes/goal.tscn" id="3_ot183"]
 [ext_resource type="PackedScene" uid="uid://byumagq3gh8y" path="res://Scenes/tile_map_layer.tscn" id="4_3ayk1"]
-[ext_resource type="Texture2D" uid="uid://1w1c41sg8wr1" path="res://Assets/Art/lose_text.png" id="5_gt1ue"]
 [ext_resource type="PackedScene" uid="uid://7j70are14236" path="res://Scenes/hazard.tscn" id="5_soaiy"]
 [ext_resource type="Theme" uid="uid://cfuny4aqpg8r2" path="res://Resources/default_theme.tres" id="6_cx770"]
 [ext_resource type="PackedScene" uid="uid://niau0ovrklso" path="res://Scenes/asteroid_2.tscn" id="6_qwbp7"]
@@ -922,7 +921,7 @@ position = Vector2(3188, -1822)
 scale = Vector2(0.25, 0.25)
 
 [node name="spawn_pos" type="Marker2D" parent="level_objects"]
-position = Vector2(82, 199)
+position = Vector2(42, 247)
 
 [node name="goal" parent="level_objects" instance=ExtResource("3_ot183")]
 position = Vector2(4839, -18)
@@ -935,23 +934,8 @@ rotation = 1.79594
 
 [node name="GUI" type="CanvasLayer" parent="."]
 
-[node name="lose_text" type="TextureRect" parent="GUI"]
-visible = false
-z_index = 5
-offset_left = -258.0
-offset_top = -83.0
-offset_right = 1662.01
-offset_bottom = 997.0
-scale = Vector2(0.685, 0.685)
-texture = ExtResource("5_gt1ue")
-
-[node name="lose_bg" type="ColorRect" parent="GUI"]
-z_index = -5
-offset_right = 514.0
-offset_bottom = 285.0
-color = Color(0, 0, 0, 1)
-
 [node name="bananas_label" type="Label" parent="GUI"]
+visible = false
 offset_left = 32.0
 offset_top = 30.0
 offset_right = 108.0

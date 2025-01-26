@@ -74,10 +74,19 @@ func _physics_process(_delta:float) -> void:
 
 
 func death() -> void:
+	if dead:
+		return
+	
 	dead = true
 	$Bubbles.play("lose")
 	$bubble_bg_Sprite.hide()
 	$bubble_top_layer.play("burst")
+	if not Globals.sound_on:
+		return
+	$pop.volume_db = Globals.sound_volume
+	$scream.volume_db = Globals.sound_volume
+	$pop.play()
+	$scream.play()
 
 
 func _integrate_forces(_state: PhysicsDirectBodyState2D) -> void:
@@ -99,5 +108,5 @@ func _on_bubble_top_layer_animation_finished() -> void:
 	$bubble_top_layer.hide()
 
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
+func _on_area_2d_body_entered(_body: Node2D) -> void:
 	$sfx.play()
