@@ -1,0 +1,361 @@
+[gd_scene load_steps=19 format=3 uid="uid://ctvomw1cn28kf"]
+
+[ext_resource type="Script" path="res://Scenes/credits.gd" id="1_5ijot"]
+[ext_resource type="Texture2D" uid="uid://8pntxcrwopv7" path="res://Assets/Art/BG_Space.jpg" id="1_hv55c"]
+[ext_resource type="AudioStream" uid="uid://cliqi057lxak6" path="res://Assets/Music/MainMenuTheme_Ilman_Introa.mp3" id="2_vpogk"]
+[ext_resource type="Texture2D" uid="uid://hl3oxmki0uo4" path="res://Assets/Art/BananaPlanetSheet.png" id="3_61wri"]
+[ext_resource type="Texture2D" uid="uid://gbmwr3ji3ra3" path="res://Assets/Art/BubblesSheet.png" id="4_dubdn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_72cta"]
+atlas = ExtResource("1_hv55c")
+region = Rect2(0, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8p14s"]
+atlas = ExtResource("1_hv55c")
+region = Rect2(1920, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ejipe"]
+atlas = ExtResource("1_hv55c")
+region = Rect2(0, 1080, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e4y81"]
+atlas = ExtResource("1_hv55c")
+region = Rect2(1920, 1080, 1920, 1080)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_10f04"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_72cta")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8p14s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ejipe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e4y81")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[sub_resource type="Theme" id="Theme_idkej"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_py8pq"]
+atlas = ExtResource("3_61wri")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lsym1"]
+atlas = ExtResource("3_61wri")
+region = Rect2(512, 0, 512, 512)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mg6uy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_py8pq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lsym1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xwdvu"]
+atlas = ExtResource("4_dubdn")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j42i2"]
+atlas = ExtResource("4_dubdn")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q424r"]
+atlas = ExtResource("4_dubdn")
+region = Rect2(0, 256, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tcieu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xwdvu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j42i2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q424r")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5ijot")
+
+[node name="bg" type="AnimatedSprite2D" parent="."]
+z_index = -10
+position = Vector2(970, 548)
+sprite_frames = SubResource("SpriteFrames_10f04")
+autoplay = "default"
+
+[node name="Credits_text_area" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -918.0
+offset_top = 27.0
+offset_right = -42.0
+offset_bottom = 902.0
+grow_horizontal = 2
+
+[node name="Credit_1" type="Label" parent="Credits_text_area"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -41.0
+offset_top = 293.0
+offset_right = -559.0
+offset_bottom = -451.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/line_spacing = 25
+theme_override_font_sizes/font_size = 43
+text = "Lead Artist"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Credit_2" type="Label" parent="Credits_text_area"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -65.0
+offset_top = 421.0
+offset_right = -575.0
+offset_bottom = -361.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/line_spacing = 25
+theme_override_font_sizes/font_size = 43
+text = "Lead Dev
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Credit_3" type="Label" parent="Credits_text_area"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.0
+offset_top = 518.0
+offset_right = -389.0
+offset_bottom = -226.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/line_spacing = 25
+theme_override_font_sizes/font_size = 43
+text = "Music & Level Design
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Credit_4" type="Label" parent="Credits_text_area"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.0
+offset_top = 643.0
+offset_right = -439.0
+offset_bottom = -109.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/line_spacing = 25
+theme_override_font_sizes/font_size = 43
+text = "UI & Programming"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Credit_5" type="Label" parent="Credits_text_area"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 9.0
+offset_top = 759.0
+offset_right = -647.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/line_spacing = 25
+theme_override_font_sizes/font_size = 43
+text = "Narrative"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Credit_6" type="Label" parent="Credits_text_area"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -11.0
+offset_top = 69.0
+offset_right = -31.0
+offset_bottom = -675.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/line_spacing = 25
+theme_override_font_sizes/font_size = 43
+text = "Bubble Bliss - Credits"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Sampsa" type="Label" parent="Credits_text_area"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 651.0
+offset_top = 319.0
+offset_right = -51.0
+offset_bottom = -465.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/line_spacing = 25
+theme_override_font_sizes/font_size = 43
+text = "Sampsa"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Miika" type="Label" parent="Credits_text_area"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 643.0
+offset_top = 427.0
+offset_right = -91.0
+offset_bottom = -357.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/line_spacing = 25
+theme_override_font_sizes/font_size = 43
+text = "Miika
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Börje" type="Label" parent="Credits_text_area"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 635.0
+offset_top = 549.0
+offset_right = -91.0
+offset_bottom = -235.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/line_spacing = 25
+theme_override_font_sizes/font_size = 43
+text = "Börje"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Arvi" type="Label" parent="Credits_text_area"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 637.0
+offset_top = 667.0
+offset_right = -91.0
+offset_bottom = -117.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/line_spacing = 25
+theme_override_font_sizes/font_size = 43
+text = "Aarre
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Otso" type="Label" parent="Credits_text_area"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 621.0
+offset_top = 777.0
+offset_right = -97.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/line_spacing = 25
+theme_override_font_sizes/font_size = 43
+text = "Otso"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="VBoxContainer" type="HBoxContainer" parent="."]
+offset_left = 716.0
+offset_top = 873.0
+offset_right = 1543.0
+offset_bottom = 1000.0
+theme_override_constants/separation = 40
+alignment = 1
+metadata/_edit_group_ = true
+
+[node name="Menu" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme = SubResource("Theme_idkej")
+theme_override_font_sizes/font_size = 60
+action_mode = 0
+text = "  Menu"
+icon_alignment = 1
+
+[node name="music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_vpogk")
+volume_db = -12.0
+autoplay = true
+
+[node name="BananaLandSprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(1416, 385)
+rotation = -6.28319
+scale = Vector2(1.85156, 1.60352)
+sprite_frames = SubResource("SpriteFrames_mg6uy")
+
+[node name="Bubbles_Sprite" type="AnimatedSprite2D" parent="BananaLandSprite"]
+position = Vector2(-139.882, 58.2322)
+rotation = 0.698132
+scale = Vector2(0.749387, 0.745782)
+sprite_frames = SubResource("SpriteFrames_tcieu")
+
+[connection signal="pressed" from="VBoxContainer/Menu" to="." method="_on_menu_pressed"]

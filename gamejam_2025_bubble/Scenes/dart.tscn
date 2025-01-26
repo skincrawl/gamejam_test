@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://c6lox10uwaoig"]
+
+[ext_resource type="Script" path="res://Scripts/dart.gd" id="1_gfdw2"]
+[ext_resource type="Texture2D" uid="uid://pop8rcr0kkao" path="res://Assets/Art/Dart.png" id="1_qwcpp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o3sy6"]
+size = Vector2(88, 20)
+
+[node name="dart" type="CharacterBody2D"]
+collision_layer = 4
+script = ExtResource("1_gfdw2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_qwcpp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 0)
+shape = SubResource("RectangleShape2D_o3sy6")

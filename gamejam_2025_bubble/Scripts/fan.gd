@@ -26,13 +26,15 @@ var push_strength:float
 
 func _ready() -> void:
 	$Part/Node2D/CPUParticles2D.emitting = true
-	push_distance_multiplier = 0.5
-	push_strength_multiplier = 0.5
+	# push_distance_multiplier = 0.5
+	# push_strength_multiplier = 0.5
+
 
 func _on_area_2d_body_entered(_body: Node2D) -> void:
 	
 	var dir:Vector2 = Vector2.DOWN.rotated(rotation)
-	var push_force:Vector2 = dir.normalized() * push_strength
+	var push_force:Vector2 = -dir.normalized() * push_strength
+	print("push_force: ", push_force)
 	if _body.name == "Bubbles":
 		_body.add_constant_central_force(push_force)
 
