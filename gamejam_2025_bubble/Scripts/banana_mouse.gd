@@ -9,8 +9,6 @@ var speed:float = 0.0
 
 func _process(_delta:float) -> void:
 	
-	
-	
 	if Input.is_action_pressed("blowing"):
 		$Part.look_at(Globals.bubbles.position)
 		$Part.rotation -= deg_to_rad(90.0)

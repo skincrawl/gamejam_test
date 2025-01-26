@@ -217,6 +217,7 @@ autoplay = true
 z_index = -10
 position = Vector2(960, 540)
 sprite_frames = SubResource("SpriteFrames_chcqr")
+autoplay = "default"
 frame = 2
 frame_progress = 0.481552
 
@@ -224,6 +225,7 @@ frame_progress = 0.481552
 position = Vector2(277, 219)
 scale = Vector2(0.785, 0.785)
 sprite_frames = SubResource("SpriteFrames_a3r2e")
+autoplay = "default"
 
 [connection signal="pressed" from="VBoxContainer/Start_game" to="." method="_on_start_game_pressed"]
 [connection signal="pressed" from="VBoxContainer2/How_to_play" to="." method="_on_how_to_play_pressed"]

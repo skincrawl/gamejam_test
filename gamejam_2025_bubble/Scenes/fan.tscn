@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://cxvn1s67oyllh"]
+
+[ext_resource type="Script" path="res://Scripts/fan.gd" id="1_05gsd"]
+[ext_resource type="Texture2D" uid="uid://civov26islc1r" path="res://Assets/Art/fan_temp.png" id="1_ibktf"]
+[ext_resource type="PackedScene" uid="uid://chgufc12c3f68" path="res://Scenes/part.tscn" id="2_2prwu"]
+[ext_resource type="Texture2D" uid="uid://daa04vblxm26l" path="res://Assets/Art/push_area_temp.png" id="3_aif7d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_24xb5"]
+size = Vector2(196, 44)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_epecg"]
+size = Vector2(198, 1056)
+
+[node name="fan" type="StaticBody2D"]
+collision_mask = 2
+script = ExtResource("1_05gsd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ibktf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 1)
+shape = SubResource("RectangleShape2D_24xb5")
+metadata/_edit_lock_ = true
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, 22)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 530)
+shape = SubResource("RectangleShape2D_epecg")
+
+[node name="Part" parent="." instance=ExtResource("2_2prwu")]
+
+[node name="push_area" type="Sprite2D" parent="."]
+position = Vector2(-2, 552)
+scale = Vector2(1, 1.06)
+texture = ExtResource("3_aif7d")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

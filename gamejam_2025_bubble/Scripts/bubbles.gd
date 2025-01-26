@@ -26,7 +26,7 @@ func _ready() -> void:
 	name = "Bubbles"
 
 
-func _process(_delta:float) -> void:
+func _physics_process(_delta:float) -> void:
 	
 	monkey_spin_speed = (linear_velocity.length() / MAX_SPEED) * MAX_MONKEY_SPIN_SPEED
 	$Bubbles.rotation = -rotation

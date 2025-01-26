@@ -18,12 +18,12 @@ func _ready() -> void:
 	Globals.bubbles = $Bubbles
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 	
-	$bananas.show()
-	$CanvasLayer/lose_text.hide()
-	$CanvasLayer/lose_bg.hide()
-	$CanvasLayer/lose_bg.size = DisplayServer.window_get_size()
+	$GUI/bananas_label.show()
+	$GUI/lose_text.hide()
+	$GUI/lose_bg.hide()
+	$GUI/lose_bg.size = DisplayServer.window_get_size()
 	
-	$Bubbles.position = $spawn_pos.position
+	$Bubbles.position = $level_objects/spawn_pos.position
 
 
 func _process(_delta:float) -> void:
@@ -43,9 +43,9 @@ func lose() -> void:
 	$Bubbles.death()
 	
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-	$CanvasLayer/lose_text.show()
-	$CanvasLayer/lose_bg.show()
-	$bananas.hide()
+	$GUI/lose_text.show()
+	$GUI/lose_bg.show()
+	$GUI/bananas_label.hide()
 	
 	await get_tree().create_timer(LOSE_TIME).timeout
 	get_tree().reload_current_scene()
@@ -55,7 +55,7 @@ func banana_collected(_banana:Banana) -> void:
 	
 	# _banana.destination = $bananas.
 	collected_bananas += 1
-	$CanvasLayer/bananas.text = "bananas: " + str(collected_bananas)
+	$GUI/bananas_label.text = "bananas: " + str(collected_bananas)
 
 
 func viewport_size_changed() -> void:
