@@ -10,29 +10,30 @@ func _ready():
 		$music.stream = menu_music
 		$music.volume_db = Globals.sound_volume
 		$music.play(Globals.music_spot)
-	
-	await get_tree().create_timer(1.01).timeout
-	# update_GUI()
 
 
 func _on_start_game_pressed():
+	$pop.play()
 	Globals.music_spot = $music.get_playback_position()
 	get_tree().change_scene_to_file("res://Scenes/narrative_screen.tscn")
 
 func _on_how_to_play_pressed():
+	$pop.play()
 	Globals.music_spot = $music.get_playback_position()
 	get_tree().change_scene_to_file("res://Scenes/how_to_play.tscn")
 
 func _on_about_us_pressed():
+	$pop.play()
 	Globals.music_spot = $music.get_playback_position()
 	get_tree().change_scene_to_file("res://Scenes/about_us.tscn")
 
 func _on_options_pressed():
+	$pop.play()
 	Globals.music_spot = $music.get_playback_position()
 	get_tree().change_scene_to_file("res://Scenes/options_menu.tscn")
 
 func _on_quit_pressed():
-	get_tree().quit()
+	$pop.play()
 
 
 func update_GUI() -> void:
@@ -45,3 +46,7 @@ func update_GUI() -> void:
 func viewport_size_changed() -> void:
 	# update_GUI()
 	pass
+
+
+func _on_pop_finished() -> void:
+	get_tree().quit()

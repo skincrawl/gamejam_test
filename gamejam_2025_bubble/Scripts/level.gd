@@ -25,9 +25,6 @@ func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 	
 	$GUI/bananas_label.show()
-	$GUI/lose_text.hide()
-	$GUI/lose_bg.hide()
-	$GUI/lose_bg.size = DisplayServer.window_get_size()
 	
 	$Bubbles.position = $level_objects/spawn_pos.position
 	
@@ -73,10 +70,6 @@ func dart_spawned(_dart_gun:DartGun) -> void:
 	# print("_dart_gun.rotation: ", _dart_gun.rotation)
 	dart.velocity = Vector2.RIGHT * dart.speed
 	dart.velocity = dart.velocity.rotated(dart.rotation)
-	
-	print("dart veloc: ", dart.speed)
-	# print("dart speed: ", dart.speed)
-	# print("velocity: ", dart.velocity)
 	
 	add_child(dart)
 
