@@ -97,3 +97,7 @@ func _on_bubbles_animation_finished() -> void:
 func _on_bubble_top_layer_animation_finished() -> void:
 	
 	$bubble_top_layer.hide()
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	$sfx.play()
