@@ -15,4 +15,4 @@ func _on_return_pressed() -> void:
 
 func _on_start_pressed() -> void:
 	Globals.music_spot = 0.0
-	get_tree().change_scene_to_file("res://Scenes/level.tscn")
+	get_tree().change_scene_to_file("res://Scenes/level_3.tscn")
