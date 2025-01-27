@@ -5,6 +5,8 @@ class_name Level
 
 var dart_packed:PackedScene = preload("res://Scenes/dart.tscn")
 
+@onready var spawn_pos:Marker2D = $level_objects/spawn_pos
+
 const LOSE_TIME:float = 3.0
 
 var screen_size:Vector2

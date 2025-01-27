@@ -6,6 +6,8 @@ var level:Level
 
 var mouse_pos:Vector2
 
+var checkpoint_manager:CheckpointManager
+
 var bubbles:Bubbles
 
 var sound_volume:float = -12.0

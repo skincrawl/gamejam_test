@@ -13,6 +13,8 @@ func _on_return_pressed() -> void:
 	Globals.music_spot = $music.get_playback_position()
 	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
 
+
 func _on_start_pressed() -> void:
 	Globals.music_spot = 0.0
-	get_tree().change_scene_to_file("res://Scenes/level_3.tscn")
+	Globals.checkpoint_manager = CheckpointManager.new()
+	get_tree().change_scene_to_file("res://Scenes/level.tscn")

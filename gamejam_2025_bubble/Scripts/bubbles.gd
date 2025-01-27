@@ -19,11 +19,12 @@ var dead:bool = false
 var monkey_spin_speed:float = 0.0
 var monkey_rotation:float = 0.0
 
+
 func _ready() -> void:
 	
+	add_to_group("Bubbles")
 	$bubble_top_layer.play("rolling")
 	$Bubbles.play("default")
-	name = "Bubbles"
 
 
 func _physics_process(_delta:float) -> void:
@@ -41,7 +42,6 @@ func _physics_process(_delta:float) -> void:
 	# Reset graphics rotation
 	$bubble_top_layer.rotation = -rotation
 	$bubble_bg_Sprite.rotation = -rotation
-	# $Bubbles.rotation = -rotation
 	
 	if not Input.is_action_pressed("blowing") or dead:
 		return
