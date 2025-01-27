@@ -8,11 +8,10 @@ var shooting_cannon:DartGun
 
 func _ready() -> void:
 	pass
-	# velocity = speed * Vector2.RIGHT
 
 
 func _process(_delta:float):
-	# print("velocity: ", velocity)
+	
 	move_and_slide()
 
 

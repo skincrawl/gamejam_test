@@ -50,17 +50,15 @@ func _physics_process(_delta:float) -> void:
 	
 	var screen_size:Vector2 = DisplayServer.window_get_size()
 	var screen_middle:Vector2 = 0.5 * screen_size
-	var mouse_pos:Vector2 = get_viewport().get_mouse_position()
-	mouse_pos = clamp(mouse_pos, Vector2.ZERO, screen_size)
 	
-	var dir:Vector2 = screen_middle - mouse_pos
+	var dir:Vector2 = screen_middle - Globals.mouse_pos
 	
-	var monkey_distance:float = max(0, mouse_pos.distance_to(screen_middle) - $CollisionShape2D.shape.radius * CONTROL_MARGIN)
+	var monkey_distance:float = max(0, Globals.mouse_pos.distance_to(screen_middle) - $CollisionShape2D.shape.radius * CONTROL_MARGIN)
 	
 	# print("monkey distance: ", monkey_distance)
 	
 	var force:Vector2
-	var distance_attenuation:float = 0.0
+	var distance_attenuation:float = 1.0
 	
 	if monkey_distance > 1.0:
 		distance_attenuation = MAX_CONTROL_DISTANCE / min(monkey_distance, MAX_CONTROL_DISTANCE)

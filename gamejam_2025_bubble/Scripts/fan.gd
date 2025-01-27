@@ -1,3 +1,4 @@
+# @tool
 extends StaticBody2D
 
 class_name Fan
@@ -25,15 +26,20 @@ var push_strength:float
 
 var bubbles:Bubbles = null
 
+
 func _ready() -> void:
-	$Part/Node2D/CPUParticles2D.emitting = true
-	# push_distance_multiplier = 0.5
-	# push_strength_multiplier = 0.5
-
-
-func _physics_process(delta: float) -> void:
 	
-	if not bubbles:
+	$Part/Node2D/CPUParticles2D.emitting = true
+	
+	push_distance = lerp(MIN_DISTANCE, MAX_DISTANCE, push_distance_multiplier)
+	if has_node("Area2D"):
+		$Area2D.scale.y = push_distance
+	push_strength = lerp(MIN_PUSH_STRENGTH, MAX_PUSH_STRENGTH, push_strength_multiplier)
+
+
+func _physics_process(_delta: float) -> void:
+	
+	if bubbles == null:
 		return
 	
 	var dir:Vector2 = Vector2.DOWN.rotated(rotation)
@@ -43,7 +49,6 @@ func _physics_process(delta: float) -> void:
 
 func _on_area_2d_body_entered(_body: Node2D) -> void:
 	
-	# print("push_force: ", push_force)
 	if _body.name == "Bubbles":
 		bubbles = _body
 

@@ -10,8 +10,6 @@ const LOSE_TIME:float = 3.0
 var screen_size:Vector2
 var collected_bananas:int = 0
 
-var mouse_pos:Vector2
-
 var game_music:AudioStream = preload("res://Assets/Audio/Music/PeliTheme.mp3")
 
 func _ready() -> void:
@@ -39,7 +37,7 @@ func _ready() -> void:
 func _input(_event:InputEvent) -> void:
 	
 	if _event is InputEventMouseMotion:
-		mouse_pos = _event.position
+		Globals.mouse_pos = _event.position
 		# print("mouse at: ", _event.position)
 
 
@@ -52,7 +50,7 @@ func _process(_delta:float) -> void:
 	# print("screen in game: ", screen_in_game)
 	# print("mouse_pos: ", mouse_pos)
 	
-	$banana_mouse.global_position = $Bubbles.position + mouse_pos - 0.5 * screen_size
+	$banana_mouse.global_position = $Bubbles.position + Globals.mouse_pos - 0.5 * screen_size
 	# $banana_mouse.global_position = mouse_pos + $Bubbles.position - 0.5 * screen_in_game.size
 
 
@@ -62,7 +60,7 @@ func lose() -> void:
 	get_tree().reload_current_scene()
 
 
-func dart_spawned(_dart_gun:DartGun) -> void:
+func spawn_dart(_dart_gun:DartGun) -> void:
 	var dart:Dart = dart_packed.instantiate()
 	dart.shooting_cannon = _dart_gun
 	dart.global_transform = _dart_gun.global_transform

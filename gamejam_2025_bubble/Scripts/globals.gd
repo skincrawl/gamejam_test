@@ -3,6 +3,9 @@ extends Node
 var audio_stream:AudioStream = preload("res://Assets/Audio/Music/MainMenuTheme_Ilman_Introa.mp3")
 
 var level:Level
+
+var mouse_pos:Vector2
+
 var bubbles:Bubbles
 
 var sound_volume:float = -12.0
