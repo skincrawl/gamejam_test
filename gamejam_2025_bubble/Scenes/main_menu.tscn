@@ -9,8 +9,8 @@
 [ext_resource type="Theme" uid="uid://cfuny4aqpg8r2" path="res://Resources/default_theme.tres" id="6_actju"]
 [ext_resource type="Script" path="res://Scripts/valikko_apina.gd" id="6_cx4xl"]
 [ext_resource type="Texture2D" uid="uid://cuxs0jdep2tjs" path="res://Assets/Art/BubbleBGTexture.png" id="7_pyfg4"]
-[ext_resource type="AudioStream" uid="uid://cliqi057lxak6" path="res://Assets/Audio/Music/MainMenuTheme_Ilman_Introa.mp3" id="7_s2nx6"]
 [ext_resource type="Texture2D" uid="uid://c4mgs6y8y43he" path="res://Assets/Art/ActualBubble_Sheet.png" id="8_yoddx"]
+[ext_resource type="AudioStream" uid="uid://bxaf8tn4ra364" path="res://Assets/Audio/Music/MainMenuTheme_Intro.mp3" id="11_8g2sv"]
 [ext_resource type="AudioStream" uid="uid://blwan44chay8p" path="res://Assets/Audio/SFX/bubble-pop.mp3" id="12_s5yk8"]
 
 [sub_resource type="Theme" id="Theme_avieb"]
@@ -513,9 +513,13 @@ theme = ExtResource("6_actju")
 text = "Quit"
 
 [node name="music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("7_s2nx6")
+stream = ExtResource("11_8g2sv")
 volume_db = -12.0
 autoplay = true
+
+[node name="menu_music_intro" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_8g2sv")
+volume_db = -12.0
 
 [node name="pop" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_s5yk8")
@@ -528,4 +532,6 @@ volume_db = -8.0
 [connection signal="pressed" from="CanvasLayer/about_us_button/texture_button" to="." method="_on_about_us_pressed"]
 [connection signal="pressed" from="CanvasLayer/options_button/texture_button" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="CanvasLayer/quit_button/texture_button" to="." method="_on_quit_pressed"]
+[connection signal="finished" from="music" to="." method="_on_music_finished"]
+[connection signal="finished" from="menu_music_intro" to="." method="_on_menu_music_intro_finished"]
 [connection signal="finished" from="pop" to="." method="_on_pop_finished"]

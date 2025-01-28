@@ -1,13 +1,17 @@
 extends Control
 
 var menu_music:AudioStream = preload("res://Assets/Audio/Music/MainMenuTheme_Ilman_Introa.mp3")
+var menu_music_intro:AudioStream = preload("res://Assets/Audio/Music/MainMenuTheme_Intro.mp3")
 
 var button_pressed:String = "none"
+
 
 func _ready():
 	
 	get_viewport().size_changed.connect(viewport_size_changed)
-	print("globals sound on: ", Globals.sound_on)
+	
+	# print("globals sound on: ", Globals.sound_on)
+	
 	if Globals.sound_on:
 		$music.stream = menu_music
 		$music.volume_db = Globals.sound_volume
@@ -31,8 +35,8 @@ func _on_options_pressed():
 	button_pressed = "options"
 
 func _on_quit_pressed():
-	button_pressed = "quit"
 	$pop.play()
+	button_pressed = "quit"
 
 
 func update_GUI() -> void:
@@ -48,17 +52,30 @@ func viewport_size_changed() -> void:
 
 
 func _on_pop_finished() -> void:
+	
+	Globals.music_spot = $music.get_playback_position()
+	
+	var callable:Callable
 	match button_pressed:
 		"start":
-			get_tree().change_scene_to_file("res://Scenes/narrative_screen.tscn")
+			
+			get_tree().change_scene_to_file.call_deferred("res://Scenes/narrative_screen.tscn")
 		"how_to_play":
-			get_tree().change_scene_to_file("res://Scenes/how_to_play.tscn")
+			get_tree().change_scene_to_file.call_deferred("res://Scenes/how_to_play.tscn")
 		"about_us":
-			get_tree().change_scene_to_file("res://Scenes/about_us.tscn")
+			get_tree().change_scene_to_file.call_deferred("res://Scenes/about_us.tscn")
 		"options":
-			get_tree().change_scene_to_file("res://Scenes/options_menu.tscn")
+			get_tree().change_scene_to_file.call_deferred("res://Scenes/options_menu.tscn")
 		"quit":
 			get_tree().quit()
 		_:
 			pass
-	Globals.music_spot = $music.get_playback_position()
+
+
+func _on_music_finished() -> void:
+	if not Globals.sound_on:
+		return
+	
+	if $music.stream == menu_music_intro:
+		$music.stream = menu_music
+		$music.play()

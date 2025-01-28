@@ -27,6 +27,17 @@ func _ready() -> void:
 	$Bubbles.play("default")
 
 
+func _unhandled_input(_event:InputEvent):
+	if dead:
+		return
+	
+	if _event is InputEventMouseButton:
+		if Input.is_action_just_pressed("blowing"):
+			$Bubbles.play("blink")
+		elif Input.is_action_just_released("blowing"):
+			$Bubbles.play("default")
+
+
 func _physics_process(_delta:float) -> void:
 	
 	monkey_spin_speed = (linear_velocity.length() / MAX_SPEED) * MAX_MONKEY_SPIN_SPEED
@@ -45,8 +56,6 @@ func _physics_process(_delta:float) -> void:
 	
 	if not Input.is_action_pressed("blowing") or dead:
 		return
-	
-	$Bubbles.play("blink")
 	
 	var screen_size:Vector2 = DisplayServer.window_get_size()
 	var screen_middle:Vector2 = 0.5 * screen_size

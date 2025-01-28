@@ -60,7 +60,9 @@ func _process(_delta:float) -> void:
 func lose() -> void:
 	
 	Globals.music_spot = $music.get_playback_position()
-	get_tree().reload_current_scene()
+	
+	var callable:Callable = get_tree().reload_current_scene
+	get_tree().process_frame.connect(callable, CONNECT_ONE_SHOT)
 
 
 func spawn_dart(_dart_gun:DartGun) -> void:
