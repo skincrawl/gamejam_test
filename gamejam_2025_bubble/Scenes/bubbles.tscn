@@ -172,7 +172,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_744ag")
 }],
-"loop": false,
+"loop": true,
 "name": &"blink",
 "speed": 5.0
 }, {
@@ -271,7 +271,7 @@ texture = ExtResource("4_k04fe")
 [node name="Bubbles" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.68, 0.68)
 sprite_frames = SubResource("SpriteFrames_agujd")
-animation = &"lose"
+animation = &"blink"
 offset = Vector2(0, -6.405)
 
 [node name="sfx" type="AudioStreamPlayer" parent="."]

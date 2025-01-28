@@ -19,11 +19,23 @@ var dead:bool = false
 var monkey_spin_speed:float = 0.0
 var monkey_rotation:float = 0.0
 
+
 func _ready() -> void:
 	
+	add_to_group("Bubbles")
 	$bubble_top_layer.play("rolling")
 	$Bubbles.play("default")
-	name = "Bubbles"
+
+
+func _unhandled_input(_event:InputEvent):
+	if dead:
+		return
+	
+	if _event is InputEventMouseButton:
+		if Input.is_action_just_pressed("blowing"):
+			$Bubbles.play("blink")
+		elif Input.is_action_just_released("blowing"):
+			$Bubbles.play("default")
 
 
 func _physics_process(_delta:float) -> void:
@@ -41,12 +53,9 @@ func _physics_process(_delta:float) -> void:
 	# Reset graphics rotation
 	$bubble_top_layer.rotation = -rotation
 	$bubble_bg_Sprite.rotation = -rotation
-	# $Bubbles.rotation = -rotation
 	
 	if not Input.is_action_pressed("blowing") or dead:
 		return
-	
-	$Bubbles.play("blink")
 	
 	var screen_size:Vector2 = DisplayServer.window_get_size()
 	var screen_middle:Vector2 = 0.5 * screen_size

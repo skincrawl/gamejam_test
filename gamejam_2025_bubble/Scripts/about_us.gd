@@ -1,6 +1,10 @@
 extends Control
 
 func _ready() -> void:
+	
+	if not Globals.sound_on:
+		return
+	$music.volume_db = Globals.sound_volume
 	$music.stream = Globals.audio_stream
 	$music.play(Globals.music_spot)
 

@@ -6,8 +6,11 @@ var level:Level
 
 var mouse_pos:Vector2
 
+var checkpoint_manager:CheckpointManager
+
 var bubbles:Bubbles
 
 var sound_volume:float = -12.0
 var sound_on:bool = true
 var music_spot:float
+var intro_finished:bool = false

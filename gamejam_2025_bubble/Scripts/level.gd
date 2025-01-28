@@ -5,12 +5,15 @@ class_name Level
 
 var dart_packed:PackedScene = preload("res://Scenes/dart.tscn")
 
+@onready var spawn_pos:Marker2D = $level_objects/spawn_pos
+
 const LOSE_TIME:float = 3.0
 
 var screen_size:Vector2
 var collected_bananas:int = 0
 
 var game_music:AudioStream = preload("res://Assets/Audio/Music/PeliTheme.mp3")
+
 
 func _ready() -> void:
 	
@@ -24,6 +27,7 @@ func _ready() -> void:
 	
 	$GUI/bananas_label.show()
 	
+	spawn_pos.global_position = Globals.checkpoint_manager.last_location
 	$Bubbles.position = $level_objects/spawn_pos.position
 	
 	if not Globals.sound_on:
@@ -51,13 +55,14 @@ func _process(_delta:float) -> void:
 	# print("mouse_pos: ", mouse_pos)
 	
 	$banana_mouse.global_position = $Bubbles.position + Globals.mouse_pos - 0.5 * screen_size
-	# $banana_mouse.global_position = mouse_pos + $Bubbles.position - 0.5 * screen_in_game.size
 
 
 func lose() -> void:
 	
 	Globals.music_spot = $music.get_playback_position()
-	get_tree().reload_current_scene()
+	
+	var callable:Callable = get_tree().reload_current_scene
+	get_tree().process_frame.connect(callable, CONNECT_ONE_SHOT)
 
 
 func spawn_dart(_dart_gun:DartGun) -> void:
