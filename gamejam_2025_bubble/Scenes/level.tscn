@@ -2061,4 +2061,10 @@ frame_progress = 0.808977
 [node name="Checkpoint" parent="." instance=ExtResource("16_yqimj")]
 position = Vector2(4553, 575)
 
+[node name="Checkpoint2" parent="." instance=ExtResource("16_yqimj")]
+position = Vector2(8871, 4229)
+
+[node name="Checkpoint3" parent="." instance=ExtResource("16_yqimj")]
+position = Vector2(10325, 7106)
+
 [editable path="level_objects/TileMapLayer"]

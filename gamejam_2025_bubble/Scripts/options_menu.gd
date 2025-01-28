@@ -8,10 +8,12 @@ const MAX_VOLUME:float = -5.0
 func _ready() -> void:
 	$VBoxContainer/Volume/volume_slider.value = 70
 	
-	if Globals.sound_on:
-		$music.volume_db = Globals.sound_volume
-		$music.stream = Globals.audio_stream
-		$music.play(Globals.music_spot)
+	if not Globals.sound_on:
+		return
+	
+	$music.volume_db = Globals.sound_volume
+	$music.stream = Globals.audio_stream
+	$music.play(Globals.music_spot)
 
 
 func _on_return_pressed():
@@ -25,5 +27,6 @@ func _on_volume_slider_value_changed(_value: float) -> void:
 
 
 func _on_sound_on_off_pressed() -> void:
-	$music.playing = $VBoxContainer/SoundOnOff.button_pressed
-	Globals.sound_on = $VBoxContainer/SoundOnOff.button_pressed
+	var sound_on:bool = $VBoxContainer/SoundOnOff.button_pressed
+	$music.playing = sound_on
+	Globals.sound_on = sound_on

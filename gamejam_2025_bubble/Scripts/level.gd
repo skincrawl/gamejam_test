@@ -14,6 +14,7 @@ var collected_bananas:int = 0
 
 var game_music:AudioStream = preload("res://Assets/Audio/Music/PeliTheme.mp3")
 
+
 func _ready() -> void:
 	
 	get_viewport().size_changed.connect(viewport_size_changed)
@@ -26,6 +27,7 @@ func _ready() -> void:
 	
 	$GUI/bananas_label.show()
 	
+	spawn_pos.global_position = Globals.checkpoint_manager.last_location
 	$Bubbles.position = $level_objects/spawn_pos.position
 	
 	if not Globals.sound_on:
@@ -53,7 +55,6 @@ func _process(_delta:float) -> void:
 	# print("mouse_pos: ", mouse_pos)
 	
 	$banana_mouse.global_position = $Bubbles.position + Globals.mouse_pos - 0.5 * screen_size
-	# $banana_mouse.global_position = mouse_pos + $Bubbles.position - 0.5 * screen_in_game.size
 
 
 func lose() -> void:

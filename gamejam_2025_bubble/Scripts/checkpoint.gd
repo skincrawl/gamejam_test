@@ -9,5 +9,6 @@ func _ready() -> void:
 
 
 func _on_body_entered(_body: Node2D) -> void:
+	# print("body entered checkpoint")
 	if _body.is_in_group("Bubbles"):
 		Globals.checkpoint_manager.last_location = $Marker2D.global_position
