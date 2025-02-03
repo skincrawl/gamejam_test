@@ -4,11 +4,12 @@ class_name Bubbles
 
 
 const MIN_BLOW_STRENGTH:float = 1.0
-const MAX_BLOW_STRENGTH:float = 70.0
+const MAX_BLOW_STRENGTH:float = 700.0
 
 const MAX_SPEED:float = 900.0
 
 const MAX_CONTROL_DISTANCE:float = 500.0
+
 # Making a little area where blowing air doesn't work
 const CONTROL_MARGIN:float = 1.1
 
@@ -19,12 +20,19 @@ var dead:bool = false
 var monkey_spin_speed:float = 0.0
 var monkey_rotation:float = 0.0
 
+var yum_sounds:Array
 
 func _ready() -> void:
 	
 	add_to_group("Bubbles")
 	$bubble_top_layer.play("rolling")
 	$Bubbles.play("default")
+	
+	yum_sounds.append(preload("res://Assets/Audio/SFX/yum_1.mp3"))
+	yum_sounds.append(preload("res://Assets/Audio/SFX/yum_2.mp3"))
+	yum_sounds.append(preload("res://Assets/Audio/SFX/yum_3.mp3"))
+	yum_sounds.append(preload("res://Assets/Audio/SFX/yum_4.mp3"))
+	yum_sounds.append(preload("res://Assets/Audio/SFX/yum_5.mp3"))
 
 
 func _unhandled_input(_event:InputEvent):
@@ -38,9 +46,15 @@ func _unhandled_input(_event:InputEvent):
 			$Bubbles.play("default")
 
 
+# Negating the rotation that arrises from the physics engine in the graphical elements,
+# so that they can have an independent rotation
+# I did try locking the rotation of the monkey in the RigidBody2D, but that affected how the bubble behaves when
+# bouncing off walls and I didn't like it.
 func _physics_process(_delta:float) -> void:
 	
-	monkey_spin_speed = (linear_velocity.length() / MAX_SPEED) * MAX_MONKEY_SPIN_SPEED
+	# Spinning the monkey
+	monkey_spin_speed = sign(linear_velocity.x) * sign(linear_velocity.y) * (linear_velocity.length() / MAX_SPEED) * MAX_MONKEY_SPIN_SPEED
+	# Reset graphics rotation
 	$Bubbles.rotation = -rotation
 	monkey_rotation += deg_to_rad(monkey_spin_speed) * _delta
 	$Bubbles.rotation += monkey_rotation
@@ -54,28 +68,31 @@ func _physics_process(_delta:float) -> void:
 	$bubble_top_layer.rotation = -rotation
 	$bubble_bg_Sprite.rotation = -rotation
 	
-	if not Input.is_action_pressed("blowing") or dead:
+	if dead or not Input.is_action_pressed("blowing"):
 		return
 	
 	var screen_size:Vector2 = DisplayServer.window_get_size()
 	var screen_middle:Vector2 = 0.5 * screen_size
 	
 	var mouse_pos:Vector2 = get_global_mouse_position()
-	var dir:Vector2 = screen_middle - mouse_pos
+	var dir:Vector2 = global_position - mouse_pos
 	
-	var monkey_distance:float = max(0, mouse_pos.distance_to(screen_middle) - $CollisionShape2D.shape.radius * CONTROL_MARGIN)
+	# var monkey_distance:float = max(0, mouse_pos.distance_to(screen_middle) - $CollisionShape2D.shape.radius * CONTROL_MARGIN)
+	var monkey_distance:float = max(0, mouse_pos.distance_to(global_position) - $CollisionShape2D.shape.radius * CONTROL_MARGIN)
 	
 	# print("monkey distance: ", monkey_distance)
 	
 	var force:Vector2
-	var distance_attenuation:float = 1.0
+	var distance_attenuation:float = clamp((MAX_CONTROL_DISTANCE - monkey_distance) / MAX_CONTROL_DISTANCE, 0.0, MAX_CONTROL_DISTANCE)
 	
-	if monkey_distance > 1.0:
-		distance_attenuation = MAX_CONTROL_DISTANCE / min(monkey_distance, MAX_CONTROL_DISTANCE)
-	
-	# force = monkey_distance * dir.normalized() * distance_attenuation
+	# With distance attenuation
 	var blow_strength:float = lerp(MIN_BLOW_STRENGTH, MAX_BLOW_STRENGTH, distance_attenuation)
-	force = MAX_BLOW_STRENGTH * dir.normalized() * blow_strength * _delta
+	force = dir.normalized() * blow_strength
+	
+	# Without distance attenuation
+	# Removing the distance attenuation, because you can affect the monkey movement slightly just by tapping the mouse button, instead
+	# of blowing air from further away
+	# force = MAX_BLOW_STRENGTH * dir.normalized()
 	
 	# print("force strength: ", force.length())
 	apply_central_force(force)
@@ -96,6 +113,12 @@ func death() -> void:
 	$pop.play()
 	$scream.play()
 
+
+func banana_eaten() -> void:
+	var chance:float = randf()
+	if chance < 0.2:
+		$yum.stream = yum_sounds.pick_random()
+		$yum.play()
 
 func _integrate_forces(_state: PhysicsDirectBodyState2D) -> void:
 	if _state.linear_velocity.length() > MAX_SPEED:

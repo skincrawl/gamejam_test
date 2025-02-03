@@ -5,7 +5,17 @@ extends AnimatedSprite2D
 const MAX_ROT_SPEED:float = 60.0
 const SLOWDOWN_SPEED:float = 90.0
 
+@onready var sound:AudioStreamPlayer = $AudioStreamPlayer
+
 var speed:float = 0.0
+
+
+func _unhandled_input(_event: InputEvent) -> void:
+	if _event is InputEventMouseButton and Input.is_action_just_pressed("blowing"):
+		sound.play(randf() * sound.stream.get_length())
+	elif _event is InputEventMouseButton and Input.is_action_just_released("blowing"):
+		sound.stop()
+
 
 func _process(_delta:float) -> void:
 	

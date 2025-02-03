@@ -2041,7 +2041,7 @@ position = Vector2(354, 368)
 
 [node name="music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_1ia1a")
-volume_db = -12.0
+volume_db = -14.0
 autoplay = true
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
