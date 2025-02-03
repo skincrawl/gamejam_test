@@ -4,11 +4,12 @@
 
 Useability
 
--Issues with fullscreen
+-UI elements don't scale properly to different screen sizes
 
 
 Gameplay
 
+-The push force isn't applied at the banana mouse in different screen sizes
 -Controls are wonky, pushes way too hard when the fan is close to the monkey
 -Passed checkpoints can be retriggered and update the spawn pos backwards
 
@@ -25,7 +26,7 @@ GUI
 
 Graphics
 
--Monkey blink animation doesn't loop
+-Change the bubble rolling animation speed depending on how fast the monkey is going
 
 
 Audio

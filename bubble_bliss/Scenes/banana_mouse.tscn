@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://7o3ladlt1r1i"]
+[gd_scene load_steps=7 format=3 uid="uid://7o3ladlt1r1i"]
 
 [ext_resource type="Texture2D" uid="uid://dkxr0yqfvyrp5" path="res://Assets/Art/Banana64Mouse.png" id="1_dhn8e"]
 [ext_resource type="Script" path="res://Scripts/banana_mouse.gd" id="2_c0gge"]
 [ext_resource type="PackedScene" uid="uid://chgufc12c3f68" path="res://Scenes/part.tscn" id="3_efoap"]
+[ext_resource type="AudioStream" uid="uid://hucowep6vail" path="res://Assets/Audio/SFX/wind_loop_1.mp3" id="4_nioym"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5gevt"]
 atlas = ExtResource("1_dhn8e")
@@ -26,3 +27,7 @@ script = ExtResource("2_c0gge")
 [node name="Part" parent="." instance=ExtResource("3_efoap")]
 top_level = true
 scale = Vector2(0.5, 0.5)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_nioym")
+volume_db = -16.0

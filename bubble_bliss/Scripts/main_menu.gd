@@ -58,7 +58,6 @@ func _on_pop_finished() -> void:
 	var callable:Callable
 	match button_pressed:
 		"start":
-			
 			get_tree().change_scene_to_file.call_deferred("res://Scenes/narrative_screen.tscn")
 		"how_to_play":
 			get_tree().change_scene_to_file.call_deferred("res://Scenes/how_to_play.tscn")

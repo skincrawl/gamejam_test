@@ -523,7 +523,7 @@ volume_db = -12.0
 
 [node name="pop" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_s5yk8")
-volume_db = -8.0
+volume_db = -10.0
 
 [connection signal="pressed" from="CanvasLayer/VBoxContainer4/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer5/Quit" to="." method="_on_quit_pressed"]

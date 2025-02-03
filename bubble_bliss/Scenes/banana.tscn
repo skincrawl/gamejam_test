@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://cunyvm8bl614t"]
+[gd_scene load_steps=9 format=3 uid="uid://cunyvm8bl614t"]
 
 [ext_resource type="Script" path="res://Scripts/banana.gd" id="1_tkajb"]
 [ext_resource type="Texture2D" uid="uid://bcp66k6r2syon" path="res://Assets/Art/Banana_Sheet.png" id="1_ycuah"]
+[ext_resource type="AudioStream" uid="uid://xiem76ob7g3q" path="res://Assets/Audio/SFX/banana_blip.mp3" id="3_2t8ey"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_r6nxe"]
 radius = 12.0
@@ -50,4 +51,9 @@ sprite_frames = SubResource("SpriteFrames_ogi3s")
 frame = 1
 frame_progress = 0.657028
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_2t8ey")
+volume_db = -10.0
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

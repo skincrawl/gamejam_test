@@ -293,6 +293,9 @@ volume_db = -8.0
 stream = ExtResource("10_hpkr7")
 volume_db = -18.0
 
+[node name="yum" type="AudioStreamPlayer" parent="."]
+volume_db = -15.0
+
 [connection signal="animation_finished" from="bubble_top_layer" to="." method="_on_bubble_top_layer_animation_finished"]
 [connection signal="animation_finished" from="Bubbles" to="." method="_on_bubbles_animation_finished"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
