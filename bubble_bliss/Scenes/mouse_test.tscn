@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://c00vo2xqmq3t4"]
+
+[ext_resource type="Script" path="res://Scripts/mouse_test.gd" id="1_r06sp"]
+[ext_resource type="Texture2D" uid="uid://n6a8agbio8pn" path="res://icon.svg" id="2_ds6kr"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_r06sp")
+
+[node name="Icon" type="Sprite2D" parent="."]
+texture = ExtResource("2_ds6kr")

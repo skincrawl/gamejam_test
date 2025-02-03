@@ -4,11 +4,12 @@
 
 Useability
 
--Issues with fullscreen
+-UI elements don't scale properly to different screen sizes
 
 
 Gameplay
 
+-The mouse position and banana fan aren't synced on different resolutions and scales
 -Controls are wonky, pushes way too hard when the fan is close to the monkey
 -Passed checkpoints can be retriggered and update the spawn pos backwards
 
@@ -22,10 +23,6 @@ GUI
 -Loader to make the menu music play right away
 -Menu fonts could use crayon style outlines or something
 
-
-Graphics
-
--Monkey blink animation doesn't loop
 
 
 Audio

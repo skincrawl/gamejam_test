@@ -4,9 +4,8 @@ var audio_stream:AudioStream = preload("res://Assets/Audio/Music/MainMenuTheme_I
 
 var level:Level
 
-var mouse_pos:Vector2
-
 var checkpoint_manager:CheckpointManager
+var first_play:bool = true
 
 var bubbles:Bubbles
 
