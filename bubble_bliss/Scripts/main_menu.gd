@@ -10,6 +10,9 @@ func _ready():
 	
 	get_viewport().size_changed.connect(viewport_size_changed)
 	
+	# var 
+	AudioServer.add_bus(AudioServer.bus_count)
+	# AudioServer.set_bus_name()
 	# print("globals sound on: ", Globals.sound_on)
 	
 	if Globals.sound_on:
@@ -17,6 +20,8 @@ func _ready():
 		$music.volume_db = Globals.sound_volume
 		$music.play(Globals.music_spot)
 
+
+# func _audio
 
 func _on_start_game_pressed():
 	$pop.play()
