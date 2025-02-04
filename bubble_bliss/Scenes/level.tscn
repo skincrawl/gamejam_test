@@ -289,25 +289,22 @@ position = Vector2(9619, 7396)
 position = Vector2(9623, 7799)
 
 [node name="banana119" parent="level_objects/bananas" instance=ExtResource("3_olu38")]
-position = Vector2(10113, 8083)
+position = Vector2(10161, 8083)
 
 [node name="banana120" parent="level_objects/bananas" instance=ExtResource("3_olu38")]
-position = Vector2(11103, 8058)
+position = Vector2(10775, 8082)
 
 [node name="banana121" parent="level_objects/bananas" instance=ExtResource("3_olu38")]
-position = Vector2(11766, 8073)
-
-[node name="banana122" parent="level_objects/bananas" instance=ExtResource("3_olu38")]
-position = Vector2(12383, 8079)
+position = Vector2(11614, 8086)
 
 [node name="banana123" parent="level_objects/bananas" instance=ExtResource("3_olu38")]
-position = Vector2(12995, 8094)
+position = Vector2(12578, 8088)
 
 [node name="banana124" parent="level_objects/bananas" instance=ExtResource("3_olu38")]
-position = Vector2(13580, 8096)
+position = Vector2(13478, 8093)
 
 [node name="banana125" parent="level_objects/bananas" instance=ExtResource("3_olu38")]
-position = Vector2(14279, 8094)
+position = Vector2(14266, 8091)
 
 [node name="banana126" parent="level_objects/bananas" instance=ExtResource("3_olu38")]
 position = Vector2(14682, 8579)
@@ -424,10 +421,34 @@ position = Vector2(8529, 4363)
 position = Vector2(8518, 3733)
 
 [node name="banana90" parent="level_objects/bananas" instance=ExtResource("3_olu38")]
-position = Vector2(8575, 2540)
+position = Vector2(8524, 2551)
+
+[node name="banana165" parent="level_objects/bananas" instance=ExtResource("3_olu38")]
+position = Vector2(8591, 3062)
+
+[node name="banana167" parent="level_objects/bananas" instance=ExtResource("3_olu38")]
+position = Vector2(8594, 3198)
+
+[node name="banana166" parent="level_objects/bananas" instance=ExtResource("3_olu38")]
+position = Vector2(8567, 3317)
 
 [node name="banana88" parent="level_objects/bananas" instance=ExtResource("3_olu38")]
 position = Vector2(8364, 1306)
+
+[node name="banana98" parent="level_objects/bananas" instance=ExtResource("3_olu38")]
+position = Vector2(8296, 1632)
+
+[node name="banana107" parent="level_objects/bananas" instance=ExtResource("3_olu38")]
+position = Vector2(8302, 1782)
+
+[node name="banana108" parent="level_objects/bananas" instance=ExtResource("3_olu38")]
+position = Vector2(8344, 1895)
+
+[node name="banana164" parent="level_objects/bananas" instance=ExtResource("3_olu38")]
+position = Vector2(8449, 2232)
+
+[node name="banana94" parent="level_objects/bananas" instance=ExtResource("3_olu38")]
+position = Vector2(8405, 788)
 
 [node name="banana87" parent="level_objects/bananas" instance=ExtResource("3_olu38")]
 position = Vector2(8489, 241)
@@ -507,1088 +528,1088 @@ position = Vector2(5479, -614)
 [node name="banana49" parent="level_objects/bananas" instance=ExtResource("3_olu38")]
 position = Vector2(5465, -24)
 
-[node name="hazards" type="Node2D" parent="level_objects/bananas"]
+[node name="hazards" type="Node2D" parent="level_objects"]
 
-[node name="hazard96" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard96" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(6265, -740)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard97" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard97" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(6322, -740)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard98" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard98" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(5922, -739.5)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard99" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard99" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(6094, -739.5)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard100" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard100" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(6037, -739.5)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard101" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard101" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(5979, -739.5)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard102" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard102" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(6151.5, -739.5)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard103" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard103" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(6208.5, -739.5)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard129" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard129" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(8657, -1189)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard130" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard130" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(8714, -1189)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard131" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard131" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(8314, -1188.5)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard132" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard132" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(8486, -1188.5)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard133" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard133" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(8429, -1188.5)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard134" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard134" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(8371, -1188.5)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard135" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard135" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(8543.5, -1188.5)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard136" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard136" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(8600.5, -1188.5)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard151" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard151" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(8690, -613)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard152" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard152" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(8747, -613)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard153" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard153" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(8347, -612.5)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard154" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard154" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(8519, -612.5)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard155" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard155" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(8462, -612.5)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard156" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard156" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(8404, -612.5)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard157" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard157" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(8576.5, -612.5)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard158" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard158" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(8633.5, -612.5)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard159" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard159" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(9571, -1053)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard160" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard160" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(9628, -1053)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard161" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard161" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(9228, -1052.5)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard162" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard162" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(9400, -1052.5)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard163" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard163" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(9343, -1052.5)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard164" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard164" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(9285, -1052.5)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard165" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard165" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(9457.5, -1052.5)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard166" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard166" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(9514.5, -1052.5)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard167" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard167" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(9656, 2212)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard168" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard168" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(9713, 2212)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard169" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard169" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(9313, 2212.5)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard170" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard170" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(9485, 2212.5)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard171" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard171" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(9428, 2212.5)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard172" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard172" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(9370, 2212.5)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard173" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard173" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(9542.5, 2212.5)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard174" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard174" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(9599.5, 2212.5)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard205" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard205" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(9656, 1053)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard206" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard206" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(9713, 1053)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard207" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard207" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(9313, 1053.5)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard208" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard208" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(9485, 1053.5)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard209" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard209" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(9428, 1053.5)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard210" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard210" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(9370, 1053.5)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard211" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard211" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(9542.5, 1053.5)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard212" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard212" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(9599.5, 1053.5)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard215" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard215" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(9769, 1053.5)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard241" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard241" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(8543, 1693)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard242" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard242" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(8600, 1693)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard243" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard243" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(8656, 1693.5)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard250" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard250" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(8241, 3164)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard251" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard251" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(8298, 3164)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard252" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard252" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(8354, 3164.5)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard175" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard175" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(10113, 2212)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard176" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard176" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(10170, 2212)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard177" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard177" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(9770, 2212.5)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard178" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard178" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(9942, 2212.5)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard179" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard179" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(9885, 2212.5)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard180" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard180" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(9827, 2212.5)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard181" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard181" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(9999.5, 2212.5)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard182" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard182" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(10056.5, 2212.5)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard185" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard185" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(10228, 2212.5)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard186" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard186" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(10400, 2212.5)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard187" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard187" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(10343, 2212.5)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard188" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard188" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(10285, 2212.5)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard85" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard85" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(4103.5, 796)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard86" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard86" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(4160.5, 796)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard87" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard87" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(4331, 795.5)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard88" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard88" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(4388, 795.5)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard89" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard89" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(4217.5, 796)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard90" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard90" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(4274.5, 796)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard62" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard62" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(7331, -3419)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard128" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard128" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(7968, -1562)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard253" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard253" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(13153, 8995)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard254" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard254" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(12256, 9123)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard277" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard277" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(11470, 8803)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard301" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard301" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(11530, 8803)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard302" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard302" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(11590, 8803)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard303" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard303" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(11650, 8803)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard304" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard304" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(11710, 8803)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard305" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard305" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(11770, 8803)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard306" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard306" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(11830, 8803)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard307" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard307" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(11890, 8803)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard308" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard308" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(11950, 8803)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard309" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard309" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(12010, 8803)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard255" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard255" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(12256, 8988)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard293" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard293" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(11471, 9884)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard296" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard296" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(11529, 9884)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard297" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard297" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(11588, 9884)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard298" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard298" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(11646, 9884)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard299" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard299" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(11705, 9884)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard300" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard300" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(11763, 9884)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard310" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard310" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(11934, 9309)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard311" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard311" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(11993, 9309)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard312" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard312" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(12051, 9309)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard257" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard257" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(12323, 9056)
 rotation = 1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard313" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard313" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(10789, 5664)
 rotation = 1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard314" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard314" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(8667, 6241)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard315" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard315" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(10789, 6817)
 rotation = 1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard260" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard260" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(12189, 9056)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard273" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard273" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(11869, 9376)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard261" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard261" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(14109, 9182)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard262" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard262" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(14109, 9242)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard263" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard263" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(14109, 9301)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard264" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard264" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(13084, 8810)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard265" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard265" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(13084, 8870)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard266" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard266" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(13084, 8929)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard267" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard267" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(13220, 8810)
 rotation = 1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard268" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard268" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(13220, 8870)
 rotation = 1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard269" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard269" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(13220, 8929)
 rotation = 1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard274" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard274" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(11428, 8848)
 rotation = 1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard275" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard275" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(11428, 8908)
 rotation = 1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard276" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard276" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(11428, 8967)
 rotation = 1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard278" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard278" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(11428, 9024)
 rotation = 1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard279" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard279" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(11428, 9084)
 rotation = 1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard280" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard280" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(11428, 9143)
 rotation = 1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard281" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard281" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(11428, 9200)
 rotation = 1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard282" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard282" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(11428, 9260)
 rotation = 1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard283" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard283" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(11428, 9319)
 rotation = 1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard284" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard284" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(11428, 9376)
 rotation = 1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard285" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard285" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(11428, 9436)
 rotation = 1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard286" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard286" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(11428, 9495)
 rotation = 1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard287" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard287" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(11428, 9552)
 rotation = 1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard288" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard288" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(11428, 9612)
 rotation = 1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard289" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard289" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(11428, 9671)
 rotation = 1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard290" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard290" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(11428, 9728)
 rotation = 1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard291" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard291" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(11428, 9788)
 rotation = 1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard292" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard292" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(11428, 9847)
 rotation = 1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard270" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard270" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(14243, 9183)
 rotation = 1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard271" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard271" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(14243, 9243)
 rotation = 1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard272" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard272" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(14243, 9302)
 rotation = 1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard256" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard256" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(14176, 9117)
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard91" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard91" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(7503, -3419)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard92" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard92" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(7446, -3419)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard93" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard93" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(7388, -3419)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard94" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard94" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(7560.5, -3419)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard95" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard95" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(7617.5, -3419)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard140" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard140" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(7329, -1820)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard141" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard141" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(7501, -1820)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard142" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard142" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(7444, -1820)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard143" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard143" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(7386, -1820)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard144" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard144" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(7558.5, -1820)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard145" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard145" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(7615.5, -1820)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard146" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard146" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(7673, -1820)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard147" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard147" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(7845, -1820)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard148" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard148" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(7788, -1820)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard149" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard149" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(7730, -1820)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard150" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard150" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(7902.5, -1820)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard104" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard104" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(9149, -2395)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard105" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard105" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(9321, -2395)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard106" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard106" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(9264, -2395)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard107" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard107" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(9206, -2395)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard108" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard108" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(9378.5, -2395)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard109" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard109" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(9435.5, -2395)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard110" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard110" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(9493, -2395)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard111" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard111" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(9665, -2395)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard112" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard112" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(9608, -2395)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard113" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard113" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(9550, -2395)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard114" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard114" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(9722.5, -2395)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard115" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard115" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(9779.5, -2395)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard116" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard116" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(9837, -2395)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard117" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard117" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(10009, -2395)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard118" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard118" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(9952, -2395)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard119" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard119" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(9894, -2395)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard120" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard120" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(10066.5, -2395)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard121" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard121" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(10123.5, -2395)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard122" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard122" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(10182, -2395)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard124" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard124" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(10297, -2395)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard125" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard125" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(10239, -2395)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard183" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard183" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(9244, 1843)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard184" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard184" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(9244.5, 1903.5)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard189" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard189" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(9244, 1963.5)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard190" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard190" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(9244, 2021.5)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard191" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard191" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(9244.5, 2082)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard192" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard192" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(9244, 2142)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard193" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard193" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(9244, 1483)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard194" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard194" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(9244.5, 1543.5)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard195" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard195" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(9244, 1603.5)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard196" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard196" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(9244, 1661.5)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard197" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard197" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(9244.5, 1722)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard198" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard198" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(9244, 1782)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard199" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard199" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(9244, 1123)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard200" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard200" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(9244.5, 1183.5)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard201" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard201" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(9244, 1243.5)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard202" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard202" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(9244, 1301.5)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard203" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard203" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(9244.5, 1362)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard204" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard204" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(9244, 1422)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard213" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard213" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(10331, -335.999)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard214" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard214" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(10331.5, -275.499)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard216" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard216" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(10331, -215.501)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard217" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard217" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(10331, -157.499)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard218" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard218" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(10331.5, -97)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard219" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard219" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(10331, -37.0014)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard220" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard220" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(10331, -696)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard221" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard221" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(10331.5, -635.5)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard222" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard222" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(10331, -575.5)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard223" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard223" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(10331, -517.5)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard224" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard224" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(10331.5, -457.001)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard225" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard225" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(10331, -397)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard226" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard226" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(10331, -1056)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard227" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard227" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(10331.5, -995.5)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard228" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard228" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(10331, -935.5)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard229" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard229" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(10331, -877.5)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard230" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard230" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(10331.5, -817)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard231" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard231" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(10331, -757)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard238" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard238" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(10331, 384)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard244" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard244" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(10331, 24)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard245" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard245" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(10331.5, 84.5)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard246" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard246" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(10331, 144.499)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard247" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard247" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(10331, 202.5)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard248" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard248" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(10331.5, 263)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard249" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard249" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(10331, 323)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard123" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard123" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(10332, -2361)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard126" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard126" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(10332.5, -2300.5)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard127" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard127" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(10332, -2240.5)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard137" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard137" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(9052, -1322)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard138" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard138" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(9052.5, -1261.5)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard139" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard139" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(9052, -1201.5)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard232" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard232" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(10331, -1308)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard233" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard233" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(10331.5, -1247.5)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard234" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard234" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(10331, -1187.5)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard235" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard235" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(10331, -1489)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard236" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard236" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(10331.5, -1428.5)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard239" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard239" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(10330, -1609)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard240" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard240" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(10330.5, -1548.5)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
 
-[node name="hazard237" parent="level_objects/bananas/hazards" instance=ExtResource("4_ouhlc")]
+[node name="hazard237" parent="level_objects/hazards" instance=ExtResource("4_ouhlc")]
 position = Vector2(10331, -1368.5)
 rotation = -1.5708
 scale = Vector2(0.7, 0.7)
@@ -1602,6 +1623,7 @@ metadata/_edit_lock_ = true
 position = Vector2(5441, 836)
 rotation = -3.14159
 scale = Vector2(2.2, 1.94)
+metadata/_edit_group_ = true
 
 [node name="fan" parent="level_objects/fans" instance=ExtResource("6_6x1ge")]
 push_distance_multiplier = 0.11
@@ -1937,75 +1959,51 @@ position = Vector2(8175, 5371)
 position = Vector2(8182, 5972)
 
 [node name="dart_gun7" parent="level_objects/dart_guns" instance=ExtResource("11_7dyal")]
-position = Vector2(10906, 8334)
+position = Vector2(11238, 8326)
 rotation = -1.5708
 
 [node name="dart_gun8" parent="level_objects/dart_guns" instance=ExtResource("11_7dyal")]
-position = Vector2(10839, 8332)
+position = Vector2(11171, 8324)
 rotation = -1.5708
 
 [node name="dart_gun9" parent="level_objects/dart_guns" instance=ExtResource("11_7dyal")]
-position = Vector2(10772, 8332)
+position = Vector2(11104, 8324)
+rotation = -1.5708
+
+[node name="dart_gun11" parent="level_objects/dart_guns" instance=ExtResource("11_7dyal")]
+position = Vector2(12163, 8323)
+rotation = -1.5708
+
+[node name="dart_gun15" parent="level_objects/dart_guns" instance=ExtResource("11_7dyal")]
+position = Vector2(12096, 8321)
 rotation = -1.5708
 
 [node name="dart_gun16" parent="level_objects/dart_guns" instance=ExtResource("11_7dyal")]
-position = Vector2(11514, 8331)
-rotation = -1.5708
-
-[node name="dart_gun17" parent="level_objects/dart_guns" instance=ExtResource("11_7dyal")]
-position = Vector2(11447, 8331)
-rotation = -1.5708
-
-[node name="dart_gun18" parent="level_objects/dart_guns" instance=ExtResource("11_7dyal")]
-position = Vector2(11380, 8331)
+position = Vector2(12029, 8321)
 rotation = -1.5708
 
 [node name="dart_gun20" parent="level_objects/dart_guns" instance=ExtResource("11_7dyal")]
-position = Vector2(12122, 8331)
+position = Vector2(13088, 8326)
 rotation = -1.5708
 
 [node name="dart_gun21" parent="level_objects/dart_guns" instance=ExtResource("11_7dyal")]
-position = Vector2(12055, 8331)
+position = Vector2(13021, 8324)
 rotation = -1.5708
 
 [node name="dart_gun22" parent="level_objects/dart_guns" instance=ExtResource("11_7dyal")]
-position = Vector2(11988, 8331)
+position = Vector2(12954, 8324)
 rotation = -1.5708
 
+[node name="dart_gun23" parent="level_objects/dart_guns" instance=ExtResource("11_7dyal")]
+position = Vector2(14014, 7804)
+rotation = 1.5708
+
 [node name="dart_gun24" parent="level_objects/dart_guns" instance=ExtResource("11_7dyal")]
-position = Vector2(12730, 7798)
+position = Vector2(13947, 7802)
 rotation = 1.5708
 
 [node name="dart_gun25" parent="level_objects/dart_guns" instance=ExtResource("11_7dyal")]
-position = Vector2(12663, 7798)
-rotation = 1.5708
-
-[node name="dart_gun26" parent="level_objects/dart_guns" instance=ExtResource("11_7dyal")]
-position = Vector2(12596, 7798)
-rotation = 1.5708
-
-[node name="dart_gun28" parent="level_objects/dart_guns" instance=ExtResource("11_7dyal")]
-position = Vector2(13338, 8330)
-rotation = -1.5708
-
-[node name="dart_gun29" parent="level_objects/dart_guns" instance=ExtResource("11_7dyal")]
-position = Vector2(13271, 8330)
-rotation = -1.5708
-
-[node name="dart_gun30" parent="level_objects/dart_guns" instance=ExtResource("11_7dyal")]
-position = Vector2(13204, 8330)
-rotation = -1.5708
-
-[node name="dart_gun32" parent="level_objects/dart_guns" instance=ExtResource("11_7dyal")]
-position = Vector2(13946, 7796)
-rotation = 1.5708
-
-[node name="dart_gun33" parent="level_objects/dart_guns" instance=ExtResource("11_7dyal")]
-position = Vector2(13879, 7796)
-rotation = 1.5708
-
-[node name="dart_gun34" parent="level_objects/dart_guns" instance=ExtResource("11_7dyal")]
-position = Vector2(13812, 7796)
+position = Vector2(13880, 7802)
 rotation = 1.5708
 
 [node name="dart_gun10" parent="level_objects/dart_guns" instance=ExtResource("11_7dyal")]
@@ -2081,5 +2079,256 @@ position = Vector2(8871, 4229)
 
 [node name="Checkpoint3" parent="." instance=ExtResource("16_yqimj")]
 position = Vector2(10325, 7106)
+
+[node name="hazard147" parent="." instance=ExtResource("4_ouhlc")]
+position = Vector2(9243, 4003)
+rotation = 3.14159
+scale = Vector2(0.7, 0.7)
+
+[node name="hazard148" parent="." instance=ExtResource("4_ouhlc")]
+position = Vector2(9186, 4003)
+rotation = 3.14159
+scale = Vector2(0.7, 0.7)
+
+[node name="hazard177" parent="." instance=ExtResource("4_ouhlc")]
+position = Vector2(9203, 4443)
+scale = Vector2(0.7, 0.7)
+
+[node name="hazard178" parent="." instance=ExtResource("4_ouhlc")]
+position = Vector2(9263, 4443)
+scale = Vector2(0.7, 0.7)
+
+[node name="hazard179" parent="." instance=ExtResource("4_ouhlc")]
+position = Vector2(9323, 4443)
+scale = Vector2(0.7, 0.7)
+
+[node name="hazard180" parent="." instance=ExtResource("4_ouhlc")]
+position = Vector2(9383, 4443)
+scale = Vector2(0.7, 0.7)
+
+[node name="hazard181" parent="." instance=ExtResource("4_ouhlc")]
+position = Vector2(9442, 4443)
+scale = Vector2(0.7, 0.7)
+
+[node name="hazard182" parent="." instance=ExtResource("4_ouhlc")]
+position = Vector2(9502, 4443)
+scale = Vector2(0.7, 0.7)
+
+[node name="hazard183" parent="." instance=ExtResource("4_ouhlc")]
+position = Vector2(9562, 4443)
+scale = Vector2(0.7, 0.7)
+
+[node name="hazard184" parent="." instance=ExtResource("4_ouhlc")]
+position = Vector2(9622, 4443)
+scale = Vector2(0.7, 0.7)
+
+[node name="hazard185" parent="." instance=ExtResource("4_ouhlc")]
+position = Vector2(9682, 4443)
+scale = Vector2(0.7, 0.7)
+
+[node name="hazard186" parent="." instance=ExtResource("4_ouhlc")]
+position = Vector2(9764, 4511)
+rotation = 1.5708
+scale = Vector2(0.7, 0.7)
+
+[node name="hazard165" parent="." instance=ExtResource("4_ouhlc")]
+position = Vector2(10205, 4042)
+rotation = 4.71239
+scale = Vector2(0.7, 0.7)
+
+[node name="hazard166" parent="." instance=ExtResource("4_ouhlc")]
+position = Vector2(10205, 4101)
+rotation = 4.71239
+scale = Vector2(0.7, 0.7)
+
+[node name="hazard167" parent="." instance=ExtResource("4_ouhlc")]
+position = Vector2(10205, 4160)
+rotation = 4.71239
+scale = Vector2(0.7, 0.7)
+
+[node name="hazard168" parent="." instance=ExtResource("4_ouhlc")]
+position = Vector2(10205, 4219)
+rotation = 4.71239
+scale = Vector2(0.7, 0.7)
+
+[node name="hazard169" parent="." instance=ExtResource("4_ouhlc")]
+position = Vector2(10205, 4278)
+rotation = 4.71239
+scale = Vector2(0.7, 0.7)
+
+[node name="hazard170" parent="." instance=ExtResource("4_ouhlc")]
+position = Vector2(10205, 4337)
+rotation = 4.71239
+scale = Vector2(0.7, 0.7)
+
+[node name="hazard171" parent="." instance=ExtResource("4_ouhlc")]
+position = Vector2(10205, 4394)
+rotation = 4.71239
+scale = Vector2(0.7, 0.7)
+
+[node name="hazard172" parent="." instance=ExtResource("4_ouhlc")]
+position = Vector2(10205, 4453)
+rotation = 4.71239
+scale = Vector2(0.7, 0.7)
+
+[node name="hazard173" parent="." instance=ExtResource("4_ouhlc")]
+position = Vector2(10205, 4512)
+rotation = 4.71239
+scale = Vector2(0.7, 0.7)
+
+[node name="hazard174" parent="." instance=ExtResource("4_ouhlc")]
+position = Vector2(10205, 4571)
+rotation = 4.71239
+scale = Vector2(0.7, 0.7)
+
+[node name="hazard175" parent="." instance=ExtResource("4_ouhlc")]
+position = Vector2(10205, 4630)
+rotation = 4.71239
+scale = Vector2(0.7, 0.7)
+
+[node name="hazard176" parent="." instance=ExtResource("4_ouhlc")]
+position = Vector2(10205, 4689)
+rotation = 4.71239
+scale = Vector2(0.7, 0.7)
+
+[node name="hazard150" parent="." instance=ExtResource("4_ouhlc")]
+position = Vector2(9300.5, 4003)
+rotation = 3.14159
+scale = Vector2(0.7, 0.7)
+
+[node name="hazard149" parent="." instance=ExtResource("4_ouhlc")]
+position = Vector2(9415, 4003)
+rotation = 3.14159
+scale = Vector2(0.7, 0.7)
+
+[node name="hazard151" parent="." instance=ExtResource("4_ouhlc")]
+position = Vector2(9358, 4003)
+rotation = 3.14159
+scale = Vector2(0.7, 0.7)
+
+[node name="hazard152" parent="." instance=ExtResource("4_ouhlc")]
+position = Vector2(9472.5, 4003)
+rotation = 3.14159
+scale = Vector2(0.7, 0.7)
+
+[node name="hazard153" parent="." instance=ExtResource("4_ouhlc")]
+position = Vector2(9587, 4003)
+rotation = 3.14159
+scale = Vector2(0.7, 0.7)
+
+[node name="hazard154" parent="." instance=ExtResource("4_ouhlc")]
+position = Vector2(9530, 4003)
+rotation = 3.14159
+scale = Vector2(0.7, 0.7)
+
+[node name="hazard155" parent="." instance=ExtResource("4_ouhlc")]
+position = Vector2(9644.5, 4003)
+rotation = 3.14159
+scale = Vector2(0.7, 0.7)
+
+[node name="hazard156" parent="." instance=ExtResource("4_ouhlc")]
+position = Vector2(9759, 4003)
+rotation = 3.14159
+scale = Vector2(0.7, 0.7)
+
+[node name="hazard157" parent="." instance=ExtResource("4_ouhlc")]
+position = Vector2(9702, 4003)
+rotation = 3.14159
+scale = Vector2(0.7, 0.7)
+
+[node name="hazard158" parent="." instance=ExtResource("4_ouhlc")]
+position = Vector2(9816.5, 4003)
+rotation = 3.14159
+scale = Vector2(0.7, 0.7)
+
+[node name="hazard159" parent="." instance=ExtResource("4_ouhlc")]
+position = Vector2(9934, 4003)
+rotation = 3.14159
+scale = Vector2(0.7, 0.7)
+
+[node name="hazard160" parent="." instance=ExtResource("4_ouhlc")]
+position = Vector2(9877, 4003)
+rotation = 3.14159
+scale = Vector2(0.7, 0.7)
+
+[node name="hazard161" parent="." instance=ExtResource("4_ouhlc")]
+position = Vector2(9991.5, 4003)
+rotation = 3.14159
+scale = Vector2(0.7, 0.7)
+
+[node name="hazard162" parent="." instance=ExtResource("4_ouhlc")]
+position = Vector2(10106, 4003)
+rotation = 3.14159
+scale = Vector2(0.7, 0.7)
+
+[node name="hazard163" parent="." instance=ExtResource("4_ouhlc")]
+position = Vector2(10049, 4003)
+rotation = 3.14159
+scale = Vector2(0.7, 0.7)
+
+[node name="hazard164" parent="." instance=ExtResource("4_ouhlc")]
+position = Vector2(10163.5, 4003)
+rotation = 3.14159
+scale = Vector2(0.7, 0.7)
+
+[node name="hazard187" parent="." instance=ExtResource("4_ouhlc")]
+position = Vector2(14942, 7881)
+rotation = 4.71239
+scale = Vector2(0.7, 0.7)
+
+[node name="hazard188" parent="." instance=ExtResource("4_ouhlc")]
+position = Vector2(14942, 7940)
+rotation = 4.71239
+scale = Vector2(0.7, 0.7)
+
+[node name="hazard189" parent="." instance=ExtResource("4_ouhlc")]
+position = Vector2(14942, 7999)
+rotation = 4.71239
+scale = Vector2(0.7, 0.7)
+
+[node name="hazard190" parent="." instance=ExtResource("4_ouhlc")]
+position = Vector2(14942, 8058)
+rotation = 4.71239
+scale = Vector2(0.7, 0.7)
+
+[node name="hazard196" parent="." instance=ExtResource("4_ouhlc")]
+position = Vector2(14942, 8118)
+rotation = 4.71239
+scale = Vector2(0.7, 0.7)
+
+[node name="hazard197" parent="." instance=ExtResource("4_ouhlc")]
+position = Vector2(14942, 8177)
+rotation = 4.71239
+scale = Vector2(0.7, 0.7)
+
+[node name="hazard198" parent="." instance=ExtResource("4_ouhlc")]
+position = Vector2(14942, 8236)
+rotation = 4.71239
+scale = Vector2(0.7, 0.7)
+
+[node name="hazard191" parent="." instance=ExtResource("4_ouhlc")]
+position = Vector2(14671, 7842)
+rotation = 3.14159
+scale = Vector2(0.7, 0.7)
+
+[node name="hazard192" parent="." instance=ExtResource("4_ouhlc")]
+position = Vector2(14728.5, 7842)
+rotation = 3.14159
+scale = Vector2(0.7, 0.7)
+
+[node name="hazard193" parent="." instance=ExtResource("4_ouhlc")]
+position = Vector2(14843, 7842)
+rotation = 3.14159
+scale = Vector2(0.7, 0.7)
+
+[node name="hazard194" parent="." instance=ExtResource("4_ouhlc")]
+position = Vector2(14786, 7842)
+rotation = 3.14159
+scale = Vector2(0.7, 0.7)
+
+[node name="hazard195" parent="." instance=ExtResource("4_ouhlc")]
+position = Vector2(14900.5, 7842)
+rotation = 3.14159
+scale = Vector2(0.7, 0.7)
 
 [editable path="level_objects/TileMapLayer"]
