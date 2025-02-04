@@ -174,8 +174,7 @@ text = "Return
 [node name="music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_pfqjf")
 volume_db = -12.0
-autoplay = true
 
-[connection signal="pressed" from="VBoxContainer/SoundOnOff" to="." method="_on_sound_on_off_pressed"]
+[connection signal="toggled" from="VBoxContainer/SoundOnOff" to="." method="_on_sound_on_off_toggled"]
 [connection signal="value_changed" from="VBoxContainer/Volume/volume_slider" to="." method="_on_volume_slider_value_changed"]
 [connection signal="pressed" from="VBoxContainer/Return" to="." method="_on_return_pressed"]

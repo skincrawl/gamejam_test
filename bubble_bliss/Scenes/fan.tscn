@@ -15,6 +15,7 @@ size = Vector2(198, 1056)
 [node name="fan" type="StaticBody2D"]
 collision_mask = 2
 script = ExtResource("1_05gsd")
+push_strength_multiplier = 1.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false

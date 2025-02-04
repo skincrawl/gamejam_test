@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://b5gigobueilix"]
+[gd_scene load_steps=35 format=3 uid="uid://b5gigobueilix"]
 
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_oinqm"]
 [ext_resource type="FontFile" uid="uid://behuf74h25j5t" path="res://GameAssets/DynaPuff/DynaPuff-VariableFont_wdth,wght.ttf" id="1_ugjs1"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cuxs0jdep2tjs" path="res://Assets/Art/BubbleBGTexture.png" id="7_pyfg4"]
 [ext_resource type="Texture2D" uid="uid://c4mgs6y8y43he" path="res://Assets/Art/ActualBubble_Sheet.png" id="8_yoddx"]
 [ext_resource type="AudioStream" uid="uid://bxaf8tn4ra364" path="res://Assets/Audio/Music/MainMenuTheme_Intro.mp3" id="11_8g2sv"]
+[ext_resource type="AudioStream" uid="uid://cliqi057lxak6" path="res://Assets/Audio/Music/MainMenuTheme_Ilman_Introa.mp3" id="11_qnrmr"]
 [ext_resource type="AudioStream" uid="uid://blwan44chay8p" path="res://Assets/Audio/SFX/bubble-pop.mp3" id="12_s5yk8"]
 
 [sub_resource type="Theme" id="Theme_avieb"]
@@ -513,17 +514,19 @@ theme = ExtResource("6_actju")
 text = "Quit"
 
 [node name="music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("11_8g2sv")
+stream = ExtResource("11_qnrmr")
 volume_db = -12.0
-autoplay = true
+bus = &"Music"
 
 [node name="menu_music_intro" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_8g2sv")
 volume_db = -12.0
+bus = &"Music"
 
 [node name="pop" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_s5yk8")
 volume_db = -10.0
+bus = &"SFX"
 
 [connection signal="pressed" from="CanvasLayer/VBoxContainer4/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer5/Quit" to="." method="_on_quit_pressed"]

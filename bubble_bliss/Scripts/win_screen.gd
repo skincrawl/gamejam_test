@@ -1,16 +1,17 @@
 extends Control
 
 
+var menu_music_intro:AudioStream = preload("res://Assets/Audio/Music/MainMenuTheme_Intro.mp3")
+var menu_music:AudioStream = preload("res://Assets/Audio/Music/MainMenuTheme_Ilman_Introa.mp3")
+
+
 func _ready() -> void:
 	
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	$VBoxContainer/Menu.grab_focus()
-	if not Globals.sound_on:
-		$music.stop()
-		return
 	
-	$music.play(Globals.music_spot)
-	$music.volume_db = Globals.sound_volume
+	if AudioServer.is_bus_mute(0):
+		$music.stop()
 
 
 func _on_credits_pressed() -> void:

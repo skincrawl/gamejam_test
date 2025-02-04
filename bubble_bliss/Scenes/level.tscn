@@ -1605,63 +1605,108 @@ scale = Vector2(2.2, 1.94)
 
 [node name="fan" parent="level_objects/fans" instance=ExtResource("6_6x1ge")]
 push_distance_multiplier = 0.11
+push_strength_multiplier = 5.0
 
 [node name="fan2" parent="level_objects/fans" instance=ExtResource("6_6x1ge")]
 position = Vector2(-639.091, 792.784)
 scale = Vector2(1, 1.35309)
 push_distance_multiplier = 0.11
+push_strength_multiplier = 5.0
 
 [node name="fan9" parent="level_objects/fans" instance=ExtResource("6_6x1ge")]
 position = Vector2(-1812.27, 727.835)
 scale = Vector2(1, 0.248)
 push_distance_multiplier = 0.115
+push_strength_multiplier = 1.0
 
 [node name="fan7" parent="level_objects/fans" instance=ExtResource("6_6x1ge")]
 position = Vector2(-937.273, 725.773)
 scale = Vector2(0.775, 0.628)
 push_distance_multiplier = 0.11
+push_strength_multiplier = 5.0
 
 [node name="fan3" parent="level_objects/fans" instance=ExtResource("6_6x1ge")]
 position = Vector2(-1454.09, 2212.89)
 rotation = 3.14159
 scale = Vector2(1, 0.758)
 push_distance_multiplier = 0.11
+push_strength_multiplier = 5.0
 
 [node name="fan8" parent="level_objects/fans" instance=ExtResource("6_6x1ge")]
 position = Vector2(-1412.27, 990.722)
 rotation = 3.14159
 scale = Vector2(1, 0.248)
 push_distance_multiplier = 0.115
+push_strength_multiplier = 1.0
 
 [node name="fan4" parent="level_objects/fans" instance=ExtResource("6_6x1ge")]
 position = Vector2(-1336.74, 1548.28)
 rotation = 1.5708
 scale = Vector2(1.195, 0.853)
 push_distance_multiplier = 0.115
+push_strength_multiplier = 5.0
 
 [node name="fan10" parent="level_objects/fans" instance=ExtResource("6_6x1ge")]
 position = Vector2(-2123.18, 993.299)
 rotation = 3.14159
 scale = Vector2(1.165, 0.81)
 push_distance_multiplier = 0.175
+push_strength_multiplier = 5.0
 
 [node name="fan11" parent="level_objects/fans" instance=ExtResource("6_6x1ge")]
 position = Vector2(-1509.79, 2.12305)
 rotation = 1.5708
 scale = Vector2(1.33, 0.938)
 push_distance_multiplier = 0.115
+push_strength_multiplier = 5.0
 
 [node name="fan13" parent="level_objects/fans" instance=ExtResource("6_6x1ge")]
 position = Vector2(-2385, 139.176)
 rotation = 3.14159
 scale = Vector2(1.16, 1.033)
 push_distance_multiplier = 0.11
+push_strength_multiplier = 5.0
 
 [node name="fan16" parent="level_objects/fans" instance=ExtResource("6_6x1ge")]
 position = Vector2(-1366.82, 433.509)
 rotation = 3.14159
 scale = Vector2(1.16, 2.183)
 push_distance_multiplier = 0.115
+push_strength_multiplier = 5.0
+
+[node name="fan14" parent="level_objects/fans" instance=ExtResource("6_6x1ge")]
+position = Vector2(-1624.1, -957.732)
+scale = Vector2(1.16, 1.033)
+push_distance_multiplier = 0.115
+push_strength_multiplier = 5.0
+
+[node name="fan12" parent="level_objects/fans" instance=ExtResource("6_6x1ge")]
+position = Vector2(-2503.97, -823.501)
+rotation = -1.5708
+scale = Vector2(1.33, 0.938)
+push_distance_multiplier = 0.115
+push_strength_multiplier = 5.0
+
+[node name="fan15" parent="level_objects/fans" instance=ExtResource("6_6x1ge")]
+position = Vector2(-1978.84, 298.276)
+rotation = -1.5708
+scale = Vector2(1.33, 0.688)
+push_distance_multiplier = 0.12
+push_strength_multiplier = 5.0
+
+[node name="fan5" parent="level_objects/fans" instance=ExtResource("6_6x1ge")]
+position = Vector2(-1685.45, 1105.15)
+rotation = 1.5708
+scale = Vector2(0.675, 0.523)
+push_distance_multiplier = 0.105
+push_strength_multiplier = 5.0
+
+[node name="fan6" parent="level_objects/fans" instance=ExtResource("6_6x1ge")]
+position = Vector2(-1162.54, 1318.74)
+rotation = 1.5708
+scale = Vector2(0.575, 0.39)
+push_distance_multiplier = 0.115
+push_strength_multiplier = 5.0
 
 [node name="fan17" parent="level_objects/fans" instance=ExtResource("6_6x1ge")]
 position = Vector2(-3083.19, -4414.94)
@@ -1669,35 +1714,6 @@ rotation = 3.14159
 scale = Vector2(1.16, 3)
 push_distance_multiplier = 0.11
 push_strength_multiplier = 1000.0
-
-[node name="fan14" parent="level_objects/fans" instance=ExtResource("6_6x1ge")]
-position = Vector2(-1624.1, -957.732)
-scale = Vector2(1.16, 1.033)
-push_distance_multiplier = 0.115
-
-[node name="fan12" parent="level_objects/fans" instance=ExtResource("6_6x1ge")]
-position = Vector2(-2503.97, -823.501)
-rotation = -1.5708
-scale = Vector2(1.33, 0.938)
-push_distance_multiplier = 0.115
-
-[node name="fan15" parent="level_objects/fans" instance=ExtResource("6_6x1ge")]
-position = Vector2(-1978.84, 298.276)
-rotation = -1.5708
-scale = Vector2(1.33, 0.688)
-push_distance_multiplier = 0.12
-
-[node name="fan5" parent="level_objects/fans" instance=ExtResource("6_6x1ge")]
-position = Vector2(-1685.45, 1105.15)
-rotation = 1.5708
-scale = Vector2(0.675, 0.523)
-push_distance_multiplier = 0.105
-
-[node name="fan6" parent="level_objects/fans" instance=ExtResource("6_6x1ge")]
-position = Vector2(-1162.54, 1318.74)
-rotation = 1.5708
-scale = Vector2(0.575, 0.39)
-push_distance_multiplier = 0.115
 
 [node name="asteroids" type="Node2D" parent="level_objects"]
 
@@ -1903,7 +1919,7 @@ rotation = -0.785398
 scale = Vector2(0.25, 0.25)
 
 [node name="spawn_pos" type="Marker2D" parent="level_objects"]
-position = Vector2(-9, 215)
+position = Vector2(-35, 223)
 
 [node name="goal" parent="level_objects" instance=ExtResource("10_uc00p")]
 position = Vector2(15236, 16493)
@@ -2041,8 +2057,7 @@ position = Vector2(354, 368)
 
 [node name="music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_1ia1a")
-volume_db = -15.0
-autoplay = true
+volume_db = -18.0
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 

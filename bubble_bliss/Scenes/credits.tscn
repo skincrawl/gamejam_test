@@ -360,3 +360,4 @@ scale = Vector2(0.749387, 0.745782)
 sprite_frames = SubResource("SpriteFrames_tcieu")
 
 [connection signal="pressed" from="VBoxContainer/Menu" to="." method="_on_menu_pressed"]
+[connection signal="finished" from="music" to="." method="_on_music_finished"]

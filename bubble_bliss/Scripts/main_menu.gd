@@ -1,7 +1,5 @@
 extends Control
 
-var menu_music:AudioStream = preload("res://Assets/Audio/Music/MainMenuTheme_Ilman_Introa.mp3")
-var menu_music_intro:AudioStream = preload("res://Assets/Audio/Music/MainMenuTheme_Intro.mp3")
 
 var button_pressed:String = "none"
 
@@ -10,18 +8,16 @@ func _ready():
 	
 	get_viewport().size_changed.connect(viewport_size_changed)
 	
-	# var 
-	AudioServer.add_bus(AudioServer.bus_count)
-	# AudioServer.set_bus_name()
 	# print("globals sound on: ", Globals.sound_on)
 	
-	if Globals.sound_on:
-		$music.stream = menu_music
-		$music.volume_db = Globals.sound_volume
+	if AudioServer.is_bus_mute(0):
+		return
+	
+	if Globals.intro_finished:
 		$music.play(Globals.music_spot)
+	else:
+		$menu_music_intro.play(Globals.music_spot)
 
-
-# func _audio
 
 func _on_start_game_pressed():
 	$pop.play()
@@ -76,10 +72,7 @@ func _on_pop_finished() -> void:
 			pass
 
 
-func _on_music_finished() -> void:
-	if not Globals.sound_on:
-		return
-	
-	if $music.stream == menu_music_intro:
-		$music.stream = menu_music
-		$music.play()
+func _on_menu_music_intro_finished() -> void:
+	Globals.intro_finished = true
+	Globals.music_spot = 0.0
+	$music.play()
