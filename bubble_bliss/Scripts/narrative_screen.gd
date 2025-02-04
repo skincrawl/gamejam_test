@@ -1,12 +1,20 @@
 extends Control
 
 
+var menu_music_intro:AudioStream = preload("res://Assets/Audio/Music/MainMenuTheme_Intro.mp3")
+var menu_music:AudioStream = preload("res://Assets/Audio/Music/MainMenuTheme_Ilman_Introa.mp3")
+
+
 func _ready() -> void:
 	
-	if Globals.sound_on:
-		$music.stream = Globals.audio_stream
-		$music.volume_db = Globals.sound_volume
-		$music.play(Globals.music_spot)
+	if AudioServer.is_bus_mute(0):
+		return
+	
+	if not Globals.intro_finished:
+		
+		$music.stream = menu_music_intro
+	
+	$music.play(Globals.music_spot)
 
 
 func _on_return_pressed() -> void:
@@ -17,3 +25,10 @@ func _on_return_pressed() -> void:
 func _on_start_pressed() -> void:
 	Globals.music_spot = 0.0
 	get_tree().change_scene_to_file("res://Scenes/level.tscn")
+
+
+func _on_music_finished() -> void:
+	
+	$music.stream = menu_music
+	Globals.music_spot = 0.0
+	$music.play()

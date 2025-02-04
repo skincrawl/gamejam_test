@@ -91,3 +91,4 @@ volume_db = -12.0
 autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/Return" to="." method="_on_return_pressed"]
+[connection signal="finished" from="music" to="." method="_on_music_finished"]

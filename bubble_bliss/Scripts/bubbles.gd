@@ -108,8 +108,7 @@ func death() -> void:
 	$bubble_top_layer.play("burst")
 	if not Globals.sound_on:
 		return
-	$pop.volume_db = Globals.sound_volume
-	$scream.volume_db = Globals.sound_volume
+	
 	$pop.play()
 	$scream.play()
 

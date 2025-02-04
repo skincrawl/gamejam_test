@@ -36,11 +36,10 @@ func _ready() -> void:
 	spawn_pos.global_position = Globals.checkpoint_manager.last_location
 	$Bubbles.global_position = $level_objects/spawn_pos.global_position
 	
-	if not Globals.sound_on:
+	if AudioServer.is_bus_mute(0):
 		$music.stop()
 		return
-	$music.stream = game_music
-	$music.volume_db = Globals.sound_volume
+		
 	$music.play(Globals.music_spot)
 
 
