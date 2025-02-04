@@ -25,7 +25,7 @@ func _ready() -> void:
 	Globals.bubbles = $Bubbles
 	
 	# Hiding the mouse
-	# Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
+	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 	
 	$GUI/bananas_label.show()
 	
