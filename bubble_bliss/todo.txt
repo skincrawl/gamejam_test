@@ -2,16 +2,42 @@
 
 
 
+Export
+
+-Find out how to export a mobile app
+-Find out how to put it on a phone
+
+
+Development
+
+-Improve the structure of the node tree
+	-Right now the way the level is setup is confusing, with children of the level scene visible
+
+
 Useability
 
--UI elements don't scale properly to different screen sizes
+
+Optimization
+
+-Spikes in _process times
+-Object pooling for the darts
 
 
 Gameplay
 
+-Random lag spikes (loading music?)
+-Fan distance attenuation...?
+-Fan effect area doesn't apparently always match the graphical area
 -The push force isn't applied at the banana mouse in different screen sizes
 -Controls are wonky, pushes way too hard when the fan is close to the monkey
 -Passed checkpoints can be retriggered and update the spawn pos backwards
+-When restarting, the game remembers the last checkpoint and spawns you there
+-Sometimes bounces in weird angles
+
+
+Level design
+
+-Shorten the fans so they don't push you into walls
 
 
 GUI
@@ -26,15 +52,19 @@ GUI
 
 Graphics
 
+-Particles visible outside the effect area, like even behind the fan!
+-Make checkpoints visible somehow
 -Change the bubble rolling animation speed depending on how fast the monkey is going
 
 
 Audio
 
--Fan sound (banana fan)
--Fan sound (level hazard)
--Banana collection sounds
+-Lag in music when navigating menus
 -Dart gun sounds
+-Banana collection sounds are too quiet (?)
+-More yum yum sounds
+-Pitch up yum yum sounds
+
 
 
 

@@ -55,7 +55,7 @@ func _process(_delta:float) -> void:
 	# print("desired resolution: ", desired_resolution)
 	# print("window size: ", window_size)
 	# print("viewport scale: ", viewport_scale)
-	var window_size:Vector2 = DisplayServer.window_get_size()
+	# var window_size:Vector2 = DisplayServer.window_get_size()
 	
 	$banana_mouse.position = get_global_mouse_position()
 	# $banana_mouse.global_position = $Bubbles.get_viewport_rect().position + Globals.mouse_pos - 0.5 * window_size

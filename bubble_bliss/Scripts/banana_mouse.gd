@@ -17,7 +17,7 @@ func _unhandled_input(_event: InputEvent) -> void:
 		sound.stop()
 
 
-func _process(_delta:float) -> void:
+func _physics_process(_delta:float) -> void:
 	
 	if Input.is_action_pressed("blowing"):
 		$Part.look_at(Globals.bubbles.position)
