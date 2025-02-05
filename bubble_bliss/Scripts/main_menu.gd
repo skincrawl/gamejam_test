@@ -56,7 +56,7 @@ func _on_pop_finished() -> void:
 	
 	Globals.music_spot = $music.get_playback_position()
 	
-	var callable:Callable
+	# var callable:Callable
 	match button_pressed:
 		"start":
 			get_tree().change_scene_to_file.call_deferred("res://Scenes/narrative_screen.tscn")

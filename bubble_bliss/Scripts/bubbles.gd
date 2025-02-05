@@ -71,8 +71,8 @@ func _physics_process(_delta:float) -> void:
 	if dead or not Input.is_action_pressed("blowing"):
 		return
 	
-	var screen_size:Vector2 = DisplayServer.window_get_size()
-	var screen_middle:Vector2 = 0.5 * screen_size
+	# var screen_size:Vector2 = DisplayServer.window_get_size()
+	# var screen_middle:Vector2 = 0.5 * screen_size
 	
 	var mouse_pos:Vector2 = get_global_mouse_position()
 	var dir:Vector2 = global_position - mouse_pos
