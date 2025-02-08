@@ -1,20 +1,18 @@
-[gd_scene load_steps=11 format=3 uid="uid://6lgt51fk3khg"]
+[gd_scene load_steps=9 format=3 uid="uid://6lgt51fk3khg"]
 
-[ext_resource type="Script" path="res://Scripts/options_menu.gd" id="1_in42w"]
-[ext_resource type="Texture2D" uid="uid://8pntxcrwopv7" path="res://Assets/Art/BG_Space.jpg" id="2_htsm4"]
-[ext_resource type="FontFile" uid="uid://behuf74h25j5t" path="res://GameAssets/DynaPuff/DynaPuff-VariableFont_wdth,wght.ttf" id="2_m52pm"]
-[ext_resource type="AudioStream" uid="uid://cliqi057lxak6" path="res://Assets/Audio/Music/MainMenuTheme_Ilman_Introa.mp3" id="4_pfqjf"]
+[ext_resource type="Script" path="res://Scripts/settings_menu.gd" id="1_1ehr6"]
+[ext_resource type="FontFile" uid="uid://behuf74h25j5t" path="res://GameAssets/DynaPuff/DynaPuff-VariableFont_wdth,wght.ttf" id="3_p3kef"]
 
 [sub_resource type="Theme" id="Theme_avieb"]
 
 [sub_resource type="Theme" id="Theme_2t6o0"]
-Label/fonts/font = ExtResource("2_m52pm")
+Label/fonts/font = ExtResource("3_p3kef")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jwn0c"]
 
 [sub_resource type="Theme" id="Theme_gnr1q"]
-Button/fonts/font = ExtResource("2_m52pm")
-CheckButton/fonts/font = ExtResource("2_m52pm")
+Button/fonts/font = ExtResource("3_p3kef")
+CheckButton/fonts/font = ExtResource("3_p3kef")
 Label/colors/font_color = Color(1, 1, 1, 1)
 Label/colors/font_outline_color = Color(0, 0, 0, 1)
 Label/colors/font_shadow_color = Color(0, 0, 0, 0)
@@ -24,18 +22,18 @@ Label/constants/shadow_offset_x = 1
 Label/constants/shadow_offset_y = 1
 Label/constants/shadow_outline_size = 1
 Label/font_sizes/font_size = 16
-Label/fonts/font = ExtResource("2_m52pm")
+Label/fonts/font = ExtResource("3_p3kef")
 Label/styles/normal = SubResource("StyleBoxEmpty_jwn0c")
 
 [sub_resource type="Theme" id="Theme_lxusg"]
-Label/fonts/font = ExtResource("2_m52pm")
+Label/fonts/font = ExtResource("3_p3kef")
 
 [sub_resource type="Theme" id="Theme_o0vlm"]
-Button/fonts/font = ExtResource("2_m52pm")
-CheckButton/fonts/font = ExtResource("2_m52pm")
-Label/fonts/font = ExtResource("2_m52pm")
+Button/fonts/font = ExtResource("3_p3kef")
+CheckButton/fonts/font = ExtResource("3_p3kef")
+Label/fonts/font = ExtResource("3_p3kef")
 
-[node name="Options" type="Control"]
+[node name="Settings" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -43,21 +41,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_avieb")
-script = ExtResource("1_in42w")
-
-[node name="TextBoxColor" type="TextureRect" parent="."]
-show_behind_parent = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -1344.0
-offset_top = -756.0
-offset_right = 1344.0
-offset_bottom = 756.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_htsm4")
+script = ExtResource("1_1ehr6")
 
 [node name="Options" type="Label" parent="."]
 layout_mode = 1
@@ -170,10 +154,6 @@ theme = SubResource("Theme_o0vlm")
 theme_override_font_sizes/font_size = 40
 text = "Return
 "
-
-[node name="music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_pfqjf")
-volume_db = -12.0
 
 [connection signal="toggled" from="VBoxContainer/SoundOnOff" to="." method="_on_sound_on_off_toggled"]
 [connection signal="value_changed" from="VBoxContainer/Volume/volume_slider" to="." method="_on_volume_slider_value_changed"]

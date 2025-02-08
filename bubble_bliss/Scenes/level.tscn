@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://dwfstap3hq4by"]
+[gd_scene load_steps=21 format=4 uid="uid://dwfstap3hq4by"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_ytksm"]
 [ext_resource type="PackedScene" uid="uid://bjqgn8eaev75p" path="res://Scenes/bubbles.tscn" id="2_b028c"]
@@ -13,7 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://cack0icu3bcjc" path="res://Scenes/dart_gun.tscn" id="11_7dyal"]
 [ext_resource type="Theme" uid="uid://cfuny4aqpg8r2" path="res://Resources/default_theme.tres" id="12_s0k7d"]
 [ext_resource type="PackedScene" uid="uid://7o3ladlt1r1i" path="res://Scenes/banana_mouse.tscn" id="13_efdhm"]
-[ext_resource type="AudioStream" uid="uid://bhkee0n6kldbe" path="res://Assets/Audio/Music/PeliTheme.mp3" id="14_1ia1a"]
 [ext_resource type="Texture2D" uid="uid://8pntxcrwopv7" path="res://Assets/Art/BG_Space.jpg" id="15_hf42d"]
 [ext_resource type="PackedScene" uid="uid://cbjekvexxrsra" path="res://Scenes/checkpoint.tscn" id="16_yqimj"]
 
@@ -2113,10 +2112,6 @@ text = "Bananas: 0"
 
 [node name="banana_mouse" parent="." instance=ExtResource("13_efdhm")]
 position = Vector2(354, 368)
-
-[node name="music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("14_1ia1a")
-volume_db = -18.0
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 

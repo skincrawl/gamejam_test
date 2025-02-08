@@ -17,6 +17,8 @@ Development
 
 Useability
 
+-Add a loading screen
+
 
 Optimization
 
@@ -29,8 +31,6 @@ Gameplay
 
 -Random lag spikes (loading music?)
 -Fan distance attenuation...?
--Fan effect area doesn't apparently always match the graphical area
--The push force isn't applied at the banana mouse in different screen sizes
 -Controls are wonky, pushes way too hard when the fan is close to the monkey
 -Passed checkpoints can be retriggered and update the spawn pos backwards
 -When restarting, the game remembers the last checkpoint and spawns you there

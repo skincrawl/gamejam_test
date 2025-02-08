@@ -106,8 +106,6 @@ func death() -> void:
 	$Bubbles.play("lose")
 	$bubble_bg_Sprite.hide()
 	$bubble_top_layer.play("burst")
-	if not Globals.sound_on:
-		return
 	
 	$pop.play()
 	$scream.play()
@@ -119,6 +117,7 @@ func banana_eaten() -> void:
 		$yum.stream = yum_sounds.pick_random()
 		$yum.play()
 
+
 func _integrate_forces(_state: PhysicsDirectBodyState2D) -> void:
 	if _state.linear_velocity.length() > MAX_SPEED:
 		_state.linear_velocity = _state.linear_velocity.normalized() * MAX_SPEED
@@ -128,7 +127,7 @@ func _on_bubbles_animation_finished() -> void:
 	
 	match $Bubbles.animation:
 		"lose":
-			Globals.level.lose()
+			Game.get_instance().lose()
 		"blink":
 			$Bubbles.play("default")
 

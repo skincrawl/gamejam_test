@@ -1,0 +1,88 @@
+extends Node2D
+
+class_name Game
+
+var level_packed:PackedScene = preload("res://Scenes/level.tscn")
+
+var menu_music:AudioStream = preload("res://Assets/Audio/Music/MainMenuTheme_Ilman_Introa.mp3")
+var menu_music_intro:AudioStream = preload("res://Assets/Audio/Music/MainMenuTheme_Intro.mp3")
+var level_music:AudioStream = preload("res://Assets/Audio/Music/PeliTheme.mp3")
+
+@onready var main_menu:Control = $Menus/MainMenu
+@onready var settings_screen:Control = $Menus/Settings
+@onready var about_us_screen:Control = $Menus/AboutUs
+@onready var how_to_screen:Control = $Menus/HowToPlay
+@onready var narrative_screen:Control = $Menus/narrative_screen
+@onready var win_screen:Control = $Menus/win_screen
+@onready var credits_screen:Control = $Menus/Credits
+
+
+static var _instance:Game
+
+var level:Level
+
+static func get_instance() -> Game:
+	return _instance
+
+
+func _ready() -> void:
+	
+	_instance = self
+
+
+func lose():
+	level.queue_free()
+	level = level_packed.instantiate()
+	add_child(level)
+
+
+# Shows the main menu
+func show_main_menu() -> void:
+	
+	$Menus.show()
+	main_menu.show()
+	main_menu.process_mode = Node.PROCESS_MODE_INHERIT
+	
+	if $music_player.stream == level_music:
+		$music_player.stream = menu_music_intro
+		$music_player.play()
+
+
+# Shows the settings menu
+func show_settings_menu() -> void:
+	
+	$Menus.show()
+	main_menu.hide()
+	settings_screen.show()
+	main_menu.process_mode = Node.PROCESS_MODE_DISABLED
+
+
+# Shows the narrative screen, before playing the game
+func start_pressed() -> void:
+	
+	main_menu.hide()
+	main_menu.process_mode = Node.PROCESS_MODE_DISABLED
+	
+	narrative_screen.show()
+	narrative_screen.mouse_filter = Control.MOUSE_FILTER_STOP
+
+
+func start_level() -> void:
+	$Menus.hide()
+	$Menus.process_mode = Node.PROCESS_MODE_DISABLED
+	level = level_packed.instantiate()
+	add_child(level)
+	$music_player.stream = level_music
+	$music_player.play()
+
+
+func music_on(_on:bool) -> void:
+	var paused:bool = not _on
+	print("paused: ", paused)
+	$music_player.stream_paused = paused
+
+
+func _on_music_player_finished() -> void:
+	if $music_player.stream == menu_music_intro:
+		$music_player.stream = menu_music
+		$music_player.play()
