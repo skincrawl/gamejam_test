@@ -12,6 +12,7 @@ Development
 
 -Improve the structure of the node tree
 	-Right now the way the level is setup is confusing, with children of the level scene visible
+-Clean up the code
 
 
 Useability
@@ -19,6 +20,7 @@ Useability
 
 Optimization
 
+-Animation instead of GPUParticles
 -Spikes in _process times
 -Object pooling for the darts
 
