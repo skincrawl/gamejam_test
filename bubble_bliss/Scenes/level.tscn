@@ -65,6 +65,7 @@ metadata/_edit_lock_ = true
 [node name="level_objects" type="Node2D" parent="."]
 
 [node name="bananas" type="Node2D" parent="level_objects"]
+metadata/_edit_group_ = true
 
 [node name="banana" parent="level_objects/bananas" instance=ExtResource("3_olu38")]
 position = Vector2(864, 200)
@@ -345,6 +346,45 @@ position = Vector2(15430, 17186)
 [node name="banana151" parent="level_objects/bananas" instance=ExtResource("3_olu38")]
 position = Vector2(14038, 15732)
 
+[node name="banana180" parent="level_objects/bananas" instance=ExtResource("3_olu38")]
+position = Vector2(14010, 15707)
+
+[node name="banana181" parent="level_objects/bananas" instance=ExtResource("3_olu38")]
+position = Vector2(13966, 15687)
+
+[node name="banana182" parent="level_objects/bananas" instance=ExtResource("3_olu38")]
+position = Vector2(13927, 15713)
+
+[node name="banana183" parent="level_objects/bananas" instance=ExtResource("3_olu38")]
+position = Vector2(13928, 15761)
+
+[node name="banana184" parent="level_objects/bananas" instance=ExtResource("3_olu38")]
+position = Vector2(13962, 15798)
+
+[node name="banana185" parent="level_objects/bananas" instance=ExtResource("3_olu38")]
+position = Vector2(14039, 15850)
+
+[node name="banana186" parent="level_objects/bananas" instance=ExtResource("3_olu38")]
+position = Vector2(14117, 15794)
+
+[node name="banana187" parent="level_objects/bananas" instance=ExtResource("3_olu38")]
+position = Vector2(14144, 15752)
+
+[node name="banana191" parent="level_objects/bananas" instance=ExtResource("3_olu38")]
+position = Vector2(13997, 15828)
+
+[node name="banana192" parent="level_objects/bananas" instance=ExtResource("3_olu38")]
+position = Vector2(14078, 15825)
+
+[node name="banana188" parent="level_objects/bananas" instance=ExtResource("3_olu38")]
+position = Vector2(14139, 15710)
+
+[node name="banana189" parent="level_objects/bananas" instance=ExtResource("3_olu38")]
+position = Vector2(14065, 15702)
+
+[node name="banana190" parent="level_objects/bananas" instance=ExtResource("3_olu38")]
+position = Vector2(14105, 15678)
+
 [node name="banana152" parent="level_objects/bananas" instance=ExtResource("3_olu38")]
 position = Vector2(13574, 16891)
 
@@ -375,11 +415,47 @@ position = Vector2(11653, 16280)
 [node name="banana162" parent="level_objects/bananas" instance=ExtResource("3_olu38")]
 position = Vector2(11651, 15750)
 
+[node name="banana168" parent="level_objects/bananas" instance=ExtResource("3_olu38")]
+position = Vector2(11326, 15668)
+
+[node name="banana169" parent="level_objects/bananas" instance=ExtResource("3_olu38")]
+position = Vector2(11372, 15669)
+
+[node name="banana170" parent="level_objects/bananas" instance=ExtResource("3_olu38")]
+position = Vector2(11327, 15717)
+
+[node name="banana171" parent="level_objects/bananas" instance=ExtResource("3_olu38")]
+position = Vector2(11378, 15720)
+
+[node name="banana172" parent="level_objects/bananas" instance=ExtResource("3_olu38")]
+position = Vector2(11347, 15762)
+
+[node name="banana173" parent="level_objects/bananas" instance=ExtResource("3_olu38")]
+position = Vector2(11419, 15680)
+
 [node name="banana163" parent="level_objects/bananas" instance=ExtResource("3_olu38")]
 position = Vector2(12852, 16106)
 
 [node name="banana161" parent="level_objects/bananas" instance=ExtResource("3_olu38")]
 position = Vector2(11439, 16853)
+
+[node name="banana174" parent="level_objects/bananas" instance=ExtResource("3_olu38")]
+position = Vector2(11354, 16851)
+
+[node name="banana175" parent="level_objects/bananas" instance=ExtResource("3_olu38")]
+position = Vector2(11315, 16904)
+
+[node name="banana176" parent="level_objects/bananas" instance=ExtResource("3_olu38")]
+position = Vector2(11347, 16929)
+
+[node name="banana177" parent="level_objects/bananas" instance=ExtResource("3_olu38")]
+position = Vector2(11389, 16938)
+
+[node name="banana178" parent="level_objects/bananas" instance=ExtResource("3_olu38")]
+position = Vector2(11440, 16928)
+
+[node name="banana179" parent="level_objects/bananas" instance=ExtResource("3_olu38")]
+position = Vector2(11485, 16894)
 
 [node name="banana132" parent="level_objects/bananas" instance=ExtResource("3_olu38")]
 position = Vector2(11511, 9630)
@@ -1623,6 +1699,7 @@ metadata/_edit_lock_ = true
 position = Vector2(5441, 836)
 rotation = -3.14159
 scale = Vector2(2.2, 1.94)
+metadata/_edit_group_ = true
 
 [node name="fan" parent="level_objects/fans" instance=ExtResource("6_6x1ge")]
 push_distance_multiplier = 0.124
@@ -1642,14 +1719,12 @@ push_distance_multiplier = 0.115
 position = Vector2(-937.273, 725.773)
 scale = Vector2(0.775, 0.628)
 push_distance_multiplier = 0.11
-push_strength_multiplier = 5.0
 
 [node name="fan3" parent="level_objects/fans" instance=ExtResource("6_6x1ge")]
 position = Vector2(-1454.09, 2212.89)
 rotation = 3.14159
 scale = Vector2(1, 0.758)
 push_distance_multiplier = 0.11
-push_strength_multiplier = 5.0
 
 [node name="fan8" parent="level_objects/fans" instance=ExtResource("6_6x1ge")]
 position = Vector2(-1412.27, 990.722)
@@ -1662,74 +1737,64 @@ position = Vector2(-1336.74, 1548.28)
 rotation = 1.5708
 scale = Vector2(1.195, 0.853)
 push_distance_multiplier = 0.115
-push_strength_multiplier = 5.0
 
 [node name="fan10" parent="level_objects/fans" instance=ExtResource("6_6x1ge")]
 position = Vector2(-2123.18, 993.299)
 rotation = 3.14159
 scale = Vector2(1.165, 0.81)
 push_distance_multiplier = 0.175
-push_strength_multiplier = 5.0
 
 [node name="fan11" parent="level_objects/fans" instance=ExtResource("6_6x1ge")]
 position = Vector2(-1509.79, 2.12305)
 rotation = 1.5708
 scale = Vector2(1.33, 0.938)
 push_distance_multiplier = 0.115
-push_strength_multiplier = 5.0
 
 [node name="fan13" parent="level_objects/fans" instance=ExtResource("6_6x1ge")]
 position = Vector2(-2385, 139.176)
 rotation = 3.14159
 scale = Vector2(1.16, 1.033)
 push_distance_multiplier = 0.11
-push_strength_multiplier = 5.0
 
 [node name="fan16" parent="level_objects/fans" instance=ExtResource("6_6x1ge")]
 position = Vector2(-1366.82, 433.509)
 rotation = 3.14159
 scale = Vector2(1.16, 2.183)
 push_distance_multiplier = 0.115
-push_strength_multiplier = 5.0
 
 [node name="fan14" parent="level_objects/fans" instance=ExtResource("6_6x1ge")]
 position = Vector2(-1624.1, -957.732)
 scale = Vector2(1.16, 1.033)
 push_distance_multiplier = 0.115
-push_strength_multiplier = 5.0
 
 [node name="fan12" parent="level_objects/fans" instance=ExtResource("6_6x1ge")]
 position = Vector2(-2503.97, -823.501)
 rotation = -1.5708
 scale = Vector2(1.33, 0.938)
 push_distance_multiplier = 0.115
-push_strength_multiplier = 5.0
 
 [node name="fan15" parent="level_objects/fans" instance=ExtResource("6_6x1ge")]
 position = Vector2(-1978.84, 298.276)
 rotation = -1.5708
 scale = Vector2(1.33, 0.688)
 push_distance_multiplier = 0.12
-push_strength_multiplier = 5.0
 
 [node name="fan5" parent="level_objects/fans" instance=ExtResource("6_6x1ge")]
 position = Vector2(-1685.45, 1105.15)
 rotation = 1.5708
 scale = Vector2(0.675, 0.523)
 push_distance_multiplier = 0.105
-push_strength_multiplier = 5.0
 
 [node name="fan6" parent="level_objects/fans" instance=ExtResource("6_6x1ge")]
 position = Vector2(-1162.54, 1318.74)
 rotation = 1.5708
 scale = Vector2(0.575, 0.39)
 push_distance_multiplier = 0.115
-push_strength_multiplier = 5.0
 
 [node name="fan17" parent="level_objects/fans" instance=ExtResource("6_6x1ge")]
 position = Vector2(-3083.19, -4414.94)
 rotation = 3.14159
-scale = Vector2(1.16, 3)
+scale = Vector2(1.1, 2.845)
 push_distance_multiplier = 0.11
 push_strength_multiplier = 1000.0
 
