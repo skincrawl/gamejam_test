@@ -1,4 +1,4 @@
-@tool
+# @tool
 extends StaticBody2D
 
 class_name Fan
@@ -32,10 +32,10 @@ func _ready() -> void:
 	
 	$Part/Node2D/CPUParticles2D.emitting = true
 	
-	push_distance = lerp(MIN_DISTANCE, MAX_DISTANCE, push_distance_multiplier)
-	if has_node("Area2D"):
-		$Area2D.scale.y = push_distance
-	push_strength = lerp(MIN_PUSH_STRENGTH, MAX_PUSH_STRENGTH, push_strength_multiplier)
+	# push_distance = lerp(MIN_DISTANCE, MAX_DISTANCE, push_distance_multiplier)
+	# if has_node("Area2D"):
+	# 	$Area2D.scale.y = push_distance
+	# push_strength = lerp(MIN_PUSH_STRENGTH, MAX_PUSH_STRENGTH, push_strength_multiplier)
 
 
 func _physics_process(_delta: float) -> void:

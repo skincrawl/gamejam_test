@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_sfcmp"]
 [ext_resource type="AudioStream" uid="uid://bxaf8tn4ra364" path="res://Assets/Audio/Music/MainMenuTheme_Intro.mp3" id="2_jai3e"]
 [ext_resource type="Script" path="res://Scripts/menus.gd" id="3_g0g27"]
-[ext_resource type="PackedScene" uid="uid://b5gigobueilix" path="res://Scenes/main_menu.tscn" id="3_x28cs"]
+[ext_resource type="PackedScene" uid="uid://b5gigobueilix" path="res://Scenes/main_menu_2.tscn" id="3_x28cs"]
 [ext_resource type="PackedScene" uid="uid://yrcn2k3wrd71" path="res://Scenes/narrative_screen.tscn" id="4_nrqdf"]
 [ext_resource type="Texture2D" uid="uid://8pntxcrwopv7" path="res://Assets/Art/BG_Space.jpg" id="5_ganff"]
 [ext_resource type="PackedScene" uid="uid://6lgt51fk3khg" path="res://Scenes/settings_menu.tscn" id="6_ajcxk"]

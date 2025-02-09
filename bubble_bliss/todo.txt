@@ -61,6 +61,7 @@ Graphics
 
 Audio
 
+-Changing sound volume in the settings reduces it a lot
 -Lag in music when navigating menus
 -Dart gun sounds
 -Banana collection sounds are too quiet (?)

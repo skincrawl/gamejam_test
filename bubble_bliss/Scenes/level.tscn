@@ -1698,7 +1698,6 @@ metadata/_edit_lock_ = true
 position = Vector2(5441, 836)
 rotation = -3.14159
 scale = Vector2(2.2, 1.94)
-metadata/_edit_group_ = true
 
 [node name="fan" parent="level_objects/fans" instance=ExtResource("6_6x1ge")]
 push_distance_multiplier = 0.124
@@ -1707,7 +1706,6 @@ push_distance_multiplier = 0.124
 position = Vector2(-639.091, 792.784)
 scale = Vector2(1, 1.35309)
 push_distance_multiplier = 0.122
-push_strength_multiplier = 5.0
 
 [node name="fan9" parent="level_objects/fans" instance=ExtResource("6_6x1ge")]
 position = Vector2(-1812.27, 727.835)

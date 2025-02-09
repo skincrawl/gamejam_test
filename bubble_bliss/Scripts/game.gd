@@ -4,6 +4,9 @@ class_name Game
 
 var level_packed:PackedScene = preload("res://Scenes/level.tscn")
 
+const MENU_MUSIC_VOLUME:float = -12.0
+const LEVEL_MUSIC_VOLUME:float = -15.0
+
 var menu_music:AudioStream = preload("res://Assets/Audio/Music/MainMenuTheme_Ilman_Introa.mp3")
 var menu_music_intro:AudioStream = preload("res://Assets/Audio/Music/MainMenuTheme_Intro.mp3")
 var level_music:AudioStream = preload("res://Assets/Audio/Music/PeliTheme.mp3")
@@ -73,6 +76,7 @@ func start_level() -> void:
 	level = level_packed.instantiate()
 	add_child(level)
 	$music_player.stream = level_music
+	$music_player.volume_db = LEVEL_MUSIC_VOLUME
 	$music_player.play()
 
 
