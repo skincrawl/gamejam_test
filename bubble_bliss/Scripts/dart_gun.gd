@@ -11,4 +11,4 @@ class_name DartGun
 
 func _on_shoot_timer_timeout() -> void:
 	
-	Globals.level.spawn_dart(self)
+	Game.get_instance().level.spawn_dart(self)

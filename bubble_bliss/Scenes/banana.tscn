@@ -48,12 +48,13 @@ shape = SubResource("CircleShape2D_r6nxe")
 position = Vector2(-3, -3)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_ogi3s")
+autoplay = "default"
 frame = 1
-frame_progress = 0.657028
+frame_progress = 0.385627
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_2t8ey")
-volume_db = -10.0
+volume_db = -8.0
 bus = &"SFX"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

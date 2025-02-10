@@ -51,9 +51,9 @@ func _on_pop_finished() -> void:
 		"start":
 			game.start_pressed()
 		"how_to_play":
-			get_tree().change_scene_to_file.call_deferred("res://Scenes/how_to_play.tscn")
+			game.show_how_to_screen()
 		"about_us":
-			get_tree().change_scene_to_file.call_deferred("res://Scenes/about_us.tscn")
+			game.show_about_us_screen()
 		"settings":
 			game.show_settings_menu()
 		"quit":

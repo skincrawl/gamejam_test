@@ -65,21 +65,27 @@ script = ExtResource("3_g0g27")
 
 [node name="narrative_screen" parent="Menus" instance=ExtResource("4_nrqdf")]
 visible = false
+mouse_filter = 2
 
 [node name="Settings" parent="Menus" instance=ExtResource("6_ajcxk")]
 visible = false
+mouse_filter = 2
 
 [node name="AboutUs" parent="Menus" instance=ExtResource("6_ov1is")]
 visible = false
+mouse_filter = 2
 
 [node name="HowToPlay" parent="Menus" instance=ExtResource("7_qeoyt")]
 visible = false
+mouse_filter = 2
 
 [node name="win_screen" parent="Menus" instance=ExtResource("8_4mtt3")]
 visible = false
+mouse_filter = 2
 
 [node name="Credits" parent="Menus" instance=ExtResource("9_05lkh")]
 visible = false
+mouse_filter = 2
 
 [node name="music_player" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_jai3e")

@@ -22,11 +22,18 @@ var monkey_rotation:float = 0.0
 
 var yum_sounds:Array
 
+
 func _ready() -> void:
 	
 	add_to_group("Bubbles")
+	
+	print("bubbles group: ", get_groups())
+	print("dead: ", dead)
+	
 	$bubble_top_layer.play("rolling")
 	$Bubbles.play("default")
+	
+	Game.get_instance().bubbles = self
 	
 	yum_sounds.append(preload("res://Assets/Audio/SFX/yum_1.mp3"))
 	yum_sounds.append(preload("res://Assets/Audio/SFX/yum_2.mp3"))
@@ -96,6 +103,12 @@ func _physics_process(_delta:float) -> void:
 	
 	# print("force strength: ", force.length())
 	apply_central_force(force)
+
+
+func reset_animations() -> void:
+	$Bubbles.play("default")
+	$bubble_bg_Sprite.show()
+	$bubble_top_layer.play("rolling")
 
 
 func death() -> void:

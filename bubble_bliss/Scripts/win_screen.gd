@@ -8,8 +8,12 @@ func _ready() -> void:
 
 
 func _on_credits_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/credits.tscn")
+	hide()
+	mouse_filter = Control.MOUSE_FILTER_IGNORE
+	Game.get_instance().show_credits_screen()
 
 
 func _on_menu_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
+	hide()
+	mouse_filter = Control.MOUSE_FILTER_IGNORE
+	Game.get_instance().show_main_menu()

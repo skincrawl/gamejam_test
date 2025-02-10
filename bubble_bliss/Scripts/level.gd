@@ -14,19 +14,21 @@ var collected_bananas:int = 0
 
 func _ready() -> void:
 	
-	Globals.level = self
-	Globals.bubbles = $Bubbles
+	var game:Game = Game.get_instance()
+	game.level = self
+	game.bubbles = $Bubbles
 	
 	# Hiding the mouse
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 	
 	$GUI/bananas_label.show()
 	
-	if Globals.first_play:
-		Globals.checkpoint_manager = CheckpointManager.new()
-		Globals.checkpoint_manager.last_location = $level_objects/spawn_pos.global_position
-		Globals.first_play = false
-	spawn_pos.global_position = Globals.checkpoint_manager.last_location
+	# if Globals.first_play:
+	# 	Globals.checkpoint_manager = CheckpointManager.new()
+	# 	Globals.checkpoint_manager.last_location = $level_objects/spawn_pos.global_position
+	# 	Globals.first_play = false
+	
+	# spawn_pos.global_position = Globals.checkpoint_manager.last_location
 	$Bubbles.global_position = $level_objects/spawn_pos.global_position
 
 
