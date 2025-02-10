@@ -28,6 +28,7 @@ static var _instance:Game
 var level:Level
 var bubbles:Bubbles
 
+
 static func get_instance() -> Game:
 	return _instance
 
@@ -68,7 +69,9 @@ func start_pressed() -> void:
 
 func start_level() -> void:
 	$Menus.hide()
-	$Menus.process_mode = Node.PROCESS_MODE_DISABLED
+	narrative_screen.hide()
+	narrative_screen.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	
 	level = level_packed.instantiate()
 	add_child(level)
 	$music_player.stream = level_music
@@ -111,13 +114,16 @@ func show_how_to_screen() -> void:
 # Shows the about us screen
 func show_win_screen() -> void:
 	
+	$Menus.show()
 	main_menu.hide()
 	main_menu.process_mode = Node.PROCESS_MODE_DISABLED
+	
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	win_screen.show()
 	win_screen.mouse_filter = Control.MOUSE_FILTER_STOP
-	level.get_node("ParallaxBackground").visible = false
-	level.get_node("GUI").visible = false
+	
 	level.queue_free()
+	
 	$music_player.stream = menu_music_intro
 	$music_player.play()
 
