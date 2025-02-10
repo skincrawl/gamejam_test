@@ -54,7 +54,7 @@ frame_progress = 0.385627
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_2t8ey")
-volume_db = -8.0
+volume_db = -6.0
 bus = &"SFX"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

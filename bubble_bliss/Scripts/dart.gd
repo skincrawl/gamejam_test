@@ -21,6 +21,6 @@ func _on_body_entered(_body: Node2D) -> void:
 		return
 	
 	if _body.is_in_group("Bubbles"):
-		Globals.bubbles.death()
+		Game.get_instance().bubbles.death()
 	else:
 		queue_free()

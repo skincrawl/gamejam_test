@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cfx55rek8u1kn" path="res://Scenes/how_to_play.tscn" id="7_qeoyt"]
 [ext_resource type="PackedScene" uid="uid://b1nk0of7fw0au" path="res://Scenes/win_screen.tscn" id="8_4mtt3"]
 [ext_resource type="PackedScene" uid="uid://ctvomw1cn28kf" path="res://Scenes/credits.tscn" id="9_05lkh"]
-[ext_resource type="PackedScene" uid="uid://b5gigobueilix" path="res://Scenes/main_menu.tscn" id="10_5yf04"]
+[ext_resource type="PackedScene" uid="uid://b5gigobueilix" path="res://Scenes/main_menu_2.tscn" id="10_5yf04"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_72cta"]
 atlas = ExtResource("5_ganff")
