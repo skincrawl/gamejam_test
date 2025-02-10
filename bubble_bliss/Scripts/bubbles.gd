@@ -102,9 +102,18 @@ func _physics_process(_delta:float) -> void:
 	apply_central_force(force)
 
 
-func reset_animations() -> void:
+func reset() -> void:
+	
+	dead = false
+	linear_velocity = Vector2.ZERO
+	
+	rotation = 0.0
+	monkey_rotation = 0.0
+	$Bubbles.rotation = 0.0
+	
 	$Bubbles.play("default")
 	$bubble_bg_Sprite.show()
+	$bubble_top_layer.show()
 	$bubble_top_layer.play("rolling")
 
 

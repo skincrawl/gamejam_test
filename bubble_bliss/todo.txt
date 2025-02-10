@@ -22,7 +22,7 @@ Useability
 
 Optimization
 
--Bubbles is instantiated when dying. Make it just reset bubbles so you don't load his sounds from file when you die
+-Fans are always producing particles, even when they're not visible
 -Animation instead of GPUParticles
 -Spikes in _process times
 -Object pooling for the darts
@@ -33,7 +33,6 @@ Gameplay
 -Checkpoints are now broken
 -Random lag spikes
 -Fan distance attenuation...?
--Controls are wonky, pushes way too hard when the fan is close to Bubbles
 -Passed checkpoints can be retriggered and update the spawn pos backwards
 -When restarting, the game remembers the last checkpoint and spawns you there
 -Sometimes bounces in weird angles
@@ -46,6 +45,7 @@ Level design
 
 GUI
 
+-The level is shown on top of the bananas GUI
 -Bubble buttons don't visually change when hovering
 -There seems to be some silence in the pop audio that should be removed for the navigation to be snappy
 -Bananas collected in win screen

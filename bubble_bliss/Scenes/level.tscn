@@ -1980,12 +1980,12 @@ rotation = -3.14159
 scale = Vector2(2.2, 1.94)
 
 [node name="fan" parent="level_objects/fans" instance=ExtResource("6_6x1ge")]
-push_distance_multiplier = 0.124
+push_distance_multiplier = 0.064
 
 [node name="fan2" parent="level_objects/fans" instance=ExtResource("6_6x1ge")]
 position = Vector2(-639.091, 792.784)
 scale = Vector2(1, 1.35309)
-push_distance_multiplier = 0.122
+push_distance_multiplier = 0.077
 
 [node name="fan9" parent="level_objects/fans" instance=ExtResource("6_6x1ge")]
 position = Vector2(-1812.27, 727.835)
@@ -2039,7 +2039,8 @@ push_distance_multiplier = 0.11
 position = Vector2(-1366.82, 433.509)
 rotation = 3.14159
 scale = Vector2(1.16, 2.183)
-push_distance_multiplier = 0.115
+push_distance_multiplier = 0.09
+push_strength_multiplier = 1.0
 
 [node name="fan14" parent="level_objects/fans" instance=ExtResource("6_6x1ge")]
 position = Vector2(-1624.1, -957.732)
@@ -2391,8 +2392,10 @@ position = Vector2(8871, 4229)
 [node name="Checkpoint3" parent="level_objects/Checkpoints" instance=ExtResource("16_yqimj")]
 position = Vector2(10325, 7106)
 
+[node name="Checkpoint4" parent="level_objects/Checkpoints" instance=ExtResource("16_yqimj")]
+position = Vector2(14324, 8075)
+
 [node name="GUI" type="CanvasLayer" parent="."]
-layer = -10
 
 [node name="bananas_label" type="Label" parent="GUI"]
 offset_left = 32.0

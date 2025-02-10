@@ -28,8 +28,6 @@ static var _instance:Game
 var level:Level
 var bubbles:Bubbles
 
-var checkpoint_manager:CheckpointManager
-
 
 static func get_instance() -> Game:
 	return _instance
@@ -41,10 +39,9 @@ func _ready() -> void:
 
 
 func lose():
-	bubbles.queue_free()
-	bubbles = bubbles_packed.instantiate()
-	bubbles.global_position = checkpoint_manager.last_location
-	level.add_child(bubbles)
+	
+	bubbles.reset()
+	bubbles.global_position = level.checkpoint_manager.last_location
 
 
 # Shows the main menu
