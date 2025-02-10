@@ -50,10 +50,10 @@ func _physics_process(_delta: float) -> void:
 
 func _on_area_2d_body_entered(_body: Node2D) -> void:
 	
-	if _body.name == "Bubbles":
+	if _body.is_in_group("Bubbles"):
 		bubbles = _body
 
 
 func _on_area_2d_body_exited(_body: Node2D) -> void:
-	if _body.name == "Bubbles":
+	if _body.is_in_group("Bubbles"):
 		bubbles = null
