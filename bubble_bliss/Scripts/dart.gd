@@ -20,7 +20,7 @@ func _on_body_entered(_body: Node2D) -> void:
 	if _body == shooting_cannon:
 		return
 	
-	if _body.name == "Bubbles":
+	if _body.is_in_group("Bubbles"):
 		Globals.bubbles.death()
 	else:
 		queue_free()

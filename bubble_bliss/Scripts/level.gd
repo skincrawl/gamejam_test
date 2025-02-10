@@ -11,31 +11,25 @@ const LOSE_TIME:float = 3.0
 
 var collected_bananas:int = 0
 
-var game_music:AudioStream = preload("res://Assets/Audio/Music/PeliTheme.mp3")
-
 
 func _ready() -> void:
 	
-	Globals.level = self
-	Globals.bubbles = $Bubbles
+	var game:Game = Game.get_instance()
+	game.level = self
+	game.bubbles = $Bubbles
 	
 	# Hiding the mouse
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 	
 	$GUI/bananas_label.show()
 	
-	if Globals.first_play:
-		Globals.checkpoint_manager = CheckpointManager.new()
-		Globals.checkpoint_manager.last_location = $level_objects/spawn_pos.global_position
-		Globals.first_play = false
-	spawn_pos.global_position = Globals.checkpoint_manager.last_location
-	$Bubbles.global_position = $level_objects/spawn_pos.global_position
+	# if Globals.first_play:
+	# 	Globals.checkpoint_manager = CheckpointManager.new()
+	# 	Globals.checkpoint_manager.last_location = $level_objects/spawn_pos.global_position
+	# 	Globals.first_play = false
 	
-	if AudioServer.is_bus_mute(0):
-		$music.stop()
-		return
-		
-	$music.play(Globals.music_spot)
+	# spawn_pos.global_position = Globals.checkpoint_manager.last_location
+	$Bubbles.global_position = $level_objects/spawn_pos.global_position
 
 
 func _process(_delta:float) -> void:
@@ -46,13 +40,6 @@ func _process(_delta:float) -> void:
 		print("milliseconds: ", str(milliseconds) + " ms" )
 	
 	$banana_mouse.position = get_global_mouse_position()
-
-
-func lose() -> void:
-	
-	Globals.music_spot = $music.get_playback_position()
-	
-	get_tree().reload_current_scene()
 
 
 func spawn_dart(_dart_gun:DartGun) -> void:

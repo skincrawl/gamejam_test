@@ -6,17 +6,8 @@ var button_pressed:String = "none"
 
 func _ready():
 	
-	get_viewport().size_changed.connect(viewport_size_changed)
-	
-	# print("globals sound on: ", Globals.sound_on)
-	
-	if AudioServer.is_bus_mute(0):
-		return
-	
-	if Globals.intro_finished:
-		$music.play(Globals.music_spot)
-	else:
-		$menu_music_intro.play(Globals.music_spot)
+	if not Engine.is_editor_hint():
+		$bg.hide()
 
 
 func _on_start_game_pressed():
@@ -33,7 +24,7 @@ func _on_about_us_pressed():
 
 func _on_options_pressed():
 	$pop.play()
-	button_pressed = "options"
+	button_pressed = "settings"
 
 func _on_quit_pressed():
 	$pop.play()
@@ -54,25 +45,18 @@ func viewport_size_changed() -> void:
 
 func _on_pop_finished() -> void:
 	
-	Globals.music_spot = $music.get_playback_position()
+	var game:Game = Game.get_instance()
 	
-	# var callable:Callable
 	match button_pressed:
 		"start":
-			get_tree().change_scene_to_file.call_deferred("res://Scenes/narrative_screen.tscn")
+			game.start_pressed()
 		"how_to_play":
-			get_tree().change_scene_to_file.call_deferred("res://Scenes/how_to_play.tscn")
+			game.show_how_to_screen()
 		"about_us":
-			get_tree().change_scene_to_file.call_deferred("res://Scenes/about_us.tscn")
-		"options":
-			get_tree().change_scene_to_file.call_deferred("res://Scenes/options_menu.tscn")
+			game.show_about_us_screen()
+		"settings":
+			game.show_settings_menu()
 		"quit":
 			get_tree().quit()
 		_:
 			pass
-
-
-func _on_menu_music_intro_finished() -> void:
-	Globals.intro_finished = true
-	Globals.music_spot = 0.0
-	$music.play()

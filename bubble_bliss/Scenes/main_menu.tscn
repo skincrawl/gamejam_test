@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://b5gigobueilix"]
+[gd_scene load_steps=33 format=3 uid="uid://b5gigobueilix"]
 
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_oinqm"]
 [ext_resource type="FontFile" uid="uid://behuf74h25j5t" path="res://GameAssets/DynaPuff/DynaPuff-VariableFont_wdth,wght.ttf" id="1_ugjs1"]
@@ -10,8 +10,6 @@
 [ext_resource type="Script" path="res://Scripts/valikko_apina.gd" id="6_cx4xl"]
 [ext_resource type="Texture2D" uid="uid://cuxs0jdep2tjs" path="res://Assets/Art/BubbleBGTexture.png" id="7_pyfg4"]
 [ext_resource type="Texture2D" uid="uid://c4mgs6y8y43he" path="res://Assets/Art/ActualBubble_Sheet.png" id="8_yoddx"]
-[ext_resource type="AudioStream" uid="uid://bxaf8tn4ra364" path="res://Assets/Audio/Music/MainMenuTheme_Intro.mp3" id="11_8g2sv"]
-[ext_resource type="AudioStream" uid="uid://cliqi057lxak6" path="res://Assets/Audio/Music/MainMenuTheme_Ilman_Introa.mp3" id="11_qnrmr"]
 [ext_resource type="AudioStream" uid="uid://blwan44chay8p" path="res://Assets/Audio/SFX/bubble-pop.mp3" id="12_s5yk8"]
 
 [sub_resource type="Theme" id="Theme_avieb"]
@@ -169,6 +167,7 @@ theme = SubResource("Theme_avieb")
 script = ExtResource("1_oinqm")
 
 [node name="bg" type="AnimatedSprite2D" parent="."]
+visible = false
 z_index = -10
 position = Vector2(960, 540)
 sprite_frames = SubResource("SpriteFrames_chcqr")
@@ -209,10 +208,14 @@ sprite_frames = SubResource("SpriteFrames_ea5kg")
 autoplay = "default"
 metadata/_edit_group_ = true
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="pop" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_s5yk8")
+volume_db = -10.0
+bus = &"SFX"
 
-[node name="VBoxContainer4" type="CenterContainer" parent="CanvasLayer"]
+[node name="VBoxContainer4" type="CenterContainer" parent="."]
 visible = false
+layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
@@ -223,7 +226,7 @@ offset_bottom = 231.132
 grow_vertical = 2
 rotation = 0.279253
 
-[node name="Options" type="Button" parent="CanvasLayer/VBoxContainer4"]
+[node name="Options" type="Button" parent="VBoxContainer4"]
 layout_mode = 2
 size_flags_horizontal = 8
 theme = SubResource("Theme_gnr1q")
@@ -233,8 +236,9 @@ text = "Settings"
 icon_alignment = 1
 expand_icon = true
 
-[node name="VBoxContainer5" type="CenterContainer" parent="CanvasLayer"]
+[node name="VBoxContainer5" type="CenterContainer" parent="."]
 visible = false
+layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
@@ -245,7 +249,7 @@ offset_bottom = 376.132
 grow_vertical = 2
 rotation = -0.0349066
 
-[node name="Quit" type="Button" parent="CanvasLayer/VBoxContainer5"]
+[node name="Quit" type="Button" parent="VBoxContainer5"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme = SubResource("Theme_gnr1q")
@@ -255,8 +259,9 @@ text = "Quit"
 icon_alignment = 1
 expand_icon = true
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
 visible = false
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -265,47 +270,47 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Control" type="VBoxContainer" parent="CanvasLayer/HBoxContainer"]
+[node name="Control" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 1.2
 
-[node name="Title_control" type="Control" parent="CanvasLayer/HBoxContainer/Control"]
+[node name="Title_control" type="Control" parent="HBoxContainer/Control"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 1.3
 
-[node name="title" type="AnimatedSprite2D" parent="CanvasLayer/HBoxContainer/Control/Title_control"]
+[node name="title" type="AnimatedSprite2D" parent="HBoxContainer/Control/Title_control"]
 position = Vector2(277, 250)
 scale = Vector2(0.785, 0.785)
 sprite_frames = SubResource("SpriteFrames_a3r2e")
 autoplay = "default"
 
-[node name="Control6" type="Control" parent="CanvasLayer/HBoxContainer/Control"]
+[node name="Control6" type="Control" parent="HBoxContainer/Control"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Control7" type="Control" parent="CanvasLayer/HBoxContainer/Control"]
+[node name="Control7" type="Control" parent="HBoxContainer/Control"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Control2" type="Control" parent="CanvasLayer/HBoxContainer"]
+[node name="Control2" type="Control" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Control3" type="Control" parent="CanvasLayer/HBoxContainer"]
+[node name="Control3" type="Control" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Control4" type="Control" parent="CanvasLayer/HBoxContainer"]
+[node name="Control4" type="Control" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Start_button" type="Control" parent="CanvasLayer"]
-layout_mode = 3
+[node name="Start_button" type="Control" parent="."]
+layout_mode = 1
 anchor_left = 0.376
 anchor_top = 0.494
 anchor_right = 0.532
@@ -317,7 +322,7 @@ offset_bottom = 13.0
 rotation = -0.10472
 metadata/_edit_group_ = true
 
-[node name="texture_button" type="TextureButton" parent="CanvasLayer/Start_button"]
+[node name="texture_button" type="TextureButton" parent="Start_button"]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.458
@@ -334,7 +339,7 @@ theme = SubResource("Theme_gnr1q")
 action_mode = 0
 texture_normal = ExtResource("5_84j0t")
 
-[node name="Label" type="Label" parent="CanvasLayer/Start_button"]
+[node name="Label" type="Label" parent="Start_button"]
 layout_mode = 0
 offset_left = -22.4469
 offset_top = 50.9326
@@ -345,8 +350,8 @@ scale = Vector2(1.815, 1.815)
 theme = ExtResource("6_actju")
 text = "Start game!"
 
-[node name="how_to_play_button" type="Control" parent="CanvasLayer"]
-layout_mode = 3
+[node name="how_to_play_button" type="Control" parent="."]
+layout_mode = 1
 anchor_left = 0.429
 anchor_top = 0.787
 anchor_right = 0.544
@@ -359,7 +364,7 @@ rotation = 0.0296706
 scale = Vector2(0.725, 0.725)
 metadata/_edit_group_ = true
 
-[node name="texture_button" type="TextureButton" parent="CanvasLayer/how_to_play_button"]
+[node name="texture_button" type="TextureButton" parent="how_to_play_button"]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.458
@@ -376,7 +381,7 @@ theme = SubResource("Theme_gnr1q")
 action_mode = 0
 texture_normal = ExtResource("5_84j0t")
 
-[node name="Label" type="Label" parent="CanvasLayer/how_to_play_button"]
+[node name="Label" type="Label" parent="how_to_play_button"]
 layout_mode = 0
 offset_left = -22.4469
 offset_top = 50.9326
@@ -387,8 +392,8 @@ scale = Vector2(1.815, 1.815)
 theme = ExtResource("6_actju")
 text = "How to play"
 
-[node name="about_us_button" type="Control" parent="CanvasLayer"]
-layout_mode = 3
+[node name="about_us_button" type="Control" parent="."]
+layout_mode = 1
 anchor_left = 0.099
 anchor_top = 0.877
 anchor_right = 0.203
@@ -401,7 +406,7 @@ rotation = 0.0296706
 scale = Vector2(0.66, 0.66)
 metadata/_edit_group_ = true
 
-[node name="texture_button" type="TextureButton" parent="CanvasLayer/about_us_button"]
+[node name="texture_button" type="TextureButton" parent="about_us_button"]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.458
@@ -418,7 +423,7 @@ theme = SubResource("Theme_gnr1q")
 action_mode = 0
 texture_normal = ExtResource("5_84j0t")
 
-[node name="Label" type="Label" parent="CanvasLayer/about_us_button"]
+[node name="Label" type="Label" parent="about_us_button"]
 layout_mode = 0
 offset_left = 3.74847
 offset_top = 50.1552
@@ -429,8 +434,8 @@ scale = Vector2(2, 2)
 theme = ExtResource("6_actju")
 text = "About us"
 
-[node name="options_button" type="Control" parent="CanvasLayer"]
-layout_mode = 3
+[node name="options_button" type="Control" parent="."]
+layout_mode = 1
 anchor_left = 0.098
 anchor_top = 0.681
 anchor_right = 0.198
@@ -443,7 +448,7 @@ rotation = 0.300197
 scale = Vector2(0.66, 0.66)
 metadata/_edit_group_ = true
 
-[node name="texture_button" type="TextureButton" parent="CanvasLayer/options_button"]
+[node name="texture_button" type="TextureButton" parent="options_button"]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.458
@@ -460,7 +465,7 @@ theme = SubResource("Theme_gnr1q")
 action_mode = 0
 texture_normal = ExtResource("5_84j0t")
 
-[node name="Label" type="Label" parent="CanvasLayer/options_button"]
+[node name="Label" type="Label" parent="options_button"]
 layout_mode = 0
 offset_left = 3.74847
 offset_top = 50.1552
@@ -471,8 +476,8 @@ scale = Vector2(1.815, 1.815)
 theme = ExtResource("6_actju")
 text = "Settings"
 
-[node name="quit_button" type="Control" parent="CanvasLayer"]
-layout_mode = 3
+[node name="quit_button" type="Control" parent="."]
+layout_mode = 1
 anchor_left = 0.782
 anchor_top = 0.832
 anchor_right = 0.884
@@ -485,7 +490,7 @@ rotation = -0.10472
 scale = Vector2(0.66, 0.66)
 metadata/_edit_group_ = true
 
-[node name="texture_button" type="TextureButton" parent="CanvasLayer/quit_button"]
+[node name="texture_button" type="TextureButton" parent="quit_button"]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.458
@@ -502,7 +507,7 @@ theme = SubResource("Theme_gnr1q")
 action_mode = 0
 texture_normal = ExtResource("5_84j0t")
 
-[node name="Label" type="Label" parent="CanvasLayer/quit_button"]
+[node name="Label" type="Label" parent="quit_button"]
 layout_mode = 0
 offset_left = 65.5413
 offset_top = 44.2803
@@ -513,28 +518,11 @@ scale = Vector2(1.815, 1.815)
 theme = ExtResource("6_actju")
 text = "Quit"
 
-[node name="music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("11_qnrmr")
-volume_db = -12.0
-bus = &"Music"
-
-[node name="menu_music_intro" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("11_8g2sv")
-volume_db = -12.0
-bus = &"Music"
-
-[node name="pop" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("12_s5yk8")
-volume_db = -10.0
-bus = &"SFX"
-
-[connection signal="pressed" from="CanvasLayer/VBoxContainer4/Options" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="CanvasLayer/VBoxContainer5/Quit" to="." method="_on_quit_pressed"]
-[connection signal="pressed" from="CanvasLayer/Start_button/texture_button" to="." method="_on_start_game_pressed"]
-[connection signal="pressed" from="CanvasLayer/how_to_play_button/texture_button" to="." method="_on_how_to_play_pressed"]
-[connection signal="pressed" from="CanvasLayer/about_us_button/texture_button" to="." method="_on_about_us_pressed"]
-[connection signal="pressed" from="CanvasLayer/options_button/texture_button" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="CanvasLayer/quit_button/texture_button" to="." method="_on_quit_pressed"]
-[connection signal="finished" from="music" to="." method="_on_music_finished"]
-[connection signal="finished" from="menu_music_intro" to="." method="_on_menu_music_intro_finished"]
 [connection signal="finished" from="pop" to="." method="_on_pop_finished"]
+[connection signal="pressed" from="VBoxContainer4/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="VBoxContainer5/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Start_button/texture_button" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="how_to_play_button/texture_button" to="." method="_on_how_to_play_pressed"]
+[connection signal="pressed" from="about_us_button/texture_button" to="." method="_on_about_us_pressed"]
+[connection signal="pressed" from="options_button/texture_button" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="quit_button/texture_button" to="." method="_on_quit_pressed"]

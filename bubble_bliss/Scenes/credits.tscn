@@ -1,46 +1,8 @@
-[gd_scene load_steps=19 format=3 uid="uid://ctvomw1cn28kf"]
+[gd_scene load_steps=12 format=3 uid="uid://ctvomw1cn28kf"]
 
 [ext_resource type="Script" path="res://Scripts/credits.gd" id="1_5ijot"]
-[ext_resource type="Texture2D" uid="uid://8pntxcrwopv7" path="res://Assets/Art/BG_Space.jpg" id="1_hv55c"]
-[ext_resource type="AudioStream" uid="uid://cliqi057lxak6" path="res://Assets/Audio/Music/MainMenuTheme_Ilman_Introa.mp3" id="2_vpogk"]
 [ext_resource type="Texture2D" uid="uid://b80qx1ag8nbsd" path="res://Assets/Art/BananaPlanetSheet.png" id="3_61wri"]
 [ext_resource type="Texture2D" uid="uid://gbmwr3ji3ra3" path="res://Assets/Art/BubblesSheet.png" id="4_dubdn"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_72cta"]
-atlas = ExtResource("1_hv55c")
-region = Rect2(0, 0, 1920, 1080)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8p14s"]
-atlas = ExtResource("1_hv55c")
-region = Rect2(1920, 0, 1920, 1080)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ejipe"]
-atlas = ExtResource("1_hv55c")
-region = Rect2(0, 1080, 1920, 1080)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_e4y81"]
-atlas = ExtResource("1_hv55c")
-region = Rect2(1920, 1080, 1920, 1080)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_10f04"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_72cta")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8p14s")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ejipe")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_e4y81")
-}],
-"loop": true,
-"name": &"default",
-"speed": 4.0
-}]
 
 [sub_resource type="Theme" id="Theme_idkej"]
 
@@ -103,12 +65,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_5ijot")
-
-[node name="bg" type="AnimatedSprite2D" parent="."]
-z_index = -10
-position = Vector2(970, 548)
-sprite_frames = SubResource("SpriteFrames_10f04")
-autoplay = "default"
 
 [node name="Credits_text_area" type="Panel" parent="."]
 layout_mode = 1
@@ -342,11 +298,6 @@ action_mode = 0
 text = "  Menu"
 icon_alignment = 1
 
-[node name="music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_vpogk")
-volume_db = -12.0
-autoplay = true
-
 [node name="BananaLandSprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(1416, 385)
 rotation = -6.28319
@@ -360,4 +311,3 @@ scale = Vector2(0.749387, 0.745782)
 sprite_frames = SubResource("SpriteFrames_tcieu")
 
 [connection signal="pressed" from="VBoxContainer/Menu" to="." method="_on_menu_pressed"]
-[connection signal="finished" from="music" to="." method="_on_music_finished"]

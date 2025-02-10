@@ -22,11 +22,15 @@ var monkey_rotation:float = 0.0
 
 var yum_sounds:Array
 
+
 func _ready() -> void:
 	
 	add_to_group("Bubbles")
+	
 	$bubble_top_layer.play("rolling")
 	$Bubbles.play("default")
+	
+	Game.get_instance().bubbles = self
 	
 	yum_sounds.append(preload("res://Assets/Audio/SFX/yum_1.mp3"))
 	yum_sounds.append(preload("res://Assets/Audio/SFX/yum_2.mp3"))
@@ -98,6 +102,12 @@ func _physics_process(_delta:float) -> void:
 	apply_central_force(force)
 
 
+func reset_animations() -> void:
+	$Bubbles.play("default")
+	$bubble_bg_Sprite.show()
+	$bubble_top_layer.play("rolling")
+
+
 func death() -> void:
 	if dead:
 		return
@@ -106,8 +116,6 @@ func death() -> void:
 	$Bubbles.play("lose")
 	$bubble_bg_Sprite.hide()
 	$bubble_top_layer.play("burst")
-	if not Globals.sound_on:
-		return
 	
 	$pop.play()
 	$scream.play()
@@ -119,6 +127,7 @@ func banana_eaten() -> void:
 		$yum.stream = yum_sounds.pick_random()
 		$yum.play()
 
+
 func _integrate_forces(_state: PhysicsDirectBodyState2D) -> void:
 	if _state.linear_velocity.length() > MAX_SPEED:
 		_state.linear_velocity = _state.linear_velocity.normalized() * MAX_SPEED
@@ -128,7 +137,7 @@ func _on_bubbles_animation_finished() -> void:
 	
 	match $Bubbles.animation:
 		"lose":
-			Globals.level.lose()
+			Game.get_instance().lose()
 		"blink":
 			$Bubbles.play("default")
 

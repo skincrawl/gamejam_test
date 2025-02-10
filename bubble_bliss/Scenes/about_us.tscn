@@ -1,9 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://ouy3qne2eb5e"]
+[gd_scene load_steps=5 format=3 uid="uid://ouy3qne2eb5e"]
 
 [ext_resource type="FontFile" uid="uid://behuf74h25j5t" path="res://GameAssets/DynaPuff/DynaPuff-VariableFont_wdth,wght.ttf" id="1_6wmt5"]
 [ext_resource type="Script" path="res://Scripts/about_us.gd" id="2_8eehu"]
-[ext_resource type="Texture2D" uid="uid://8pntxcrwopv7" path="res://Assets/Art/BG_Space.jpg" id="3_1vw7k"]
-[ext_resource type="AudioStream" uid="uid://cliqi057lxak6" path="res://Assets/Audio/Music/MainMenuTheme_Ilman_Introa.mp3" id="4_l2ra3"]
 
 [sub_resource type="Theme" id="Theme_avieb"]
 Button/fonts/font = ExtResource("1_6wmt5")
@@ -20,16 +18,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_avieb")
 script = ExtResource("2_8eehu")
-
-[node name="TextBoxColor" type="TextureRect" parent="."]
-show_behind_parent = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("3_1vw7k")
 
 [node name="TextBoxAnchoring" type="Panel" parent="."]
 layout_mode = 1
@@ -85,10 +73,4 @@ action_mode = 0
 text = "Return"
 icon_alignment = 1
 
-[node name="music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_l2ra3")
-volume_db = -12.0
-autoplay = true
-
 [connection signal="pressed" from="VBoxContainer/Return" to="." method="_on_return_pressed"]
-[connection signal="finished" from="music" to="." method="_on_music_finished"]

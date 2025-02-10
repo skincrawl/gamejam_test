@@ -7,5 +7,5 @@ func _ready() -> void:
 
 func _on_body_entered(_body: Node2D) -> void:
 	
-	if _body.name == "Bubbles" and not _body.dead:
-		get_tree().change_scene_to_file.call_deferred("res://Scenes/win_screen.tscn")
+	if _body.is_in_group("Bubbles") and not Game.get_instance().bubbles.dead:
+		Game.get_instance().show_win_screen()

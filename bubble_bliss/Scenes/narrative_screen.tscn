@@ -1,9 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://yrcn2k3wrd71"]
+[gd_scene load_steps=11 format=3 uid="uid://yrcn2k3wrd71"]
 
 [ext_resource type="FontFile" uid="uid://behuf74h25j5t" path="res://GameAssets/DynaPuff/DynaPuff-VariableFont_wdth,wght.ttf" id="1_nxky1"]
 [ext_resource type="Script" path="res://Scripts/narrative_screen.gd" id="2_7b8gn"]
 [ext_resource type="Texture2D" uid="uid://8pntxcrwopv7" path="res://Assets/Art/BG_Space.jpg" id="3_c6r4f"]
-[ext_resource type="AudioStream" uid="uid://cliqi057lxak6" path="res://Assets/Audio/Music/MainMenuTheme_Ilman_Introa.mp3" id="4_stxnu"]
 
 [sub_resource type="Theme" id="Theme_i2vsh"]
 Button/fonts/font = ExtResource("1_nxky1")
@@ -57,6 +56,7 @@ theme = SubResource("Theme_i2vsh")
 script = ExtResource("2_7b8gn")
 
 [node name="bg" type="AnimatedSprite2D" parent="."]
+visible = false
 z_index = -10
 position = Vector2(960, 540)
 sprite_frames = SubResource("SpriteFrames_6y4pv")
@@ -122,10 +122,5 @@ action_mode = 0
 text = "   Play   "
 icon_alignment = 1
 
-[node name="music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_stxnu")
-volume_db = -12.0
-
 [connection signal="pressed" from="VBoxContainer/Return" to="." method="_on_return_pressed"]
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
-[connection signal="finished" from="music" to="." method="_on_music_finished"]

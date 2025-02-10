@@ -1,46 +1,8 @@
-[gd_scene load_steps=19 format=3 uid="uid://b1nk0of7fw0au"]
+[gd_scene load_steps=12 format=3 uid="uid://b1nk0of7fw0au"]
 
 [ext_resource type="Script" path="res://Scripts/win_screen.gd" id="1_yact1"]
-[ext_resource type="Texture2D" uid="uid://8pntxcrwopv7" path="res://Assets/Art/BG_Space.jpg" id="2_tn11s"]
-[ext_resource type="AudioStream" uid="uid://cliqi057lxak6" path="res://Assets/Audio/Music/MainMenuTheme_Ilman_Introa.mp3" id="3_d6pyg"]
 [ext_resource type="Texture2D" uid="uid://b80qx1ag8nbsd" path="res://Assets/Art/BananaPlanetSheet.png" id="4_nuwg6"]
 [ext_resource type="Texture2D" uid="uid://gbmwr3ji3ra3" path="res://Assets/Art/BubblesSheet.png" id="5_3y2cb"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_72cta"]
-atlas = ExtResource("2_tn11s")
-region = Rect2(0, 0, 1920, 1080)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8p14s"]
-atlas = ExtResource("2_tn11s")
-region = Rect2(1920, 0, 1920, 1080)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ejipe"]
-atlas = ExtResource("2_tn11s")
-region = Rect2(0, 1080, 1920, 1080)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_e4y81"]
-atlas = ExtResource("2_tn11s")
-region = Rect2(1920, 1080, 1920, 1080)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_pjhnb"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_72cta")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8p14s")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ejipe")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_e4y81")
-}],
-"loop": true,
-"name": &"default",
-"speed": 4.0
-}]
 
 [sub_resource type="Theme" id="Theme_1mlce"]
 
@@ -100,12 +62,6 @@ layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_yact1")
 
-[node name="bg" type="AnimatedSprite2D" parent="."]
-z_index = -10
-position = Vector2(970, 548)
-sprite_frames = SubResource("SpriteFrames_pjhnb")
-autoplay = "default"
-
 [node name="TextBoxAnchoring" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 5
@@ -162,11 +118,6 @@ theme_override_font_sizes/font_size = 60
 action_mode = 0
 text = "  Menu"
 icon_alignment = 1
-
-[node name="music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_d6pyg")
-volume_db = -12.0
-autoplay = true
 
 [node name="BananaLandSprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(1496, 546)

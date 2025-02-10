@@ -1,3 +1,95 @@
-[gd_scene format=3 uid="uid://4qcyhacocqsd"]
+[gd_scene load_steps=17 format=3 uid="uid://4qcyhacocqsd"]
+
+[ext_resource type="Script" path="res://Scripts/game.gd" id="1_sfcmp"]
+[ext_resource type="AudioStream" uid="uid://bxaf8tn4ra364" path="res://Assets/Audio/Music/MainMenuTheme_Intro.mp3" id="2_jai3e"]
+[ext_resource type="Script" path="res://Scripts/menus.gd" id="3_g0g27"]
+[ext_resource type="PackedScene" uid="uid://yrcn2k3wrd71" path="res://Scenes/narrative_screen.tscn" id="4_nrqdf"]
+[ext_resource type="Texture2D" uid="uid://8pntxcrwopv7" path="res://Assets/Art/BG_Space.jpg" id="5_ganff"]
+[ext_resource type="PackedScene" uid="uid://6lgt51fk3khg" path="res://Scenes/settings_menu.tscn" id="6_ajcxk"]
+[ext_resource type="PackedScene" uid="uid://ouy3qne2eb5e" path="res://Scenes/about_us.tscn" id="6_ov1is"]
+[ext_resource type="PackedScene" uid="uid://cfx55rek8u1kn" path="res://Scenes/how_to_play.tscn" id="7_qeoyt"]
+[ext_resource type="PackedScene" uid="uid://b1nk0of7fw0au" path="res://Scenes/win_screen.tscn" id="8_4mtt3"]
+[ext_resource type="PackedScene" uid="uid://ctvomw1cn28kf" path="res://Scenes/credits.tscn" id="9_05lkh"]
+[ext_resource type="PackedScene" uid="uid://b5gigobueilix" path="res://Scenes/main_menu.tscn" id="10_5yf04"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_72cta"]
+atlas = ExtResource("5_ganff")
+region = Rect2(0, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8p14s"]
+atlas = ExtResource("5_ganff")
+region = Rect2(1920, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ejipe"]
+atlas = ExtResource("5_ganff")
+region = Rect2(0, 1080, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e4y81"]
+atlas = ExtResource("5_ganff")
+region = Rect2(1920, 1080, 1920, 1080)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yrmts"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_72cta")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8p14s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ejipe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e4y81")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_sfcmp")
+
+[node name="bg" type="AnimatedSprite2D" parent="."]
+z_index = -10
+position = Vector2(960, 540)
+sprite_frames = SubResource("SpriteFrames_yrmts")
+autoplay = "default"
+metadata/_edit_lock_ = true
+
+[node name="Menus" type="CanvasLayer" parent="."]
+script = ExtResource("3_g0g27")
+
+[node name="MainMenu" parent="Menus" instance=ExtResource("10_5yf04")]
+
+[node name="narrative_screen" parent="Menus" instance=ExtResource("4_nrqdf")]
+visible = false
+mouse_filter = 2
+
+[node name="Settings" parent="Menus" instance=ExtResource("6_ajcxk")]
+visible = false
+mouse_filter = 2
+
+[node name="AboutUs" parent="Menus" instance=ExtResource("6_ov1is")]
+visible = false
+mouse_filter = 2
+
+[node name="HowToPlay" parent="Menus" instance=ExtResource("7_qeoyt")]
+visible = false
+mouse_filter = 2
+
+[node name="win_screen" parent="Menus" instance=ExtResource("8_4mtt3")]
+visible = false
+mouse_filter = 2
+
+[node name="Credits" parent="Menus" instance=ExtResource("9_05lkh")]
+visible = false
+mouse_filter = 2
+
+[node name="music_player" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_jai3e")
+volume_db = -12.0
+autoplay = true
+
+[connection signal="finished" from="music_player" to="." method="_on_music_player_finished"]
