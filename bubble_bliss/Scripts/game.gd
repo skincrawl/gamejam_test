@@ -28,6 +28,8 @@ static var _instance:Game
 var level:Level
 var bubbles:Bubbles
 
+var checkpoint_manager:CheckpointManager
+
 
 static func get_instance() -> Game:
 	return _instance

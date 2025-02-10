@@ -22,6 +22,7 @@ Useability
 
 Optimization
 
+-Bubbles is instantiated when dying. Make it just reset bubbles so you don't load his sounds from file when you die
 -Animation instead of GPUParticles
 -Spikes in _process times
 -Object pooling for the darts
@@ -29,8 +30,8 @@ Optimization
 
 Gameplay
 
--Win screen doesn't show up for some reason
--Random lag spikes (loading music?)
+-Checkpoints are now broken
+-Random lag spikes
 -Fan distance attenuation...?
 -Controls are wonky, pushes way too hard when the fan is close to Bubbles
 -Passed checkpoints can be retriggered and update the spawn pos backwards
