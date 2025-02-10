@@ -1991,6 +1991,7 @@ push_distance_multiplier = 0.122
 position = Vector2(-1812.27, 727.835)
 scale = Vector2(1, 0.248)
 push_distance_multiplier = 0.115
+push_strength_multiplier = 1.0
 
 [node name="fan7" parent="level_objects/fans" instance=ExtResource("6_6x1ge")]
 position = Vector2(-937.273, 725.773)
@@ -2008,6 +2009,7 @@ position = Vector2(-1412.27, 990.722)
 rotation = 3.14159
 scale = Vector2(1, 0.248)
 push_distance_multiplier = 0.115
+push_strength_multiplier = 1.0
 
 [node name="fan4" parent="level_objects/fans" instance=ExtResource("6_6x1ge")]
 position = Vector2(-1336.74, 1548.28)

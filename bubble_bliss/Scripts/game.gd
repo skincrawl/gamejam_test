@@ -43,7 +43,7 @@ func _ready() -> void:
 func lose():
 	bubbles.queue_free()
 	bubbles = bubbles_packed.instantiate()
-	bubbles.global_position = level.spawn_pos.global_position
+	bubbles.global_position = checkpoint_manager.last_location
 	level.add_child(bubbles)
 
 
