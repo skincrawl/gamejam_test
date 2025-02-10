@@ -48,5 +48,9 @@ stream = ExtResource("5_l70ob")
 volume_db = -22.0
 autoplay = true
 
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+rect = Rect2(-300, -200, 600, 1400)
+enable_node_path = NodePath("../Part")
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

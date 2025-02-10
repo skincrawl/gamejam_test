@@ -17,6 +17,7 @@ const MAX_PUSH_STRENGTH:float = 500.0
 		if has_node("Area2D"):
 			$Area2D.scale.y = push_distance
 			$push_area_origin.scale.y = push_distance
+			$VisibleOnScreenEnabler2D.scale.y = push_distance
 @export var push_strength_multiplier:float = 0.5:
 	set(_new_value):
 		push_strength_multiplier = _new_value
