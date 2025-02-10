@@ -29,9 +29,10 @@ Optimization
 
 Gameplay
 
+-Win screen doesn't show up for some reason
 -Random lag spikes (loading music?)
 -Fan distance attenuation...?
--Controls are wonky, pushes way too hard when the fan is close to the monkey
+-Controls are wonky, pushes way too hard when the fan is close to Bubbles
 -Passed checkpoints can be retriggered and update the spawn pos backwards
 -When restarting, the game remembers the last checkpoint and spawns you there
 -Sometimes bounces in weird angles

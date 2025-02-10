@@ -27,9 +27,6 @@ func _ready() -> void:
 	
 	add_to_group("Bubbles")
 	
-	print("bubbles group: ", get_groups())
-	print("dead: ", dead)
-	
 	$bubble_top_layer.play("rolling")
 	$Bubbles.play("default")
 	

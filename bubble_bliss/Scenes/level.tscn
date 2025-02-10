@@ -2390,6 +2390,7 @@ position = Vector2(8871, 4229)
 position = Vector2(10325, 7106)
 
 [node name="GUI" type="CanvasLayer" parent="."]
+layer = -10
 
 [node name="bananas_label" type="Label" parent="GUI"]
 offset_left = 32.0

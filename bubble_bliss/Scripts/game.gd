@@ -115,6 +115,8 @@ func show_win_screen() -> void:
 	main_menu.process_mode = Node.PROCESS_MODE_DISABLED
 	win_screen.show()
 	win_screen.mouse_filter = Control.MOUSE_FILTER_STOP
+	level.get_node("ParallaxBackground").visible = false
+	level.get_node("GUI").visible = false
 	level.queue_free()
 	$music_player.stream = menu_music_intro
 	$music_player.play()

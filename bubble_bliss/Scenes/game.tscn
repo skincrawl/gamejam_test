@@ -3,7 +3,6 @@
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_sfcmp"]
 [ext_resource type="AudioStream" uid="uid://bxaf8tn4ra364" path="res://Assets/Audio/Music/MainMenuTheme_Intro.mp3" id="2_jai3e"]
 [ext_resource type="Script" path="res://Scripts/menus.gd" id="3_g0g27"]
-[ext_resource type="PackedScene" uid="uid://b5gigobueilix" path="res://Scenes/main_menu_2.tscn" id="3_x28cs"]
 [ext_resource type="PackedScene" uid="uid://yrcn2k3wrd71" path="res://Scenes/narrative_screen.tscn" id="4_nrqdf"]
 [ext_resource type="Texture2D" uid="uid://8pntxcrwopv7" path="res://Assets/Art/BG_Space.jpg" id="5_ganff"]
 [ext_resource type="PackedScene" uid="uid://6lgt51fk3khg" path="res://Scenes/settings_menu.tscn" id="6_ajcxk"]
@@ -11,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cfx55rek8u1kn" path="res://Scenes/how_to_play.tscn" id="7_qeoyt"]
 [ext_resource type="PackedScene" uid="uid://b1nk0of7fw0au" path="res://Scenes/win_screen.tscn" id="8_4mtt3"]
 [ext_resource type="PackedScene" uid="uid://ctvomw1cn28kf" path="res://Scenes/credits.tscn" id="9_05lkh"]
+[ext_resource type="PackedScene" uid="uid://b5gigobueilix" path="res://Scenes/main_menu.tscn" id="10_5yf04"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_72cta"]
 atlas = ExtResource("5_ganff")
@@ -61,7 +61,7 @@ metadata/_edit_lock_ = true
 [node name="Menus" type="CanvasLayer" parent="."]
 script = ExtResource("3_g0g27")
 
-[node name="MainMenu" parent="Menus" instance=ExtResource("3_x28cs")]
+[node name="MainMenu" parent="Menus" instance=ExtResource("10_5yf04")]
 
 [node name="narrative_screen" parent="Menus" instance=ExtResource("4_nrqdf")]
 visible = false
