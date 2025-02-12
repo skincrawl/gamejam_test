@@ -525,7 +525,10 @@ position = Vector2(8529, 4363)
 position = Vector2(8518, 3733)
 
 [node name="banana90" parent="level_objects/bananas" instance=ExtResource("3_olu38")]
-position = Vector2(8524, 2551)
+position = Vector2(8527, 2475)
+
+[node name="banana206" parent="level_objects/bananas" instance=ExtResource("3_olu38")]
+position = Vector2(8571, 2761)
 
 [node name="banana165" parent="level_objects/bananas" instance=ExtResource("3_olu38")]
 position = Vector2(8591, 3062)
@@ -539,6 +542,9 @@ position = Vector2(8567, 3317)
 [node name="banana88" parent="level_objects/bananas" instance=ExtResource("3_olu38")]
 position = Vector2(8364, 1306)
 
+[node name="banana204" parent="level_objects/bananas" instance=ExtResource("3_olu38")]
+position = Vector2(8321, 1466)
+
 [node name="banana98" parent="level_objects/bananas" instance=ExtResource("3_olu38")]
 position = Vector2(8296, 1632)
 
@@ -548,11 +554,20 @@ position = Vector2(8302, 1782)
 [node name="banana108" parent="level_objects/bananas" instance=ExtResource("3_olu38")]
 position = Vector2(8344, 1895)
 
+[node name="banana205" parent="level_objects/bananas" instance=ExtResource("3_olu38")]
+position = Vector2(8404, 2057)
+
 [node name="banana164" parent="level_objects/bananas" instance=ExtResource("3_olu38")]
-position = Vector2(8449, 2232)
+position = Vector2(8476, 2247)
 
 [node name="banana94" parent="level_objects/bananas" instance=ExtResource("3_olu38")]
-position = Vector2(8405, 788)
+position = Vector2(8396, 787)
+
+[node name="banana203" parent="level_objects/bananas" instance=ExtResource("3_olu38")]
+position = Vector2(8371, 1040)
+
+[node name="banana122" parent="level_objects/bananas" instance=ExtResource("3_olu38")]
+position = Vector2(8435, 535)
 
 [node name="banana87" parent="level_objects/bananas" instance=ExtResource("3_olu38")]
 position = Vector2(8489, 241)

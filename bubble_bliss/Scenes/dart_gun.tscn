@@ -26,6 +26,7 @@ metadata/_edit_lock_ = true
 autostart = true
 
 [node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+visible = false
 rect = Rect2(-4000, -4000, 8000, 8000)
 
 [connection signal="timeout" from="shoot_timer" to="." method="_on_shoot_timer_timeout"]

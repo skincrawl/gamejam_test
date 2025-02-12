@@ -31,6 +31,7 @@ var bubbles:Bubbles = null
 
 func _ready() -> void:
 	
+	$VisibleOnScreenEnabler2D.show()
 	$Part/Node2D/CPUParticles2D.emitting = true
 	
 	# push_distance = lerp(MIN_DISTANCE, MAX_DISTANCE, push_distance_multiplier)

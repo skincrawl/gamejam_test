@@ -71,6 +71,9 @@ func start_level() -> void:
 	narrative_screen.hide()
 	narrative_screen.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	
+	if not level == null:
+		level.queue_free()
+	
 	level = level_packed.instantiate()
 	add_child(level)
 	$music_player.stream = level_music

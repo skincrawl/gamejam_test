@@ -22,19 +22,21 @@ Useability
 
 Optimization
 
--Fans are always producing particles, even when they're not visible
 -Animation instead of GPUParticles
--Spikes in _process times
 -Object pooling for the darts
 
 
 Gameplay
 
--Checkpoints are now broken
--Random lag spikes
+-Pause button
+-Make the banana fan force stronger
+-Increase the max speed of Bubbles
+-Add bananas collected in the win screen
+-Add points in the win screen (deaths x time x bananas)
+-Banana bunches (3 & 5)
+-More bananas to safely lead the monkey down 
 -Fan distance attenuation...?
 -Passed checkpoints can be retriggered and update the spawn pos backwards
--When restarting, the game remembers the last checkpoint and spawns you there
 -Sometimes bounces in weird angles
 
 
@@ -56,6 +58,7 @@ GUI
 
 Graphics
 
+-Add a timer so Bubbles only closes his eyes after 0.5 seconds of blowing air at him!
 -Particles visible outside the effect area, like even behind the fan!
 -Make checkpoints visible somehow
 -Change the bubble rolling animation speed depending on how fast the monkey is going
@@ -64,11 +67,16 @@ Graphics
 Audio
 
 -Changing sound volume in the settings reduces it a lot
--Lag in music when navigating menus
 -Dart gun sounds
 -Banana collection sounds are too quiet (?)
 -More yum yum sounds
 -Pitch up yum yum sounds
+
+
+Extras
+
+-Add a reward for collecting all bananas
+-Banana fan appears in the menu after a while and you can move Bubbles around on the screen
 
 
 

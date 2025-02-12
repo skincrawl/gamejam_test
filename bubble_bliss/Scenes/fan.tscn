@@ -49,6 +49,7 @@ volume_db = -22.0
 autoplay = true
 
 [node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+visible = false
 rect = Rect2(-300, -200, 600, 1400)
 enable_node_path = NodePath("../Part")
 

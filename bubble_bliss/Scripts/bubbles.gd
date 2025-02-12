@@ -4,9 +4,9 @@ class_name Bubbles
 
 
 const MIN_BLOW_STRENGTH:float = 1.0
-const MAX_BLOW_STRENGTH:float = 700.0
+const MAX_BLOW_STRENGTH:float = 750.0
 
-const MAX_SPEED:float = 900.0
+const MAX_SPEED:float = 1000.0
 
 const MAX_CONTROL_DISTANCE:float = 500.0
 

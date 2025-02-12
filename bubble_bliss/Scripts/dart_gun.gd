@@ -9,6 +9,10 @@ class_name DartGun
 		$shoot_timer.wait_time = shoot_period
  
 
+func _ready() -> void:
+	$VisibleOnScreenEnabler2D.show()
+
+
 func _on_shoot_timer_timeout() -> void:
 	
 	Game.get_instance().level.spawn_dart(self)
