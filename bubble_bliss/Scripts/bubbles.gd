@@ -4,9 +4,9 @@ class_name Bubbles
 
 
 const MIN_BLOW_STRENGTH:float = 1.0
-const MAX_BLOW_STRENGTH:float = 750.0
+const MAX_BLOW_STRENGTH:float = 12.0 * 100.0 # Assume 1 m = 100 px, then 750 N = 750 kg * m/s^2 * 100 px/m = 750,000 px/s^2 
 
-const MAX_SPEED:float = 1000.0
+const MAX_SPEED:float = 2000.0
 
 const MAX_CONTROL_DISTANCE:float = 500.0
 

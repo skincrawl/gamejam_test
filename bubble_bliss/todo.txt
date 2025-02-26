@@ -22,6 +22,7 @@ Useability
 
 Optimization
 
+-Make sure there aren't any unnecessary spikes in process frames!
 -Animation instead of GPUParticles
 -Object pooling for the darts
 
@@ -29,8 +30,6 @@ Optimization
 Gameplay
 
 -Pause button
--Make the banana fan force stronger
--Increase the max speed of Bubbles
 -Add bananas collected in the win screen
 -Add points in the win screen (deaths x time x bananas)
 -Banana bunches (3 & 5)
@@ -42,16 +41,13 @@ Gameplay
 
 Level design
 
--Shorten the fans so they don't push you into walls
-
 
 GUI
 
--The level is shown on top of the bananas GUI
+-Pause overlay
 -Bubble buttons don't visually change when hovering
 -There seems to be some silence in the pop audio that should be removed for the navigation to be snappy
 -Bananas collected in win screen
--Main menu theme intro
 -Loader to make the menu music play right away
 -Menu fonts could use crayon style outlines or something
 
