@@ -5,7 +5,7 @@ class_name Level
 
 @onready var banana_mouse:BananaMouse = Game.get_instance().banana_mouse
 @onready var spawn_pos:Marker2D = $level_objects/spawn_pos
-@onready var shoot_timer:Timer = $shoot_timer
+
 
 const LOSE_TIME:float = 3.0
 
@@ -30,8 +30,6 @@ func _ready() -> void:
 	
 	# Hiding the mouse
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
-	
-	$GUI/bananas_label.show()
 	
 	banana_mouse.process_mode = Node.PROCESS_MODE_INHERIT
 	
@@ -62,7 +60,7 @@ func banana_collected(_banana:Banana) -> void:
 	# _banana.destination = $bananas.
 	
 	collected_bananas += 1
-	$GUI/bananas_label.text = "bananas: " + str(collected_bananas)
+	Game.get_instance().level_GUI.bananas_label.text = "bananas: " + str(collected_bananas)
 
 
 func _on_shoot_timer_timeout() -> void:

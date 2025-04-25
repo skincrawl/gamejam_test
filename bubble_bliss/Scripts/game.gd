@@ -2,7 +2,7 @@ extends Node2D
 
 class_name Game
 
-var level_packed:PackedScene = preload("res://Scenes/level.tscn")
+var level_packed:PackedScene = preload("res://Scenes/levels/og_level.tscn")
 var bubbles_packed:PackedScene = preload("res://Scenes/bubbles.tscn")
 
 const MENU_MUSIC_VOLUME:float = -12.0
@@ -24,6 +24,7 @@ var level_music:AudioStream = preload("res://Assets/Audio/Music/PeliTheme.mp3")
 
 @onready var paused_label:Label = $Menus/Pause/paused_label
 
+@onready var level_GUI:CanvasLayer = $level_GUI
 @onready var banana_mouse:BananaMouse = $banana_mouse
 
 
@@ -60,6 +61,8 @@ func show_main_menu() -> void:
 	
 	main_menu.show()
 	main_menu.process_mode = Node.PROCESS_MODE_INHERIT
+	
+	level_GUI.hide()
 	banana_mouse.hide()
 	banana_mouse.process_mode = Node.PROCESS_MODE_DISABLED
 	
@@ -84,6 +87,8 @@ func start_level() -> void:
 	
 	narrative_screen.hide()
 	narrative_screen.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	
+	level_GUI.show()
 	banana_mouse.show()
 	banana_mouse.process_mode = Node.PROCESS_MODE_INHERIT
 	
