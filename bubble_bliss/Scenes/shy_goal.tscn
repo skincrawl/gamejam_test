@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://c48rsvjykkd1r"]
+
+[ext_resource type="PhysicsMaterial" uid="uid://ct1d50ek00vmo" path="res://Resources/PhysicsMaterials/shy_goal_physics_material.tres" id="1_nkpod"]
+[ext_resource type="Script" uid="uid://u0htjv07s0hr" path="res://Scripts/shy_goal.gd" id="1_oso4j"]
+[ext_resource type="PackedScene" uid="uid://c4h04nltkk8mx" path="res://Scenes/goal.tscn" id="3_nkpod"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nkpod"]
+radius = 221.183
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oso4j"]
+radius = 1193.03
+
+[node name="shy_goal" type="RigidBody2D"]
+collision_layer = 4
+mass = 10.0
+physics_material_override = ExtResource("1_nkpod")
+gravity_scale = 0.0
+script = ExtResource("1_oso4j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_nkpod")
+
+[node name="detection_area" type="Area2D" parent="."]
+collision_mask = 2
+input_pickable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detection_area"]
+shape = SubResource("CircleShape2D_oso4j")
+
+[node name="goal" parent="." instance=ExtResource("3_nkpod")]
+
+[node name="banana_timer" type="Timer" parent="."]
+wait_time = 0.3
+
+[connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]
+[connection signal="timeout" from="banana_timer" to="." method="_on_banana_timer_timeout"]

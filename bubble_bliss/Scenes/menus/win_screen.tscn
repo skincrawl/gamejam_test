@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://b1nk0of7fw0au"]
 
-[ext_resource type="Script" path="res://Scripts/win_screen.gd" id="1_yact1"]
+[ext_resource type="Script" uid="uid://cdq5vydyv485i" path="res://Scripts/menus/win_screen.gd" id="1_yact1"]
 [ext_resource type="Texture2D" uid="uid://b80qx1ag8nbsd" path="res://Assets/Art/BananaPlanetSheet.png" id="4_nuwg6"]
 [ext_resource type="Texture2D" uid="uid://gbmwr3ji3ra3" path="res://Assets/Art/BubblesSheet.png" id="5_3y2cb"]
 

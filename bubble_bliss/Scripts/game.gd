@@ -2,7 +2,7 @@ extends Node2D
 
 class_name Game
 
-var level_packed:PackedScene = preload("res://Scenes/levels/og_level.tscn")
+var level_packed:PackedScene = preload("res://Scenes/levels/test_level_1.tscn")
 var bubbles_packed:PackedScene = preload("res://Scenes/bubbles.tscn")
 
 const MENU_MUSIC_VOLUME:float = -12.0

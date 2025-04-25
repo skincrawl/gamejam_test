@@ -10,6 +10,7 @@ class_name Level
 const LOSE_TIME:float = 3.0
 
 
+var game:Game
 var checkpoint_manager:CheckpointManager
 
 var dart_packed:PackedScene = preload("res://Scenes/dart.tscn")
@@ -17,12 +18,14 @@ var dart_packed:PackedScene = preload("res://Scenes/dart.tscn")
 var bananas_amount:int = 0
 var collected_bananas:int = 0
 
+var next_level:Level
+
 signal shoot
 
 
 func _ready() -> void:
 	
-	var game:Game = Game.get_instance()
+	game = Game.get_instance()
 	game.level = self
 	game.bubbles = $Bubbles
 	
