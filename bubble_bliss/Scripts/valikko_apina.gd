@@ -6,12 +6,13 @@ extends Node2D
 var spin_speed:float = 5.0
 
 var mouse_pointing:bool = false
-
+var screaming:bool = false
 
 func _unhandled_input(_event:InputEvent) -> void:
-	if mouse_pointing and Input.is_action_just_pressed("blowing"):
+	if not screaming and mouse_pointing and Input.is_action_just_pressed("blowing"):
 		$monkey_scream.play()
 		$ApinaBubbles.play("whoa!")
+		screaming = true
 
 
 func _process(_delta:float) -> void:
@@ -29,3 +30,4 @@ func _on_area_2d_mouse_exited() -> void:
 
 func _on_apina_bubbles_animation_finished() -> void:
 	$ApinaBubbles.play("default")
+	screaming = false

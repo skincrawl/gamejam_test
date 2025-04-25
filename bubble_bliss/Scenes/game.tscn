@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cfx55rek8u1kn" path="res://Scenes/how_to_play.tscn" id="7_qeoyt"]
 [ext_resource type="PackedScene" uid="uid://b1nk0of7fw0au" path="res://Scenes/win_screen.tscn" id="8_4mtt3"]
 [ext_resource type="PackedScene" uid="uid://ctvomw1cn28kf" path="res://Scenes/credits.tscn" id="9_05lkh"]
-[ext_resource type="Script" uid="uid://dxiqrwxseeafo" path="res://Scenes/pause.gd" id="11_5fxth"]
+[ext_resource type="Script" uid="uid://dxiqrwxseeafo" path="res://Scripts/pause.gd" id="11_5fxth"]
 [ext_resource type="Script" uid="uid://chdt1a1d6jcqk" path="res://Scripts/debug.gd" id="12_rfjv2"]
 [ext_resource type="Theme" uid="uid://b0w104qw2pa54" path="res://Resources/Themes/debugging_theme.tres" id="12_rku1e"]
 [ext_resource type="PackedScene" uid="uid://7o3ladlt1r1i" path="res://Scenes/banana_mouse.tscn" id="14_1phco"]

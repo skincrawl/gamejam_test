@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://b5gigobueilix"]
+[gd_scene load_steps=36 format=3 uid="uid://b5gigobueilix"]
 
 [ext_resource type="Script" uid="uid://ckjt1t4tl5soy" path="res://Scripts/main_menu.gd" id="1_oinqm"]
 [ext_resource type="FontFile" uid="uid://behuf74h25j5t" path="res://GameAssets/DynaPuff/DynaPuff-VariableFont_wdth,wght.ttf" id="1_ugjs1"]
@@ -75,6 +75,9 @@ animations = [{
 "name": &"default",
 "speed": 2.0
 }]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vr1f0"]
+radius = 156.697
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_68v2j"]
 atlas = ExtResource("5_xd7ie")
@@ -160,32 +163,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_vr1f0"]
-radius = 156.697
-
 [sub_resource type="Theme" id="Theme_gnr1q"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_u7ehx"]
-atlas = ExtResource("5_styjg")
-region = Rect2(0, 0, 630, 500)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qba2m"]
-atlas = ExtResource("5_styjg")
-region = Rect2(630, 0, 630, 500)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_a3r2e"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_u7ehx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qba2m")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -194,6 +172,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 theme = SubResource("Theme_avieb")
 script = ExtResource("1_oinqm")
 
@@ -219,6 +198,11 @@ position = Vector2(1476, 477)
 script = ExtResource("6_cx4xl")
 metadata/_edit_group_ = true
 
+[node name="Area2D" type="Area2D" parent="BubblesMainMenu"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BubblesMainMenu/Area2D"]
+shape = SubResource("CircleShape2D_vr1f0")
+
 [node name="ApinaBubbles" type="AnimatedSprite2D" parent="BubblesMainMenu"]
 position = Vector2(0, -8)
 scale = Vector2(2.265, 2.265)
@@ -239,14 +223,6 @@ sprite_frames = SubResource("SpriteFrames_ea5kg")
 autoplay = "default"
 metadata/_edit_group_ = true
 
-[node name="Area2D" type="Area2D" parent="BubblesMainMenu"]
-collision_layer = 16
-collision_mask = 0
-monitorable = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BubblesMainMenu/Area2D"]
-shape = SubResource("CircleShape2D_vr1f0")
-
 [node name="monkey_scream" type="AudioStreamPlayer" parent="BubblesMainMenu"]
 stream = ExtResource("9_t1dhk")
 volume_db = -18.0
@@ -256,102 +232,6 @@ bus = &"SFX"
 stream = ExtResource("12_s5yk8")
 volume_db = -10.0
 bus = &"SFX"
-
-[node name="VBoxContainer4" type="CenterContainer" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 91.3648
-offset_top = 131.132
-offset_right = 341.365
-offset_bottom = 231.132
-grow_vertical = 2
-rotation = 0.279253
-
-[node name="Options" type="Button" parent="VBoxContainer4"]
-layout_mode = 2
-size_flags_horizontal = 8
-theme = SubResource("Theme_gnr1q")
-theme_override_font_sizes/font_size = 40
-action_mode = 0
-text = "Settings"
-icon_alignment = 1
-expand_icon = true
-
-[node name="VBoxContainer5" type="CenterContainer" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 171.365
-offset_top = 276.132
-offset_right = 421.365
-offset_bottom = 376.132
-grow_vertical = 2
-rotation = -0.0349066
-
-[node name="Quit" type="Button" parent="VBoxContainer5"]
-layout_mode = 2
-size_flags_horizontal = 4
-theme = SubResource("Theme_gnr1q")
-theme_override_font_sizes/font_size = 40
-action_mode = 0
-text = "Quit"
-icon_alignment = 1
-expand_icon = true
-
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Control" type="VBoxContainer" parent="HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 1.2
-
-[node name="Title_control" type="Control" parent="HBoxContainer/Control"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-size_flags_stretch_ratio = 1.3
-
-[node name="title" type="AnimatedSprite2D" parent="HBoxContainer/Control/Title_control"]
-position = Vector2(277, 250)
-scale = Vector2(0.785, 0.785)
-sprite_frames = SubResource("SpriteFrames_a3r2e")
-autoplay = "default"
-
-[node name="Control6" type="Control" parent="HBoxContainer/Control"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Control7" type="Control" parent="HBoxContainer/Control"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Control2" type="Control" parent="HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Control3" type="Control" parent="HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Control4" type="Control" parent="HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
 
 [node name="Start_button" type="Control" parent="."]
 layout_mode = 1
@@ -562,12 +442,10 @@ scale = Vector2(1.815, 1.815)
 theme = ExtResource("6_actju")
 text = "Quit"
 
-[connection signal="animation_finished" from="BubblesMainMenu/ApinaBubbles" to="BubblesMainMenu" method="_on_apina_bubbles_animation_finished"]
 [connection signal="mouse_entered" from="BubblesMainMenu/Area2D" to="BubblesMainMenu" method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="BubblesMainMenu/Area2D" to="BubblesMainMenu" method="_on_area_2d_mouse_exited"]
+[connection signal="animation_finished" from="BubblesMainMenu/ApinaBubbles" to="BubblesMainMenu" method="_on_apina_bubbles_animation_finished"]
 [connection signal="finished" from="pop" to="." method="_on_pop_finished"]
-[connection signal="pressed" from="VBoxContainer4/Options" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="VBoxContainer5/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="Start_button/texture_button" to="." method="_on_start_game_pressed"]
 [connection signal="pressed" from="how_to_play_button/texture_button" to="." method="_on_how_to_play_pressed"]
 [connection signal="pressed" from="about_us_button/texture_button" to="." method="_on_about_us_pressed"]
