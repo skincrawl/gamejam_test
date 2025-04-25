@@ -10,9 +10,11 @@ class_name DartGun
  
 
 func _ready() -> void:
-	$VisibleOnScreenEnabler2D.show()
-
-
-func _on_shoot_timer_timeout() -> void:
 	
+	$VisibleOnScreenEnabler2D.show()
+	
+	Game.get_instance().level.shoot.connect(shoot)
+
+
+func shoot() -> void:
 	Game.get_instance().level.spawn_dart(self)

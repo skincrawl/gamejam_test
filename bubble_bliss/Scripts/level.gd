@@ -4,6 +4,7 @@ class_name Level
 
 
 @onready var spawn_pos:Marker2D = $level_objects/spawn_pos
+@onready var shoot_timer:Timer = $shoot_timer
 
 const LOSE_TIME:float = 3.0
 
@@ -14,6 +15,8 @@ var dart_packed:PackedScene = preload("res://Scenes/dart.tscn")
 
 var bananas_amount:int = 0
 var collected_bananas:int = 0
+
+signal shoot
 
 
 func _ready() -> void:
@@ -68,3 +71,7 @@ func banana_collected(_banana:Banana) -> void:
 	
 	collected_bananas += 1
 	$GUI/bananas_label.text = "bananas: " + str(collected_bananas)
+
+
+func _on_shoot_timer_timeout() -> void:
+	shoot.emit()

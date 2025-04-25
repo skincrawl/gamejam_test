@@ -16,16 +16,17 @@ Development
 Useability
 
 -Add a loading screen
+-Add options and back to menu buttons in the pause menu
 
 
 Optimization
 
--Add a button to show and hide debugging stuff
 -Object pooling for the darts
 
 
 Gameplay
 
+-Someone wanted the fan attenuation to be inversed, or to have the option to. So that it pushed harder from further away
 -Fan works weirdly inside the bubble
 -Add bananas collected in the win screen
 -Add points in the win screen (deaths x time x bananas)
@@ -41,7 +42,6 @@ Level design
 
 GUI
 
--Pause overlay
 -Bubble buttons don't visually change when hovering
 -There seems to be some silence in the pop audio that should be removed for the navigation to be snappy
 -Bananas collected in win screen
