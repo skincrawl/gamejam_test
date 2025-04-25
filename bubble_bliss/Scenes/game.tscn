@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://4qcyhacocqsd"]
+[gd_scene load_steps=20 format=3 uid="uid://4qcyhacocqsd"]
 
 [ext_resource type="Script" uid="uid://c3kq4ht6cbv0g" path="res://Scripts/game.gd" id="1_sfcmp"]
 [ext_resource type="AudioStream" uid="uid://bxaf8tn4ra364" path="res://Assets/Audio/Music/MainMenuTheme_Intro.mp3" id="2_jai3e"]
@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://b1nk0of7fw0au" path="res://Scenes/win_screen.tscn" id="8_4mtt3"]
 [ext_resource type="PackedScene" uid="uid://ctvomw1cn28kf" path="res://Scenes/credits.tscn" id="9_05lkh"]
 [ext_resource type="Script" uid="uid://dxiqrwxseeafo" path="res://Scenes/pause.gd" id="11_5fxth"]
+[ext_resource type="Script" uid="uid://chdt1a1d6jcqk" path="res://Scripts/debug.gd" id="12_rfjv2"]
+[ext_resource type="Theme" uid="uid://b0w104qw2pa54" path="res://Resources/Themes/debugging_theme.tres" id="12_rku1e"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_72cta"]
 atlas = ExtResource("5_ganff")
@@ -120,5 +122,25 @@ text = "PAUSED"
 stream = ExtResource("2_jai3e")
 volume_db = -12.0
 autoplay = true
+
+[node name="Debug" type="CanvasLayer" parent="."]
+layer = 2
+script = ExtResource("12_rfjv2")
+
+[node name="MarginContainer" type="MarginContainer" parent="Debug"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("12_rku1e")
+
+[node name="fps_label" type="Label" parent="Debug/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("12_rku1e")
+text = "0 fps"
 
 [connection signal="finished" from="music_player" to="." method="_on_music_player_finished"]

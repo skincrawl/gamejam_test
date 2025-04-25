@@ -10,8 +10,6 @@ Export
 
 Development
 
--Improve the structure of the node tree
-	-Right now the way the level is setup is confusing, with children of the level scene visible
 -Clean up the code
 
 
@@ -22,14 +20,13 @@ Useability
 
 Optimization
 
--Make sure there aren't any unnecessary spikes in process frames!
--Animation instead of GPUParticles
+-Add a button to show and hide debugging stuff
 -Object pooling for the darts
 
 
 Gameplay
 
--Pause button
+-Fan works weirdly inside the bubble
 -Add bananas collected in the win screen
 -Add points in the win screen (deaths x time x bananas)
 -Banana bunches (3 & 5)
