@@ -10,8 +10,6 @@ Export
 
 Development
 
--Clean up the code
-
 
 Useability
 
@@ -22,6 +20,11 @@ Useability
 Optimization
 
 -Object pooling for the darts
+
+
+Bugs
+
+-Volume slider in the options menu stopped working
 
 
 Gameplay

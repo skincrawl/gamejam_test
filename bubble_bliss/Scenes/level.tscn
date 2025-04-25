@@ -2297,7 +2297,7 @@ rotation = -0.785398
 scale = Vector2(0.25, 0.25)
 
 [node name="spawn_pos" type="Marker2D" parent="level_objects"]
-position = Vector2(11776, 9669)
+position = Vector2(-18, 218)
 
 [node name="goal" parent="level_objects" instance=ExtResource("10_uc00p")]
 position = Vector2(15236, 16493)
@@ -2421,9 +2421,11 @@ theme = ExtResource("12_s0k7d")
 text = "Bananas: 0"
 
 [node name="banana_mouse" parent="." instance=ExtResource("13_efdhm")]
+visible = false
 position = Vector2(354, 368)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+visible = false
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_mirroring = Vector2(1920, 1080)
