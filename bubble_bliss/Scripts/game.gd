@@ -24,6 +24,8 @@ var level_music:AudioStream = preload("res://Assets/Audio/Music/PeliTheme.mp3")
 
 @onready var paused_label:Label = $Menus/Pause/paused_label
 
+@onready var banana_mouse:BananaMouse = $banana_mouse
+
 
 static var _instance:Game
 
@@ -40,6 +42,7 @@ static func get_instance() -> Game:
 func _ready() -> void:
 	
 	_instance = self
+	show_main_menu()
 
 
 func _process(_delta:float) -> void:
@@ -57,6 +60,8 @@ func show_main_menu() -> void:
 	
 	main_menu.show()
 	main_menu.process_mode = Node.PROCESS_MODE_INHERIT
+	banana_mouse.hide()
+	banana_mouse.process_mode = Node.PROCESS_MODE_DISABLED
 	
 	if $music_player.stream == level_music:
 		$music_player.stream = menu_music_intro
@@ -79,6 +84,8 @@ func start_level() -> void:
 	
 	narrative_screen.hide()
 	narrative_screen.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	banana_mouse.show()
+	banana_mouse.process_mode = Node.PROCESS_MODE_INHERIT
 	
 	if not level == null:
 		level.queue_free()

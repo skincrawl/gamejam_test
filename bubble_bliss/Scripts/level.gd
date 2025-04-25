@@ -3,6 +3,7 @@ extends Node2D
 class_name Level
 
 
+@onready var banana_mouse:BananaMouse = Game.get_instance().banana_mouse
 @onready var spawn_pos:Marker2D = $level_objects/spawn_pos
 @onready var shoot_timer:Timer = $shoot_timer
 
@@ -32,23 +33,14 @@ func _ready() -> void:
 	
 	$GUI/bananas_label.show()
 	
-	# if Globals.first_play:
-	# 	Globals.checkpoint_manager = CheckpointManager.new()
-	# 	Globals.checkpoint_manager.last_location = $level_objects/spawn_pos.global_position
-	# 	Globals.first_play = false
+	banana_mouse.process_mode = Node.PROCESS_MODE_INHERIT
 	
-	# spawn_pos.global_position = Globals.checkpoint_manager.last_location
 	$Bubbles.global_position = $level_objects/spawn_pos.global_position
 
 
 func _process(_delta:float) -> void:
 	
-	var threshold:float = 30.0
-	var milliseconds:float = _delta * 1000.0
-	if milliseconds > threshold:
-		print("milliseconds: ", str(milliseconds) + " ms" )
-	
-	$banana_mouse.position = get_global_mouse_position()
+	banana_mouse.position = get_global_mouse_position()
 
 
 func spawn_dart(_dart_gun:DartGun) -> void:

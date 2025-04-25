@@ -1,5 +1,7 @@
 extends AnimatedSprite2D
 
+class_name BananaMouse
+
 
 # Rotation speed in degrees
 const MAX_ROT_SPEED:float = 60.0
