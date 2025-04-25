@@ -1,6 +1,6 @@
 [gd_scene load_steps=21 format=4 uid="uid://dwfstap3hq4by"]
 
-[ext_resource type="Script" path="res://Scripts/level.gd" id="1_ytksm"]
+[ext_resource type="Script" uid="uid://b7nltwwnf7r1r" path="res://Scripts/level.gd" id="1_ytksm"]
 [ext_resource type="PackedScene" uid="uid://bjqgn8eaev75p" path="res://Scenes/bubbles.tscn" id="2_b028c"]
 [ext_resource type="PackedScene" uid="uid://cunyvm8bl614t" path="res://Scenes/banana.tscn" id="3_olu38"]
 [ext_resource type="PackedScene" uid="uid://7j70are14236" path="res://Scenes/spike.tscn" id="4_ouhlc"]
@@ -525,7 +525,10 @@ position = Vector2(8529, 4363)
 position = Vector2(8518, 3733)
 
 [node name="banana90" parent="level_objects/bananas" instance=ExtResource("3_olu38")]
-position = Vector2(8524, 2551)
+position = Vector2(8527, 2475)
+
+[node name="banana206" parent="level_objects/bananas" instance=ExtResource("3_olu38")]
+position = Vector2(8571, 2761)
 
 [node name="banana165" parent="level_objects/bananas" instance=ExtResource("3_olu38")]
 position = Vector2(8591, 3062)
@@ -539,6 +542,9 @@ position = Vector2(8567, 3317)
 [node name="banana88" parent="level_objects/bananas" instance=ExtResource("3_olu38")]
 position = Vector2(8364, 1306)
 
+[node name="banana204" parent="level_objects/bananas" instance=ExtResource("3_olu38")]
+position = Vector2(8321, 1466)
+
 [node name="banana98" parent="level_objects/bananas" instance=ExtResource("3_olu38")]
 position = Vector2(8296, 1632)
 
@@ -548,11 +554,20 @@ position = Vector2(8302, 1782)
 [node name="banana108" parent="level_objects/bananas" instance=ExtResource("3_olu38")]
 position = Vector2(8344, 1895)
 
+[node name="banana205" parent="level_objects/bananas" instance=ExtResource("3_olu38")]
+position = Vector2(8404, 2057)
+
 [node name="banana164" parent="level_objects/bananas" instance=ExtResource("3_olu38")]
-position = Vector2(8449, 2232)
+position = Vector2(8476, 2247)
 
 [node name="banana94" parent="level_objects/bananas" instance=ExtResource("3_olu38")]
-position = Vector2(8405, 788)
+position = Vector2(8396, 787)
+
+[node name="banana203" parent="level_objects/bananas" instance=ExtResource("3_olu38")]
+position = Vector2(8371, 1040)
+
+[node name="banana122" parent="level_objects/bananas" instance=ExtResource("3_olu38")]
+position = Vector2(8435, 535)
 
 [node name="banana87" parent="level_objects/bananas" instance=ExtResource("3_olu38")]
 position = Vector2(8489, 241)
@@ -1980,12 +1995,12 @@ rotation = -3.14159
 scale = Vector2(2.2, 1.94)
 
 [node name="fan" parent="level_objects/fans" instance=ExtResource("6_6x1ge")]
-push_distance_multiplier = 0.124
+push_distance_multiplier = 0.064
 
 [node name="fan2" parent="level_objects/fans" instance=ExtResource("6_6x1ge")]
 position = Vector2(-639.091, 792.784)
 scale = Vector2(1, 1.35309)
-push_distance_multiplier = 0.122
+push_distance_multiplier = 0.077
 
 [node name="fan9" parent="level_objects/fans" instance=ExtResource("6_6x1ge")]
 position = Vector2(-1812.27, 727.835)
@@ -2039,7 +2054,8 @@ push_distance_multiplier = 0.11
 position = Vector2(-1366.82, 433.509)
 rotation = 3.14159
 scale = Vector2(1.16, 2.183)
-push_distance_multiplier = 0.115
+push_distance_multiplier = 0.09
+push_strength_multiplier = 1.0
 
 [node name="fan14" parent="level_objects/fans" instance=ExtResource("6_6x1ge")]
 position = Vector2(-1624.1, -957.732)
@@ -2281,7 +2297,7 @@ rotation = -0.785398
 scale = Vector2(0.25, 0.25)
 
 [node name="spawn_pos" type="Marker2D" parent="level_objects"]
-position = Vector2(-31, 229)
+position = Vector2(11776, 9669)
 
 [node name="goal" parent="level_objects" instance=ExtResource("10_uc00p")]
 position = Vector2(15236, 16493)
@@ -2391,8 +2407,10 @@ position = Vector2(8871, 4229)
 [node name="Checkpoint3" parent="level_objects/Checkpoints" instance=ExtResource("16_yqimj")]
 position = Vector2(10325, 7106)
 
+[node name="Checkpoint4" parent="level_objects/Checkpoints" instance=ExtResource("16_yqimj")]
+position = Vector2(14324, 8075)
+
 [node name="GUI" type="CanvasLayer" parent="."]
-layer = -10
 
 [node name="bananas_label" type="Label" parent="GUI"]
 offset_left = 32.0
@@ -2418,5 +2436,10 @@ sprite_frames = SubResource("SpriteFrames_gpyhd")
 autoplay = "default"
 frame = 1
 frame_progress = 0.808977
+
+[node name="shoot_timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="shoot_timer" to="." method="_on_shoot_timer_timeout"]
 
 [editable path="level_objects/TileMapLayer"]

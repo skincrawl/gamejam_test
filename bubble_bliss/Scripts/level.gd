@@ -3,13 +3,20 @@ extends Node2D
 class_name Level
 
 
-var dart_packed:PackedScene = preload("res://Scenes/dart.tscn")
-
 @onready var spawn_pos:Marker2D = $level_objects/spawn_pos
+@onready var shoot_timer:Timer = $shoot_timer
 
 const LOSE_TIME:float = 3.0
 
+
+var checkpoint_manager:CheckpointManager
+
+var dart_packed:PackedScene = preload("res://Scenes/dart.tscn")
+
+var bananas_amount:int = 0
 var collected_bananas:int = 0
+
+signal shoot
 
 
 func _ready() -> void:
@@ -17,6 +24,8 @@ func _ready() -> void:
 	var game:Game = Game.get_instance()
 	game.level = self
 	game.bubbles = $Bubbles
+	
+	checkpoint_manager = CheckpointManager.new()
 	
 	# Hiding the mouse
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
@@ -62,3 +71,7 @@ func banana_collected(_banana:Banana) -> void:
 	
 	collected_bananas += 1
 	$GUI/bananas_label.text = "bananas: " + str(collected_bananas)
+
+
+func _on_shoot_timer_timeout() -> void:
+	shoot.emit()

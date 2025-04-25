@@ -4,9 +4,9 @@ class_name Bubbles
 
 
 const MIN_BLOW_STRENGTH:float = 1.0
-const MAX_BLOW_STRENGTH:float = 700.0
+const MAX_BLOW_STRENGTH:float = 12.0 * 100.0 # Assume 1 m = 100 px, then 750 N = 750 kg * m/s^2 * 100 px/m = 750,000 px/s^2 
 
-const MAX_SPEED:float = 900.0
+const MAX_SPEED:float = 2000.0
 
 const MAX_CONTROL_DISTANCE:float = 500.0
 
@@ -102,9 +102,18 @@ func _physics_process(_delta:float) -> void:
 	apply_central_force(force)
 
 
-func reset_animations() -> void:
+func reset() -> void:
+	
+	dead = false
+	linear_velocity = Vector2.ZERO
+	
+	rotation = 0.0
+	monkey_rotation = 0.0
+	$Bubbles.rotation = 0.0
+	
 	$Bubbles.play("default")
 	$bubble_bg_Sprite.show()
+	$bubble_top_layer.show()
 	$bubble_top_layer.play("rolling")
 
 

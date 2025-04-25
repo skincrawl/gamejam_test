@@ -15,7 +15,7 @@ size = Vector2(200, 1000)
 [node name="fan" type="StaticBody2D"]
 collision_mask = 2
 script = ExtResource("1_05gsd")
-push_strength_multiplier = 2.0
+push_strength_multiplier = 1.5
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false
@@ -47,6 +47,11 @@ texture = ExtResource("3_aif7d")
 stream = ExtResource("5_l70ob")
 volume_db = -22.0
 autoplay = true
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+visible = false
+rect = Rect2(-300, -200, 600, 1400)
+enable_node_path = NodePath("../Part")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

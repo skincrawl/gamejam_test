@@ -248,6 +248,7 @@ animations = [{
 radius = 60.0333
 
 [node name="bubbles" type="RigidBody2D"]
+process_mode = 1
 collision_layer = 2
 physics_material_override = SubResource("PhysicsMaterial_gqpca")
 gravity_scale = 0.0

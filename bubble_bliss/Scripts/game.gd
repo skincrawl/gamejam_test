@@ -22,13 +22,15 @@ var level_music:AudioStream = preload("res://Assets/Audio/Music/PeliTheme.mp3")
 @onready var win_screen:Control = $Menus/win_screen
 @onready var credits_screen:Control = $Menus/Credits
 
+@onready var paused_label:Label = $Menus/Pause/paused_label
+
 
 static var _instance:Game
 
 var level:Level
 var bubbles:Bubbles
 
-var checkpoint_manager:CheckpointManager
+var in_level:bool = false
 
 
 static func get_instance() -> Game:
@@ -40,17 +42,19 @@ func _ready() -> void:
 	_instance = self
 
 
+func _process(_delta:float) -> void:
+	pass
+
+
 func lose():
-	bubbles.queue_free()
-	bubbles = bubbles_packed.instantiate()
-	bubbles.global_position = checkpoint_manager.last_location
-	level.add_child(bubbles)
+	
+	bubbles.reset()
+	bubbles.global_position = level.checkpoint_manager.last_location
 
 
 # Shows the main menu
 func show_main_menu() -> void:
 	
-	$Menus.show()
 	main_menu.show()
 	main_menu.process_mode = Node.PROCESS_MODE_INHERIT
 	
@@ -70,9 +74,14 @@ func start_pressed() -> void:
 
 
 func start_level() -> void:
-	$Menus.hide()
+	
+	in_level = true
+	
 	narrative_screen.hide()
 	narrative_screen.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	
+	if not level == null:
+		level.queue_free()
 	
 	level = level_packed.instantiate()
 	add_child(level)
@@ -84,7 +93,6 @@ func start_level() -> void:
 # Shows the settings menu
 func show_settings_menu() -> void:
 	
-	$Menus.show()
 	main_menu.hide()
 	main_menu.process_mode = Node.PROCESS_MODE_DISABLED
 	settings_screen.show()
@@ -116,7 +124,8 @@ func show_how_to_screen() -> void:
 # Shows the about us screen
 func show_win_screen() -> void:
 	
-	$Menus.show()
+	in_level = false
+	
 	main_menu.hide()
 	main_menu.process_mode = Node.PROCESS_MODE_DISABLED
 	

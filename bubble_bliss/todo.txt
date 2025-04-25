@@ -10,38 +10,34 @@ Export
 
 Development
 
--Improve the structure of the node tree
-	-Right now the way the level is setup is confusing, with children of the level scene visible
 -Clean up the code
 
 
 Useability
 
 -Add a loading screen
+-Add options and back to menu buttons in the pause menu
 
 
 Optimization
 
--Bubbles is instantiated when dying. Make it just reset bubbles so you don't load his sounds from file when you die
--Animation instead of GPUParticles
--Spikes in _process times
 -Object pooling for the darts
 
 
 Gameplay
 
--Checkpoints are now broken
--Random lag spikes
+-Someone wanted the fan attenuation to be inversed, or to have the option to. So that it pushed harder from further away
+-Fan works weirdly inside the bubble
+-Add bananas collected in the win screen
+-Add points in the win screen (deaths x time x bananas)
+-Banana bunches (3 & 5)
+-More bananas to safely lead the monkey down 
 -Fan distance attenuation...?
--Controls are wonky, pushes way too hard when the fan is close to Bubbles
 -Passed checkpoints can be retriggered and update the spawn pos backwards
--When restarting, the game remembers the last checkpoint and spawns you there
 -Sometimes bounces in weird angles
 
 
 Level design
-
--Shorten the fans so they don't push you into walls
 
 
 GUI
@@ -49,13 +45,13 @@ GUI
 -Bubble buttons don't visually change when hovering
 -There seems to be some silence in the pop audio that should be removed for the navigation to be snappy
 -Bananas collected in win screen
--Main menu theme intro
 -Loader to make the menu music play right away
 -Menu fonts could use crayon style outlines or something
 
 
 Graphics
 
+-Add a timer so Bubbles only closes his eyes after 0.5 seconds of blowing air at him!
 -Particles visible outside the effect area, like even behind the fan!
 -Make checkpoints visible somehow
 -Change the bubble rolling animation speed depending on how fast the monkey is going
@@ -64,11 +60,16 @@ Graphics
 Audio
 
 -Changing sound volume in the settings reduces it a lot
--Lag in music when navigating menus
 -Dart gun sounds
 -Banana collection sounds are too quiet (?)
 -More yum yum sounds
 -Pitch up yum yum sounds
+
+
+Extras
+
+-Add a reward for collecting all bananas
+-Banana fan appears in the menu after a while and you can move Bubbles around on the screen
 
 
 
