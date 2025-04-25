@@ -22,7 +22,7 @@ var level_music:AudioStream = preload("res://Assets/Audio/Music/PeliTheme.mp3")
 @onready var win_screen:Control = $Menus/win_screen
 @onready var credits_screen:Control = $Menus/Credits
 
-@onready var paused_label:Label = $Menus/VBoxContainer/paused_label
+@onready var paused_label:Label = $Menus/Pause/paused_label
 
 
 static var _instance:Game
@@ -43,7 +43,7 @@ func _ready() -> void:
 
 
 func _process(_delta:float) -> void:
-	print("lol")
+	pass
 
 
 func lose():

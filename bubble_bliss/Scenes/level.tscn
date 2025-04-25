@@ -1,6 +1,6 @@
 [gd_scene load_steps=21 format=4 uid="uid://dwfstap3hq4by"]
 
-[ext_resource type="Script" path="res://Scripts/level.gd" id="1_ytksm"]
+[ext_resource type="Script" uid="uid://b7nltwwnf7r1r" path="res://Scripts/level.gd" id="1_ytksm"]
 [ext_resource type="PackedScene" uid="uid://bjqgn8eaev75p" path="res://Scenes/bubbles.tscn" id="2_b028c"]
 [ext_resource type="PackedScene" uid="uid://cunyvm8bl614t" path="res://Scenes/banana.tscn" id="3_olu38"]
 [ext_resource type="PackedScene" uid="uid://7j70are14236" path="res://Scenes/spike.tscn" id="4_ouhlc"]
@@ -2297,7 +2297,7 @@ rotation = -0.785398
 scale = Vector2(0.25, 0.25)
 
 [node name="spawn_pos" type="Marker2D" parent="level_objects"]
-position = Vector2(-31, 229)
+position = Vector2(11776, 9669)
 
 [node name="goal" parent="level_objects" instance=ExtResource("10_uc00p")]
 position = Vector2(15236, 16493)
