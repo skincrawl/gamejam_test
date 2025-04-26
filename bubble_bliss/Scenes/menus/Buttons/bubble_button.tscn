@@ -1,7 +1,8 @@
-[gd_scene load_steps=19 format=3 uid="uid://biqwbx2o6j8yg"]
+[gd_scene load_steps=20 format=3 uid="uid://biqwbx2o6j8yg"]
 
 [ext_resource type="Theme" uid="uid://cfuny4aqpg8r2" path="res://Resources/default_theme.tres" id="1_6x3qt"]
 [ext_resource type="Texture2D" uid="uid://bgarkxr8iglny" path="res://Assets/Art/BubbleButton/button_line_1.png" id="1_8nnxp"]
+[ext_resource type="Script" uid="uid://eor7b1m57lfx" path="res://Scripts/menus/bubble_button.gd" id="2_6mf7f"]
 [ext_resource type="Texture2D" uid="uid://ckjv26hy0en3g" path="res://Assets/Art/BubbleButton/button_line_2.png" id="2_omi8x"]
 [ext_resource type="Texture2D" uid="uid://cyjyjewmkigpo" path="res://Assets/Art/BubbleButton/button_swirl_1_back.png" id="3_3klnm"]
 [ext_resource type="Texture2D" uid="uid://dx727etdcpe8m" path="res://Assets/Art/BubbleButton/button_line_3.png" id="3_6x3qt"]
@@ -85,6 +86,7 @@ anchors_preset = 0
 offset_right = 235.0
 offset_bottom = 87.0
 theme = ExtResource("1_6x3qt")
+script = ExtResource("2_6mf7f")
 
 [node name="Button" type="Button" parent="."]
 modulate = Color(1, 1, 1, 0)
@@ -103,24 +105,24 @@ position = Vector2(112, 43)
 scale = Vector2(0.535714, 0.411)
 sprite_frames = SubResource("SpriteFrames_ka37w")
 animation = &"swirl_back"
-frame = 3
-frame_progress = 0.928089
+
+[node name="swirl_front" type="AnimatedSprite2D" parent="."]
+position = Vector2(112, 43)
+scale = Vector2(0.535714, 0.411)
+sprite_frames = SubResource("SpriteFrames_cio17")
+animation = &"swirl_front"
+autoplay = "swirl_front"
+frame = 2
+frame_progress = 0.0310632
 
 [node name="Label" type="Label" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 10.0
 offset_top = 20.0
 offset_right = 225.0
 offset_bottom = 61.0
 text = "TEST BUTTON"
-
-[node name="swirl_front" type="AnimatedSprite2D" parent="."]
-modulate = Color(1, 1, 1, 0.596078)
-position = Vector2(112, 43)
-scale = Vector2(0.535714, 0.411)
-sprite_frames = SubResource("SpriteFrames_cio17")
-animation = &"swirl_front"
-autoplay = "swirl_front"
 
 [node name="bubble_outline" type="AnimatedSprite2D" parent="."]
 z_index = 1
@@ -131,3 +133,7 @@ autoplay = "default"
 frame = 2
 frame_progress = 0.550853
 metadata/_edit_lock_ = true
+
+[connection signal="mouse_entered" from="Button" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Button" to="." method="_on_button_mouse_exited"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -1,22 +1,20 @@
 extends Control
 
+class_name MainMenu
+
 
 var button_pressed:String = "none"
 
-
 func _ready():
 	
-	if not Engine.is_editor_hint():
-		$bg.hide()
+	pass
 
 
-func _on_start_game_pressed():
+func button_was_pressed(_button:String) -> void:
 	$pop.play()
-	button_pressed = "start"
+	button_pressed = _button
 
-func _on_how_to_play_pressed():
-	$pop.play()
-	button_pressed = "how_to_play"
+
 
 func _on_about_us_pressed():
 	$pop.play()
@@ -53,15 +51,15 @@ func _on_pop_finished() -> void:
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
 	
 	match button_pressed:
-		"start":
+		"start game":
 			game.start_pressed()
-		"how_to_play":
+		"how to play":
 			game.show_how_to_screen()
-		"about_us":
+		"about us":
 			game.show_about_us_screen()
 		"settings":
 			game.show_settings_menu()
-		"level_select":
+		"level select":
 			game.show_level_select()
 		"quit":
 			get_tree().quit()

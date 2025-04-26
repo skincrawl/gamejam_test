@@ -4,12 +4,16 @@ extends Control
 const MIN_VOLUME:float = -30.0
 const MAX_VOLUME:float = 0.0
 
+const DEFAULT_VOLUME:float = 22.5
+const DEFAULT_VOLUME_RATIO:float = 0.75
+
 
 func _ready() -> void:
 	
 	# Setting the volume slider to match the volume of the master bus
-	var volume:float = clamp(AudioServer.get_bus_volume_db(0), MIN_VOLUME, MAX_VOLUME)
-	var volume_ratio:float = (volume - MIN_VOLUME) / (MAX_VOLUME - MIN_VOLUME)
+	AudioServer.set_bus_volume_db(0, DEFAULT_VOLUME)
+	# var volume:float = clamp(AudioServer.get_bus_volume_db(0), MIN_VOLUME, MAX_VOLUME)
+	var volume_ratio:float = DEFAULT_VOLUME_RATIO
 	
 	# print("volume: ", volume)
 	# print("volume_ratio: ", volume_ratio)

@@ -1,8 +1,7 @@
-[gd_scene load_steps=37 format=3 uid="uid://b5gigobueilix"]
+[gd_scene load_steps=30 format=3 uid="uid://b5gigobueilix"]
 
 [ext_resource type="Script" uid="uid://ckjt1t4tl5soy" path="res://Scripts/menus/main_menu.gd" id="1_oinqm"]
 [ext_resource type="FontFile" uid="uid://behuf74h25j5t" path="res://GameAssets/DynaPuff/DynaPuff-VariableFont_wdth,wght.ttf" id="1_ugjs1"]
-[ext_resource type="Texture2D" uid="uid://8pntxcrwopv7" path="res://Assets/Art/BG_Space.jpg" id="3_8bard"]
 [ext_resource type="Texture2D" uid="uid://yv20cwmhlpwh" path="res://Assets/Art/MenuBubble.png" id="5_84j0t"]
 [ext_resource type="Texture2D" uid="uid://58hkgo1s8li0" path="res://Assets/Art/Title_Sheet.png" id="5_styjg"]
 [ext_resource type="Texture2D" uid="uid://gbmwr3ji3ra3" path="res://Assets/Art/BubblesSheet.png" id="5_xd7ie"]
@@ -18,42 +17,6 @@
 [sub_resource type="Theme" id="Theme_avieb"]
 Button/fonts/font = ExtResource("1_ugjs1")
 Label/fonts/font = ExtResource("1_ugjs1")
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_72cta"]
-atlas = ExtResource("3_8bard")
-region = Rect2(0, 0, 1920, 1080)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8p14s"]
-atlas = ExtResource("3_8bard")
-region = Rect2(1920, 0, 1920, 1080)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ejipe"]
-atlas = ExtResource("3_8bard")
-region = Rect2(0, 1080, 1920, 1080)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_e4y81"]
-atlas = ExtResource("3_8bard")
-region = Rect2(1920, 1080, 1920, 1080)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_chcqr"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_72cta")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8p14s")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ejipe")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_e4y81")
-}],
-"loop": true,
-"name": &"default",
-"speed": 4.0
-}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t8ox7"]
 atlas = ExtResource("5_styjg")
@@ -164,8 +127,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="Theme" id="Theme_gnr1q"]
-
 [node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -176,16 +137,6 @@ grow_vertical = 2
 mouse_filter = 1
 theme = SubResource("Theme_avieb")
 script = ExtResource("1_oinqm")
-
-[node name="bg" type="AnimatedSprite2D" parent="."]
-visible = false
-z_index = -10
-position = Vector2(960, 540)
-sprite_frames = SubResource("SpriteFrames_chcqr")
-autoplay = "default"
-frame = 2
-frame_progress = 0.481552
-metadata/_edit_lock_ = true
 
 [node name="GameTitle" type="AnimatedSprite2D" parent="."]
 position = Vector2(508, 358)
@@ -234,229 +185,142 @@ stream = ExtResource("12_s5yk8")
 volume_db = -10.0
 bus = &"SFX"
 
-[node name="Start_button" type="Control" parent="."]
-layout_mode = 1
-anchor_left = 0.376
-anchor_top = 0.494
-anchor_right = 0.532
-anchor_bottom = 0.723
-offset_left = -0.400024
-offset_top = 49.0001
-offset_right = 4.20001
-offset_bottom = 13.0
-rotation = -0.10472
-metadata/_edit_lock_ = true
-
-[node name="texture_button" type="TextureButton" parent="Start_button"]
-visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.458
-anchor_bottom = 0.458
-offset_left = -769.883
-offset_top = -726.625
-offset_right = 1013.12
-offset_bottom = 409.374
-grow_horizontal = 2
-grow_vertical = 2
-rotation = -0.10472
-scale = Vector2(0.285, 0.155)
-pivot_offset = Vector2(931.753, 714.37)
-size_flags_horizontal = 8
-theme = SubResource("Theme_gnr1q")
-action_mode = 0
-texture_normal = ExtResource("5_84j0t")
-
-[node name="Label" type="Label" parent="Start_button"]
+[node name="start_button" parent="." node_paths=PackedStringArray("label") instance=ExtResource("14_nnvic")]
 layout_mode = 0
-offset_left = -22.4469
-offset_top = 50.9326
-offset_right = 206.553
-offset_bottom = 113.933
-rotation = -0.10472
-scale = Vector2(1.815, 1.815)
-theme = ExtResource("6_actju")
-text = "Start game!"
-
-[node name="bubble_button" parent="Start_button" instance=ExtResource("14_nnvic")]
-layout_mode = 0
-offset_left = 27.4944
-offset_top = 39.5707
-offset_right = 274.494
-offset_bottom = 126.571
+offset_left = 753.0
+offset_top = 619.0
+offset_right = 990.0
+offset_bottom = 702.0
 rotation = -0.0872665
 scale = Vector2(1.2, 1)
+button_action = "start game"
+label = NodePath("start_label")
 
-[node name="how_to_play_button" type="Control" parent="."]
-layout_mode = 1
-anchor_left = 0.429
-anchor_top = 0.787
-anchor_right = 0.544
-anchor_bottom = 0.921
-offset_left = 0.899902
-offset_top = -6.0
-offset_right = 83.3999
-offset_bottom = 52.9999
-rotation = 0.0296706
-scale = Vector2(0.725, 0.725)
-metadata/_edit_lock_ = true
+[node name="start_label" type="Label" parent="start_button"]
+layout_mode = 0
+offset_left = 19.9137
+offset_top = 25.1785
+offset_right = 214.914
+offset_bottom = 110.179
+rotation = -0.0237574
+scale = Vector2(1.265, 1.265)
+pivot_offset = Vector2(98, 21)
+text = "Start game
+"
 
-[node name="texture_button" type="TextureButton" parent="how_to_play_button"]
+[node name="how_to_play_button" parent="." node_paths=PackedStringArray("label") instance=ExtResource("14_nnvic")]
+layout_mode = 0
+offset_left = 800.0
+offset_top = 865.0
+offset_right = 1047.0
+offset_bottom = 952.0
+rotation = 0.20191
+scale = Vector2(1.02348, 0.833028)
+button_action = "how to play"
+label = NodePath("how_to_play_label")
+
+[node name="how_to_play_label" type="Label" parent="how_to_play_button"]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.458
-anchor_bottom = 0.458
-offset_left = -956.0
-offset_top = -753.304
-offset_right = 827.0
-offset_bottom = 382.696
-rotation = -0.10472
-scale = Vector2(0.285, 0.155)
-pivot_offset = Vector2(1200, 750)
-size_flags_horizontal = 8
-theme = SubResource("Theme_gnr1q")
-action_mode = 0
-texture_normal = ExtResource("5_84j0t")
+anchor_right = 0.948
+anchor_bottom = 0.888
+offset_left = 21.7364
+offset_top = 22.716
+offset_right = -17.4196
+offset_bottom = 30.46
+rotation = 0.0385386
+scale = Vector2(1.355, 1.355)
+pivot_offset = Vector2(98, 21)
+text = "How to play
+"
 
-[node name="Label" type="Label" parent="how_to_play_button"]
-layout_mode = 0
-offset_left = -22.4469
-offset_top = 50.9326
-offset_right = 206.553
-offset_bottom = 113.933
-rotation = -0.10472
-scale = Vector2(1.815, 1.815)
-theme = ExtResource("6_actju")
-text = "How to play"
-
-[node name="about_us_button" type="Control" parent="."]
-layout_mode = 1
-anchor_left = 0.099
-anchor_top = 0.877
-anchor_right = 0.203
-anchor_bottom = 0.97
-offset_left = -0.100006
-offset_top = -34.0201
-offset_right = 103.3
-offset_bottom = 65.9799
-rotation = 0.0296706
-scale = Vector2(0.66, 0.66)
-metadata/_edit_lock_ = true
-
-[node name="texture_button" type="TextureButton" parent="about_us_button"]
+[node name="about_us_button" parent="." node_paths=PackedStringArray("label") instance=ExtResource("14_nnvic")]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.458
-anchor_bottom = 0.458
-offset_left = -947.0
-offset_top = -748.802
-offset_right = 836.0
-offset_bottom = 387.199
-rotation = -0.10472
-scale = Vector2(0.285, 0.155)
-pivot_offset = Vector2(1200, 750)
-size_flags_horizontal = 8
-theme = SubResource("Theme_gnr1q")
-action_mode = 0
-texture_normal = ExtResource("5_84j0t")
+anchor_left = 0.095
+anchor_top = 0.885
+anchor_right = 0.198
+anchor_bottom = 0.913
+offset_left = -6.39995
+offset_top = -12.8001
+offset_right = 42.84
+offset_bottom = 43.96
+rotation = -0.108272
+scale = Vector2(0.902526, 0.746132)
+button_action = "about us"
+label = NodePath("about_us_label")
 
-[node name="Label" type="Label" parent="about_us_button"]
-layout_mode = 0
-offset_left = 3.74847
-offset_top = 50.1552
-offset_right = 232.748
-offset_bottom = 113.156
-rotation = -0.10472
-scale = Vector2(2, 2)
-theme = ExtResource("6_actju")
+[node name="about_us_label" type="Label" parent="about_us_button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.948
+anchor_bottom = 0.888
+offset_left = 35.6554
+offset_top = 24.9102
+offset_right = -47.5006
+offset_bottom = -11.3459
+rotation = -0.0132275
+scale = Vector2(1.55, 1.55)
+pivot_offset = Vector2(75, 20)
 text = "About us"
 
-[node name="options_button" type="Control" parent="."]
-layout_mode = 1
-anchor_left = 0.098
-anchor_top = 0.681
-anchor_right = 0.198
-anchor_bottom = 0.802
-offset_left = -0.199951
-offset_top = -59.0001
-offset_right = 110.8
-offset_bottom = 12.9998
-rotation = 0.300197
-scale = Vector2(0.66, 0.66)
-metadata/_edit_lock_ = true
-
-[node name="texture_button" type="TextureButton" parent="options_button"]
+[node name="settings_button" parent="." node_paths=PackedStringArray("label") instance=ExtResource("14_nnvic")]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.458
-anchor_bottom = 0.458
-offset_left = -962.0
-offset_top = -756.827
-offset_right = 821.0
-offset_bottom = 379.173
-rotation = -0.10472
-scale = Vector2(0.285, 0.155)
-pivot_offset = Vector2(1200, 750)
-size_flags_horizontal = 8
-theme = SubResource("Theme_gnr1q")
-action_mode = 0
-texture_normal = ExtResource("5_84j0t")
+anchor_left = 0.095
+anchor_top = 0.885
+anchor_right = 0.198
+anchor_bottom = 0.913
+offset_left = -9.39998
+offset_top = -256.8
+offset_right = 39.84
+offset_bottom = -200.04
+rotation = 0.190976
+scale = Vector2(0.902526, 0.746132)
+button_action = "settings"
+label = NodePath("settings_label")
 
-[node name="Label" type="Label" parent="options_button"]
+[node name="settings_label" type="Label" parent="settings_button"]
 layout_mode = 0
-offset_left = 3.74847
-offset_top = 50.1552
-offset_right = 232.748
-offset_bottom = 113.156
-rotation = -0.10472
-scale = Vector2(1.815, 1.815)
+offset_left = 44.2105
+offset_top = 22.4227
+offset_right = 192.21
+offset_bottom = 63.4227
+rotation = 0.019176
+scale = Vector2(1.68, 1.68)
+pivot_offset = Vector2(75, 20)
 theme = ExtResource("6_actju")
 text = "Settings"
 
-[node name="quit_button" type="Control" parent="."]
-layout_mode = 1
-anchor_left = 0.782
-anchor_top = 0.832
-anchor_right = 0.884
-anchor_bottom = 0.901
-offset_left = -3.80017
-offset_top = -37.335
-offset_right = 103.4
-offset_bottom = 86.6649
-rotation = -0.10472
-scale = Vector2(0.66, 0.66)
-metadata/_edit_lock_ = true
-
-[node name="texture_button" type="TextureButton" parent="quit_button"]
+[node name="quit_button" parent="." node_paths=PackedStringArray("label") instance=ExtResource("14_nnvic")]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.458
-anchor_bottom = 0.458
-offset_left = -965.0
-offset_top = -759.922
-offset_right = 818.0
-offset_bottom = 376.078
-rotation = -0.10472
-scale = Vector2(0.285, 0.155)
-pivot_offset = Vector2(1200, 750)
-size_flags_horizontal = 8
-theme = SubResource("Theme_gnr1q")
-action_mode = 0
-texture_normal = ExtResource("5_84j0t")
+anchor_left = 0.095
+anchor_top = 0.885
+anchor_right = 0.198
+anchor_bottom = 0.913
+offset_left = 1309.6
+offset_top = -72.8
+offset_right = 1358.84
+offset_bottom = -16.0399
+rotation = -0.207815
+scale = Vector2(0.758, 0.626)
+button_action = "quit"
+label = NodePath("quit_label")
 
-[node name="Label" type="Label" parent="quit_button"]
+[node name="quit_label" type="Label" parent="quit_button"]
 layout_mode = 0
-offset_left = 65.5413
-offset_top = 44.2803
-offset_right = 206.541
-offset_bottom = 107.28
-rotation = -0.10472
-scale = Vector2(1.815, 1.815)
+offset_left = 76.9166
+offset_top = 26.4667
+offset_right = 152.917
+offset_bottom = 67.4667
+rotation = 0.019176
+scale = Vector2(2.24, 2.24)
+pivot_offset = Vector2(35, 20)
 theme = ExtResource("6_actju")
 text = "Quit"
 
 [node name="level_select" type="Control" parent="."]
-visible = false
 layout_mode = 1
 anchor_left = 0.507
 anchor_top = 0.308
@@ -472,14 +336,15 @@ metadata/_edit_lock_ = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.349
-anchor_top = 0.5
-anchor_right = 0.594
+anchor_top = 0.382
+anchor_right = 0.68
 anchor_bottom = 0.773
-offset_left = -119.525
-offset_top = -63.5
-offset_right = 1608.35
-offset_bottom = 1046.02
-scale = Vector2(0.17, 0.12)
+offset_left = -100.525
+offset_top = -28.0539
+offset_right = 1608.0
+offset_bottom = 1070.02
+rotation = -0.103876
+scale = Vector2(0.148082, 0.100288)
 texture_normal = ExtResource("5_84j0t")
 
 [node name="Label" type="Label" parent="level_select"]
@@ -489,12 +354,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -110.5
-offset_top = -16.5
-offset_right = 98.5
-offset_bottom = 24.5
+offset_left = -104.5
+offset_top = -2.49994
+offset_right = 104.5
+offset_bottom = 38.5001
 grow_horizontal = 2
 grow_vertical = 2
+rotation = -0.135747
 theme = ExtResource("6_actju")
 text = "Level select"
 
@@ -502,9 +368,3 @@ text = "Level select"
 [connection signal="mouse_exited" from="BubblesMainMenu/Area2D" to="BubblesMainMenu" method="_on_area_2d_mouse_exited"]
 [connection signal="animation_finished" from="BubblesMainMenu/ApinaBubbles" to="BubblesMainMenu" method="_on_apina_bubbles_animation_finished"]
 [connection signal="finished" from="pop" to="." method="_on_pop_finished"]
-[connection signal="pressed" from="Start_button/texture_button" to="." method="_on_start_game_pressed"]
-[connection signal="pressed" from="how_to_play_button/texture_button" to="." method="_on_how_to_play_pressed"]
-[connection signal="pressed" from="about_us_button/texture_button" to="." method="_on_about_us_pressed"]
-[connection signal="pressed" from="options_button/texture_button" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="quit_button/texture_button" to="." method="_on_quit_pressed"]
-[connection signal="pressed" from="level_select/TextureButton" to="." method="_on_level_select_pressed"]

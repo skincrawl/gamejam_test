@@ -50,7 +50,7 @@ Level design
 
 GUI
 
--Bubble buttons don't visually change when hovering
+-Add a specular highlight to the bubble buttons
 -Bananas collected in win screen
 -Loader to make the menu music play right away
 -Menu fonts could use crayon style outlines or something
@@ -66,8 +66,8 @@ Graphics
 
 Audio
 
+-SFX are too quiet
 -Dart gun sounds
--Banana collection sounds are too quiet (?)
 -More yum yum sounds
 -Pitch up yum yum sounds
 
