@@ -60,6 +60,7 @@ animations = [{
 [node name="win_screen" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+mouse_filter = 1
 script = ExtResource("1_yact1")
 
 [node name="TextBoxAnchoring" type="Panel" parent="."]

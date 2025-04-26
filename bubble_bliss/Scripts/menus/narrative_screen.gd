@@ -1,5 +1,7 @@
 extends Control
 
+var level_packed:PackedScene = preload("res://Scenes/levels/og_level.tscn")
+
 
 func _ready() -> void:
 	
@@ -13,4 +15,5 @@ func _on_return_pressed() -> void:
 
 
 func _on_start_pressed() -> void:
-	Game.get_instance().start_level()
+	var level:Level = level_packed.instantiate()
+	Game.get_instance().start_level(level)

@@ -15,14 +15,4 @@ func _on_body_entered(_body: Node2D) -> void:
 	if Game.get_instance().bubbles.dead:
 		return
 	
-	var game:Game = Game.get_instance()
-	var next_level:Level = game.level.next_level
-	
-	if next_level == null:
-		Game.get_instance().show_win_screen()
-		return
-	
-	game.level.queue_free()
-	game.level = next_level
-	game.call_deferred("add_child", game.level)
-		
+	Game.get_instance().show_win_screen()

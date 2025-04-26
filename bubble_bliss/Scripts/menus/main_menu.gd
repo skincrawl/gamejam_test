@@ -26,6 +26,10 @@ func _on_options_pressed():
 	$pop.play()
 	button_pressed = "settings"
 
+func _on_level_select_pressed() -> void:
+	$pop.play()
+	button_pressed = "level_select"
+
 func _on_quit_pressed():
 	$pop.play()
 	button_pressed = "quit"
@@ -46,6 +50,7 @@ func viewport_size_changed() -> void:
 func _on_pop_finished() -> void:
 	
 	var game:Game = Game.get_instance()
+	mouse_filter = Control.MOUSE_FILTER_IGNORE
 	
 	match button_pressed:
 		"start":
@@ -56,6 +61,8 @@ func _on_pop_finished() -> void:
 			game.show_about_us_screen()
 		"settings":
 			game.show_settings_menu()
+		"level_select":
+			game.show_level_select()
 		"quit":
 			get_tree().quit()
 		_:

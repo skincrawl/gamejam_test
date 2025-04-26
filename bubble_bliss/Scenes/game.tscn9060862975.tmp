@@ -95,7 +95,6 @@ visible = false
 mouse_filter = 2
 
 [node name="level_select_screen" parent="Menus" instance=ExtResource("10_nnt18")]
-visible = false
 
 [node name="Pause" type="VBoxContainer" parent="Menus"]
 process_mode = 3

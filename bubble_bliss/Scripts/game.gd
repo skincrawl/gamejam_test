@@ -2,13 +2,10 @@ extends Node2D
 
 class_name Game
 
-var level_packed:PackedScene = preload("res://Scenes/levels/test_level_1.tscn")
 var bubbles_packed:PackedScene = preload("res://Scenes/bubbles.tscn")
 
 const MENU_MUSIC_VOLUME:float = -12.0
 const LEVEL_MUSIC_VOLUME:float = -15.0
-
-var number:int = 20000
 
 var menu_music:AudioStream = preload("res://Assets/Audio/Music/MainMenuTheme_Ilman_Introa.mp3")
 var menu_music_intro:AudioStream = preload("res://Assets/Audio/Music/MainMenuTheme_Intro.mp3")
@@ -16,6 +13,7 @@ var level_music:AudioStream = preload("res://Assets/Audio/Music/PeliTheme.mp3")
 
 @onready var main_menu:Control = $Menus/MainMenu
 @onready var settings_screen:Control = $Menus/Settings
+@onready var level_select_screen:Control = $Menus/level_select_screen
 @onready var about_us_screen:Control = $Menus/AboutUs
 @onready var how_to_screen:Control = $Menus/HowToPlay
 @onready var narrative_screen:Control = $Menus/narrative_screen
@@ -81,12 +79,15 @@ func start_pressed() -> void:
 	narrative_screen.mouse_filter = Control.MOUSE_FILTER_STOP
 
 
-func start_level() -> void:
+func start_level(_new_level:Level) -> void:
 	
 	in_level = true
 	
 	narrative_screen.hide()
 	narrative_screen.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	
+	level_select_screen.hide()
+	level_select_screen.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	
 	level_GUI.show()
 	banana_mouse.show()
@@ -95,8 +96,9 @@ func start_level() -> void:
 	if not level == null:
 		level.queue_free()
 	
-	level = level_packed.instantiate()
+	level = _new_level
 	add_child(level)
+	
 	$music_player.stream = level_music
 	$music_player.volume_db = LEVEL_MUSIC_VOLUME
 	$music_player.play()
@@ -108,7 +110,20 @@ func show_settings_menu() -> void:
 	main_menu.hide()
 	main_menu.process_mode = Node.PROCESS_MODE_DISABLED
 	settings_screen.show()
-	about_us_screen.mouse_filter = Control.MOUSE_FILTER_STOP
+	settings_screen.process_mode = Node.PROCESS_MODE_INHERIT
+	settings_screen.mouse_filter = Control.MOUSE_FILTER_STOP
+	
+	if $music_player.stream == level_music:
+		$music_player.stream = menu_music_intro
+		$music_player.play()
+
+
+# Shows the settings menu
+func show_level_select() -> void:
+	
+	main_menu.hide()
+	main_menu.process_mode = Node.PROCESS_MODE_DISABLED
+	level_select_screen.show()
 	
 	if $music_player.stream == level_music:
 		$music_player.stream = menu_music_intro
@@ -162,7 +177,7 @@ func show_credits_screen() -> void:
 
 func music_on(_on:bool) -> void:
 	var paused:bool = not _on
-	print("paused: ", paused)
+	# print("paused: ", paused)
 	$music_player.stream_paused = paused
 
 

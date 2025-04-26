@@ -10,6 +10,8 @@ Export
 
 Development
 
+-Add a level select screen
+
 
 Useability
 
@@ -25,28 +27,30 @@ Optimization
 Bugs
 
 -Volume slider in the options menu stopped working
+-The buttons in the level select work weirdly. Sometimes it detects hovering the mouse on the buttons and sometimes not
 
 
 Gameplay
 
 -Someone wanted the fan attenuation to be inversed, or to have the option to. So that it pushed harder from further away
+-I'd like to remove the distance attenuation
 -Fan works weirdly inside the bubble
 -Add bananas collected in the win screen
 -Add points in the win screen (deaths x time x bananas)
 -Banana bunches (3 & 5)
--More bananas to safely lead the monkey down 
--Fan distance attenuation...?
 -Passed checkpoints can be retriggered and update the spawn pos backwards
--Sometimes bounces in weird angles
 
 
 Level design
+
+-Add curved walls
+-Look into bezier curves and splines
+-See if you can draw curved walls using curves consisting of three points
 
 
 GUI
 
 -Bubble buttons don't visually change when hovering
--There seems to be some silence in the pop audio that should be removed for the navigation to be snappy
 -Bananas collected in win screen
 -Loader to make the menu music play right away
 -Menu fonts could use crayon style outlines or something
@@ -62,7 +66,6 @@ Graphics
 
 Audio
 
--Changing sound volume in the settings reduces it a lot
 -Dart gun sounds
 -Banana collection sounds are too quiet (?)
 -More yum yum sounds
