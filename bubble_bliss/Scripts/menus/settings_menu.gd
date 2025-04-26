@@ -2,7 +2,7 @@ extends Control
 
 
 const MIN_VOLUME:float = -30.0
-const MAX_VOLUME:float = 5.0
+const MAX_VOLUME:float = 0.0
 
 
 func _ready() -> void:

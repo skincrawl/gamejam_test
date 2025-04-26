@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://b5gigobueilix"]
+[gd_scene load_steps=37 format=3 uid="uid://b5gigobueilix"]
 
 [ext_resource type="Script" uid="uid://ckjt1t4tl5soy" path="res://Scripts/menus/main_menu.gd" id="1_oinqm"]
 [ext_resource type="FontFile" uid="uid://behuf74h25j5t" path="res://GameAssets/DynaPuff/DynaPuff-VariableFont_wdth,wght.ttf" id="1_ugjs1"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://c4mgs6y8y43he" path="res://Assets/Art/ActualBubble_Sheet.png" id="8_yoddx"]
 [ext_resource type="AudioStream" uid="uid://coi0eovow878l" path="res://Assets/Audio/SFX/mixkit-cartoon-creature-pain-scream-101.wav" id="9_t1dhk"]
 [ext_resource type="AudioStream" uid="uid://blwan44chay8p" path="res://Assets/Audio/SFX/bubble-pop.mp3" id="12_s5yk8"]
+[ext_resource type="PackedScene" uid="uid://biqwbx2o6j8yg" path="res://Scenes/menus/Buttons/bubble_button.tscn" id="14_nnvic"]
 
 [sub_resource type="Theme" id="Theme_avieb"]
 Button/fonts/font = ExtResource("1_ugjs1")
@@ -244,20 +245,23 @@ offset_top = 49.0001
 offset_right = 4.20001
 offset_bottom = 13.0
 rotation = -0.10472
-metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
 
 [node name="texture_button" type="TextureButton" parent="Start_button"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.458
 anchor_bottom = 0.458
-offset_left = -1045.39
-offset_top = -780.458
-offset_right = 1354.61
-offset_bottom = 719.542
+offset_left = -769.883
+offset_top = -726.625
+offset_right = 1013.12
+offset_bottom = 409.374
+grow_horizontal = 2
+grow_vertical = 2
 rotation = -0.10472
 scale = Vector2(0.285, 0.155)
-pivot_offset = Vector2(1200, 750)
+pivot_offset = Vector2(931.753, 714.37)
 size_flags_horizontal = 8
 theme = SubResource("Theme_gnr1q")
 action_mode = 0
@@ -274,6 +278,15 @@ scale = Vector2(1.815, 1.815)
 theme = ExtResource("6_actju")
 text = "Start game!"
 
+[node name="bubble_button" parent="Start_button" instance=ExtResource("14_nnvic")]
+layout_mode = 0
+offset_left = 27.4944
+offset_top = 39.5707
+offset_right = 274.494
+offset_bottom = 126.571
+rotation = -0.0872665
+scale = Vector2(1.2, 1)
+
 [node name="how_to_play_button" type="Control" parent="."]
 layout_mode = 1
 anchor_left = 0.429
@@ -286,17 +299,17 @@ offset_right = 83.3999
 offset_bottom = 52.9999
 rotation = 0.0296706
 scale = Vector2(0.725, 0.725)
-metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
 
 [node name="texture_button" type="TextureButton" parent="how_to_play_button"]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.458
 anchor_bottom = 0.458
-offset_left = -1045.39
-offset_top = -780.458
-offset_right = 1354.61
-offset_bottom = 719.542
+offset_left = -956.0
+offset_top = -753.304
+offset_right = 827.0
+offset_bottom = 382.696
 rotation = -0.10472
 scale = Vector2(0.285, 0.155)
 pivot_offset = Vector2(1200, 750)
@@ -328,17 +341,17 @@ offset_right = 103.3
 offset_bottom = 65.9799
 rotation = 0.0296706
 scale = Vector2(0.66, 0.66)
-metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
 
 [node name="texture_button" type="TextureButton" parent="about_us_button"]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.458
 anchor_bottom = 0.458
-offset_left = -1045.39
-offset_top = -780.458
-offset_right = 1354.61
-offset_bottom = 719.542
+offset_left = -947.0
+offset_top = -748.802
+offset_right = 836.0
+offset_bottom = 387.199
 rotation = -0.10472
 scale = Vector2(0.285, 0.155)
 pivot_offset = Vector2(1200, 750)
@@ -370,17 +383,17 @@ offset_right = 110.8
 offset_bottom = 12.9998
 rotation = 0.300197
 scale = Vector2(0.66, 0.66)
-metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
 
 [node name="texture_button" type="TextureButton" parent="options_button"]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.458
 anchor_bottom = 0.458
-offset_left = -1045.39
-offset_top = -780.458
-offset_right = 1354.61
-offset_bottom = 719.542
+offset_left = -962.0
+offset_top = -756.827
+offset_right = 821.0
+offset_bottom = 379.173
 rotation = -0.10472
 scale = Vector2(0.285, 0.155)
 pivot_offset = Vector2(1200, 750)
@@ -412,17 +425,17 @@ offset_right = 103.4
 offset_bottom = 86.6649
 rotation = -0.10472
 scale = Vector2(0.66, 0.66)
-metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
 
 [node name="texture_button" type="TextureButton" parent="quit_button"]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.458
 anchor_bottom = 0.458
-offset_left = -1045.39
-offset_top = -780.458
-offset_right = 1354.61
-offset_bottom = 719.542
+offset_left = -965.0
+offset_top = -759.922
+offset_right = 818.0
+offset_bottom = 376.078
 rotation = -0.10472
 scale = Vector2(0.285, 0.155)
 pivot_offset = Vector2(1200, 750)
@@ -443,6 +456,7 @@ theme = ExtResource("6_actju")
 text = "Quit"
 
 [node name="level_select" type="Control" parent="."]
+visible = false
 layout_mode = 1
 anchor_left = 0.507
 anchor_top = 0.308
@@ -452,13 +466,19 @@ offset_left = 10.5599
 offset_top = -5.64005
 offset_right = 18.6
 offset_bottom = 8.19998
+metadata/_edit_lock_ = true
 
 [node name="TextureButton" type="TextureButton" parent="level_select"]
-layout_mode = 0
-offset_left = -98.0
-offset_top = -46.0
-offset_right = 2302.0
-offset_bottom = 1468.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.349
+anchor_top = 0.5
+anchor_right = 0.594
+anchor_bottom = 0.773
+offset_left = -119.525
+offset_top = -63.5
+offset_right = 1608.35
+offset_bottom = 1046.02
 scale = Vector2(0.17, 0.12)
 texture_normal = ExtResource("5_84j0t")
 

@@ -23,16 +23,20 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_h2tj1")
 
-[node name="GridContainer" type="GridContainer" parent="MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
 columns = 3
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/GridContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="level_1_button" type="Button" parent="MarginContainer/GridContainer/MarginContainer"]
+[node name="level_1_button" type="Button" parent="MarginContainer/VBoxContainer/GridContainer/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -41,100 +45,123 @@ text = "LEVEL 1"
 script = ExtResource("3_qg76k")
 level_name = "og_level"
 
-[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/GridContainer"]
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="level_2_button" type="Button" parent="MarginContainer/GridContainer/MarginContainer2"]
+[node name="level_2_button" type="Button" parent="MarginContainer/VBoxContainer/GridContainer/MarginContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource("2_h2tj1")
 text = "LEVEL 2"
 
-[node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/GridContainer"]
+[node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="level_3_button" type="Button" parent="MarginContainer/GridContainer/MarginContainer3"]
+[node name="level_3_button" type="Button" parent="MarginContainer/VBoxContainer/GridContainer/MarginContainer3"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource("2_h2tj1")
 text = "LEVEL 3"
 
-[node name="MarginContainer4" type="MarginContainer" parent="MarginContainer/GridContainer"]
+[node name="MarginContainer4" type="MarginContainer" parent="MarginContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="level_4_button" type="Button" parent="MarginContainer/GridContainer/MarginContainer4"]
+[node name="level_4_button" type="Button" parent="MarginContainer/VBoxContainer/GridContainer/MarginContainer4"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource("2_h2tj1")
 text = "LEVEL 4"
 
-[node name="MarginContainer5" type="MarginContainer" parent="MarginContainer/GridContainer"]
+[node name="MarginContainer5" type="MarginContainer" parent="MarginContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="level_5_button" type="Button" parent="MarginContainer/GridContainer/MarginContainer5"]
+[node name="level_5_button" type="Button" parent="MarginContainer/VBoxContainer/GridContainer/MarginContainer5"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource("2_h2tj1")
 text = "LEVEL 5"
 
-[node name="MarginContainer6" type="MarginContainer" parent="MarginContainer/GridContainer"]
+[node name="MarginContainer6" type="MarginContainer" parent="MarginContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="level_6_button" type="Button" parent="MarginContainer/GridContainer/MarginContainer6"]
+[node name="level_6_button" type="Button" parent="MarginContainer/VBoxContainer/GridContainer/MarginContainer6"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource("2_h2tj1")
 text = "LEVEL 6"
 
-[node name="MarginContainer7" type="MarginContainer" parent="MarginContainer/GridContainer"]
+[node name="MarginContainer7" type="MarginContainer" parent="MarginContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="level_7_button" type="Button" parent="MarginContainer/GridContainer/MarginContainer7"]
+[node name="level_7_button" type="Button" parent="MarginContainer/VBoxContainer/GridContainer/MarginContainer7"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource("2_h2tj1")
 text = "LEVEL 7"
 
-[node name="MarginContainer8" type="MarginContainer" parent="MarginContainer/GridContainer"]
+[node name="MarginContainer8" type="MarginContainer" parent="MarginContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="level_8_button" type="Button" parent="MarginContainer/GridContainer/MarginContainer8"]
+[node name="level_8_button" type="Button" parent="MarginContainer/VBoxContainer/GridContainer/MarginContainer8"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource("2_h2tj1")
 text = "LEVEL 8"
 
-[node name="MarginContainer9" type="MarginContainer" parent="MarginContainer/GridContainer"]
+[node name="MarginContainer9" type="MarginContainer" parent="MarginContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="level_9_button" type="Button" parent="MarginContainer/GridContainer/MarginContainer9"]
+[node name="level_9_button" type="Button" parent="MarginContainer/VBoxContainer/GridContainer/MarginContainer9"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource("2_h2tj1")
 text = "LEVEL 9"
 
-[connection signal="pressed" from="MarginContainer/GridContainer/MarginContainer/level_1_button" to="." method="_on_level_1_button_pressed"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="Control2" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.33
+
+[node name="ReturnButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.2
+theme = ExtResource("2_h2tj1")
+text = "RETURN"
+
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.33
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/GridContainer/MarginContainer/level_1_button" to="." method="_on_level_1_button_pressed"]
