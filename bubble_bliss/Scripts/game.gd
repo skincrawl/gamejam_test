@@ -11,6 +11,7 @@ var menu_music:AudioStream = preload("res://Assets/Audio/Music/MainMenuTheme_Ilm
 var menu_music_intro:AudioStream = preload("res://Assets/Audio/Music/MainMenuTheme_Intro.mp3")
 var level_music:AudioStream = preload("res://Assets/Audio/Music/PeliTheme.mp3")
 
+@onready var bubbles:Bubbles = $bubbles
 @onready var main_menu:Control = $Menus/MainMenu
 @onready var settings_screen:Control = $Menus/Settings
 @onready var level_select_screen:Control = $Menus/level_select_screen
@@ -29,7 +30,6 @@ var level_music:AudioStream = preload("res://Assets/Audio/Music/PeliTheme.mp3")
 static var _instance:Game
 
 var level:Level
-var bubbles:Bubbles
 
 var in_level:bool = false
 
@@ -57,6 +57,9 @@ func lose():
 # Shows the main menu
 func show_main_menu() -> void:
 	
+	bubbles.hide()
+	bubbles.process_mode = Node.PROCESS_MODE_DISABLED
+	
 	main_menu.show()
 	main_menu.process_mode = Node.PROCESS_MODE_INHERIT
 	
@@ -82,6 +85,9 @@ func start_pressed() -> void:
 func start_level(_new_level:Level) -> void:
 	
 	in_level = true
+	
+	bubbles.show()
+	bubbles.process_mode = Node.PROCESS_MODE_PAUSABLE
 	
 	narrative_screen.hide()
 	narrative_screen.mouse_filter = Control.MOUSE_FILTER_IGNORE

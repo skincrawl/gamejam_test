@@ -27,7 +27,6 @@ func _ready() -> void:
 	
 	game = Game.get_instance()
 	game.level = self
-	game.bubbles = $Bubbles
 	
 	checkpoint_manager = CheckpointManager.new()
 	
@@ -36,7 +35,9 @@ func _ready() -> void:
 	
 	banana_mouse.process_mode = Node.PROCESS_MODE_INHERIT
 	
-	$Bubbles.global_position = $level_objects/spawn_pos.global_position
+	var bubbles:Bubbles = game.bubbles
+	bubbles.global_position = $level_objects/spawn_pos.global_position
+	bubbles.linear_velocity = Vector2.ZERO
 
 
 func _process(_delta:float) -> void:

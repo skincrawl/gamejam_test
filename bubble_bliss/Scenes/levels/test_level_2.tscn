@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://cmld51j6in8qb"]
+[gd_scene load_steps=7 format=3 uid="uid://cmld51j6in8qb"]
 
 [ext_resource type="Script" uid="uid://db7tbaxefx2p4" path="res://Scripts/test_level_2.gd" id="1_ykus5"]
-[ext_resource type="PackedScene" uid="uid://bjqgn8eaev75p" path="res://Scenes/bubbles.tscn" id="2_7sqwt"]
 [ext_resource type="PackedScene" uid="uid://c48rsvjykkd1r" path="res://Scenes/shy_goal.tscn" id="3_t0h8e"]
 [ext_resource type="PackedScene" uid="uid://cunyvm8bl614t" path="res://Scenes/banana.tscn" id="4_phoot"]
 [ext_resource type="PackedScene" uid="uid://crp07ccl85rm6" path="res://Scenes/asteroid_1.tscn" id="5_u0rtd"]
@@ -10,10 +9,6 @@
 
 [node name="test_level_2" type="Node2D"]
 script = ExtResource("1_ykus5")
-
-[node name="Bubbles" parent="." instance=ExtResource("2_7sqwt")]
-z_index = 1
-position = Vector2(453, 272)
 
 [node name="level_objects" type="Node2D" parent="."]
 

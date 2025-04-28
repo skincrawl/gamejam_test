@@ -1,6 +1,6 @@
 extends Control
 
-var level_packed:PackedScene = preload("res://Scenes/levels/og_level.tscn")
+var level_packed:PackedScene = preload("res://Scenes/levels/test_level_1.tscn")
 
 
 func _ready() -> void:

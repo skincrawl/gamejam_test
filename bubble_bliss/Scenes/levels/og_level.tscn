@@ -19,6 +19,8 @@ script = ExtResource("1_743i6")
 metadata/_edit_horizontal_guides_ = [4220.0]
 
 [node name="Bubbles" parent="." instance=ExtResource("2_6modi")]
+process_mode = 4
+visible = false
 z_index = 1
 position = Vector2(576, 324)
 metadata/_edit_lock_ = true
