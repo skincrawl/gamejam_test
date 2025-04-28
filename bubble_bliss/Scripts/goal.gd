@@ -1,5 +1,7 @@
 extends Area2D
 
+class_name Goal
+
 
 func _ready() -> void:
 	pass
@@ -7,5 +9,10 @@ func _ready() -> void:
 
 func _on_body_entered(_body: Node2D) -> void:
 	
-	if _body.is_in_group("Bubbles") and not Game.get_instance().bubbles.dead:
-		Game.get_instance().show_win_screen()
+	if not _body.is_in_group("Bubbles"):
+		return
+	
+	if Game.get_instance().bubbles.dead:
+		return
+	
+	Game.get_instance().show_win_screen()

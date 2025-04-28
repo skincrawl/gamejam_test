@@ -30,8 +30,6 @@ func _ready() -> void:
 	$bubble_top_layer.play("rolling")
 	$Bubbles.play("default")
 	
-	Game.get_instance().bubbles = self
-	
 	yum_sounds.append(preload("res://Assets/Audio/SFX/yum_1.mp3"))
 	yum_sounds.append(preload("res://Assets/Audio/SFX/yum_2.mp3"))
 	yum_sounds.append(preload("res://Assets/Audio/SFX/yum_3.mp3"))

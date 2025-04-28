@@ -1,0 +1,148 @@
+[gd_scene load_steps=8 format=3 uid="uid://b7ldm4mo8abgn"]
+
+[ext_resource type="Script" uid="uid://b6qpkxjutt7p6" path="res://Scripts/test_level_1.gd" id="1_3nuq4"]
+[ext_resource type="PackedScene" uid="uid://bjqgn8eaev75p" path="res://Scenes/bubbles.tscn" id="1_vcbye"]
+[ext_resource type="PackedScene" uid="uid://crp07ccl85rm6" path="res://Scenes/asteroid_1.tscn" id="3_n7fjt"]
+[ext_resource type="PackedScene" uid="uid://niau0ovrklso" path="res://Scenes/asteroid_2.tscn" id="4_3nuq4"]
+[ext_resource type="PackedScene" uid="uid://7hbodbdwusp3" path="res://Scenes/asteroid_3.tscn" id="5_037dh"]
+[ext_resource type="PackedScene" uid="uid://c4h04nltkk8mx" path="res://Scenes/goal.tscn" id="6_3nuq4"]
+[ext_resource type="PackedScene" uid="uid://cunyvm8bl614t" path="res://Scenes/banana.tscn" id="7_037dh"]
+
+[node name="test_level_1" type="Node2D"]
+script = ExtResource("1_3nuq4")
+
+[node name="Bubbles" parent="." instance=ExtResource("1_vcbye")]
+z_index = 1
+position = Vector2(-37, 239)
+
+[node name="level_objects" type="Node2D" parent="."]
+
+[node name="spawn_pos" type="Marker2D" parent="level_objects"]
+position = Vector2(-35, 246)
+
+[node name="asteroids" type="Node2D" parent="level_objects"]
+
+[node name="asteroid_1" parent="level_objects/asteroids" instance=ExtResource("3_n7fjt")]
+position = Vector2(-420, -290)
+rotation = 1.01372
+
+[node name="asteroid_2" parent="level_objects/asteroids" instance=ExtResource("3_n7fjt")]
+position = Vector2(-522, 441)
+rotation = 1.9489
+
+[node name="asteroid_6" parent="level_objects/asteroids" instance=ExtResource("3_n7fjt")]
+position = Vector2(-48, 1025)
+rotation = 4.15851
+
+[node name="asteroid_10" parent="level_objects/asteroids" instance=ExtResource("3_n7fjt")]
+position = Vector2(760, 1067)
+rotation = 7.05123
+
+[node name="asteroid_3" parent="level_objects/asteroids" instance=ExtResource("4_3nuq4")]
+position = Vector2(-40, -418)
+rotation = 0.11715
+
+[node name="asteroid_19" parent="level_objects/asteroids" instance=ExtResource("3_n7fjt")]
+position = Vector2(1797, -516)
+rotation = 2.34353
+
+[node name="asteroid_20" parent="level_objects/asteroids" instance=ExtResource("4_3nuq4")]
+position = Vector2(2200, -439)
+rotation = 0.11715
+
+[node name="asteroid_5" parent="level_objects/asteroids" instance=ExtResource("4_3nuq4")]
+position = Vector2(-391, 808)
+rotation = -1.62116
+
+[node name="asteroid_9" parent="level_objects/asteroids" instance=ExtResource("4_3nuq4")]
+position = Vector2(373, 1053)
+rotation = 0.105163
+
+[node name="asteroid_15" parent="level_objects/asteroids" instance=ExtResource("3_n7fjt")]
+position = Vector2(2749, 706)
+rotation = 4.15851
+
+[node name="asteroid_16" parent="level_objects/asteroids" instance=ExtResource("3_n7fjt")]
+position = Vector2(2729, -114)
+rotation = 7.05123
+
+[node name="asteroid_17" parent="level_objects/asteroids" instance=ExtResource("4_3nuq4")]
+position = Vector2(1493, -326)
+rotation = -0.437275
+
+[node name="asteroid_18" parent="level_objects/asteroids" instance=ExtResource("4_3nuq4")]
+position = Vector2(2866, 273)
+rotation = 0.105163
+
+[node name="asteroid_4" parent="level_objects/asteroids" instance=ExtResource("5_037dh")]
+position = Vector2(-551, 107)
+rotation = -1.17267
+
+[node name="asteroid_12" parent="level_objects/asteroids" instance=ExtResource("3_n7fjt")]
+position = Vector2(1105, -328)
+rotation = 3.63058
+
+[node name="asteroid_13" parent="level_objects/asteroids" instance=ExtResource("3_n7fjt")]
+position = Vector2(1767, 1051)
+rotation = 4.56576
+
+[node name="asteroid_14" parent="level_objects/asteroids" instance=ExtResource("5_037dh")]
+position = Vector2(2314, 970)
+rotation = 1.44418
+
+[node name="asteroid_21" parent="level_objects/asteroids" instance=ExtResource("5_037dh")]
+position = Vector2(2635, -475)
+rotation = 1.44418
+
+[node name="asteroid_7" parent="level_objects/asteroids" instance=ExtResource("5_037dh")]
+position = Vector2(310, -503)
+rotation = -3.66519
+
+[node name="asteroid_11" parent="level_objects/asteroids" instance=ExtResource("5_037dh")]
+position = Vector2(746, -418)
+rotation = -2.46352
+
+[node name="asteroid_8" parent="level_objects/asteroids" instance=ExtResource("5_037dh")]
+position = Vector2(1272, 1067)
+rotation = -0.940063
+
+[node name="goal" parent="level_objects" instance=ExtResource("6_3nuq4")]
+position = Vector2(2254, 261)
+
+[node name="bananas" type="Node2D" parent="level_objects"]
+
+[node name="banana" parent="level_objects/bananas" instance=ExtResource("7_037dh")]
+position = Vector2(356, 245)
+
+[node name="banana2" parent="level_objects/bananas" instance=ExtResource("7_037dh")]
+position = Vector2(486, 245)
+
+[node name="banana3" parent="level_objects/bananas" instance=ExtResource("7_037dh")]
+position = Vector2(630, 243)
+
+[node name="banana4" parent="level_objects/bananas" instance=ExtResource("7_037dh")]
+position = Vector2(800, 243)
+
+[node name="banana5" parent="level_objects/bananas" instance=ExtResource("7_037dh")]
+position = Vector2(1031, 236)
+
+[node name="banana6" parent="level_objects/bananas" instance=ExtResource("7_037dh")]
+position = Vector2(1321, 234)
+
+[node name="banana7" parent="level_objects/bananas" instance=ExtResource("7_037dh")]
+position = Vector2(1260, 182)
+
+[node name="banana8" parent="level_objects/bananas" instance=ExtResource("7_037dh")]
+position = Vector2(1194, 118)
+
+[node name="banana9" parent="level_objects/bananas" instance=ExtResource("7_037dh")]
+position = Vector2(1135, 61)
+
+[node name="banana10" parent="level_objects/bananas" instance=ExtResource("7_037dh")]
+position = Vector2(1260, 280)
+
+[node name="banana11" parent="level_objects/bananas" instance=ExtResource("7_037dh")]
+position = Vector2(1189, 335)
+
+[node name="banana12" parent="level_objects/bananas" instance=ExtResource("7_037dh")]
+position = Vector2(1131, 375)

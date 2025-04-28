@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://fdnker86sjp0"]
+
+[ext_resource type="Script" uid="uid://w2umig8u4yp7" path="res://Scripts/level_gui.gd" id="1_eh1tm"]
+[ext_resource type="Theme" uid="uid://cfuny4aqpg8r2" path="res://Resources/default_theme.tres" id="1_vvh8v"]
+
+[node name="level_GUI" type="CanvasLayer"]
+script = ExtResource("1_eh1tm")
+
+[node name="bananas_label" type="Label" parent="."]
+offset_left = 32.0
+offset_top = 30.0
+offset_right = 108.0
+offset_bottom = 53.0
+theme = ExtResource("1_vvh8v")
+text = "Bananas: 0"

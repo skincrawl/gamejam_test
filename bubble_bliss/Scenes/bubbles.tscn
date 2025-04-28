@@ -1,6 +1,6 @@
 [gd_scene load_steps=44 format=3 uid="uid://bjqgn8eaev75p"]
 
-[ext_resource type="Script" path="res://Scripts/bubbles.gd" id="1_hivhj"]
+[ext_resource type="Script" uid="uid://b78mggtarvteu" path="res://Scripts/bubbles.gd" id="1_hivhj"]
 [ext_resource type="Texture2D" uid="uid://b61eeh6fi5m8d" path="res://Assets/Art/ABubbleExplode.png" id="2_18lce"]
 [ext_resource type="Texture2D" uid="uid://c4mgs6y8y43he" path="res://Assets/Art/ActualBubble_Sheet.png" id="3_w0ptm"]
 [ext_resource type="Texture2D" uid="uid://cuxs0jdep2tjs" path="res://Assets/Art/BubbleBGTexture.png" id="4_k04fe"]
@@ -272,7 +272,6 @@ texture = ExtResource("4_k04fe")
 [node name="Bubbles" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.68, 0.68)
 sprite_frames = SubResource("SpriteFrames_agujd")
-animation = &"blink"
 offset = Vector2(0, -6.405)
 
 [node name="sfx" type="AudioStreamPlayer" parent="."]

@@ -22,8 +22,8 @@ func _unhandled_input(_event:InputEvent) -> void:
 
 func _physics_process(_delta: float) -> void:
 	
-	var fps:int = int(Engine.get_frames_per_second())
-	fps_label.text = str(fps) + " fps"
+	var fps:float = Engine.get_frames_per_second()
+	fps_label.text = str(int(fps)) + " fps"
 	
 	var fps_offset:float = fps / GOOD_FPS
 	

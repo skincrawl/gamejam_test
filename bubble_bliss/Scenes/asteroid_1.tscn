@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://crp07ccl85rm6"]
 
-[ext_resource type="Script" path="res://Scripts/asteroid.gd" id="1_y0hw4"]
+[ext_resource type="Script" uid="uid://btprr8t81pluw" path="res://Scripts/asteroid.gd" id="1_y0hw4"]
 [ext_resource type="Texture2D" uid="uid://5mo4dmo5hp4b" path="res://Assets/Art/meteor/frame0000.png" id="2_f85v5"]
 
 [node name="asteroid_1" type="CharacterBody2D"]

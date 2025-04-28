@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://c4h04nltkk8mx"]
 
-[ext_resource type="Script" path="res://Scripts/goal.gd" id="1_twwxx"]
+[ext_resource type="Script" uid="uid://c1yjqya3i1v0r" path="res://Scripts/goal.gd" id="1_twwxx"]
 [ext_resource type="Texture2D" uid="uid://b80qx1ag8nbsd" path="res://Assets/Art/BananaPlanetSheet.png" id="2_qq003"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dn280"]
