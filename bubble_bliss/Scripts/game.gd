@@ -159,6 +159,9 @@ func show_win_screen() -> void:
 	
 	in_level = false
 	
+	bubbles.hide()
+	bubbles.process_mode = Node.PROCESS_MODE_DISABLED
+	
 	main_menu.hide()
 	main_menu.process_mode = Node.PROCESS_MODE_DISABLED
 	

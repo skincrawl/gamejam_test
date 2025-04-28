@@ -52,7 +52,6 @@ GUI
 
 -Add a specular highlight to the bubble buttons
 -Add a pop animation when pressing a button in the main menu
--Use a shader to add a colorful scrolling texture
 -Bananas collected in win screen
 -Loader to make the menu music play right away
 -Menu fonts could use crayon style outlines or something

@@ -29,7 +29,9 @@ void fragment() {
 		discard;
 	}
 	
-	COLOR = combined;
+	COLOR.rgb = COLOR.rgb * combined.rgb;
+	COLOR.a = combined.a;
+	// COLOR = combined;
 }
 
 
