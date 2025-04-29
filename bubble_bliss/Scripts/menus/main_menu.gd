@@ -20,7 +20,6 @@ func button_was_pressed(_button:String) -> void:
 	button_pressed = _button
 
 
-
 func _on_about_us_pressed():
 	$pop.play()
 	button_pressed = "about_us"
@@ -36,18 +35,6 @@ func _on_level_select_pressed() -> void:
 func _on_quit_pressed():
 	$pop.play()
 	button_pressed = "quit"
-
-
-func update_GUI() -> void:
-	var title_control_rect:Rect2 = $CanvasLayer/HBoxContainer/Control/Title_control.get_viewport_rect()
-	print("title control rect: ", title_control_rect)
-	var title_center:Vector2 = title_control_rect.position + 0.5 * title_control_rect.size
-	$CanvasLayer/HBoxContainer/Control/Title_control/title.position = title_center
-
-
-func viewport_size_changed() -> void:
-	# update_GUI()
-	pass
 
 
 func _on_pop_finished() -> void:
