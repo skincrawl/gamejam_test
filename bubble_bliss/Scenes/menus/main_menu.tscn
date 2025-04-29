@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://ud00kehm07pv" path="res://Assets/Art/BubblesWhoa.png" id="7_5egv6"]
 [ext_resource type="Texture2D" uid="uid://cuxs0jdep2tjs" path="res://Assets/Art/BubbleBGTexture.png" id="7_pyfg4"]
 [ext_resource type="Texture2D" uid="uid://c4mgs6y8y43he" path="res://Assets/Art/ActualBubble_Sheet.png" id="8_yoddx"]
-[ext_resource type="AudioStream" uid="uid://coi0eovow878l" path="res://Assets/Audio/SFX/mixkit-cartoon-creature-pain-scream-101.wav" id="9_t1dhk"]
+[ext_resource type="AudioStream" uid="uid://coi0eovow878l" path="res://Assets/Audio/SFX/monkey_bubbles/mixkit-cartoon-creature-pain-scream-101.wav" id="9_h6oay"]
 [ext_resource type="AudioStream" uid="uid://blwan44chay8p" path="res://Assets/Audio/SFX/bubble-pop.mp3" id="12_s5yk8"]
 [ext_resource type="PackedScene" uid="uid://biqwbx2o6j8yg" path="res://Scenes/menus/Buttons/bubble_button.tscn" id="14_nnvic"]
 
@@ -175,8 +175,8 @@ autoplay = "default"
 metadata/_edit_group_ = true
 
 [node name="monkey_scream" type="AudioStreamPlayer" parent="BubblesMainMenu"]
-stream = ExtResource("9_t1dhk")
-volume_db = -18.0
+stream = ExtResource("9_h6oay")
+volume_db = -15.0
 bus = &"SFX"
 
 [node name="pop" type="AudioStreamPlayer" parent="."]
@@ -284,10 +284,10 @@ label = NodePath("settings_label")
 
 [node name="settings_label" type="Label" parent="settings_button"]
 layout_mode = 0
-offset_left = -56.8441
-offset_top = -16.7381
-offset_right = 91.1554
-offset_bottom = 24.2619
+offset_left = -72.0378
+offset_top = -20.0102
+offset_right = 75.9617
+offset_bottom = 20.9898
 rotation = 0.019176
 scale = Vector2(1.68, 1.68)
 pivot_offset = Vector2(75, 20)

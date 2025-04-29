@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://7o3ladlt1r1i" path="res://Scenes/banana_mouse.tscn" id="14_q6fw6"]
 
 [node name="og_level" type="Node2D"]
+process_mode = 1
 script = ExtResource("1_743i6")
 metadata/_edit_horizontal_guides_ = [4220.0]
 

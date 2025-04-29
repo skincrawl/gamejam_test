@@ -98,6 +98,7 @@ func start_level(_new_level:Level) -> void:
 	
 	bubbles.show()
 	bubbles.process_mode = Node.PROCESS_MODE_PAUSABLE
+	bubbles.reset()
 	
 	narrative_screen.hide()
 	narrative_screen.mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -164,6 +165,7 @@ func show_how_to_screen() -> void:
 	
 	main_menu.hide()
 	main_menu.process_mode = Node.PROCESS_MODE_DISABLED
+	
 	how_to_screen.show()
 	how_to_screen.mouse_filter = Control.MOUSE_FILTER_STOP
 
@@ -172,6 +174,9 @@ func show_how_to_screen() -> void:
 func show_win_screen() -> void:
 	
 	in_level = false
+	
+	banana_mouse.hide()
+	banana_mouse.process_mode = Node.PROCESS_MODE_DISABLED
 	
 	bubbles.hide()
 	bubbles.process_mode = Node.PROCESS_MODE_DISABLED
@@ -192,8 +197,9 @@ func show_win_screen() -> void:
 # Shows the about us screen
 func show_credits_screen() -> void:
 	
-	main_menu.hide()
-	main_menu.process_mode = Node.PROCESS_MODE_DISABLED
+	banana_mouse.hide()
+	banana_mouse.process_mode = Node.PROCESS_MODE_DISABLED
+	
 	credits_screen.show()
 	credits_screen.mouse_filter = Control.MOUSE_FILTER_STOP
 

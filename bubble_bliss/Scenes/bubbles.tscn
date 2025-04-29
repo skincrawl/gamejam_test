@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://gbmwr3ji3ra3" path="res://Assets/Art/BubblesSheet.png" id="6_unr71"]
 [ext_resource type="AudioStream" uid="uid://cheewt11gp6n" path="res://Assets/Audio/SFX/CollisionSound.wav" id="8_o2fcc"]
 [ext_resource type="AudioStream" uid="uid://blwan44chay8p" path="res://Assets/Audio/SFX/bubble-pop.mp3" id="9_hd0nl"]
-[ext_resource type="AudioStream" uid="uid://coi0eovow878l" path="res://Assets/Audio/SFX/mixkit-cartoon-creature-pain-scream-101.wav" id="10_hpkr7"]
+[ext_resource type="AudioStream" uid="uid://coi0eovow878l" path="res://Assets/Audio/SFX/monkey_bubbles/mixkit-cartoon-creature-pain-scream-101.wav" id="10_t6dee"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gqpca"]
 bounce = 0.5
@@ -291,19 +291,14 @@ volume_db = -8.0
 bus = &"SFX"
 
 [node name="scream" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("10_hpkr7")
-volume_db = -18.0
-bus = &"SFX"
-
-[node name="yum" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_t6dee")
 volume_db = -17.0
 bus = &"SFX"
 
-[node name="shuteye_timer" type="Timer" parent="."]
-wait_time = 0.5
-one_shot = true
+[node name="yum" type="AudioStreamPlayer" parent="."]
+volume_db = -15.0
+bus = &"SFX"
 
 [connection signal="animation_finished" from="bubble_top_layer" to="." method="_on_bubble_top_layer_animation_finished"]
 [connection signal="animation_finished" from="Bubbles" to="." method="_on_bubbles_animation_finished"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="timeout" from="shuteye_timer" to="." method="_on_shuteye_timer_timeout"]

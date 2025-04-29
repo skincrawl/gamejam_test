@@ -30,22 +30,22 @@ func _ready() -> void:
 	$bubble_top_layer.play("rolling")
 	$Bubbles.play("default")
 	
-	yum_sounds.append(preload("res://Assets/Audio/SFX/yum_1.mp3"))
-	yum_sounds.append(preload("res://Assets/Audio/SFX/yum_2.mp3"))
-	yum_sounds.append(preload("res://Assets/Audio/SFX/yum_3.mp3"))
-	yum_sounds.append(preload("res://Assets/Audio/SFX/yum_4.mp3"))
-	yum_sounds.append(preload("res://Assets/Audio/SFX/yum_5.mp3"))
+	yum_sounds.append(preload("res://Assets/Audio/SFX/monkey_bubbles/yum_pitched_1.mp3"))
+	yum_sounds.append(preload("res://Assets/Audio/SFX/monkey_bubbles/yum_pitched_2.mp3"))
+	yum_sounds.append(preload("res://Assets/Audio/SFX/monkey_bubbles/yum_pitched_3.mp3"))
+	yum_sounds.append(preload("res://Assets/Audio/SFX/monkey_bubbles/yum_pitched_4.mp3"))
+	yum_sounds.append(preload("res://Assets/Audio/SFX/monkey_bubbles/yum_pitched_5.mp3"))
 
 
 func _unhandled_input(_event:InputEvent):
+	
 	if dead:
 		return
 	
 	if _event is InputEventMouseButton:
 		if Input.is_action_just_pressed("blowing"):
-			$shuteye_timer.start()
+			$Bubbles.play("blink")
 		elif Input.is_action_just_released("blowing"):
-			$shuteye_timer.stop()
 			$Bubbles.play("default")
 
 
@@ -117,10 +117,12 @@ func reset() -> void:
 
 
 func death() -> void:
+	
 	if dead:
 		return
 	
 	dead = true
+	
 	$Bubbles.play("lose")
 	$bubble_bg_Sprite.hide()
 	$bubble_top_layer.play("burst")
@@ -130,6 +132,7 @@ func death() -> void:
 
 
 func banana_eaten() -> void:
+	
 	var chance:float = randf()
 	if chance < 0.2:
 		$yum.stream = yum_sounds.pick_random()
@@ -157,8 +160,3 @@ func _on_bubble_top_layer_animation_finished() -> void:
 
 func _on_area_2d_body_entered(_body: Node2D) -> void:
 	$sfx.play()
-
-
-# Making Bubbles close his eyes if you blow air at him for a second
-func _on_shuteye_timer_timeout() -> void:
-	$Bubbles.play("blink")

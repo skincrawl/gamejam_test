@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://7o3ladlt1r1i"]
 
 [ext_resource type="Texture2D" uid="uid://dkxr0yqfvyrp5" path="res://Assets/Art/Banana64Mouse.png" id="1_dhn8e"]
-[ext_resource type="Script" path="res://Scripts/banana_mouse.gd" id="2_c0gge"]
+[ext_resource type="Script" uid="uid://dvn6dupfkh4es" path="res://Scripts/banana_mouse.gd" id="2_c0gge"]
 [ext_resource type="PackedScene" uid="uid://chgufc12c3f68" path="res://Scenes/part.tscn" id="3_efoap"]
 [ext_resource type="AudioStream" uid="uid://hucowep6vail" path="res://Assets/Audio/SFX/wind_loop_1.mp3" id="4_nioym"]
 
@@ -21,7 +21,7 @@ animations = [{
 }]
 
 [node name="banana_mouse" type="AnimatedSprite2D"]
-process_mode = 1
+process_mode = 3
 sprite_frames = SubResource("SpriteFrames_83y1t")
 script = ExtResource("2_c0gge")
 
