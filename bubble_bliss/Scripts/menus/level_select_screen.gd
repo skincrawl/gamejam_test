@@ -1,6 +1,20 @@
 extends Control
 
 
-func _on_level_1_button_pressed() -> void:
-	var next_level:Level = preload("res://Scenes/levels/og_level.tscn").instantiate()
-	Game.get_instance().start_level(next_level)
+var level_path:String = "res://Scenes/levels/"
+
+signal level_selected(level_name:String)
+signal return_pressed
+
+
+func _on_return_button_pressed() -> void:
+	
+	process_mode = Node.PROCESS_MODE_DISABLED
+	hide()
+	
+	return_pressed.emit()
+
+
+func _on_level_selected(level_name: String) -> void:
+	
+	level_selected.emit(level_name)

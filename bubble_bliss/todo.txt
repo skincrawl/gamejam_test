@@ -8,6 +8,7 @@ Export
 -Find out how to put it on a phone
 
 
+
 Development
 
 -Make the level select screen work
@@ -26,7 +27,6 @@ Optimization
 
 Bugs
 
--Volume slider in the options menu stopped working
 -The buttons in the level select work weirdly. Sometimes it detects hovering the mouse on the buttons and sometimes not
 
 
@@ -43,13 +43,17 @@ Gameplay
 
 Level design
 
--Add curved walls
--Look into bezier curves and splines
--See if you can draw curved walls using curves consisting of three points
+-Add more curved walls
+-Make the walls thicker or use 128 x 128
 
 
 GUI
 
+-Add a pause menu
+	-Resume
+	-Settings
+	-Back to menu
+	-Quit
 -Add a specular highlight to the bubble buttons
 -Add a pop animation when pressing a button in the main menu
 -Bananas collected in win screen
@@ -59,7 +63,6 @@ GUI
 
 Graphics
 
--Add a timer so Bubbles only closes his eyes after 0.5 seconds of blowing air at him!
 -Particles visible outside the effect area, like even behind the fan!
 -Make checkpoints visible somehow
 -Change the bubble rolling animation speed depending on how fast the monkey is going
@@ -70,13 +73,20 @@ Audio
 -SFX are too quiet
 -Dart gun sounds
 -More yum yum sounds
--Pitch up yum yum sounds
 
 
 Extras
 
 -Add a reward for collecting all bananas
 -Banana fan appears in the menu after a while and you can move Bubbles around on the screen
+-Make the asteroids RigidBody2D nodes so you can push them
+
+
+Promo
+
+-Cosmic monkey looking at the Earth
+	-Banana?
+-Cosmic fetus scene from 2001 Space Odyssey, except with Bubbles
 
 
 

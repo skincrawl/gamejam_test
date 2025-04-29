@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://c6lox10uwaoig"]
 
-[ext_resource type="Script" path="res://Scripts/dart.gd" id="1_gfdw2"]
+[ext_resource type="Script" uid="uid://yvfkoqqjqepe" path="res://Scripts/dart.gd" id="1_gfdw2"]
 [ext_resource type="Texture2D" uid="uid://dr4m1lk4jd15w" path="res://Assets/Art/Dart2_1.png" id="2_gkldw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o3sy6"]

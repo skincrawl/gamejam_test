@@ -30,14 +30,15 @@ func _ready() -> void:
 	$bubble_top_layer.play("rolling")
 	$Bubbles.play("default")
 	
-	yum_sounds.append(preload("res://Assets/Audio/SFX/yum_1.mp3"))
-	yum_sounds.append(preload("res://Assets/Audio/SFX/yum_2.mp3"))
-	yum_sounds.append(preload("res://Assets/Audio/SFX/yum_3.mp3"))
-	yum_sounds.append(preload("res://Assets/Audio/SFX/yum_4.mp3"))
-	yum_sounds.append(preload("res://Assets/Audio/SFX/yum_5.mp3"))
+	yum_sounds.append(preload("res://Assets/Audio/SFX/monkey_bubbles/yum_pitched_1.mp3"))
+	yum_sounds.append(preload("res://Assets/Audio/SFX/monkey_bubbles/yum_pitched_2.mp3"))
+	yum_sounds.append(preload("res://Assets/Audio/SFX/monkey_bubbles/yum_pitched_3.mp3"))
+	yum_sounds.append(preload("res://Assets/Audio/SFX/monkey_bubbles/yum_pitched_4.mp3"))
+	yum_sounds.append(preload("res://Assets/Audio/SFX/monkey_bubbles/yum_pitched_5.mp3"))
 
 
 func _unhandled_input(_event:InputEvent):
+	
 	if dead:
 		return
 	
@@ -116,10 +117,12 @@ func reset() -> void:
 
 
 func death() -> void:
+	
 	if dead:
 		return
 	
 	dead = true
+	
 	$Bubbles.play("lose")
 	$bubble_bg_Sprite.hide()
 	$bubble_top_layer.play("burst")
@@ -129,6 +132,7 @@ func death() -> void:
 
 
 func banana_eaten() -> void:
+	
 	var chance:float = randf()
 	if chance < 0.2:
 		$yum.stream = yum_sounds.pick_random()

@@ -1,4 +1,6 @@
-extends Control
+extends Menu
+
+class_name SettingsMenu
 
 
 const MIN_VOLUME:float = -30.0
@@ -10,6 +12,8 @@ const DEFAULT_VOLUME_RATIO:float = 0.75
 
 func _ready() -> void:
 	
+	mouse_filter = Control.MOUSE_FILTER_PASS
+	
 	# Setting the volume slider to match the volume of the master bus
 	AudioServer.set_bus_volume_db(0, DEFAULT_VOLUME)
 	# var volume:float = clamp(AudioServer.get_bus_volume_db(0), MIN_VOLUME, MAX_VOLUME)
@@ -17,6 +21,7 @@ func _ready() -> void:
 	
 	# print("volume: ", volume)
 	# print("volume_ratio: ", volume_ratio)
+	
 	$VBoxContainer/Volume/volume_slider.value = volume_ratio * 100.0
 	
 	# Updating the toggle to match the master audio bus mute state
@@ -24,9 +29,11 @@ func _ready() -> void:
 
 
 func _on_return_pressed():
+	
 	hide()
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
-	Game.get_instance().show_main_menu()
+	
+	return_pressed.emit()
 
 
 func _on_volume_slider_value_changed(_value:float) -> void:

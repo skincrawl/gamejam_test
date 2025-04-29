@@ -10,6 +10,7 @@ func _unhandled_input(_event: InputEvent) -> void:
 
 
 func _toggle_pause(_paused:bool) -> void:
+	
 	get_tree().paused = _paused
 	Game.get_instance().paused_label.visible = _paused
 	if _paused:

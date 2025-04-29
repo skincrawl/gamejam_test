@@ -1,9 +1,6 @@
-[gd_scene load_steps=8 format=4 uid="uid://b7ldm4mo8abgn"]
+[gd_scene load_steps=5 format=4 uid="uid://b7ldm4mo8abgn"]
 
 [ext_resource type="Script" uid="uid://b6qpkxjutt7p6" path="res://Scripts/test_level_1.gd" id="1_3nuq4"]
-[ext_resource type="PackedScene" uid="uid://crp07ccl85rm6" path="res://Scenes/asteroid_1.tscn" id="3_n7fjt"]
-[ext_resource type="PackedScene" uid="uid://niau0ovrklso" path="res://Scenes/asteroid_2.tscn" id="4_3nuq4"]
-[ext_resource type="PackedScene" uid="uid://7hbodbdwusp3" path="res://Scenes/asteroid_3.tscn" id="5_037dh"]
 [ext_resource type="PackedScene" uid="uid://c4h04nltkk8mx" path="res://Scenes/goal.tscn" id="6_3nuq4"]
 [ext_resource type="PackedScene" uid="uid://cunyvm8bl614t" path="res://Scenes/banana.tscn" id="7_037dh"]
 [ext_resource type="TileSet" uid="uid://c8yf65bgrdbyk" path="res://Resources/TileMaps/level.tres" id="8_037dh"]
@@ -14,95 +11,10 @@ script = ExtResource("1_3nuq4")
 [node name="level_objects" type="Node2D" parent="."]
 
 [node name="spawn_pos" type="Marker2D" parent="level_objects"]
-position = Vector2(-35, 246)
+position = Vector2(2, 258)
 
 [node name="asteroids" type="Node2D" parent="level_objects"]
 process_mode = 4
-visible = false
-
-[node name="asteroid_1" parent="level_objects/asteroids" instance=ExtResource("3_n7fjt")]
-position = Vector2(-420, -290)
-rotation = 1.01372
-
-[node name="asteroid_2" parent="level_objects/asteroids" instance=ExtResource("3_n7fjt")]
-position = Vector2(-522, 441)
-rotation = 1.9489
-
-[node name="asteroid_6" parent="level_objects/asteroids" instance=ExtResource("3_n7fjt")]
-position = Vector2(-48, 1025)
-rotation = 4.15851
-
-[node name="asteroid_10" parent="level_objects/asteroids" instance=ExtResource("3_n7fjt")]
-position = Vector2(760, 1067)
-rotation = 7.05123
-
-[node name="asteroid_3" parent="level_objects/asteroids" instance=ExtResource("4_3nuq4")]
-position = Vector2(-40, -418)
-rotation = 0.11715
-
-[node name="asteroid_19" parent="level_objects/asteroids" instance=ExtResource("3_n7fjt")]
-position = Vector2(1797, -516)
-rotation = 2.34353
-
-[node name="asteroid_20" parent="level_objects/asteroids" instance=ExtResource("4_3nuq4")]
-position = Vector2(2200, -439)
-rotation = 0.11715
-
-[node name="asteroid_5" parent="level_objects/asteroids" instance=ExtResource("4_3nuq4")]
-position = Vector2(-391, 808)
-rotation = -1.62116
-
-[node name="asteroid_9" parent="level_objects/asteroids" instance=ExtResource("4_3nuq4")]
-position = Vector2(373, 1053)
-rotation = 0.105163
-
-[node name="asteroid_15" parent="level_objects/asteroids" instance=ExtResource("3_n7fjt")]
-position = Vector2(2749, 706)
-rotation = 4.15851
-
-[node name="asteroid_16" parent="level_objects/asteroids" instance=ExtResource("3_n7fjt")]
-position = Vector2(2729, -114)
-rotation = 7.05123
-
-[node name="asteroid_17" parent="level_objects/asteroids" instance=ExtResource("4_3nuq4")]
-position = Vector2(1493, -326)
-rotation = -0.437275
-
-[node name="asteroid_18" parent="level_objects/asteroids" instance=ExtResource("4_3nuq4")]
-position = Vector2(2866, 273)
-rotation = 0.105163
-
-[node name="asteroid_4" parent="level_objects/asteroids" instance=ExtResource("5_037dh")]
-position = Vector2(-551, 107)
-rotation = -1.17267
-
-[node name="asteroid_12" parent="level_objects/asteroids" instance=ExtResource("3_n7fjt")]
-position = Vector2(1105, -328)
-rotation = 3.63058
-
-[node name="asteroid_13" parent="level_objects/asteroids" instance=ExtResource("3_n7fjt")]
-position = Vector2(1767, 1051)
-rotation = 4.56576
-
-[node name="asteroid_14" parent="level_objects/asteroids" instance=ExtResource("5_037dh")]
-position = Vector2(2314, 970)
-rotation = 1.44418
-
-[node name="asteroid_21" parent="level_objects/asteroids" instance=ExtResource("5_037dh")]
-position = Vector2(2635, -475)
-rotation = 1.44418
-
-[node name="asteroid_7" parent="level_objects/asteroids" instance=ExtResource("5_037dh")]
-position = Vector2(310, -503)
-rotation = -3.66519
-
-[node name="asteroid_11" parent="level_objects/asteroids" instance=ExtResource("5_037dh")]
-position = Vector2(746, -418)
-rotation = -2.46352
-
-[node name="asteroid_8" parent="level_objects/asteroids" instance=ExtResource("5_037dh")]
-position = Vector2(1272, 1067)
-rotation = -0.940063
 
 [node name="goal" parent="level_objects" instance=ExtResource("6_3nuq4")]
 position = Vector2(2254, 261)
@@ -113,57 +25,54 @@ position = Vector2(2254, 261)
 position = Vector2(325, 245)
 
 [node name="banana2" parent="level_objects/bananas" instance=ExtResource("7_037dh")]
-position = Vector2(439, 371)
+position = Vector2(527, 242)
 
 [node name="banana3" parent="level_objects/bananas" instance=ExtResource("7_037dh")]
-position = Vector2(585, 440)
-
-[node name="banana4" parent="level_objects/bananas" instance=ExtResource("7_037dh")]
-position = Vector2(794, 403)
+position = Vector2(747, 241)
 
 [node name="banana5" parent="level_objects/bananas" instance=ExtResource("7_037dh")]
-position = Vector2(934, 287)
+position = Vector2(905, 266)
 
 [node name="banana6" parent="level_objects/bananas" instance=ExtResource("7_037dh")]
-position = Vector2(1824, 320)
+position = Vector2(1836, 281)
 
 [node name="banana7" parent="level_objects/bananas" instance=ExtResource("7_037dh")]
-position = Vector2(1765, 268)
+position = Vector2(1779, 225)
 
 [node name="banana8" parent="level_objects/bananas" instance=ExtResource("7_037dh")]
-position = Vector2(1716, 192)
+position = Vector2(1730, 161)
 
 [node name="banana9" parent="level_objects/bananas" instance=ExtResource("7_037dh")]
-position = Vector2(1675, 139)
+position = Vector2(1673, 94)
 
 [node name="banana13" parent="level_objects/bananas" instance=ExtResource("7_037dh")]
-position = Vector2(1711, 319)
+position = Vector2(1715, 286)
 
 [node name="banana15" parent="level_objects/bananas" instance=ExtResource("7_037dh")]
-position = Vector2(1524, 277)
+position = Vector2(1510, 281)
 
 [node name="banana16" parent="level_objects/bananas" instance=ExtResource("7_037dh")]
-position = Vector2(1475, 211)
+position = Vector2(1399, 277)
 
 [node name="banana17" parent="level_objects/bananas" instance=ExtResource("7_037dh")]
-position = Vector2(1399, 147)
+position = Vector2(1284, 270)
 
 [node name="banana18" parent="level_objects/bananas" instance=ExtResource("7_037dh")]
-position = Vector2(1270, 141)
+position = Vector2(1110, 277)
 
 [node name="banana14" parent="level_objects/bananas" instance=ExtResource("7_037dh")]
-position = Vector2(1592, 323)
+position = Vector2(1625, 284)
 
 [node name="banana10" parent="level_objects/bananas" instance=ExtResource("7_037dh")]
-position = Vector2(1763, 372)
+position = Vector2(1779, 354)
 
 [node name="banana11" parent="level_objects/bananas" instance=ExtResource("7_037dh")]
-position = Vector2(1694, 419)
+position = Vector2(1717, 413)
 
 [node name="banana12" parent="level_objects/bananas" instance=ExtResource("7_037dh")]
-position = Vector2(1622, 488)
+position = Vector2(1653, 467)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("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")
+tile_map_data = PackedByteArray("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")
 tile_set = ExtResource("8_037dh")
 metadata/_edit_lock_ = true

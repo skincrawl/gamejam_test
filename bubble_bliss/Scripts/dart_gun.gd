@@ -13,8 +13,8 @@ func _ready() -> void:
 	
 	$VisibleOnScreenEnabler2D.show()
 	
-	Game.get_instance().level.shoot.connect(shoot)
+	Game.get_instance().current_level.shoot.connect(shoot)
 
 
 func shoot() -> void:
-	Game.get_instance().level.spawn_dart(self)
+	Game.get_instance().current_level.spawn_dart(self)

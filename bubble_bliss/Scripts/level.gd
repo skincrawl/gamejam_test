@@ -26,7 +26,9 @@ signal shoot
 func _ready() -> void:
 	
 	game = Game.get_instance()
-	game.level = self
+	game.current_level = self
+	
+	process_mode = Node.PROCESS_MODE_PAUSABLE
 	
 	checkpoint_manager = CheckpointManager.new()
 	
@@ -38,11 +40,18 @@ func _ready() -> void:
 	var bubbles:Bubbles = game.bubbles
 	bubbles.global_position = $level_objects/spawn_pos.global_position
 	bubbles.linear_velocity = Vector2.ZERO
+	
+	Game.get_instance().level_GUI.bananas_label.text = "bananas: " + str(collected_bananas)
 
 
 func _process(_delta:float) -> void:
 	
 	banana_mouse.position = get_global_mouse_position()
+
+
+func checkpoint_reached(_global_position:Vector2) -> void:
+	
+	Game.get_instance().current_level.checkpoint_manager.last_location = _global_position
 
 
 func spawn_dart(_dart_gun:DartGun) -> void:
