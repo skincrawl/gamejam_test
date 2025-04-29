@@ -10,3 +10,4 @@ shader_parameter/tex1_scroll_speed = Vector2(0.1, 0.1)
 shader_parameter/tex2_scroll_speed = Vector2(0.1, 0.1)
 shader_parameter/circle_radius = 0.5
 shader_parameter/circle_center = Vector2(0.5, 0.5)
+shader_parameter/offset = 0.0

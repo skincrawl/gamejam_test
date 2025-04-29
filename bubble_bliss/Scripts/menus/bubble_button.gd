@@ -39,12 +39,18 @@ func _unhandled_input(_event: InputEvent) -> void:
 
 func _button_pressed() -> void:
 	
+	if $og_bubble.visible:
+		$og_bubble.play("pressed")
+	
 	pressed.emit(button_action)
 
 
 func _on_area_2d_mouse_entered() -> void:
 	
 	mouse_inside = true
+	
+	if $og_bubble.visible:
+		$og_bubble.play("hover")
 	
 	# var original_scale:Vector2 = label.scale
 	label.scale = original_scale * 1.2
@@ -66,6 +72,9 @@ func _on_area_2d_mouse_entered() -> void:
 func _on_area_2d_mouse_exited() -> void:
 	
 	mouse_inside = false
+	
+	if $og_bubble.visible:
+		$og_bubble.play("normal")
 	
 	label.scale = original_scale
 	var regular_hue:Color = Color.WHITE

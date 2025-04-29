@@ -43,8 +43,9 @@ func _unhandled_input(_event:InputEvent):
 	
 	if _event is InputEventMouseButton:
 		if Input.is_action_just_pressed("blowing"):
-			$Bubbles.play("blink")
+			$shuteye_timer.start()
 		elif Input.is_action_just_released("blowing"):
+			$shuteye_timer.stop()
 			$Bubbles.play("default")
 
 
@@ -156,3 +157,8 @@ func _on_bubble_top_layer_animation_finished() -> void:
 
 func _on_area_2d_body_entered(_body: Node2D) -> void:
 	$sfx.play()
+
+
+# Making Bubbles close his eyes if you blow air at him for a second
+func _on_shuteye_timer_timeout() -> void:
+	$Bubbles.play("blink")

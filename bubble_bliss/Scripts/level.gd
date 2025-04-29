@@ -26,7 +26,7 @@ signal shoot
 func _ready() -> void:
 	
 	game = Game.get_instance()
-	game.level = self
+	game.current_level = self
 	
 	checkpoint_manager = CheckpointManager.new()
 	

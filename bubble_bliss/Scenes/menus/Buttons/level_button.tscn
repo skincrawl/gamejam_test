@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dg10qqqmum3qa"]
+
+[ext_resource type="Theme" uid="uid://cfuny4aqpg8r2" path="res://Resources/default_theme.tres" id="1_qgl46"]
+[ext_resource type="Script" uid="uid://dxtelh1qmhe81" path="res://Scripts/menus/level_button.gd" id="2_s6khe"]
+
+[node name="level_button" type="Button"]
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_qgl46")
+text = "LEVEL 1"
+script = ExtResource("2_s6khe")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

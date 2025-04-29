@@ -6,7 +6,7 @@ class_name Banana
 var destination:Vector2
 
 func _ready() -> void:
-	Game.get_instance().level.bananas_amount += 1
+	Game.get_instance().current_level.bananas_amount += 1
 
 
 func _on_body_entered(_body: Node2D) -> void:
@@ -16,7 +16,7 @@ func _on_body_entered(_body: Node2D) -> void:
 		hide()
 		$CollisionShape2D.set_deferred("disabled", true)
 		Game.get_instance().bubbles.banana_eaten()
-		Game.get_instance().level.banana_collected(self)
+		Game.get_instance().current_level.banana_collected(self)
 
 
 func _on_audio_stream_player_finished() -> void:

@@ -323,6 +323,7 @@ theme = ExtResource("6_actju")
 text = "Quit"
 
 [node name="level_select_button" parent="." node_paths=PackedStringArray("label") instance=ExtResource("14_nnvic")]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.095

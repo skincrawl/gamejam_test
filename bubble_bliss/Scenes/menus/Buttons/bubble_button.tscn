@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://biqwbx2o6j8yg"]
+[gd_scene load_steps=25 format=3 uid="uid://biqwbx2o6j8yg"]
 
 [ext_resource type="Theme" uid="uid://cfuny4aqpg8r2" path="res://Resources/default_theme.tres" id="1_6x3qt"]
 [ext_resource type="Texture2D" uid="uid://bgarkxr8iglny" path="res://Assets/Art/BubbleButton/button_line_1.png" id="1_8nnxp"]
@@ -17,7 +17,9 @@
 [ext_resource type="Texture2D" uid="uid://2ujlnuld2xa8" path="res://Assets/Art/BubbleButton/button_swirl_3.png" id="10_2nbg6"]
 [ext_resource type="Texture2D" uid="uid://ce6j8posirayj" path="res://Assets/Art/BubbleButton/button_swirl_4.png" id="11_sac55"]
 [ext_resource type="Texture2D" uid="uid://da2ctljjt5pi0" path="res://Assets/Art/BubbleButton/button_swirl_5.png" id="12_lxdcw"]
+[ext_resource type="Texture2D" uid="uid://ceaoxin83h26i" path="res://Assets/Art/BubbleButton/Original/hover.png" id="19_00cop"]
 [ext_resource type="Material" uid="uid://qryooqjw61cv" path="res://Resources/Materials/GUI/Menus/bubble_button_material.tres" id="20_00cop"]
+[ext_resource type="Texture2D" uid="uid://du8rgex4i0af1" path="res://Assets/Art/BubbleButton/Original/pressed.png" id="20_b7c7n"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ka37w"]
 animations = [{
@@ -82,6 +84,33 @@ animations = [{
 "speed": 4.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_8r554"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_00cop")
+}],
+"loop": true,
+"name": &"hover",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ka37w")
+}],
+"loop": true,
+"name": &"normal",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_b7c7n")
+}],
+"loop": true,
+"name": &"pressed",
+"speed": 0.0
+}]
+
 [node name="bubble_button" type="Control"]
 layout_mode = 3
 anchors_preset = 0
@@ -119,6 +148,7 @@ offset_bottom = 61.0
 text = "TEST BUTTON"
 
 [node name="bubble_outline" type="AnimatedSprite2D" parent="."]
+visible = false
 z_index = 1
 scale = Vector2(0.535714, 0.411)
 sprite_frames = SubResource("SpriteFrames_6mf7f")
@@ -127,6 +157,7 @@ frame = 2
 frame_progress = 0.550853
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 material = ExtResource("20_00cop")
 scale = Vector2(0.19, 0.147)
 texture = ExtResource("3_ka37w")
@@ -136,6 +167,12 @@ texture = ExtResource("3_ka37w")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 scale = Vector2(0.19, 0.147)
 polygon = PackedVector2Array(-58.5, -534.3, -58.5, -531.9, -284.9, -504, -291.1, -504, -500.2, -434, -504.3, -434, -674.2, -330, -678, -330, -799.9, -194, -803.6, -194, -854.6, -47, -859.8, -47, -839.5, 114.4, -839.5, 119.9, -754.5, 255.9, -754.5, 259.7, -612.5, 375.6, -612.5, 378.4, -417.5, 468.4, -417.5, 471, -184.5, 523, -184.5, 525.2, -47.9, 536, 46.1, 536, 287, 505, 293.2, 505, 504.2, 433, 508.4, 433, 686.4, 320, 690.2, 320, 805.2, 182, 809, 182, 853, 31, 857.6, 31, 845.5, -84, 845.5, -90.2, 799.5, -190.3, 799.5, -193.7, 712.5, -295.7, 712.5, -298, 608.5, -375.1, 608.5, -377.3, 456.5, -451.3, 456.5, -453.5, 301.5, -499.5, 301.5, -501.6, 137.5, -526.7, 137.5, -528.7)
+
+[node name="og_bubble" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.185, 0.15)
+sprite_frames = SubResource("SpriteFrames_8r554")
+animation = &"pressed"
+autoplay = "normal"
 
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

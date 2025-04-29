@@ -29,7 +29,9 @@ var level_music:AudioStream = preload("res://Assets/Audio/Music/PeliTheme.mp3")
 
 static var _instance:Game
 
-var level:Level
+var levels_path:String = "res://Scenes/levels"
+
+var current_level:Level
 
 var in_level:bool = false
 
@@ -45,6 +47,10 @@ func _init() -> void:
 func _ready() -> void:
 	
 	show_main_menu()
+	
+	$Menus/narrative_screen.return_pressed.connect(show_main_menu)
+	$Menus/Settings.return_pressed.connect(show_main_menu)
+	$Menus/AboutUs.return_pressed.connect(show_main_menu)
 
 
 func _process(_delta:float) -> void:
@@ -54,7 +60,7 @@ func _process(_delta:float) -> void:
 func lose():
 	
 	bubbles.reset()
-	bubbles.global_position = level.checkpoint_manager.last_location
+	bubbles.global_position = current_level.checkpoint_manager.last_location
 
 
 # Shows the main menu
@@ -65,6 +71,7 @@ func show_main_menu() -> void:
 	
 	main_menu.show()
 	main_menu.process_mode = Node.PROCESS_MODE_INHERIT
+	main_menu.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	
 	level_GUI.hide()
 	banana_mouse.hide()
@@ -102,11 +109,11 @@ func start_level(_new_level:Level) -> void:
 	banana_mouse.show()
 	banana_mouse.process_mode = Node.PROCESS_MODE_INHERIT
 	
-	if not level == null:
-		level.queue_free()
+	if not current_level == null:
+		current_level.queue_free()
 	
-	level = _new_level
-	add_child(level)
+	current_level = _new_level
+	add_child(current_level)
 	
 	$music_player.stream = level_music
 	$music_player.volume_db = LEVEL_MUSIC_VOLUME
@@ -118,6 +125,8 @@ func show_settings_menu() -> void:
 	
 	main_menu.hide()
 	main_menu.process_mode = Node.PROCESS_MODE_DISABLED
+	main_menu.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	
 	settings_screen.show()
 	settings_screen.process_mode = Node.PROCESS_MODE_INHERIT
 	settings_screen.mouse_filter = Control.MOUSE_FILTER_STOP
@@ -132,7 +141,9 @@ func show_level_select() -> void:
 	
 	main_menu.hide()
 	main_menu.process_mode = Node.PROCESS_MODE_DISABLED
+	
 	level_select_screen.show()
+	level_select_screen.process_mode = Node.PROCESS_MODE_INHERIT
 	
 	if $music_player.stream == level_music:
 		$music_player.stream = menu_music_intro
@@ -172,7 +183,7 @@ func show_win_screen() -> void:
 	win_screen.show()
 	win_screen.mouse_filter = Control.MOUSE_FILTER_STOP
 	
-	level.queue_free()
+	current_level.queue_free()
 	
 	$music_player.stream = menu_music_intro
 	$music_player.play()
@@ -199,7 +210,7 @@ func _on_music_player_finished() -> void:
 		$music_player.play()
 
 
-func _on_main_menu_button_presseded(button_action: String) -> void:
+func _on_main_menu_button_pressed(button_action: String) -> void:
 	
 	match button_action:
 		"start game":
@@ -216,3 +227,13 @@ func _on_main_menu_button_presseded(button_action: String) -> void:
 			get_tree().quit()
 		_:
 			pass
+
+
+func _on_narrative_screen_start_level(_level_name:String) -> void:
+	
+	var level:Level = preload("res://Scenes/levels/og_level.tscn").instantiate()
+	start_level(level)
+
+
+func _on_settings_return_pressed() -> void:
+	show_main_menu()
