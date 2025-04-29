@@ -7,7 +7,12 @@ var button_pressed:String = "none"
 
 func _ready():
 	
-	pass
+	var game:Game = Game.get_instance()
+	if game == null:
+		game = preload("res://Scenes/game.tscn").instantiate()
+		get_tree().root.call_deferred("add_child", game)
+		get_tree().root.call_deferred("remove_child", self)
+		game.call_deferred("add_child", self)
 
 
 func button_was_pressed(_button:String) -> void:
@@ -48,6 +53,7 @@ func viewport_size_changed() -> void:
 func _on_pop_finished() -> void:
 	
 	var game:Game = Game.get_instance()
+	
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
 	
 	match button_pressed:

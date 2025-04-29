@@ -21,7 +21,6 @@ func _on_button_pressed() -> void:
 	
 	var menu:MainMenu = game.main_menu
 	menu.button_was_pressed(button_action)
-	
 
 
 func _on_button_mouse_entered() -> void:

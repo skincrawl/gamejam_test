@@ -35,12 +35,17 @@ var in_level:bool = false
 
 
 static func get_instance() -> Game:
+	print("game get instance: ", _instance)
 	return _instance
+
+
+func _init() -> void:
+	print("game init")
+	_instance = self
 
 
 func _ready() -> void:
 	
-	_instance = self
 	show_main_menu()
 
 

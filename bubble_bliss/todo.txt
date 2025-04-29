@@ -8,6 +8,14 @@ Export
 -Find out how to put it on a phone
 
 
+Original
+
+-Hide fps
+-Original bubbles
+-No Level select
+-Fix bugs
+
+
 Development
 
 -Make the level select screen work
@@ -77,6 +85,13 @@ Extras
 
 -Add a reward for collecting all bananas
 -Banana fan appears in the menu after a while and you can move Bubbles around on the screen
+
+
+Promo
+
+-Cosmic monkey looking at the Earth
+	-Banana?
+-Cosmic fetus scene from 2001 Space Odyssey, except with Bubbles
 
 
 
