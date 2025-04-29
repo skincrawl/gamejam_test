@@ -164,4 +164,5 @@ autoplay = "default"
 
 [node name="level_GUI" parent="." instance=ExtResource("15_nb51f")]
 
+[connection signal="button_presseded" from="Menus/MainMenu" to="." method="_on_main_menu_button_presseded"]
 [connection signal="finished" from="music_player" to="." method="_on_music_player_finished"]

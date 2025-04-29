@@ -10,7 +10,7 @@ extends Control
 var mouse_inside:bool = false
 var pressing:bool = false
 
-signal pressed
+signal pressed(_button_action:String)
 
 
 func _ready() -> void:

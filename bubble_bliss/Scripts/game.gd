@@ -197,3 +197,22 @@ func _on_music_player_finished() -> void:
 	if $music_player.stream == menu_music_intro:
 		$music_player.stream = menu_music
 		$music_player.play()
+
+
+func _on_main_menu_button_presseded(button_action: String) -> void:
+	
+	match button_action:
+		"start game":
+			start_pressed()
+		"how to play":
+			show_how_to_screen()
+		"about us":
+			show_about_us_screen()
+		"settings":
+			show_settings_menu()
+		"level select":
+			show_level_select()
+		"quit":
+			get_tree().quit()
+		_:
+			pass
