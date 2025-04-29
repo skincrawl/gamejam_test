@@ -10,10 +10,14 @@ extends Control
 var mouse_inside:bool = false
 var pressing:bool = false
 
+signal pressed
+
 
 func _ready() -> void:
 	
 	$Label.text = button_action.capitalize()
+	$Sprite2D.material.set_shader_parameter("offset", randf() * 5.0)
+	
 	# var random_frame:int = randi_range(1, 5)
 	# $swirl_back.frame = random_frame
 	# $swirl_front.frame = random_frame
@@ -35,10 +39,7 @@ func _unhandled_input(_event: InputEvent) -> void:
 
 func _button_pressed() -> void:
 	
-	var game:Game = Game.get_instance()
-	
-	var menu:MainMenu = game.main_menu
-	menu.button_was_pressed(button_action)
+	pressed.emit(button_action)
 
 
 func _on_area_2d_mouse_entered() -> void:

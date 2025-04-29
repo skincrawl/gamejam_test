@@ -7,16 +7,12 @@ var button_pressed:String = "none"
 
 func _ready():
 	
-	var game:Game = Game.get_instance()
-	if game == null:
-		game = preload("res://Scenes/game.tscn").instantiate()
-		get_tree().root.call_deferred("add_child", game)
-		get_tree().root.call_deferred("remove_child", self)
-		game.call_deferred("add_child", self)
+	$start_button.pressed.connect(button_was_pressed)
 
 
 func button_was_pressed(_button:String) -> void:
 	$pop.play()
+	print("button was pressed")
 	button_pressed = _button
 
 
