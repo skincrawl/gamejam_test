@@ -43,6 +43,13 @@ func _ready() -> void:
 	bubbles.linear_velocity = Vector2.ZERO
 	
 	Game.get_instance().level_GUI.bananas_label.text = "bananas: " + str(collected_bananas)
+	
+	if has_node("dart_guns") and get_node("dart_guns").get_child_count() > 0:
+		var shoot_timer:Timer = Timer.new()
+		shoot_timer.wait_time = 1.0
+		add_child(shoot_timer)
+		shoot_timer.timeout.connect(_on_shoot_timer_timeout)
+		shoot_timer.start()
 
 
 func _process(_delta:float) -> void:
@@ -83,5 +90,5 @@ func banana_collected(_banana:Banana) -> void:
 
 
 func _on_shoot_timer_timeout() -> void:
-	print("shoot timer from test level 1")
+	
 	shoot.emit()

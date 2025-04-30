@@ -55,8 +55,6 @@ func _physics_process(_delta: float) -> void:
 
 func shoot() -> void:
 	
-	print("shooting from dart gun shoot()")
-	
 	can_shoot = false
 	$cool_down.start()
 	Game.get_instance().current_level.spawn_dart(self)
