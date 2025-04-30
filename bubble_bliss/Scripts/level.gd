@@ -6,6 +6,7 @@ class_name Level
 @onready var banana_mouse:BananaMouse = Game.get_instance().banana_mouse
 @onready var spawn_pos:Marker2D = $level_objects/spawn_pos
 
+@onready var level_objects:Node2D = $level_objects
 
 const LOSE_TIME:float = 3.0
 
@@ -64,7 +65,12 @@ func spawn_dart(_dart_gun:DartGun) -> void:
 	dart.velocity = Vector2.RIGHT * dart.speed
 	dart.velocity = dart.velocity.rotated(dart.rotation)
 	
-	add_child(dart)
+	if not level_objects.has_node("darts"):
+		var darts:Node2D = Node2D.new()
+		darts.name = "darts"
+		level_objects.add_child(darts)
+	
+	level_objects.get_node("darts").add_child(dart)
 
 
 func banana_collected(_banana:Banana) -> void:
@@ -77,4 +83,5 @@ func banana_collected(_banana:Banana) -> void:
 
 
 func _on_shoot_timer_timeout() -> void:
+	print("shoot timer from test level 1")
 	shoot.emit()

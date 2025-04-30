@@ -24,6 +24,7 @@ func _ready() -> void:
 	match type:
 		"own_timer":
 			$shoot_timer.timeout.connect(shoot)
+			$shoot_timer.start()
 			laser.hide()
 			laser.enabled = false
 		"synced_timer":
@@ -53,6 +54,8 @@ func _physics_process(_delta: float) -> void:
 
 
 func shoot() -> void:
+	
+	print("shooting from dart gun shoot()")
 	
 	can_shoot = false
 	$cool_down.start()
