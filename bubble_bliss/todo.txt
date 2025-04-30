@@ -2,6 +2,9 @@
 
 
 
+Technical
+
+
 Export
 
 -Find out how to export a mobile app
@@ -11,7 +14,9 @@ Export
 
 Development
 
--Make the level select screen work
+-Make it so pressing numbers (1, 2, 3, etc.) skips to the checkpoint with the same index in the level
+	-Kinda like in youtube videos
+	-Only if debug is on
 
 
 Useability
@@ -28,30 +33,17 @@ Optimization
 Bugs
 
 -The shy moon stops dropping bananas if you lose it and come back to it
+-Passed checkpoints can be retriggered and update the spawn pos backwards
+-The banana fan sound actually stops after a while. Make it loop
 
 
 Gameplay
 
 -Someone wanted the fan attenuation to be inversed, or to have the option to. So that it pushed harder from further away
 -I'd like to remove the distance attenuation
--Fan works weirdly inside the bubble
 -Add bananas collected in the win screen
 -Add points in the win screen (deaths x time x bananas)
 -Banana bunches (3 & 5)
--Passed checkpoints can be retriggered and update the spawn pos backwards
-
-
-Level objects
-
--Add a dart gun with a detector
--Make it so the shy moon curves instead of flying straight away from monkey
-
-
-Level design
-
--Redo the physics layer collision shapes in the TileMapLayer
--Add a new level that tells you to go and stop to keep you safe from darts
--Add more curved walls
 
 
 GUI
@@ -70,6 +62,7 @@ GUI
 
 Graphics
 
+-Change it so Bubbles only rotates based on x-speed or only rotates one way
 -Particles visible outside the effect area, like even behind the fan!
 -Make checkpoints visible somehow
 -Change the bubble rolling animation speed depending on how fast the monkey is going
@@ -82,13 +75,6 @@ Audio
 -More yum yum sounds
 
 
-Extras
-
--Add a reward for collecting all bananas
--Banana fan appears in the menu after a while and you can move Bubbles around on the screen
--Make the asteroids RigidBody2D nodes so you can push them
-
-
 Promo
 
 -Cosmic monkey looking at the Earth
@@ -97,6 +83,27 @@ Promo
 
 
 
+Fun
+
+
+Level objects
+
+-Add a dart gun with a detector
+-Make it so the shy moon curves instead of flying straight away from monkey
+
+
+Level design
+
+-Redo the physics layer collision shapes in the TileMapLayer
+-Add a new level that tells you to go and stop to keep you safe from darts
+-Add more curved walls
+
+
+Extras
+
+-Add a reward for collecting all bananas
+-Banana fan appears in the menu after a while and you can move Bubbles around on the screen
+-Make the asteroids RigidBody2D nodes so you can push them
 
 
 
