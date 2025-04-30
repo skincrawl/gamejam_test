@@ -8,7 +8,7 @@
 radius = 221.183
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_oso4j"]
-radius = 1193.03
+radius = 1250.0
 
 [node name="shy_goal" type="RigidBody2D"]
 collision_layer = 4
@@ -31,6 +31,8 @@ shape = SubResource("CircleShape2D_oso4j")
 
 [node name="banana_timer" type="Timer" parent="."]
 wait_time = 0.3
+
+[node name="turn_timer" type="Timer" parent="."]
 
 [connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]

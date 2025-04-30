@@ -7,7 +7,7 @@ extends CanvasLayer
 const GOOD_FPS:int = 60
 const MID_FPS:int = 30
 
-var debug_on:bool = false
+var debug_on:bool = true
 
 
 func _ready() -> void:

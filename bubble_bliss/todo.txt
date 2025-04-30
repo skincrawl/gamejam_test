@@ -27,7 +27,7 @@ Optimization
 
 Bugs
 
--The buttons in the level select work weirdly. Sometimes it detects hovering the mouse on the buttons and sometimes not
+-The shy moon stops dropping bananas if you lose it and come back to it
 
 
 Gameplay
@@ -41,10 +41,17 @@ Gameplay
 -Passed checkpoints can be retriggered and update the spawn pos backwards
 
 
+Level objects
+
+-Add a dart gun with a detector
+-Make it so the shy moon curves instead of flying straight away from monkey
+
+
 Level design
 
+-Redo the physics layer collision shapes in the TileMapLayer
+-Add a new level that tells you to go and stop to keep you safe from darts
 -Add more curved walls
--Make the walls thicker or use 128 x 128
 
 
 GUI
