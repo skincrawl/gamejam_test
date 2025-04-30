@@ -29,7 +29,7 @@ var level_music:AudioStream = preload("res://Assets/Audio/Music/PeliTheme.mp3")
 
 static var _instance:Game
 
-var levels_path:String = "res://Scenes/levels"
+var levels_path:String = "res://Scenes/levels/"
 
 var current_level:Level
 
@@ -92,7 +92,14 @@ func start_pressed() -> void:
 	narrative_screen.mouse_filter = Control.MOUSE_FILTER_STOP
 
 
-func start_level(_new_level:Level) -> void:
+func start_level(level_name:String) -> void:
+	
+	var full_path:String = levels_path + level_name + ".tscn"
+	
+	if not ResourceLoader.exists(full_path):
+		return
+	
+	var level:Level = load(full_path).instantiate()
 	
 	in_level = true
 	
@@ -113,7 +120,7 @@ func start_level(_new_level:Level) -> void:
 	if not current_level == null:
 		current_level.queue_free()
 	
-	current_level = _new_level
+	current_level = level
 	add_child(current_level)
 	
 	$music_player.stream = level_music
@@ -237,8 +244,8 @@ func _on_main_menu_button_pressed(button_action: String) -> void:
 
 func _on_narrative_screen_start_level(_level_name:String) -> void:
 	
-	var level:Level = preload("res://Scenes/levels/og_level.tscn").instantiate()
-	start_level(level)
+	# var level:Level = preload("res://Scenes/levels/og_level.tscn").instantiate()
+	start_level("og_level")
 
 
 func _on_settings_return_pressed() -> void:

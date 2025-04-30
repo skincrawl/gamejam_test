@@ -38,6 +38,7 @@ size_flags_vertical = 3
 
 [node name="level_1_button" parent="MarginContainer/VBoxContainer/GridContainer/MarginContainer" instance=ExtResource("3_085hy")]
 layout_mode = 2
+level_name = "og_level"
 
 [node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
@@ -137,4 +138,8 @@ size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.33
 
 [connection signal="level_selected" from="MarginContainer/VBoxContainer/GridContainer/MarginContainer/level_1_button" to="." method="_on_level_selected"]
+[connection signal="level_selected" from="MarginContainer/VBoxContainer/GridContainer/MarginContainer2/level_2_button" to="." method="_on_level_selected"]
+[connection signal="level_selected" from="MarginContainer/VBoxContainer/GridContainer/MarginContainer3/level_3_button" to="." method="_on_level_selected"]
+[connection signal="level_selected" from="MarginContainer/VBoxContainer/GridContainer/MarginContainer4/level_4_button" to="." method="_on_level_selected"]
+[connection signal="level_selected" from="MarginContainer/VBoxContainer/GridContainer/MarginContainer5/level_5_button" to="." method="_on_level_selected"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/ReturnButton" to="." method="_on_return_button_pressed"]
