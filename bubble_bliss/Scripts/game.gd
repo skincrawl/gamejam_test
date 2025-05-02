@@ -12,14 +12,14 @@ var menu_music_intro:AudioStream = preload("res://Assets/Audio/Music/MainMenuThe
 var level_music:AudioStream = preload("res://Assets/Audio/Music/PeliTheme.mp3")
 
 @onready var bubbles:Bubbles = $bubbles
-@onready var main_menu:Control = $Menus/MainMenu
-@onready var settings_screen:Control = $Menus/Settings
-@onready var level_select_screen:Control = $Menus/level_select_screen
-@onready var about_us_screen:Control = $Menus/AboutUs
-@onready var how_to_screen:Control = $Menus/HowToPlay
-@onready var narrative_screen:Control = $Menus/narrative_screen
-@onready var win_screen:Control = $Menus/win_screen
-@onready var credits_screen:Control = $Menus/Credits
+@onready var main_menu:Menu = $Menus/MainMenu
+@onready var settings_screen:Menu = $Menus/Settings
+@onready var level_select_screen:Menu = $Menus/level_select_screen
+@onready var about_us_screen:Menu = $Menus/AboutUs
+@onready var how_to_screen:Menu = $Menus/HowToPlay
+@onready var narrative_screen:Menu = $Menus/narrative_screen
+@onready var win_screen:Menu = $Menus/win_screen
+@onready var credits_screen:Menu = $Menus/Credits
 
 @onready var paused_label:Label = $Menus/Pause/paused_label
 
@@ -28,6 +28,9 @@ var level_music:AudioStream = preload("res://Assets/Audio/Music/PeliTheme.mp3")
 
 
 static var _instance:Game
+
+var menus:Array
+var current_menu:Menu = main_menu
 
 var levels_path:String = "res://Scenes/levels/"
 
@@ -46,11 +49,35 @@ func _init() -> void:
 
 func _ready() -> void:
 	
-	show_main_menu()
+	_setup_menus()
 	
-	$Menus/narrative_screen.return_pressed.connect(show_main_menu)
-	$Menus/Settings.return_pressed.connect(show_main_menu)
-	$Menus/AboutUs.return_pressed.connect(show_main_menu)
+
+
+func _setup_menus() -> void:
+	
+	menus.append(main_menu)
+	menus.append(narrative_screen)
+	menus.append(settings_screen)
+	menus.append(about_us_screen)
+	menus.append(how_to_screen)
+	menus.append(win_screen)
+	menus.append(credits_screen)
+	menus.append(level_select_screen)
+	# menus.append(pause_screen)
+	
+	var function:Callable = show_menu
+	function.bind("menu")
+	main_menu.return_pressed.connect(function)
+	narrative_screen.return_pressed.connect(function)
+	settings_screen.return_pressed.connect(function)
+	about_us_screen.return_pressed.connect(function)
+	how_to_screen.return_pressed.connect(function)
+	win_screen.return_pressed.connect(function)
+	credits_screen.return_pressed.connect(function)
+	level_select_screen.return_pressed.connect(function)
+	# pause_menu.return_pressed.connect(function)
+	
+	show_menu("main")
 
 
 func _process(_delta:float) -> void:
@@ -63,33 +90,45 @@ func lose():
 	bubbles.global_position = current_level.checkpoint_manager.last_location
 
 
+func show_menu(_menu_name:String) -> void:
+	
+	banana_mouse.process_mode = Node.PROCESS_MODE_DISABLED
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	
+	for menu_i in menus.size():
+		
+		var menu:Menu = menus[menu_i]
+		current_menu = menu
+		# print("menu: ", menu.menu_name)
+		
+		if menu.menu_name == "pause":
+			continue
+		if menu.menu_name != _menu_name:
+			menu.hide()
+			menu.mouse_filter = Control.MOUSE_FILTER_IGNORE
+			menu.process_mode = Node.PROCESS_MODE_DISABLED
+		else:
+			print("showing menu: ", menu.menu_name)
+			menu.show()
+			menu.mouse_filter = Control.MOUSE_FILTER_PASS
+			menu.process_mode = Node.PROCESS_MODE_INHERIT
+	
+	if not _menu_name == "pause":
+		level_GUI.hide()
+		banana_mouse.hide()
+		bubbles.hide()
+		bubbles.process_mode = Node.PROCESS_MODE_DISABLED
+		return
+	
+	
+
+
 # Shows the main menu
 func show_main_menu() -> void:
-	
-	bubbles.hide()
-	bubbles.process_mode = Node.PROCESS_MODE_DISABLED
-	
-	main_menu.show()
-	main_menu.process_mode = Node.PROCESS_MODE_INHERIT
-	main_menu.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	
-	level_GUI.hide()
-	banana_mouse.hide()
-	banana_mouse.process_mode = Node.PROCESS_MODE_DISABLED
 	
 	if $music_player.stream == level_music:
 		$music_player.stream = menu_music_intro
 		$music_player.play()
-
-
-# Shows the narrative screen, before playing the game
-func start_pressed() -> void:
-	
-	main_menu.hide()
-	main_menu.process_mode = Node.PROCESS_MODE_DISABLED
-	
-	narrative_screen.show()
-	narrative_screen.mouse_filter = Control.MOUSE_FILTER_STOP
 
 
 func start_level(level_name:String) -> void:
@@ -128,89 +167,6 @@ func start_level(level_name:String) -> void:
 	$music_player.play()
 
 
-# Shows the settings menu
-func show_settings_menu() -> void:
-	
-	main_menu.hide()
-	main_menu.process_mode = Node.PROCESS_MODE_DISABLED
-	main_menu.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	
-	settings_screen.show()
-	settings_screen.process_mode = Node.PROCESS_MODE_INHERIT
-	settings_screen.mouse_filter = Control.MOUSE_FILTER_STOP
-	
-	if $music_player.stream == level_music:
-		$music_player.stream = menu_music_intro
-		$music_player.play()
-
-
-# Shows the settings menu
-func show_level_select() -> void:
-	
-	main_menu.hide()
-	main_menu.process_mode = Node.PROCESS_MODE_DISABLED
-	
-	level_select_screen.show()
-	level_select_screen.process_mode = Node.PROCESS_MODE_INHERIT
-	
-	if $music_player.stream == level_music:
-		$music_player.stream = menu_music_intro
-		$music_player.play()
-
-
-# Shows the about us screen
-func show_about_us_screen() -> void:
-	
-	main_menu.hide()
-	main_menu.process_mode = Node.PROCESS_MODE_DISABLED
-	about_us_screen.show()
-	about_us_screen.mouse_filter = Control.MOUSE_FILTER_STOP
-
-
-# Shows the about us screen
-func show_how_to_screen() -> void:
-	
-	main_menu.hide()
-	main_menu.process_mode = Node.PROCESS_MODE_DISABLED
-	
-	how_to_screen.show()
-	how_to_screen.mouse_filter = Control.MOUSE_FILTER_STOP
-
-
-# Shows the about us screen
-func show_win_screen() -> void:
-	
-	in_level = false
-	
-	banana_mouse.hide()
-	banana_mouse.process_mode = Node.PROCESS_MODE_DISABLED
-	
-	bubbles.hide()
-	bubbles.process_mode = Node.PROCESS_MODE_DISABLED
-	
-	main_menu.hide()
-	main_menu.process_mode = Node.PROCESS_MODE_DISABLED
-	
-	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-	win_screen.show()
-	win_screen.mouse_filter = Control.MOUSE_FILTER_STOP
-	
-	current_level.queue_free()
-	
-	$music_player.stream = menu_music_intro
-	$music_player.play()
-
-
-# Shows the about us screen
-func show_credits_screen() -> void:
-	
-	banana_mouse.hide()
-	banana_mouse.process_mode = Node.PROCESS_MODE_DISABLED
-	
-	credits_screen.show()
-	credits_screen.mouse_filter = Control.MOUSE_FILTER_STOP
-
-
 func music_on(_on:bool) -> void:
 	var paused:bool = not _on
 	# print("paused: ", paused)
@@ -227,15 +183,15 @@ func _on_main_menu_button_pressed(button_action: String) -> void:
 	
 	match button_action:
 		"start game":
-			start_pressed()
+			show_menu("narrative")
 		"how to play":
-			show_how_to_screen()
+			show_menu("how_to_play")
 		"about us":
-			show_about_us_screen()
+			show_menu("about_us")
 		"settings":
-			show_settings_menu()
+			show_menu("settings")
 		"level select":
-			show_level_select()
+			show_menu("level_select")
 		"quit":
 			get_tree().quit()
 		_:
@@ -248,5 +204,11 @@ func _on_narrative_screen_start_level(_level_name:String) -> void:
 	start_level("og_level")
 
 
-func _on_settings_return_pressed() -> void:
-	show_main_menu()
+func _on_no_longer_in_level() -> void:
+	
+	$music_player.stream = menu_music_intro
+	$music_player.play()
+	
+	in_level = false
+	current_level.queue_free()
+	current_level = null

@@ -57,11 +57,13 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="win_screen" type="Control"]
+[node name="win_screen" type="Control" node_paths=PackedStringArray("return_button")]
 layout_mode = 3
 anchors_preset = 0
 mouse_filter = 1
 script = ExtResource("1_yact1")
+menu_name = "win_screen"
+return_button = NodePath("VBoxContainer/Menu")
 
 [node name="TextBoxAnchoring" type="Panel" parent="."]
 layout_mode = 1
@@ -131,5 +133,5 @@ rotation = 0.698132
 scale = Vector2(0.749387, 0.745782)
 sprite_frames = SubResource("SpriteFrames_x5hm7")
 
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="pressed" from="VBoxContainer/Credits" to="." method="_on_credits_pressed"]
-[connection signal="pressed" from="VBoxContainer/Menu" to="." method="_on_menu_pressed"]

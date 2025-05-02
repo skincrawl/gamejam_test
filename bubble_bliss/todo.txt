@@ -35,6 +35,11 @@ Bugs
 -The shy moon stops dropping bananas if you lose it and come back to it
 -Passed checkpoints can be retriggered and update the spawn pos backwards
 -The banana fan sound actually stops after a while. Make it loop
+-Bubbles doesn't spawn at the spawn point after dying in test_level_4
+-Bananas in test_level_2 make the game crash
+-test_level_4 text shows above the bubble texture
+-Level select return button doesn't work
+-Lasers don't stop where they hit stuff
 
 
 Gameplay
@@ -88,7 +93,7 @@ Fun
 
 Level objects
 
--Add a dart gun with a detector
+-Add more level objects
 -Make it so the shy moon curves instead of flying straight away from monkey
 
 

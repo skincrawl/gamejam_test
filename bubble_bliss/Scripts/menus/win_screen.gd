@@ -1,19 +1,24 @@
-extends Control
+extends Menu
+
+class_name WinScreen
+
+
+signal no_longer_in_level
 
 
 func _ready() -> void:
 	
-	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	super._ready()
+	
 	$VBoxContainer/Menu.grab_focus()
 
 
 func _on_credits_pressed() -> void:
-	hide()
-	mouse_filter = Control.MOUSE_FILTER_IGNORE
-	Game.get_instance().show_credits_screen()
+	
+	Game.get_instance().show_menu("credits")
 
 
-func _on_menu_pressed() -> void:
-	hide()
-	mouse_filter = Control.MOUSE_FILTER_IGNORE
-	Game.get_instance().show_main_menu()
+func _on_visibility_changed() -> void:
+	
+	if visible:
+		no_longer_in_level.emit()

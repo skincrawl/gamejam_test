@@ -18,6 +18,8 @@ func _ready() -> void:
 	$Label.text = button_action.capitalize()
 	$Sprite2D.material.set_shader_parameter("offset", randf() * 5.0)
 	
+	$Area2D.show()
+	
 	# var random_frame:int = randi_range(1, 5)
 	# $swirl_back.frame = random_frame
 	# $swirl_front.frame = random_frame

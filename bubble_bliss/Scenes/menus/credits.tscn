@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://ctvomw1cn28kf"]
 
-[ext_resource type="Script" uid="uid://m0idg8jwll8i" path="res://Scripts/menus/credits.gd" id="1_5ijot"]
+[ext_resource type="Script" uid="uid://cws3u5y3pcqng" path="res://Scripts/menus/menu.gd" id="1_ty7xb"]
 [ext_resource type="Texture2D" uid="uid://b80qx1ag8nbsd" path="res://Assets/Art/BananaPlanetSheet.png" id="3_61wri"]
 [ext_resource type="Texture2D" uid="uid://gbmwr3ji3ra3" path="res://Assets/Art/BubblesSheet.png" id="4_dubdn"]
 
@@ -57,7 +57,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Credits" type="Control"]
+[node name="Credits" type="Control" node_paths=PackedStringArray("return_button")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -65,7 +65,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
-script = ExtResource("1_5ijot")
+script = ExtResource("1_ty7xb")
+menu_name = "credits"
+return_button = NodePath("VBoxContainer/Menu")
 
 [node name="Credits_text_area" type="Panel" parent="."]
 layout_mode = 1
@@ -310,5 +312,3 @@ position = Vector2(-139.882, 58.2322)
 rotation = 0.698132
 scale = Vector2(0.749387, 0.745782)
 sprite_frames = SubResource("SpriteFrames_tcieu")
-
-[connection signal="pressed" from="VBoxContainer/Menu" to="." method="_on_menu_pressed"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=25 format=3 uid="uid://biqwbx2o6j8yg"]
 
-[ext_resource type="Theme" uid="uid://cfuny4aqpg8r2" path="res://Resources/default_theme.tres" id="1_6x3qt"]
+[ext_resource type="Theme" uid="uid://cfuny4aqpg8r2" path="res://Resources/Themes/default_theme.tres" id="1_6x3qt"]
 [ext_resource type="Texture2D" uid="uid://bgarkxr8iglny" path="res://Assets/Art/BubbleButton/button_line_1.png" id="1_8nnxp"]
 [ext_resource type="Script" uid="uid://eor7b1m57lfx" path="res://Scripts/menus/bubble_button.gd" id="2_6mf7f"]
 [ext_resource type="Texture2D" uid="uid://ckjv26hy0en3g" path="res://Assets/Art/BubbleButton/button_line_2.png" id="2_omi8x"]
@@ -161,6 +161,7 @@ scale = Vector2(0.19, 0.147)
 texture = ExtResource("3_ka37w")
 
 [node name="Area2D" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 scale = Vector2(0.19, 0.147)

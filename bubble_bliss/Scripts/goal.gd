@@ -15,4 +15,4 @@ func _on_body_entered(_body: Node2D) -> void:
 	if Game.get_instance().bubbles.dead:
 		return
 	
-	Game.get_instance().show_win_screen()
+	Game.get_instance().show_menu("win_screen")

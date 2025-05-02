@@ -36,6 +36,7 @@ collision_mask = 3
 width = 2.0
 
 [node name="cool_down" type="Timer" parent="."]
+wait_time = 2.0
 one_shot = true
 
 [connection signal="timeout" from="cool_down" to="." method="_on_cool_down_timeout"]

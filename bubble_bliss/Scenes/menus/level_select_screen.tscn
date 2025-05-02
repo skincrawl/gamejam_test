@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://wihmesnnx145"]
 
 [ext_resource type="Script" uid="uid://qb25hkdo7c7" path="res://Scripts/menus/level_select_screen.gd" id="1_1538e"]
-[ext_resource type="Theme" uid="uid://cfuny4aqpg8r2" path="res://Resources/default_theme.tres" id="2_h2tj1"]
+[ext_resource type="Theme" uid="uid://cfuny4aqpg8r2" path="res://Resources/Themes/default_theme.tres" id="2_h2tj1"]
 [ext_resource type="PackedScene" uid="uid://dg10qqqmum3qa" path="res://Scenes/menus/Buttons/level_button.tscn" id="3_085hy"]
 
-[node name="level_select_screen" type="Control"]
+[node name="level_select_screen" type="Control" node_paths=PackedStringArray("return_button")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,7 +12,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
+theme = ExtResource("2_h2tj1")
 script = ExtResource("1_1538e")
+menu_name = "level_select"
+return_button = NodePath("MarginContainer/VBoxContainer/HBoxContainer/ReturnButton")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -144,4 +147,3 @@ size_flags_stretch_ratio = 0.33
 [connection signal="level_selected" from="MarginContainer/VBoxContainer/GridContainer/MarginContainer3/level_3_button" to="." method="_on_level_selected"]
 [connection signal="level_selected" from="MarginContainer/VBoxContainer/GridContainer/MarginContainer4/level_4_button" to="." method="_on_level_selected"]
 [connection signal="level_selected" from="MarginContainer/VBoxContainer/GridContainer/MarginContainer5/level_5_button" to="." method="_on_level_selected"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/ReturnButton" to="." method="_on_return_button_pressed"]

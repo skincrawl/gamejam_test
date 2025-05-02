@@ -11,7 +11,6 @@ signal button_pressed(button_action:String)
 func _ready():
 	
 	super._ready()
-	mouse_filter = Control.MOUSE_FILTER_PASS
 	pass
 
 

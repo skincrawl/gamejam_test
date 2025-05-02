@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://cfx55rek8u1kn"]
 
-[ext_resource type="Script" uid="uid://bh1tngh84ohj5" path="res://Scripts/menus/how_to_play.gd" id="1_nd7su"]
 [ext_resource type="FontFile" uid="uid://behuf74h25j5t" path="res://GameAssets/DynaPuff/DynaPuff-VariableFont_wdth,wght.ttf" id="1_sujcp"]
+[ext_resource type="Script" uid="uid://cws3u5y3pcqng" path="res://Scripts/menus/menu.gd" id="2_7ctcg"]
 [ext_resource type="Texture2D" uid="uid://dkxr0yqfvyrp5" path="res://Assets/Art/Banana64Mouse.png" id="4_qjr05"]
 [ext_resource type="Texture2D" uid="uid://bcp66k6r2syon" path="res://Assets/Art/Banana_Sheet.png" id="5_k678y"]
 [ext_resource type="Texture2D" uid="uid://pop8rcr0kkao" path="res://Assets/Art/Dart.png" id="6_omqmp"]
@@ -46,7 +46,7 @@ animations = [{
 script/source = "extends Button
 "
 
-[node name="HowToPlay" type="Control"]
+[node name="HowToPlay" type="Control" node_paths=PackedStringArray("return_button")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -55,7 +55,9 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 theme = SubResource("Theme_avieb")
-script = ExtResource("1_nd7su")
+script = ExtResource("2_7ctcg")
+menu_name = "how_to_play"
+return_button = NodePath("VBoxContainer/Return")
 
 [node name="TextBoxAnchoring" type="Panel" parent="."]
 layout_mode = 1
@@ -158,5 +160,3 @@ action_mode = 0
 text = "Return"
 icon_alignment = 1
 script = SubResource("GDScript_t48tm")
-
-[connection signal="pressed" from="VBoxContainer/Return" to="." method="_on_return_pressed"]

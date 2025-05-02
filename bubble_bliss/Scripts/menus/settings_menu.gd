@@ -12,6 +12,8 @@ const DEFAULT_VOLUME_RATIO:float = 0.75
 
 func _ready() -> void:
 	
+	super._ready()
+	
 	mouse_filter = Control.MOUSE_FILTER_PASS
 	
 	# Setting the volume slider to match the volume of the master bus
@@ -26,14 +28,6 @@ func _ready() -> void:
 	
 	# Updating the toggle to match the master audio bus mute state
 	$VBoxContainer/SoundOnOff.button_pressed = not AudioServer.is_bus_mute(0)
-
-
-func _on_return_pressed():
-	
-	hide()
-	mouse_filter = Control.MOUSE_FILTER_IGNORE
-	
-	return_pressed.emit()
 
 
 func _on_volume_slider_value_changed(_value:float) -> void:
