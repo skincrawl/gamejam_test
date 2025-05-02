@@ -17,6 +17,7 @@ Development
 -Make it so pressing numbers (1, 2, 3, etc.) skips to the checkpoint with the same index in the level
 	-Kinda like in youtube videos
 	-Only if debug is on
+-The OG level's hazards and tilemap layer are weirdly organized in the scene. Organize them better
 
 
 Useability
@@ -37,8 +38,7 @@ Bugs
 -The banana fan sound actually stops after a while. Make it loop
 -Bubbles doesn't spawn at the spawn point after dying in test_level_4
 -Bananas in test_level_2 make the game crash
--test_level_4 text shows above the bubble texture
--Level select return button doesn't work
+-test_level_4 text within the level (GO, STOP) shows above the bubble texture
 -Lasers don't stop where they hit stuff
 
 
