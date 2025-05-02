@@ -1,9 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://6lgt51fk3khg"]
 
 [ext_resource type="Script" uid="uid://b5pfchanircn2" path="res://Scripts/menus/settings_menu.gd" id="1_1ehr6"]
+[ext_resource type="Theme" uid="uid://cfuny4aqpg8r2" path="res://Resources/Themes/default_theme.tres" id="1_7k4s8"]
 [ext_resource type="FontFile" uid="uid://behuf74h25j5t" path="res://GameAssets/DynaPuff/DynaPuff-VariableFont_wdth,wght.ttf" id="3_p3kef"]
-
-[sub_resource type="Theme" id="Theme_avieb"]
 
 [sub_resource type="Theme" id="Theme_2t6o0"]
 Label/fonts/font = ExtResource("3_p3kef")
@@ -33,15 +32,17 @@ Button/fonts/font = ExtResource("3_p3kef")
 CheckButton/fonts/font = ExtResource("3_p3kef")
 Label/fonts/font = ExtResource("3_p3kef")
 
-[node name="Settings" type="Control"]
+[node name="Settings" type="Control" node_paths=PackedStringArray("return_button")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = SubResource("Theme_avieb")
+theme = ExtResource("1_7k4s8")
 script = ExtResource("1_1ehr6")
+menu_name = "settings"
+return_button = NodePath("VBoxContainer/Return")
 
 [node name="Options" type="Label" parent="."]
 layout_mode = 1
@@ -157,4 +158,3 @@ text = "Return
 
 [connection signal="toggled" from="VBoxContainer/SoundOnOff" to="." method="_on_sound_on_off_toggled"]
 [connection signal="value_changed" from="VBoxContainer/Volume/volume_slider" to="." method="_on_volume_slider_value_changed"]
-[connection signal="pressed" from="VBoxContainer/Return" to="." method="_on_return_pressed"]

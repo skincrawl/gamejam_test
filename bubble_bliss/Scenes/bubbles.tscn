@@ -296,7 +296,7 @@ volume_db = -17.0
 bus = &"SFX"
 
 [node name="yum" type="AudioStreamPlayer" parent="."]
-volume_db = -15.0
+volume_db = -13.0
 bus = &"SFX"
 
 [connection signal="animation_finished" from="bubble_top_layer" to="." method="_on_bubble_top_layer_animation_finished"]

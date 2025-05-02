@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://cunyvm8bl614t"]
 
-[ext_resource type="Script" path="res://Scripts/banana.gd" id="1_tkajb"]
+[ext_resource type="Script" uid="uid://bc10jedvoe30h" path="res://Scripts/banana.gd" id="1_tkajb"]
 [ext_resource type="Texture2D" uid="uid://bcp66k6r2syon" path="res://Assets/Art/Banana_Sheet.png" id="1_ycuah"]
 [ext_resource type="AudioStream" uid="uid://xiem76ob7g3q" path="res://Assets/Audio/SFX/banana_blip.mp3" id="3_2t8ey"]
 
@@ -55,7 +55,7 @@ frame_progress = 0.385627
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_2t8ey")
-volume_db = -6.0
+volume_db = -4.0
 bus = &"SFX"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://yrcn2k3wrd71"]
 
 [ext_resource type="FontFile" uid="uid://behuf74h25j5t" path="res://GameAssets/DynaPuff/DynaPuff-VariableFont_wdth,wght.ttf" id="1_nxky1"]
-[ext_resource type="Script" uid="uid://c3jjvcp23kesm" path="res://Scripts/menus/narrative_screen.gd" id="2_7b8gn"]
+[ext_resource type="Script" uid="uid://cws3u5y3pcqng" path="res://Scripts/menus/menu.gd" id="2_cnd0h"]
 [ext_resource type="Texture2D" uid="uid://8pntxcrwopv7" path="res://Assets/Art/BG_Space.jpg" id="3_c6r4f"]
 
 [sub_resource type="Theme" id="Theme_i2vsh"]
@@ -45,7 +45,7 @@ animations = [{
 
 [sub_resource type="Theme" id="Theme_5ep5s"]
 
-[node name="narative_screen" type="Control"]
+[node name="narative_screen" type="Control" node_paths=PackedStringArray("return_button")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -54,7 +54,9 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 theme = SubResource("Theme_i2vsh")
-script = ExtResource("2_7b8gn")
+script = ExtResource("2_cnd0h")
+menu_name = "narrative"
+return_button = NodePath("VBoxContainer/Return")
 
 [node name="bg" type="AnimatedSprite2D" parent="."]
 visible = false
@@ -123,5 +125,4 @@ action_mode = 0
 text = "   Play   "
 icon_alignment = 1
 
-[connection signal="pressed" from="VBoxContainer/Return" to="." method="_on_return_pressed"]
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]

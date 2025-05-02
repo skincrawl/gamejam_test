@@ -111,6 +111,7 @@ func reset() -> void:
 	$Bubbles.rotation = 0.0
 	
 	$Bubbles.play("default")
+	
 	$bubble_bg_Sprite.show()
 	$bubble_top_layer.show()
 	$bubble_top_layer.play("rolling")

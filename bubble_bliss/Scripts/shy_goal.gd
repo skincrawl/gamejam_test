@@ -64,15 +64,15 @@ func _on_detection_area_body_exited(_body: Node2D) -> void:
 
 func _on_banana_timer_timeout() -> void:
 	
-	print("speed: ", linear_velocity.length())
+	# print("speed: ", linear_velocity.length())
 	
 	var banana:Banana = preload("res://Scenes/banana.tscn").instantiate()
 	bananas.append(banana)
 	
 	# Removing oldest banana when we have max bananas
-	if bananas.size() > MAX_BANANAS:
-		var old_banana:Banana = bananas.pop_front()
-		old_banana.queue_free()
+	# if bananas.size() > MAX_BANANAS:
+	# 	var old_banana:Banana = bananas.pop_front()
+	# 	old_banana.queue_free()
 	
 	Game.get_instance().current_level.add_child(banana)
 	banana.global_position = global_position

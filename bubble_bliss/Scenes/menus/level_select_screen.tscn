@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://wihmesnnx145"]
 
 [ext_resource type="Script" uid="uid://qb25hkdo7c7" path="res://Scripts/menus/level_select_screen.gd" id="1_1538e"]
-[ext_resource type="Theme" uid="uid://cfuny4aqpg8r2" path="res://Resources/default_theme.tres" id="2_h2tj1"]
+[ext_resource type="Theme" uid="uid://cfuny4aqpg8r2" path="res://Resources/Themes/default_theme.tres" id="2_h2tj1"]
 [ext_resource type="PackedScene" uid="uid://dg10qqqmum3qa" path="res://Scenes/menus/Buttons/level_button.tscn" id="3_085hy"]
 
-[node name="level_select_screen" type="Control"]
+[node name="level_select_screen" type="Control" node_paths=PackedStringArray("return_button")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,7 +12,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
+theme = ExtResource("2_h2tj1")
 script = ExtResource("1_1538e")
+menu_name = "level_select"
+return_button = NodePath("MarginContainer/VBoxContainer/HBoxContainer/ReturnButton")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -68,6 +71,7 @@ size_flags_vertical = 3
 [node name="level_4_button" parent="MarginContainer/VBoxContainer/GridContainer/MarginContainer4" instance=ExtResource("3_085hy")]
 layout_mode = 2
 text = "LEVEL 4"
+level_name = "test_level_3"
 
 [node name="MarginContainer5" type="MarginContainer" parent="MarginContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
@@ -77,6 +81,7 @@ size_flags_vertical = 3
 [node name="level_5_button" parent="MarginContainer/VBoxContainer/GridContainer/MarginContainer5" instance=ExtResource("3_085hy")]
 layout_mode = 2
 text = "LEVEL 5"
+level_name = "test_level_4"
 
 [node name="MarginContainer6" type="MarginContainer" parent="MarginContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
@@ -85,7 +90,7 @@ size_flags_vertical = 3
 
 [node name="level_6_button" parent="MarginContainer/VBoxContainer/GridContainer/MarginContainer6" instance=ExtResource("3_085hy")]
 layout_mode = 2
-text = "LEVEL 6"
+text = "COMING SOON"
 
 [node name="MarginContainer7" type="MarginContainer" parent="MarginContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
@@ -94,7 +99,7 @@ size_flags_vertical = 3
 
 [node name="level_7_button" parent="MarginContainer/VBoxContainer/GridContainer/MarginContainer7" instance=ExtResource("3_085hy")]
 layout_mode = 2
-text = "LEVEL 7"
+text = "COMING SOON"
 
 [node name="MarginContainer8" type="MarginContainer" parent="MarginContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
@@ -103,7 +108,7 @@ size_flags_vertical = 3
 
 [node name="level_8_button" parent="MarginContainer/VBoxContainer/GridContainer/MarginContainer8" instance=ExtResource("3_085hy")]
 layout_mode = 2
-text = "LEVEL 8"
+text = "COMING SOON"
 
 [node name="MarginContainer9" type="MarginContainer" parent="MarginContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
@@ -112,7 +117,7 @@ size_flags_vertical = 3
 
 [node name="level_9_button" parent="MarginContainer/VBoxContainer/GridContainer/MarginContainer9" instance=ExtResource("3_085hy")]
 layout_mode = 2
-text = "LEVEL 9"
+text = "COMING SOON"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -142,4 +147,3 @@ size_flags_stretch_ratio = 0.33
 [connection signal="level_selected" from="MarginContainer/VBoxContainer/GridContainer/MarginContainer3/level_3_button" to="." method="_on_level_selected"]
 [connection signal="level_selected" from="MarginContainer/VBoxContainer/GridContainer/MarginContainer4/level_4_button" to="." method="_on_level_selected"]
 [connection signal="level_selected" from="MarginContainer/VBoxContainer/GridContainer/MarginContainer5/level_5_button" to="." method="_on_level_selected"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/ReturnButton" to="." method="_on_return_button_pressed"]

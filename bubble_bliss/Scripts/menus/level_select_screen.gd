@@ -1,18 +1,14 @@
-extends Control
+extends Menu
 
+class_name LevelSeceltMenu
 
-var level_path:String = "res://Scenes/levels/"
 
 signal level_selected(level_name:String)
-signal return_pressed
 
 
-func _on_return_button_pressed() -> void:
+func _ready() -> void:
 	
-	process_mode = Node.PROCESS_MODE_DISABLED
-	hide()
-	
-	return_pressed.emit()
+	super._ready()
 
 
 func _on_level_selected(level_name: String) -> void:

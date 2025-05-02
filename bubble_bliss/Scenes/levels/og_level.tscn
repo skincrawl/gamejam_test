@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=4 uid="uid://dwfstap3hq4by"]
 
-[ext_resource type="Script" uid="uid://cwjq5u2ennnia" path="res://Scripts/og_level.gd" id="1_743i6"]
+[ext_resource type="Script" uid="uid://b7nltwwnf7r1r" path="res://Scripts/level.gd" id="1_o1vsi"]
 [ext_resource type="PackedScene" uid="uid://bjqgn8eaev75p" path="res://Scenes/bubbles.tscn" id="2_6modi"]
 [ext_resource type="PackedScene" uid="uid://cunyvm8bl614t" path="res://Scenes/banana.tscn" id="3_2haej"]
 [ext_resource type="PackedScene" uid="uid://7j70are14236" path="res://Scenes/spike.tscn" id="4_jx3di"]
@@ -16,7 +16,7 @@
 
 [node name="og_level" type="Node2D"]
 process_mode = 1
-script = ExtResource("1_743i6")
+script = ExtResource("1_o1vsi")
 metadata/_edit_horizontal_guides_ = [4220.0]
 
 [node name="Bubbles" parent="." instance=ExtResource("2_6modi")]
@@ -2272,94 +2272,118 @@ position = Vector2(15236, 16493)
 [node name="dart_gun" parent="level_objects/dart_guns" instance=ExtResource("11_hr8s6")]
 position = Vector2(10255, 4952)
 rotation = 3.14159
+type = "synced_timer"
 
 [node name="dart_gun2" parent="level_objects/dart_guns" instance=ExtResource("11_hr8s6")]
 position = Vector2(8175, 5371)
+type = "synced_timer"
 
 [node name="dart_gun3" parent="level_objects/dart_guns" instance=ExtResource("11_hr8s6")]
 position = Vector2(8182, 5972)
+type = "synced_timer"
 
 [node name="dart_gun7" parent="level_objects/dart_guns" instance=ExtResource("11_hr8s6")]
 position = Vector2(11238, 8326)
 rotation = -1.5708
+type = "synced_timer"
 
 [node name="dart_gun8" parent="level_objects/dart_guns" instance=ExtResource("11_hr8s6")]
 position = Vector2(11171, 8324)
 rotation = -1.5708
+type = "synced_timer"
 
 [node name="dart_gun9" parent="level_objects/dart_guns" instance=ExtResource("11_hr8s6")]
 position = Vector2(11104, 8324)
 rotation = -1.5708
+type = "synced_timer"
 
 [node name="dart_gun11" parent="level_objects/dart_guns" instance=ExtResource("11_hr8s6")]
 position = Vector2(12163, 8323)
 rotation = -1.5708
+type = "synced_timer"
 
 [node name="dart_gun15" parent="level_objects/dart_guns" instance=ExtResource("11_hr8s6")]
 position = Vector2(12096, 8321)
 rotation = -1.5708
+type = "synced_timer"
 
 [node name="dart_gun16" parent="level_objects/dart_guns" instance=ExtResource("11_hr8s6")]
 position = Vector2(12029, 8321)
 rotation = -1.5708
+type = "synced_timer"
 
 [node name="dart_gun20" parent="level_objects/dart_guns" instance=ExtResource("11_hr8s6")]
 position = Vector2(13088, 8326)
 rotation = -1.5708
+type = "synced_timer"
 
 [node name="dart_gun21" parent="level_objects/dart_guns" instance=ExtResource("11_hr8s6")]
 position = Vector2(13021, 8324)
 rotation = -1.5708
+type = "synced_timer"
 
 [node name="dart_gun22" parent="level_objects/dart_guns" instance=ExtResource("11_hr8s6")]
 position = Vector2(12954, 8324)
 rotation = -1.5708
+type = "synced_timer"
 
 [node name="dart_gun23" parent="level_objects/dart_guns" instance=ExtResource("11_hr8s6")]
 position = Vector2(14014, 7804)
 rotation = 1.5708
+type = "synced_timer"
 
 [node name="dart_gun24" parent="level_objects/dart_guns" instance=ExtResource("11_hr8s6")]
 position = Vector2(13947, 7802)
 rotation = 1.5708
+type = "synced_timer"
 
 [node name="dart_gun25" parent="level_objects/dart_guns" instance=ExtResource("11_hr8s6")]
 position = Vector2(13880, 7802)
 rotation = 1.5708
+type = "synced_timer"
 
 [node name="dart_gun10" parent="level_objects/dart_guns" instance=ExtResource("11_hr8s6")]
 position = Vector2(10251, 7490)
 rotation = 3.14159
+type = "synced_timer"
 
 [node name="dart_gun12" parent="level_objects/dart_guns" instance=ExtResource("11_hr8s6")]
 position = Vector2(10251, 7554)
 rotation = 3.14159
+type = "synced_timer"
 
 [node name="dart_gun13" parent="level_objects/dart_guns" instance=ExtResource("11_hr8s6")]
 position = Vector2(10251, 7618)
 rotation = 3.14159
+type = "synced_timer"
 
 [node name="dart_gun14" parent="level_objects/dart_guns" instance=ExtResource("11_hr8s6")]
 position = Vector2(10251, 7682)
 rotation = 3.14159
+type = "synced_timer"
 
 [node name="dart_gun35" parent="level_objects/dart_guns" instance=ExtResource("11_hr8s6")]
 position = Vector2(15562, 8899)
 rotation = 3.14159
+type = "synced_timer"
 
 [node name="dart_gun37" parent="level_objects/dart_guns" instance=ExtResource("11_hr8s6")]
 position = Vector2(15562, 9059)
 rotation = 3.14159
+type = "synced_timer"
 
 [node name="dart_gun38" parent="level_objects/dart_guns" instance=ExtResource("11_hr8s6")]
 position = Vector2(15562, 9219)
 rotation = 3.14159
+type = "synced_timer"
 
 [node name="dart_gun4" parent="level_objects/dart_guns" instance=ExtResource("11_hr8s6")]
 position = Vector2(8178, 6507)
+type = "synced_timer"
 
 [node name="dart_gun5" parent="level_objects/dart_guns" instance=ExtResource("11_hr8s6")]
 position = Vector2(8178, 6564)
+type = "synced_timer"
 
 [node name="Checkpoints" type="Node2D" parent="level_objects"]
 
