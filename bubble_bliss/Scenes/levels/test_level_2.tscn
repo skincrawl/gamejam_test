@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=4 uid="uid://cmld51j6in8qb"]
 
 [ext_resource type="Script" uid="uid://b7nltwwnf7r1r" path="res://Scripts/level.gd" id="1_phoot"]
-[ext_resource type="PackedScene" uid="uid://c48rsvjykkd1r" path="res://Scenes/shy_goal.tscn" id="3_t0h8e"]
-[ext_resource type="PackedScene" uid="uid://cunyvm8bl614t" path="res://Scenes/banana.tscn" id="4_phoot"]
+[ext_resource type="PackedScene" uid="uid://c48rsvjykkd1r" path="res://Scenes/level_objects/shy_goal.tscn" id="3_t0h8e"]
+[ext_resource type="PackedScene" uid="uid://cunyvm8bl614t" path="res://Scenes/level_objects/banana.tscn" id="4_phoot"]
 [ext_resource type="TileSet" uid="uid://c8yf65bgrdbyk" path="res://Resources/TileMaps/level.tres" id="7_u0rtd"]
 
 [node name="test_level_2" type="Node2D"]

@@ -29,7 +29,7 @@ rect = Rect2(-4000, -4000, 8000, 8000)
 
 [node name="Laser" type="RayCast2D" parent="."]
 position = Vector2(-2, 0)
-target_position = Vector2(2000, 0)
+target_position = Vector2(2500, 0)
 collision_mask = 3
 
 [node name="Line2D" type="Line2D" parent="Laser"]
