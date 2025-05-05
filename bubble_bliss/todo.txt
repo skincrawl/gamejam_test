@@ -1,0 +1,109 @@
+
+
+
+
+Technical
+
+
+Export
+
+-Find out how to export a mobile app
+-Find out how to put it on a phone
+
+
+
+Development
+
+-Make it so pressing numbers (1, 2, 3, etc.) skips to the checkpoint with the same index in the level
+	-Kinda like in youtube videos
+	-Only if debug is on
+-The OG level's hazards and tilemap layer are weirdly organized in the scene. Organize them better
+
+
+Useability
+
+-Add a loading screen
+-Add options and back to menu buttons in the pause menu
+
+
+Optimization
+
+-Object pooling for the darts
+
+
+Bugs
+
+-The shy moon stops dropping bananas if you lose it and come back to it
+-Passed checkpoints can be retriggered and update the spawn pos backwards
+-The banana fan sound actually stops after a while. Make it loop
+-Bubbles doesn't spawn at the spawn point after dying in test_level_4
+-Bananas in test_level_2 make the game crash
+
+
+Gameplay
+
+-Someone wanted the fan attenuation to be inversed, or to have the option to. So that it pushed harder from further away
+-I'd like to remove the distance attenuation
+-Add bananas collected in the win screen
+-Add points in the win screen (deaths x time x bananas)
+-Banana bunches (3 & 5)
+
+
+GUI
+
+-Make buttons look like actual bubbles
+-Add a pause menu
+	-Resume
+	-Settings
+	-Back to menu
+	-Quit
+-Add a specular highlight to the bubble buttons
+-Add a pop animation when pressing a button in the main menu
+-Bananas collected in win screen
+-Loader to make the menu music play right away
+-Menu fonts could use crayon style outlines or something
+
+
+Graphics
+
+-Change it so Bubbles only rotates based on x-speed or only rotates one way
+-Particles visible outside the effect area, like even behind the fan!
+-Make checkpoints visible somehow
+-Change the bubble rolling animation speed depending on how fast the monkey is going
+
+
+Audio
+
+-SFX are too quiet
+-Dart gun sounds
+-More yum yum sounds
+
+
+Promo
+
+-Cosmic fetus scene from 2001 Space Odyssey, except with Bubbles
+
+
+
+Fun
+
+
+Level objects
+
+-Add more level objects
+-Make it so the shy moon curves instead of flying straight away from monkey
+
+
+Level design
+
+-Add more curved walls
+
+
+Extras
+
+-Add a reward for collecting all bananas
+-Banana fan appears in the menu after a while and you can move Bubbles around on the screen
+-Make the asteroids RigidBody2D nodes so you can push them
+
+
+

@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://c4h04nltkk8mx"]
+
+[ext_resource type="Script" uid="uid://c1yjqya3i1v0r" path="res://Scripts/goal.gd" id="1_twwxx"]
+[ext_resource type="Texture2D" uid="uid://b80qx1ag8nbsd" path="res://Assets/Art/BananaPlanetSheet.png" id="2_qq003"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dn280"]
+atlas = ExtResource("2_qq003")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7bmgv"]
+atlas = ExtResource("2_qq003")
+region = Rect2(512, 0, 512, 512)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yqe7g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dn280")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7bmgv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5mrya"]
+size = Vector2(377, 408)
+
+[node name="goal" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_twwxx")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_yqe7g")
+autoplay = "default"
+frame = 1
+frame_progress = 0.127465
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(18.5, -2)
+shape = SubResource("RectangleShape2D_5mrya")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

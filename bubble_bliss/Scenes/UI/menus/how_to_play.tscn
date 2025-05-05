@@ -1,0 +1,162 @@
+[gd_scene load_steps=14 format=3 uid="uid://cfx55rek8u1kn"]
+
+[ext_resource type="FontFile" uid="uid://behuf74h25j5t" path="res://GameAssets/DynaPuff/DynaPuff-VariableFont_wdth,wght.ttf" id="1_sujcp"]
+[ext_resource type="Script" uid="uid://cws3u5y3pcqng" path="res://Scripts/menus/menu.gd" id="2_7ctcg"]
+[ext_resource type="Texture2D" uid="uid://dkxr0yqfvyrp5" path="res://Assets/Art/Banana64Mouse.png" id="4_qjr05"]
+[ext_resource type="Texture2D" uid="uid://bcp66k6r2syon" path="res://Assets/Art/Banana_Sheet.png" id="5_k678y"]
+[ext_resource type="Texture2D" uid="uid://pop8rcr0kkao" path="res://Assets/Art/Dart.png" id="6_omqmp"]
+[ext_resource type="Texture2D" uid="uid://dwwgyrbnuker1" path="res://Assets/Art/Spike_V1.png" id="7_47ign"]
+
+[sub_resource type="Theme" id="Theme_avieb"]
+Button/fonts/font = ExtResource("1_sujcp")
+Label/fonts/font = ExtResource("1_sujcp")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r8xim"]
+atlas = ExtResource("5_k678y")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ieph"]
+atlas = ExtResource("5_k678y")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e60g2"]
+atlas = ExtResource("5_k678y")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8gd5e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r8xim")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ieph")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e60g2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Theme" id="Theme_gnr1q"]
+
+[sub_resource type="GDScript" id="GDScript_t48tm"]
+script/source = "extends Button
+"
+
+[node name="HowToPlay" type="Control" node_paths=PackedStringArray("return_button")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme = SubResource("Theme_avieb")
+script = ExtResource("2_7ctcg")
+menu_name = "how_to_play"
+return_button = NodePath("VBoxContainer/Return")
+
+[node name="TextBoxAnchoring" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -750.0
+offset_top = 169.0
+offset_right = 786.0
+offset_bottom = 729.0
+grow_horizontal = 2
+
+[node name="Tip#1" type="Label" parent="TextBoxAnchoring"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 674.0
+offset_top = 96.0
+offset_right = -586.0
+offset_bottom = -354.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Use with mouse"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Tip#2" type="Label" parent="TextBoxAnchoring"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 664.0
+offset_top = 252.0
+offset_right = -580.0
+offset_bottom = -198.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Collect bananas"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Tip#3" type="Label" parent="TextBoxAnchoring"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 644.0
+offset_top = 406.0
+offset_right = -590.0
+offset_bottom = -44.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Avoid Hazards!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Bananafan" type="Sprite2D" parent="TextBoxAnchoring"]
+position = Vector2(536, 152)
+scale = Vector2(1.875, 1.6875)
+texture = ExtResource("4_qjr05")
+
+[node name="Bananas" type="AnimatedSprite2D" parent="TextBoxAnchoring"]
+position = Vector2(548, 296)
+sprite_frames = SubResource("SpriteFrames_8gd5e")
+
+[node name="Dart" type="Sprite2D" parent="TextBoxAnchoring"]
+position = Vector2(541, 450)
+scale = Vector2(0.191882, 0.379487)
+texture = ExtResource("6_omqmp")
+
+[node name="Spike" type="Sprite2D" parent="TextBoxAnchoring"]
+position = Vector2(378, 440)
+texture = ExtResource("7_47ign")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -125.0
+offset_top = -118.0
+offset_right = 125.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="Return" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_gnr1q")
+theme_override_font_sizes/font_size = 60
+action_mode = 0
+text = "Return"
+icon_alignment = 1
+script = SubResource("GDScript_t48tm")

@@ -1,0 +1,77 @@
+[gd_scene load_steps=5 format=3 uid="uid://ouy3qne2eb5e"]
+
+[ext_resource type="FontFile" uid="uid://behuf74h25j5t" path="res://GameAssets/DynaPuff/DynaPuff-VariableFont_wdth,wght.ttf" id="1_6wmt5"]
+[ext_resource type="Script" uid="uid://cws3u5y3pcqng" path="res://Scripts/menus/menu.gd" id="2_q74ar"]
+
+[sub_resource type="Theme" id="Theme_avieb"]
+Button/fonts/font = ExtResource("1_6wmt5")
+Label/fonts/font = ExtResource("1_6wmt5")
+
+[sub_resource type="Theme" id="Theme_gnr1q"]
+
+[node name="AboutUs" type="Control" node_paths=PackedStringArray("return_button")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme = SubResource("Theme_avieb")
+script = ExtResource("2_q74ar")
+menu_name = "about_us"
+return_button = NodePath("VBoxContainer/Return")
+
+[node name="TextBoxAnchoring" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -504.0
+offset_top = 57.0
+offset_right = 500.0
+offset_bottom = 757.0
+grow_horizontal = 2
+
+[node name="Instructions" type="Label" parent="TextBoxAnchoring"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 22.0
+offset_top = -3.0
+offset_right = -10.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/line_spacing = 25
+theme_override_font_sizes/font_size = 43
+text = "Bubble Bliss was part of the Global Game Jam 2025. Produced by five young jammers from Turku with four first timers, we set off to create a cartoony space platform-adventure with tight maneuvering, strong art style and a shared common vision.
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -125.0
+offset_top = -118.0
+offset_right = 125.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="Return" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_gnr1q")
+theme_override_font_sizes/font_size = 60
+action_mode = 0
+text = "Return"
+icon_alignment = 1

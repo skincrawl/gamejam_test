@@ -1,0 +1,164 @@
+[gd_scene load_steps=23 format=3 uid="uid://4qcyhacocqsd"]
+
+[ext_resource type="Script" uid="uid://c3kq4ht6cbv0g" path="res://Scripts/game.gd" id="1_sfcmp"]
+[ext_resource type="AudioStream" uid="uid://bxaf8tn4ra364" path="res://Assets/Audio/Music/MainMenuTheme_Intro.mp3" id="2_jai3e"]
+[ext_resource type="PackedScene" uid="uid://yrcn2k3wrd71" path="res://Scenes/menus/narrative_screen.tscn" id="4_nrqdf"]
+[ext_resource type="PackedScene" uid="uid://b5gigobueilix" path="res://Scenes/menus/main_menu.tscn" id="4_vb8i7"]
+[ext_resource type="Texture2D" uid="uid://8pntxcrwopv7" path="res://Assets/Art/BG_Space.jpg" id="5_ganff"]
+[ext_resource type="PackedScene" uid="uid://6lgt51fk3khg" path="res://Scenes/menus/settings_menu.tscn" id="6_ajcxk"]
+[ext_resource type="PackedScene" uid="uid://ouy3qne2eb5e" path="res://Scenes/menus/about_us.tscn" id="6_ov1is"]
+[ext_resource type="PackedScene" uid="uid://cfx55rek8u1kn" path="res://Scenes/menus/how_to_play.tscn" id="7_qeoyt"]
+[ext_resource type="PackedScene" uid="uid://b1nk0of7fw0au" path="res://Scenes/menus/win_screen.tscn" id="8_4mtt3"]
+[ext_resource type="PackedScene" uid="uid://ctvomw1cn28kf" path="res://Scenes/menus/credits.tscn" id="9_05lkh"]
+[ext_resource type="PackedScene" uid="uid://wihmesnnx145" path="res://Scenes/menus/level_select_screen.tscn" id="10_nnt18"]
+[ext_resource type="Script" uid="uid://dxiqrwxseeafo" path="res://Scripts/pause.gd" id="11_5fxth"]
+[ext_resource type="Script" uid="uid://chdt1a1d6jcqk" path="res://Scripts/debug.gd" id="12_rfjv2"]
+[ext_resource type="Theme" uid="uid://b0w104qw2pa54" path="res://Resources/Themes/debugging_theme.tres" id="12_rku1e"]
+[ext_resource type="PackedScene" uid="uid://7o3ladlt1r1i" path="res://Scenes/banana_mouse.tscn" id="14_1phco"]
+[ext_resource type="PackedScene" uid="uid://fdnker86sjp0" path="res://Scenes/level_gui.tscn" id="15_nb51f"]
+
+[sub_resource type="GDScript" id="GDScript_o5yvi"]
+script/source = "extends CanvasLayer
+"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b1ypm"]
+atlas = ExtResource("5_ganff")
+region = Rect2(0, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_52scj"]
+atlas = ExtResource("5_ganff")
+region = Rect2(1920, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ka1dl"]
+atlas = ExtResource("5_ganff")
+region = Rect2(0, 1080, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ng86i"]
+atlas = ExtResource("5_ganff")
+region = Rect2(1920, 1080, 1920, 1080)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rfjv2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b1ypm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_52scj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ka1dl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ng86i")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[node name="Game" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_sfcmp")
+
+[node name="banana_mouse" parent="." instance=ExtResource("14_1phco")]
+z_index = 10
+position = Vector2(354, 368)
+
+[node name="Menus" type="CanvasLayer" parent="."]
+script = SubResource("GDScript_o5yvi")
+
+[node name="MainMenu" parent="Menus" instance=ExtResource("4_vb8i7")]
+
+[node name="narrative_screen" parent="Menus" instance=ExtResource("4_nrqdf")]
+visible = false
+mouse_filter = 2
+
+[node name="Settings" parent="Menus" instance=ExtResource("6_ajcxk")]
+visible = false
+mouse_filter = 2
+
+[node name="AboutUs" parent="Menus" instance=ExtResource("6_ov1is")]
+visible = false
+mouse_filter = 2
+
+[node name="HowToPlay" parent="Menus" instance=ExtResource("7_qeoyt")]
+visible = false
+mouse_filter = 2
+
+[node name="win_screen" parent="Menus" instance=ExtResource("8_4mtt3")]
+visible = false
+mouse_filter = 2
+
+[node name="Credits" parent="Menus" instance=ExtResource("9_05lkh")]
+visible = false
+mouse_filter = 2
+
+[node name="level_select_screen" parent="Menus" instance=ExtResource("10_nnt18")]
+visible = false
+mouse_filter = 2
+
+[node name="Pause" type="VBoxContainer" parent="Menus"]
+process_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -173.0
+offset_top = -212.0
+offset_right = 174.0
+offset_bottom = 62.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+alignment = 1
+script = ExtResource("11_5fxth")
+
+[node name="paused_label" type="Label" parent="Menus/Pause"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 90
+text = "PAUSED"
+
+[node name="music_player" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_jai3e")
+volume_db = -12.0
+autoplay = true
+
+[node name="Debug" type="CanvasLayer" parent="."]
+layer = 2
+script = ExtResource("12_rfjv2")
+
+[node name="MarginContainer" type="MarginContainer" parent="Debug"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("12_rku1e")
+
+[node name="fps_label" type="Label" parent="Debug/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("12_rku1e")
+text = "0 fps"
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1920, 1080)
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(960, 540)
+sprite_frames = SubResource("SpriteFrames_rfjv2")
+autoplay = "default"
+
+[node name="level_GUI" parent="." instance=ExtResource("15_nb51f")]
+
+[connection signal="finished" from="music_player" to="." method="_on_music_player_finished"]

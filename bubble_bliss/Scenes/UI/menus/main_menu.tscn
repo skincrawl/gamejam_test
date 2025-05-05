@@ -1,0 +1,359 @@
+[gd_scene load_steps=27 format=3 uid="uid://b5gigobueilix"]
+
+[ext_resource type="Script" uid="uid://ckjt1t4tl5soy" path="res://Scripts/menus/main_menu.gd" id="1_oinqm"]
+[ext_resource type="Texture2D" uid="uid://58hkgo1s8li0" path="res://Assets/Art/Title_Sheet.png" id="5_styjg"]
+[ext_resource type="Texture2D" uid="uid://gbmwr3ji3ra3" path="res://Assets/Art/BubblesSheet.png" id="5_xd7ie"]
+[ext_resource type="Theme" uid="uid://cfuny4aqpg8r2" path="res://Resources/Themes/default_theme.tres" id="6_actju"]
+[ext_resource type="Script" uid="uid://btxyy03cgiojw" path="res://Scripts/menus/valikko_apina.gd" id="6_cx4xl"]
+[ext_resource type="Texture2D" uid="uid://ud00kehm07pv" path="res://Assets/Art/BubblesWhoa.png" id="7_5egv6"]
+[ext_resource type="Texture2D" uid="uid://cuxs0jdep2tjs" path="res://Assets/Art/BubbleBGTexture.png" id="7_pyfg4"]
+[ext_resource type="Texture2D" uid="uid://c4mgs6y8y43he" path="res://Assets/Art/ActualBubble_Sheet.png" id="8_yoddx"]
+[ext_resource type="AudioStream" uid="uid://coi0eovow878l" path="res://Assets/Audio/SFX/monkey_bubbles/mixkit-cartoon-creature-pain-scream-101.wav" id="9_h6oay"]
+[ext_resource type="AudioStream" uid="uid://blwan44chay8p" path="res://Assets/Audio/SFX/bubble-pop.mp3" id="12_s5yk8"]
+[ext_resource type="PackedScene" uid="uid://biqwbx2o6j8yg" path="res://Scenes/UI/menus/Buttons/bubble_button.tscn" id="14_nnvic"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t8ox7"]
+atlas = ExtResource("5_styjg")
+region = Rect2(0, 0, 630, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s2scx"]
+atlas = ExtResource("5_styjg")
+region = Rect2(630, 0, 630, 500)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bq2v4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t8ox7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s2scx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vr1f0"]
+radius = 156.697
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_68v2j"]
+atlas = ExtResource("5_xd7ie")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pyr0n"]
+atlas = ExtResource("5_xd7ie")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_64lv3"]
+atlas = ExtResource("5_xd7ie")
+region = Rect2(0, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vtepg"]
+atlas = ExtResource("7_5egv6")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8dnnj"]
+atlas = ExtResource("7_5egv6")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m3bi6"]
+atlas = ExtResource("7_5egv6")
+region = Rect2(0, 256, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g6qib"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_68v2j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pyr0n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_64lv3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vtepg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8dnnj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m3bi6")
+}],
+"loop": false,
+"name": &"whoa!",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_58nmk"]
+atlas = ExtResource("8_yoddx")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ctnhm"]
+atlas = ExtResource("8_yoddx")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f5850"]
+atlas = ExtResource("8_yoddx")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ea5kg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_58nmk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ctnhm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f5850")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme = ExtResource("6_actju")
+script = ExtResource("1_oinqm")
+menu_name = "main"
+
+[node name="GameTitle" type="AnimatedSprite2D" parent="."]
+position = Vector2(508, 358)
+scale = Vector2(1.425, 1.425)
+sprite_frames = SubResource("SpriteFrames_bq2v4")
+autoplay = "default"
+metadata/_edit_lock_ = true
+
+[node name="BubblesMainMenu" type="Node2D" parent="."]
+position = Vector2(1476, 477)
+script = ExtResource("6_cx4xl")
+metadata/_edit_group_ = true
+
+[node name="Area2D" type="Area2D" parent="BubblesMainMenu"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BubblesMainMenu/Area2D"]
+shape = SubResource("CircleShape2D_vr1f0")
+
+[node name="ApinaBubbles" type="AnimatedSprite2D" parent="BubblesMainMenu"]
+position = Vector2(0, -8)
+scale = Vector2(2.265, 2.265)
+sprite_frames = SubResource("SpriteFrames_g6qib")
+autoplay = "default"
+metadata/_edit_group_ = true
+
+[node name="Bubble" type="Sprite2D" parent="BubblesMainMenu"]
+scale = Vector2(2.89, 2.89)
+texture = ExtResource("7_pyfg4")
+metadata/_edit_group_ = true
+
+[node name="BubbleOutline" type="AnimatedSprite2D" parent="BubblesMainMenu"]
+z_index = 1
+position = Vector2(0.160034, -5.84)
+scale = Vector2(2.94, 2.94)
+sprite_frames = SubResource("SpriteFrames_ea5kg")
+autoplay = "default"
+metadata/_edit_group_ = true
+
+[node name="monkey_scream" type="AudioStreamPlayer" parent="BubblesMainMenu"]
+stream = ExtResource("9_h6oay")
+volume_db = -15.0
+bus = &"SFX"
+
+[node name="pop" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_s5yk8")
+volume_db = -10.0
+bus = &"SFX"
+
+[node name="start_button" parent="." node_paths=PackedStringArray("label") instance=ExtResource("14_nnvic")]
+layout_mode = 0
+offset_left = 889.0
+offset_top = 622.0
+offset_right = 889.0
+offset_bottom = 622.0
+rotation = -0.0872665
+scale = Vector2(1.2, 1)
+button_action = "start game"
+label = NodePath("start_label")
+
+[node name="start_label" type="Label" parent="start_button"]
+layout_mode = 0
+offset_left = -95.6451
+offset_top = -19.0758
+offset_right = 99.3552
+offset_bottom = 65.9247
+rotation = -0.0237574
+scale = Vector2(1.265, 1.265)
+pivot_offset = Vector2(98, 21)
+theme = ExtResource("6_actju")
+text = "Start game
+"
+
+[node name="how_to_play_button" parent="." node_paths=PackedStringArray("label") instance=ExtResource("14_nnvic")]
+layout_mode = 0
+offset_left = 898.0
+offset_top = 901.0
+offset_right = 898.0
+offset_bottom = 901.0
+rotation = 0.20191
+scale = Vector2(1.02348, 0.833028)
+button_action = "how to play"
+label = NodePath("how_to_play_label")
+
+[node name="how_to_play_label" type="Label" parent="how_to_play_button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.497
+anchor_top = -0.199
+anchor_right = 0.506
+anchor_bottom = 0.888
+offset_left = -99.0
+offset_top = -19.0
+offset_right = 98.0
+offset_bottom = 66.0
+rotation = 0.0385386
+scale = Vector2(1.355, 1.355)
+pivot_offset = Vector2(98, 21)
+text = "How to play
+"
+
+[node name="about_us_button" parent="." node_paths=PackedStringArray("label") instance=ExtResource("14_nnvic")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.095
+anchor_top = 0.885
+anchor_right = 0.198
+anchor_bottom = 0.913
+offset_left = 95.6
+offset_top = 14.2
+offset_right = -102.16
+offset_bottom = -16.04
+rotation = -0.108272
+scale = Vector2(0.902526, 0.746132)
+button_action = "about us"
+label = NodePath("about_us_label")
+
+[node name="about_us_label" type="Label" parent="about_us_button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.948
+anchor_bottom = 0.888
+offset_left = -72.1013
+offset_top = -16.2204
+offset_right = 78.8987
+offset_bottom = 24.7796
+rotation = -0.0132275
+scale = Vector2(1.55, 1.55)
+pivot_offset = Vector2(75, 20)
+text = "About us"
+
+[node name="settings_button" parent="." node_paths=PackedStringArray("label") instance=ExtResource("14_nnvic")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.095
+anchor_top = 0.681
+anchor_right = 0.201
+anchor_bottom = 0.725
+offset_left = 103.6
+offset_top = 3.51996
+offset_right = -99.92
+offset_bottom = -44.0
+rotation = 0.190976
+scale = Vector2(0.902526, 0.746132)
+button_action = "settings"
+label = NodePath("settings_label")
+
+[node name="settings_label" type="Label" parent="settings_button"]
+layout_mode = 0
+offset_left = -72.0378
+offset_top = -20.0102
+offset_right = 75.9617
+offset_bottom = 20.9898
+rotation = 0.019176
+scale = Vector2(1.68, 1.68)
+pivot_offset = Vector2(75, 20)
+theme = ExtResource("6_actju")
+text = "Settings"
+
+[node name="quit_button" parent="." node_paths=PackedStringArray("label") instance=ExtResource("14_nnvic")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.095
+anchor_top = 0.885
+anchor_right = 0.198
+anchor_bottom = 0.913
+offset_left = 1381.6
+offset_top = -60.8
+offset_right = 1183.84
+offset_bottom = -91.04
+rotation = -0.207815
+scale = Vector2(0.758, 0.626)
+button_action = "quit"
+label = NodePath("quit_label")
+
+[node name="quit_label" type="Label" parent="quit_button"]
+layout_mode = 0
+offset_left = -38.3841
+offset_top = -19.5957
+offset_right = 37.6163
+offset_bottom = 21.4043
+rotation = 0.019176
+scale = Vector2(2.24, 2.24)
+pivot_offset = Vector2(35, 20)
+theme = ExtResource("6_actju")
+text = "Quit"
+
+[node name="level_select_button" parent="." node_paths=PackedStringArray("label") instance=ExtResource("14_nnvic")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.095
+anchor_top = 0.885
+anchor_right = 0.198
+anchor_bottom = 0.913
+offset_left = 908.6
+offset_top = -572.8
+offset_right = 710.84
+offset_bottom = -603.04
+rotation = -0.142341
+scale = Vector2(1.12274, 1.50753)
+button_action = "level select"
+label = NodePath("level_select_label")
+
+[node name="level_select_label" type="Label" parent="level_select_button"]
+layout_mode = 0
+offset_left = -70.1776
+offset_top = -55.621
+offset_right = 40.8224
+offset_bottom = 29.379
+rotation = -0.022988
+scale = Vector2(1.605, 1.605)
+pivot_offset = Vector2(35, 20)
+theme = ExtResource("6_actju")
+text = "Level 
+Select"
+
+[connection signal="mouse_entered" from="BubblesMainMenu/Area2D" to="BubblesMainMenu" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="BubblesMainMenu/Area2D" to="BubblesMainMenu" method="_on_area_2d_mouse_exited"]
+[connection signal="animation_finished" from="BubblesMainMenu/ApinaBubbles" to="BubblesMainMenu" method="_on_apina_bubbles_animation_finished"]
+[connection signal="finished" from="pop" to="." method="_on_pop_finished"]
+[connection signal="pressed" from="start_button" to="." method="button_was_pressed"]
+[connection signal="pressed" from="how_to_play_button" to="." method="button_was_pressed"]
+[connection signal="pressed" from="about_us_button" to="." method="button_was_pressed"]
+[connection signal="pressed" from="settings_button" to="." method="button_was_pressed"]
+[connection signal="pressed" from="quit_button" to="." method="button_was_pressed"]
+[connection signal="pressed" from="level_select_button" to="." method="button_was_pressed"]

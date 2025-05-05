@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://qryooqjw61cv"]
+
+[ext_resource type="Shader" uid="uid://cpat78ut7sjwl" path="res://Resources/Shaders/GUI/Menus/bubble_button.gdshader" id="1_17yb3"]
+[ext_resource type="Texture2D" uid="uid://dcuduljslrc4" path="res://Assets/Art/BubbleButton/bubble_scroll_texture.png" id="2_ejrsb"]
+
+[resource]
+shader = ExtResource("1_17yb3")
+shader_parameter/tex = ExtResource("2_ejrsb")
+shader_parameter/tex1_scroll_speed = Vector2(0.1, 0.1)
+shader_parameter/tex2_scroll_speed = Vector2(0.1, 0.1)
+shader_parameter/circle_radius = 0.5
+shader_parameter/circle_center = Vector2(0.5, 0.5)
+shader_parameter/offset = 0.0
