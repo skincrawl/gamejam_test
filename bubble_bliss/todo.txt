@@ -38,8 +38,6 @@ Bugs
 -The banana fan sound actually stops after a while. Make it loop
 -Bubbles doesn't spawn at the spawn point after dying in test_level_4
 -Bananas in test_level_2 make the game crash
--test_level_4 text within the level (GO, STOP) shows above the bubble texture
--Lasers don't stop where they hit stuff
 
 
 Gameplay
@@ -53,6 +51,7 @@ Gameplay
 
 GUI
 
+-Make buttons look like actual bubbles
 -Add a pause menu
 	-Resume
 	-Settings
@@ -82,8 +81,6 @@ Audio
 
 Promo
 
--Cosmic monkey looking at the Earth
-	-Banana?
 -Cosmic fetus scene from 2001 Space Odyssey, except with Bubbles
 
 
@@ -99,8 +96,6 @@ Level objects
 
 Level design
 
--Redo the physics layer collision shapes in the TileMapLayer
--Add a new level that tells you to go and stop to keep you safe from darts
 -Add more curved walls
 
 
