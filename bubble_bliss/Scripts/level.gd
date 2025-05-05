@@ -14,7 +14,7 @@ const LOSE_TIME:float = 3.0
 var game:Game
 var checkpoint_manager:CheckpointManager
 
-var dart_packed:PackedScene = preload("res://Scenes/dart.tscn")
+var dart_packed:PackedScene = preload("res://Scenes/level_objects/dart.tscn")
 
 var bananas_amount:int = 0
 var collected_bananas:int = 0

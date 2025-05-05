@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=4 uid="uid://meskojorqttl"]
 
-[ext_resource type="PackedScene" uid="uid://c4h04nltkk8mx" path="res://Scenes/goal.tscn" id="1_75vkj"]
-[ext_resource type="PackedScene" uid="uid://cunyvm8bl614t" path="res://Scenes/banana.tscn" id="2_3i7na"]
+[ext_resource type="PackedScene" uid="uid://c4h04nltkk8mx" path="res://Scenes/level_objects/goal.tscn" id="1_75vkj"]
+[ext_resource type="PackedScene" uid="uid://cunyvm8bl614t" path="res://Scenes/level_objects/banana.tscn" id="2_3i7na"]
 [ext_resource type="TileSet" uid="uid://c8yf65bgrdbyk" path="res://Resources/TileMaps/level.tres" id="3_u4h4s"]
 
 [sub_resource type="GDScript" id="GDScript_c2xgd"]

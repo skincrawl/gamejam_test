@@ -66,7 +66,7 @@ func _on_banana_timer_timeout() -> void:
 	
 	# print("speed: ", linear_velocity.length())
 	
-	var banana:Banana = preload("res://Scenes/banana.tscn").instantiate()
+	var banana:Banana = preload("res://Scenes/level_objects/banana.tscn").instantiate()
 	bananas.append(banana)
 	
 	# Removing oldest banana when we have max bananas
