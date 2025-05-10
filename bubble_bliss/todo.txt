@@ -22,7 +22,6 @@ Development
 
 Useability
 
--Add a loading screen
 -Add options and back to menu buttons in the pause menu
 
 
@@ -51,7 +50,7 @@ Gameplay
 
 GUI
 
--Make buttons look like actual bubbles
+-Make buttons circular like actual bubbles, now they're oval
 -Add a pause menu
 	-Resume
 	-Settings

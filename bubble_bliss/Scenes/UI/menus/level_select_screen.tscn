@@ -90,7 +90,8 @@ size_flags_vertical = 3
 
 [node name="level_6_button" parent="MarginContainer/VBoxContainer/GridContainer/MarginContainer6" instance=ExtResource("3_085hy")]
 layout_mode = 2
-text = "COMING SOON"
+text = "MIIKA LEVEL 1"
+level_name = "miika_level_1"
 
 [node name="MarginContainer7" type="MarginContainer" parent="MarginContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
@@ -147,3 +148,7 @@ size_flags_stretch_ratio = 0.33
 [connection signal="level_selected" from="MarginContainer/VBoxContainer/GridContainer/MarginContainer3/level_3_button" to="." method="_on_level_selected"]
 [connection signal="level_selected" from="MarginContainer/VBoxContainer/GridContainer/MarginContainer4/level_4_button" to="." method="_on_level_selected"]
 [connection signal="level_selected" from="MarginContainer/VBoxContainer/GridContainer/MarginContainer5/level_5_button" to="." method="_on_level_selected"]
+[connection signal="level_selected" from="MarginContainer/VBoxContainer/GridContainer/MarginContainer6/level_6_button" to="." method="_on_level_selected"]
+[connection signal="level_selected" from="MarginContainer/VBoxContainer/GridContainer/MarginContainer7/level_7_button" to="." method="_on_level_selected"]
+[connection signal="level_selected" from="MarginContainer/VBoxContainer/GridContainer/MarginContainer8/level_8_button" to="." method="_on_level_selected"]
+[connection signal="level_selected" from="MarginContainer/VBoxContainer/GridContainer/MarginContainer9/level_9_button" to="." method="_on_level_selected"]
