@@ -20,6 +20,7 @@ var level_music:AudioStream = preload("res://Assets/Audio/Music/PeliTheme.mp3")
 @onready var narrative_screen:Menu = $Menus/narrative_screen
 @onready var win_screen:Menu = $Menus/win_screen
 @onready var credits_screen:Menu = $Menus/Credits
+@onready var loading_screen:LoadingScreen = $Menus/LoadingScreen
 
 @onready var paused_label:Label = $Menus/Pause/paused_label
 
@@ -63,11 +64,12 @@ func _setup_menus() -> void:
 	menus.append(win_screen)
 	menus.append(credits_screen)
 	menus.append(level_select_screen)
+	menus.append(loading_screen)
 	# menus.append(pause_screen)
 	
 	var function:Callable = show_menu
-	function.bind("menu")
-	main_menu.return_pressed.connect(function)
+	function.bind("main")
+	# main_menu.return_pressed.connect(function)
 	narrative_screen.return_pressed.connect(function)
 	settings_screen.return_pressed.connect(function)
 	about_us_screen.return_pressed.connect(function)
@@ -98,7 +100,6 @@ func show_menu(_menu_name:String) -> void:
 	for menu_i in menus.size():
 		
 		var menu:Menu = menus[menu_i]
-		current_menu = menu
 		# print("menu: ", menu.menu_name)
 		
 		if menu.menu_name == "pause":
@@ -108,10 +109,15 @@ func show_menu(_menu_name:String) -> void:
 			menu.mouse_filter = Control.MOUSE_FILTER_IGNORE
 			menu.process_mode = Node.PROCESS_MODE_DISABLED
 		else:
-			print("showing menu: ", menu.menu_name)
+			# print("showing menu: ", menu.menu_name)
+			current_menu = menu
 			menu.show()
 			menu.mouse_filter = Control.MOUSE_FILTER_PASS
 			menu.process_mode = Node.PROCESS_MODE_INHERIT
+	
+	if _menu_name == "loading_screen":
+		# $Menus/LoadingScreen.next_scene_path = "res://Scenes/levels/og_level.tscn"
+		$Menus/LoadingScreen.show()
 	
 	if not _menu_name == "pause":
 		level_GUI.hide()
@@ -119,16 +125,6 @@ func show_menu(_menu_name:String) -> void:
 		bubbles.hide()
 		bubbles.process_mode = Node.PROCESS_MODE_DISABLED
 		return
-	
-	
-
-
-# Shows the main menu
-func show_main_menu() -> void:
-	
-	if $music_player.stream == level_music:
-		$music_player.stream = menu_music_intro
-		$music_player.play()
 
 
 func start_level(level_name:String) -> void:
@@ -136,35 +132,11 @@ func start_level(level_name:String) -> void:
 	var full_path:String = levels_path + level_name + ".tscn"
 	
 	if not ResourceLoader.exists(full_path):
+		push_error("failed to load level: ", level_name)
 		return
 	
-	var level:Level = load(full_path).instantiate()
-	
-	in_level = true
-	
-	bubbles.show()
-	bubbles.process_mode = Node.PROCESS_MODE_PAUSABLE
-	bubbles.reset()
-	
-	narrative_screen.hide()
-	narrative_screen.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	
-	level_select_screen.hide()
-	level_select_screen.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	
-	level_GUI.show()
-	banana_mouse.show()
-	banana_mouse.process_mode = Node.PROCESS_MODE_INHERIT
-	
-	if not current_level == null:
-		current_level.queue_free()
-	
-	current_level = level
-	add_child(current_level)
-	
-	$music_player.stream = level_music
-	$music_player.volume_db = LEVEL_MUSIC_VOLUME
-	$music_player.play()
+	loading_screen.next_scene_path = full_path
+	show_menu("loading_screen")
 
 
 func music_on(_on:bool) -> void:
@@ -198,12 +170,6 @@ func _on_main_menu_button_pressed(button_action: String) -> void:
 			pass
 
 
-func _on_narrative_screen_start_level(_level_name:String) -> void:
-	
-	# var level:Level = preload("res://Scenes/levels/og_level.tscn").instantiate()
-	start_level("og_level")
-
-
 func _on_no_longer_in_level() -> void:
 	
 	$music_player.stream = menu_music_intro
@@ -212,3 +178,26 @@ func _on_no_longer_in_level() -> void:
 	in_level = false
 	current_level.queue_free()
 	current_level = null
+
+
+func _on_scene_loaded(_scene: PackedScene) -> void:
+	
+	if not current_level == null:
+		current_level.queue_free()
+	current_level = _scene.instantiate()
+	
+	in_level = true
+	
+	bubbles.show()
+	bubbles.process_mode = Node.PROCESS_MODE_PAUSABLE
+	bubbles.reset()
+	
+	level_GUI.show()
+	banana_mouse.show()
+	banana_mouse.process_mode = Node.PROCESS_MODE_INHERIT
+	
+	add_child(current_level)
+	
+	$music_player.stream = level_music
+	$music_player.volume_db = LEVEL_MUSIC_VOLUME
+	$music_player.play()

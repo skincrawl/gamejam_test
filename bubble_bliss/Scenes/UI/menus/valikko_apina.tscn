@@ -1,0 +1,131 @@
+[gd_scene load_steps=18 format=3 uid="uid://bpmfp8y87a16b"]
+
+[ext_resource type="Texture2D" uid="uid://gbmwr3ji3ra3" path="res://Assets/Art/BubblesSheet.png" id="2_kqku5"]
+[ext_resource type="Texture2D" uid="uid://ud00kehm07pv" path="res://Assets/Art/BubblesWhoa.png" id="3_u7jbm"]
+[ext_resource type="Texture2D" uid="uid://cuxs0jdep2tjs" path="res://Assets/Art/BubbleBGTexture.png" id="4_rwduo"]
+[ext_resource type="Texture2D" uid="uid://c4mgs6y8y43he" path="res://Assets/Art/ActualBubble_Sheet.png" id="5_fpkrb"]
+[ext_resource type="AudioStream" uid="uid://coi0eovow878l" path="res://Assets/Audio/SFX/monkey_bubbles/mixkit-cartoon-creature-pain-scream-101.wav" id="6_snseo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vr1f0"]
+radius = 156.697
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_68v2j"]
+atlas = ExtResource("2_kqku5")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pyr0n"]
+atlas = ExtResource("2_kqku5")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_64lv3"]
+atlas = ExtResource("2_kqku5")
+region = Rect2(0, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vtepg"]
+atlas = ExtResource("3_u7jbm")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8dnnj"]
+atlas = ExtResource("3_u7jbm")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m3bi6"]
+atlas = ExtResource("3_u7jbm")
+region = Rect2(0, 256, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g6qib"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_68v2j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pyr0n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_64lv3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vtepg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8dnnj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m3bi6")
+}],
+"loop": false,
+"name": &"whoa!",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_58nmk"]
+atlas = ExtResource("5_fpkrb")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ctnhm"]
+atlas = ExtResource("5_fpkrb")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f5850"]
+atlas = ExtResource("5_fpkrb")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ea5kg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_58nmk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ctnhm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f5850")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="BubblesMainMenu" type="Node2D"]
+metadata/_edit_group_ = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_vr1f0")
+
+[node name="ApinaBubbles" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -8)
+scale = Vector2(2.265, 2.265)
+sprite_frames = SubResource("SpriteFrames_g6qib")
+autoplay = "default"
+metadata/_edit_group_ = true
+
+[node name="Bubble" type="Sprite2D" parent="."]
+scale = Vector2(2.89, 2.89)
+texture = ExtResource("4_rwduo")
+metadata/_edit_group_ = true
+
+[node name="BubbleOutline" type="AnimatedSprite2D" parent="."]
+z_index = 1
+position = Vector2(0.160034, -5.84)
+scale = Vector2(2.94, 2.94)
+sprite_frames = SubResource("SpriteFrames_ea5kg")
+autoplay = "default"
+metadata/_edit_group_ = true
+
+[node name="monkey_scream" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_snseo")
+volume_db = -15.0
+bus = &"SFX"
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="animation_finished" from="ApinaBubbles" to="." method="_on_apina_bubbles_animation_finished"]
