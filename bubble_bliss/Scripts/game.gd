@@ -20,6 +20,7 @@ var level_music:AudioStream = preload("res://Assets/Audio/Music/PeliTheme.mp3")
 @onready var narrative_screen:Menu = $Menus/narrative_screen
 @onready var win_screen:Menu = $Menus/win_screen
 @onready var credits_screen:Menu = $Menus/Credits
+@onready var loading_screen:Menu = $Menus/LoadingScreen
 
 @onready var paused_label:Label = $Menus/Pause/paused_label
 
@@ -63,10 +64,11 @@ func _setup_menus() -> void:
 	menus.append(win_screen)
 	menus.append(credits_screen)
 	menus.append(level_select_screen)
+	menus.append(loading_screen)
 	# menus.append(pause_screen)
 	
 	var function:Callable = show_menu
-	function.bind("menu")
+	function.bind("main")
 	main_menu.return_pressed.connect(function)
 	narrative_screen.return_pressed.connect(function)
 	settings_screen.return_pressed.connect(function)
@@ -108,10 +110,14 @@ func show_menu(_menu_name:String) -> void:
 			menu.mouse_filter = Control.MOUSE_FILTER_IGNORE
 			menu.process_mode = Node.PROCESS_MODE_DISABLED
 		else:
-			print("showing menu: ", menu.menu_name)
+			# print("showing menu: ", menu.menu_name)
 			menu.show()
 			menu.mouse_filter = Control.MOUSE_FILTER_PASS
 			menu.process_mode = Node.PROCESS_MODE_INHERIT
+	
+	if _menu_name == "loading_screen":
+		$Menus/LoadingScreen.next_scene_path = "res://Scenes/levels/og_level.tscn"
+		$Menus/LoadingScreen.show()
 	
 	if not _menu_name == "pause":
 		level_GUI.hide()
@@ -119,16 +125,6 @@ func show_menu(_menu_name:String) -> void:
 		bubbles.hide()
 		bubbles.process_mode = Node.PROCESS_MODE_DISABLED
 		return
-	
-	
-
-
-# Shows the main menu
-func show_main_menu() -> void:
-	
-	if $music_player.stream == level_music:
-		$music_player.stream = menu_music_intro
-		$music_player.play()
 
 
 func start_level(level_name:String) -> void:
@@ -136,8 +132,10 @@ func start_level(level_name:String) -> void:
 	var full_path:String = levels_path + level_name + ".tscn"
 	
 	if not ResourceLoader.exists(full_path):
+		push_error("failed to load level: ", level_name)
 		return
 	
+	show_menu("loading_screen")
 	var level:Level = load(full_path).instantiate()
 	
 	in_level = true
@@ -196,12 +194,6 @@ func _on_main_menu_button_pressed(button_action: String) -> void:
 			get_tree().quit()
 		_:
 			pass
-
-
-func _on_narrative_screen_start_level(_level_name:String) -> void:
-	
-	# var level:Level = preload("res://Scenes/levels/og_level.tscn").instantiate()
-	start_level("og_level")
 
 
 func _on_no_longer_in_level() -> void:
