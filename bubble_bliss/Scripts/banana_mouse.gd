@@ -12,6 +12,12 @@ const SLOWDOWN_SPEED:float = 90.0
 var speed:float = 0.0
 
 
+func _ready() -> void:
+	
+	hide()
+	process_mode = Node.PROCESS_MODE_DISABLED
+
+
 func _unhandled_input(_event: InputEvent) -> void:
 	if _event is InputEventMouseButton and Input.is_action_just_pressed("blowing"):
 		sound.play(randf() * sound.stream.get_length())

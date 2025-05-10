@@ -1,19 +1,23 @@
-extends VBoxContainer
+extends Menu
 
+class_name PauseScreen
 
 
 func _unhandled_input(_event: InputEvent) -> void:
 	
 	if Game.get_instance().in_level and _event is InputEventKey and Input.is_action_just_released("pause"):
 		
-		_toggle_pause(not get_tree().paused)
+		_toggle_paused()
 
 
-func _toggle_pause(_paused:bool) -> void:
+func _toggle_paused() -> void:
 	
-	get_tree().paused = _paused
-	Game.get_instance().paused_label.visible = _paused
-	if _paused:
+	var paused:bool = not get_tree().paused
+	get_tree().paused = paused
+	
+	visible = paused
+	
+	if paused:
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	else:
 		Input.mouse_mode = Input.MOUSE_MODE_HIDDEN

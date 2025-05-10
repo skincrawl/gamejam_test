@@ -1,0 +1,70 @@
+[gd_scene load_steps=3 format=3 uid="uid://bels5rlbg4ln6"]
+
+[ext_resource type="Theme" uid="uid://cfuny4aqpg8r2" path="res://Resources/Themes/default_theme.tres" id="1_u63ji"]
+[ext_resource type="Script" uid="uid://dxiqrwxseeafo" path="res://Scripts/menus/pause_screen.gd" id="2_u63ji"]
+
+[node name="pause_screen" type="MarginContainer" node_paths=PackedStringArray("return_button")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_u63ji")
+script = ExtResource("2_u63ji")
+menu_name = "pause_screen"
+return_button = NodePath("Pause/HBoxContainer/Buttons/MenuButton")
+
+[node name="Pause" type="VBoxContainer" parent="."]
+process_mode = 3
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme = ExtResource("1_u63ji")
+alignment = 1
+
+[node name="Dummy" type="Control" parent="Pause"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="paused_label" type="Label" parent="Pause"]
+layout_mode = 2
+size_flags_vertical = 2
+size_flags_stretch_ratio = 0.7
+theme_override_font_sizes/font_size = 90
+text = "PAUSED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Pause"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Dummy2" type="Control" parent="Pause/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Buttons" type="VBoxContainer" parent="Pause/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="RetryButton" type="Button" parent="Pause/HBoxContainer/Buttons"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Restart level"
+
+[node name="MenuButton" type="Button" parent="Pause/HBoxContainer/Buttons"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Back to Menu"
+
+[node name="ReturnButton2" type="Button" parent="Pause/HBoxContainer/Buttons"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Quit"
+
+[node name="Dummy3" type="Control" parent="Pause/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3

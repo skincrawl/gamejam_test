@@ -27,6 +27,9 @@ func _ready() -> void:
 	
 	add_to_group("Bubbles")
 	
+	hide()
+	process_mode = Node.PROCESS_MODE_DISABLED
+	
 	$bubble_top_layer.play("rolling")
 	$Bubbles.play("default")
 	

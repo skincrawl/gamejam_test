@@ -1,6 +1,6 @@
 extends Menu
 
-class_name LevelSeceltMenu
+class_name LevelSelectMenu
 
 
 signal level_selected(level_name:String)

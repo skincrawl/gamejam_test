@@ -12,17 +12,16 @@ var menu_music_intro:AudioStream = preload("res://Assets/Audio/Music/MainMenuThe
 var level_music:AudioStream = preload("res://Assets/Audio/Music/PeliTheme.mp3")
 
 @onready var bubbles:Bubbles = $bubbles
-@onready var main_menu:Menu = $Menus/MainMenu
-@onready var settings_screen:Menu = $Menus/Settings
-@onready var level_select_screen:Menu = $Menus/level_select_screen
+@onready var main_menu:MainMenu = $Menus/MainMenu
+@onready var settings_screen:SettingsMenu = $Menus/Settings
+@onready var level_select_screen:LevelSelectMenu = $Menus/level_select_screen
 @onready var about_us_screen:Menu = $Menus/AboutUs
 @onready var how_to_screen:Menu = $Menus/HowToPlay
-@onready var narrative_screen:Menu = $Menus/narrative_screen
+@onready var narrative_screen:NarrativeMenu = $Menus/narrative_screen
 @onready var win_screen:Menu = $Menus/win_screen
 @onready var credits_screen:Menu = $Menus/Credits
 @onready var loading_screen:LoadingScreen = $Menus/LoadingScreen
-
-@onready var paused_label:Label = $Menus/Pause/paused_label
+@onready var pause_screen:PauseScreen = $Menus/PauseMenu
 
 @onready var level_GUI:CanvasLayer = $level_GUI
 @onready var banana_mouse:BananaMouse = $banana_mouse
@@ -30,7 +29,7 @@ var level_music:AudioStream = preload("res://Assets/Audio/Music/PeliTheme.mp3")
 
 static var _instance:Game
 
-var menus:Array
+var menus:Dictionary = {}
 var current_menu:Menu = main_menu
 
 var levels_path:String = "res://Scenes/levels/"
@@ -56,20 +55,20 @@ func _ready() -> void:
 
 func _setup_menus() -> void:
 	
-	menus.append(main_menu)
-	menus.append(narrative_screen)
-	menus.append(settings_screen)
-	menus.append(about_us_screen)
-	menus.append(how_to_screen)
-	menus.append(win_screen)
-	menus.append(credits_screen)
-	menus.append(level_select_screen)
-	menus.append(loading_screen)
-	# menus.append(pause_screen)
+	menus["main"] = main_menu
+	menus["narrative"] = narrative_screen
+	menus["settings"] = settings_screen
+	menus["about_us"] = about_us_screen
+	menus["how_to_play"] = how_to_screen
+	menus["win_screen"] = win_screen
+	menus["credits_screen"] = credits_screen
+	menus["level_select"] = level_select_screen
+	menus["loading_screen"] = loading_screen
+	menus["pause_screen"] = pause_screen
 	
 	var function:Callable = show_menu
 	function.bind("main")
-	# main_menu.return_pressed.connect(function)
+	
 	narrative_screen.return_pressed.connect(function)
 	settings_screen.return_pressed.connect(function)
 	about_us_screen.return_pressed.connect(function)
@@ -77,7 +76,7 @@ func _setup_menus() -> void:
 	win_screen.return_pressed.connect(function)
 	credits_screen.return_pressed.connect(function)
 	level_select_screen.return_pressed.connect(function)
-	# pause_menu.return_pressed.connect(function)
+	pause_screen.return_pressed.connect(function)
 	
 	show_menu("main")
 
@@ -94,37 +93,23 @@ func lose():
 
 func show_menu(_menu_name:String) -> void:
 	
-	banana_mouse.process_mode = Node.PROCESS_MODE_DISABLED
-	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	print("showing menu: ", _menu_name)
 	
-	for menu_i in menus.size():
-		
-		var menu:Menu = menus[menu_i]
-		# print("menu: ", menu.menu_name)
-		
-		if menu.menu_name == "pause":
-			continue
-		if menu.menu_name != _menu_name:
-			menu.hide()
-			menu.mouse_filter = Control.MOUSE_FILTER_IGNORE
-			menu.process_mode = Node.PROCESS_MODE_DISABLED
-		else:
-			# print("showing menu: ", menu.menu_name)
-			current_menu = menu
-			menu.show()
-			menu.mouse_filter = Control.MOUSE_FILTER_PASS
-			menu.process_mode = Node.PROCESS_MODE_INHERIT
+	# banana_mouse.process_mode = Node.PROCESS_MODE_DISABLED
+	# Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	
+	if not current_menu == null:
+		current_menu.hide()
+		current_menu.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		current_menu.process_mode = Node.PROCESS_MODE_DISABLED
+	
+	current_menu = menus[_menu_name]
+	current_menu.show()
+	current_menu.mouse_filter = Control.MOUSE_FILTER_PASS
+	current_menu.process_mode = Node.PROCESS_MODE_INHERIT
 	
 	if _menu_name == "loading_screen":
-		# $Menus/LoadingScreen.next_scene_path = "res://Scenes/levels/og_level.tscn"
 		$Menus/LoadingScreen.show()
-	
-	if not _menu_name == "pause":
-		level_GUI.hide()
-		banana_mouse.hide()
-		bubbles.hide()
-		bubbles.process_mode = Node.PROCESS_MODE_DISABLED
-		return
 
 
 func start_level(level_name:String) -> void:
@@ -174,6 +159,11 @@ func _on_no_longer_in_level() -> void:
 	
 	$music_player.stream = menu_music_intro
 	$music_player.play()
+	
+	level_GUI.hide()
+	banana_mouse.hide()
+	bubbles.hide()
+	bubbles.process_mode = Node.PROCESS_MODE_DISABLED
 	
 	in_level = false
 	current_level.queue_free()

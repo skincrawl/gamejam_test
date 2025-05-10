@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://b1nk0of7fw0au" path="res://Scenes/UI/menus/win_screen.tscn" id="8_4mtt3"]
 [ext_resource type="PackedScene" uid="uid://ctvomw1cn28kf" path="res://Scenes/UI/menus/credits.tscn" id="9_05lkh"]
 [ext_resource type="PackedScene" uid="uid://wihmesnnx145" path="res://Scenes/UI/menus/level_select_screen.tscn" id="10_nnt18"]
-[ext_resource type="Script" uid="uid://dxiqrwxseeafo" path="res://Scripts/pause.gd" id="11_5fxth"]
+[ext_resource type="PackedScene" uid="uid://bels5rlbg4ln6" path="res://Scenes/UI/menus/pause_screen.tscn" id="12_85qyi"]
 [ext_resource type="Script" uid="uid://chdt1a1d6jcqk" path="res://Scripts/debug.gd" id="12_rfjv2"]
 [ext_resource type="Theme" uid="uid://b0w104qw2pa54" path="res://Resources/Themes/debugging_theme.tres" id="12_rku1e"]
 [ext_resource type="PackedScene" uid="uid://dq45kwrsxjydf" path="res://Scenes/UI/menus/loading_screen.tscn" id="13_85qyi"]
@@ -98,30 +98,8 @@ mouse_filter = 2
 visible = false
 mouse_filter = 2
 
-[node name="Pause" type="VBoxContainer" parent="Menus"]
-process_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -173.0
-offset_top = -212.0
-offset_right = 174.0
-offset_bottom = 62.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_vertical = 3
-mouse_filter = 2
-alignment = 1
-script = ExtResource("11_5fxth")
-
-[node name="paused_label" type="Label" parent="Menus/Pause"]
+[node name="PauseMenu" parent="Menus" instance=ExtResource("12_85qyi")]
 visible = false
-layout_mode = 2
-size_flags_vertical = 6
-theme_override_font_sizes/font_size = 90
-text = "PAUSED"
 
 [node name="LoadingScreen" parent="Menus" instance=ExtResource("13_85qyi")]
 visible = false
@@ -166,7 +144,7 @@ autoplay = "default"
 [node name="level_GUI" parent="." instance=ExtResource("15_nb51f")]
 
 [connection signal="button_pressed" from="Menus/MainMenu" to="." method="_on_main_menu_button_pressed"]
-[connection signal="start_pressed" from="Menus/narrative_screen" to="." method="start_level"]
+[connection signal="start_level" from="Menus/narrative_screen" to="." method="start_level"]
 [connection signal="no_longer_in_level" from="Menus/win_screen" to="." method="_on_no_longer_in_level"]
 [connection signal="level_selected" from="Menus/level_select_screen" to="." method="start_level"]
 [connection signal="scene_loaded" from="Menus/LoadingScreen" to="." method="_on_scene_loaded"]
