@@ -169,4 +169,5 @@ autoplay = "default"
 [connection signal="start_pressed" from="Menus/narrative_screen" to="." method="start_level"]
 [connection signal="no_longer_in_level" from="Menus/win_screen" to="." method="_on_no_longer_in_level"]
 [connection signal="level_selected" from="Menus/level_select_screen" to="." method="start_level"]
+[connection signal="scene_loaded" from="Menus/LoadingScreen" to="." method="_on_scene_loaded"]
 [connection signal="finished" from="music_player" to="." method="_on_music_player_finished"]

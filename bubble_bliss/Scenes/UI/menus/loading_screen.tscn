@@ -30,13 +30,21 @@ layout_mode = 2
 [node name="Dummy2" type="Control" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+size_flags_stretch_ratio = 2.5
 
 [node name="LoadingLabel" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
+size_flags_stretch_ratio = 2.0
 theme = ExtResource("2_nnp3q")
 text = "Loading..."
+
+[node name="ProgressBar" type="ProgressBar" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(384, 20)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_nnp3q")
 
 [node name="Dummy" type="Control" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2

@@ -11,7 +11,7 @@ func _ready() -> void:
 	screen_size = DisplayServer.window_get_size()
 	get_viewport().size_changed.connect(_screen_size_changed)
 	
-	# _start_loading_game()
+	_start_loading_game()
 	
 
 

@@ -6,9 +6,15 @@ extends Node2D
 var screen_size:Vector2i
 
 var float_speed:float = 15.0
+var spin_speed:float = 5.0
 
 var mouse_pointing:bool = false
 var screaming:bool = false
+
+
+func _ready() -> void:
+	
+	screen_size = DisplayServer.window_get_size()
 
 
 func _unhandled_input(_event:InputEvent) -> void:
@@ -23,6 +29,7 @@ func _process(_delta:float) -> void:
 	if position.x > screen_size.x + 100.0:
 		position.x = -100.0
 	position.x += float_speed * _delta
+	valikko_apina.rotation += deg_to_rad(spin_speed) * _delta
 
 
 func _on_area_2d_mouse_entered() -> void:
