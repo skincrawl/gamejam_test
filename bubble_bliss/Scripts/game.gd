@@ -88,6 +88,13 @@ func lose():
 	bubbles.global_position = current_level.checkpoint_manager.last_location
 
 
+func hide_menu(_menu_name:String) -> void:
+	
+	current_menu.hide()
+	current_menu = null
+	pass
+
+
 func show_menu(_menu_name:String) -> void:
 	
 	# print("showing menu: ", _menu_name)
@@ -118,6 +125,8 @@ func start_level(level_name:String) -> void:
 		return
 	
 	loading_screen.next_scene_path = full_path
+	loading_screen.next_level_name = level_name
+	
 	show_menu("loading_screen")
 
 
@@ -174,11 +183,12 @@ func _on_scene_loaded(_scene: PackedScene) -> void:
 		current_level.queue_free()
 	current_level = _scene.instantiate()
 	
+	current_level.level_name = loading_screen.next_level_name
+	
 	in_level = true
 	
 	bubbles.show()
 	bubbles.process_mode = Node.PROCESS_MODE_PAUSABLE
-	bubbles.reset()
 	
 	level_GUI.show()
 	banana_mouse.show()

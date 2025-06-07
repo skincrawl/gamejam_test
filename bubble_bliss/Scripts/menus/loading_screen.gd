@@ -9,6 +9,7 @@ var screen_size:Vector2i
 
 @onready var progress_bar:ProgressBar = $MarginContainer/VBoxContainer/ProgressBar
 
+var next_level_name:String = ""
 
 var is_loading:bool = false
 

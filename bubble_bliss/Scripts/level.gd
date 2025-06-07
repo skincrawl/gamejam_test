@@ -18,6 +18,8 @@ const LOSE_TIME:float = 3.0
 var game:Game
 var checkpoint_manager:CheckpointManager
 
+var level_name:String
+
 var bananas_amount:int = 0
 var collected_bananas:int = 0
 
@@ -37,14 +39,17 @@ func _ready() -> void:
 	music_player.stream = level_music
 	music_player.play()
 	
+	var spawn_position:Vector2 = $level_objects/spawn_pos.global_position
 	checkpoint_manager = CheckpointManager.new()
+	checkpoint_manager.last_location = spawn_position
 	
 	# Hiding the mouse
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 	
 	var bubbles:Bubbles = game.bubbles
-	bubbles.global_position = $level_objects/spawn_pos.global_position
+	bubbles.global_position = spawn_position
 	bubbles.linear_velocity = Vector2.ZERO
+	bubbles.reset()
 	
 	Game.get_instance().level_GUI.bananas_label.text = "bananas: " + str(collected_bananas)
 	
@@ -58,7 +63,7 @@ func _ready() -> void:
 
 func checkpoint_reached(_global_position:Vector2) -> void:
 	
-	Game.get_instance().current_level.checkpoint_manager.last_location = _global_position
+	checkpoint_manager.last_location = _global_position
 
 
 func spawn_dart(_dart_gun:DartGun) -> void:

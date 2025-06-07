@@ -106,8 +106,12 @@ func _physics_process(_delta:float) -> void:
 
 func reset() -> void:
 	
+	# print("resetting bubbles")
+	
 	dead = false
 	linear_velocity = Vector2.ZERO
+	
+	global_position = Game.get_instance().current_level.checkpoint_manager.last_location
 	
 	rotation = 0.0
 	monkey_rotation = 0.0
