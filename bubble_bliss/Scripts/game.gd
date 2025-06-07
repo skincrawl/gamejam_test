@@ -5,11 +5,10 @@ class_name Game
 var bubbles_packed:PackedScene = preload("res://Scenes/bubbles.tscn")
 
 const MENU_MUSIC_VOLUME:float = -12.0
-const LEVEL_MUSIC_VOLUME:float = -15.0
 
 var menu_music:AudioStream = preload("res://Assets/Audio/Music/MainMenuTheme_Ilman_Introa.mp3")
 var menu_music_intro:AudioStream = preload("res://Assets/Audio/Music/MainMenuTheme_Intro.mp3")
-var level_music:AudioStream = preload("res://Assets/Audio/Music/PeliTheme.mp3")
+# var level_music:AudioStream = preload("res://Assets/Audio/Music/PeliTheme.mp3")
 
 @onready var bubbles:Bubbles = $bubbles
 @onready var main_menu:MainMenu = $Menus/MainMenu
@@ -25,6 +24,8 @@ var level_music:AudioStream = preload("res://Assets/Audio/Music/PeliTheme.mp3")
 
 @onready var level_GUI:CanvasLayer = $level_GUI
 @onready var banana_mouse:BananaMouse = $banana_mouse
+
+@onready var music_player:AudioStreamPlayer = $music_player
 
 
 static var _instance:Game
@@ -81,10 +82,6 @@ func _setup_menus() -> void:
 	show_menu("main")
 
 
-func _process(_delta:float) -> void:
-	pass
-
-
 func lose():
 	
 	bubbles.reset()
@@ -93,7 +90,7 @@ func lose():
 
 func show_menu(_menu_name:String) -> void:
 	
-	print("showing menu: ", _menu_name)
+	# print("showing menu: ", _menu_name)
 	
 	# banana_mouse.process_mode = Node.PROCESS_MODE_DISABLED
 	# Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
@@ -162,6 +159,7 @@ func _on_no_longer_in_level() -> void:
 	
 	level_GUI.hide()
 	banana_mouse.hide()
+	banana_mouse.process_mode = Node.PROCESS_MODE_DISABLED
 	bubbles.hide()
 	bubbles.process_mode = Node.PROCESS_MODE_DISABLED
 	
@@ -184,10 +182,6 @@ func _on_scene_loaded(_scene: PackedScene) -> void:
 	
 	level_GUI.show()
 	banana_mouse.show()
-	banana_mouse.process_mode = Node.PROCESS_MODE_INHERIT
+	banana_mouse.process_mode = Node.PROCESS_MODE_PAUSABLE
 	
 	add_child(current_level)
-	
-	$music_player.stream = level_music
-	$music_player.volume_db = LEVEL_MUSIC_VOLUME
-	$music_player.play()

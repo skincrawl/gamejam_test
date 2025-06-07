@@ -15,21 +15,21 @@ void vertex() {
 }
 
 void fragment() {
-	
+
 	vec2 uv1 = fract(UV + tex1_scroll_speed * (TIME + offset));
 	vec2 uv2 = fract(vec2(1.0 - UV.x, 1.0 - UV.y) + tex2_scroll_speed * (TIME + offset));
-	
+
 	vec4 color1 = texture(tex, uv1);
 	vec4 color2 = texture(tex, uv2);
-	
+
 	vec4 combined = (color1 + color2 * 0.5) * 0.66; // Blend the two
-	
+
 	// Circular mask
 	float dist = distance(UV, circle_center);
 	if (dist > circle_radius){
 		discard;
 	}
-	
+
 	COLOR.rgb = COLOR.rgb * combined.rgb;
 	COLOR.a = combined.a;
 	// COLOR = combined;

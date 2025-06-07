@@ -3,18 +3,20 @@ extends Node2D
 class_name Level
 
 
+var level_music:AudioStream = preload("res://Assets/Audio/Music/PeliTheme.mp3")
+var dart_packed:PackedScene = preload("res://Scenes/level_objects/dart.tscn")
+
+@onready var music_player:AudioStreamPlayer = Game.get_instance().music_player
 @onready var banana_mouse:BananaMouse = Game.get_instance().banana_mouse
 @onready var spawn_pos:Marker2D = $level_objects/spawn_pos
 
 @onready var level_objects:Node2D = $level_objects
 
+const LEVEL_MUSIC_VOLUME:float = -15.0
 const LOSE_TIME:float = 3.0
-
 
 var game:Game
 var checkpoint_manager:CheckpointManager
-
-var dart_packed:PackedScene = preload("res://Scenes/level_objects/dart.tscn")
 
 var bananas_amount:int = 0
 var collected_bananas:int = 0
@@ -31,12 +33,14 @@ func _ready() -> void:
 	
 	process_mode = Node.PROCESS_MODE_PAUSABLE
 	
+	music_player.volume_db = LEVEL_MUSIC_VOLUME
+	music_player.stream = level_music
+	music_player.play()
+	
 	checkpoint_manager = CheckpointManager.new()
 	
 	# Hiding the mouse
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
-	
-	banana_mouse.process_mode = Node.PROCESS_MODE_INHERIT
 	
 	var bubbles:Bubbles = game.bubbles
 	bubbles.global_position = $level_objects/spawn_pos.global_position
@@ -50,11 +54,6 @@ func _ready() -> void:
 		add_child(shoot_timer)
 		shoot_timer.timeout.connect(_on_shoot_timer_timeout)
 		shoot_timer.start()
-
-
-func _process(_delta:float) -> void:
-	
-	banana_mouse.position = get_global_mouse_position()
 
 
 func checkpoint_reached(_global_position:Vector2) -> void:
