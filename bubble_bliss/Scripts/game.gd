@@ -118,6 +118,10 @@ func show_menu(_menu_name:String) -> void:
 
 func start_level(level_name:String) -> void:
 	
+	if not current_level == null:
+		current_level.hide()
+		Game.get_instance().bubbles.hide()
+	
 	var full_path:String = levels_path + level_name + ".tscn"
 	
 	if not ResourceLoader.exists(full_path):
