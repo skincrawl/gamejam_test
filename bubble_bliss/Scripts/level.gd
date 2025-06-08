@@ -3,18 +3,23 @@ extends Node2D
 class_name Level
 
 
+var level_music:AudioStream = preload("res://Assets/Audio/Music/PeliTheme.mp3")
+var dart_packed:PackedScene = preload("res://Scenes/level_objects/dart.tscn")
+
+@onready var music_player:AudioStreamPlayer = Game.get_instance().music_player
 @onready var banana_mouse:BananaMouse = Game.get_instance().banana_mouse
 @onready var spawn_pos:Marker2D = $level_objects/spawn_pos
 
 @onready var level_objects:Node2D = $level_objects
+@onready var goal:Goal = $level_objects/goal
 
+const LEVEL_MUSIC_VOLUME:float = -15.0
 const LOSE_TIME:float = 3.0
-
 
 var game:Game
 var checkpoint_manager:CheckpointManager
 
-var dart_packed:PackedScene = preload("res://Scenes/level_objects/dart.tscn")
+var level_name:String
 
 var bananas_amount:int = 0
 var collected_bananas:int = 0
@@ -22,6 +27,7 @@ var collected_bananas:int = 0
 var next_level:Level
 
 signal shoot
+signal level_defeated
 
 
 func _ready() -> void:
@@ -29,18 +35,25 @@ func _ready() -> void:
 	game = Game.get_instance()
 	game.current_level = self
 	
-	process_mode = Node.PROCESS_MODE_PAUSABLE
+	goal.level_defeated.connect(_level_defeated)
 	
+	# process_mode = Node.PROCESS_MODE_PAUSABLE
+	
+	music_player.volume_db = LEVEL_MUSIC_VOLUME
+	music_player.stream = level_music
+	music_player.play()
+	
+	var spawn_position:Vector2 = $level_objects/spawn_pos.global_position
 	checkpoint_manager = CheckpointManager.new()
+	checkpoint_manager.last_location = spawn_position
 	
 	# Hiding the mouse
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 	
-	banana_mouse.process_mode = Node.PROCESS_MODE_INHERIT
-	
 	var bubbles:Bubbles = game.bubbles
-	bubbles.global_position = $level_objects/spawn_pos.global_position
+	bubbles.global_position = spawn_position
 	bubbles.linear_velocity = Vector2.ZERO
+	bubbles.reset()
 	
 	Game.get_instance().level_GUI.bananas_label.text = "bananas: " + str(collected_bananas)
 	
@@ -52,14 +65,9 @@ func _ready() -> void:
 		shoot_timer.start()
 
 
-func _process(_delta:float) -> void:
-	
-	banana_mouse.position = get_global_mouse_position()
-
-
 func checkpoint_reached(_global_position:Vector2) -> void:
 	
-	Game.get_instance().current_level.checkpoint_manager.last_location = _global_position
+	checkpoint_manager.last_location = _global_position
 
 
 func spawn_dart(_dart_gun:DartGun) -> void:
@@ -92,3 +100,8 @@ func banana_collected(_banana:Banana) -> void:
 func _on_shoot_timer_timeout() -> void:
 	
 	shoot.emit()
+
+
+func _level_defeated() -> void:
+	
+	level_defeated.emit()

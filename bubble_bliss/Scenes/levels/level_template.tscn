@@ -6,6 +6,7 @@
 [ext_resource type="TileSet" uid="uid://c8yf65bgrdbyk" path="res://Resources/TileMaps/level.tres" id="4_8ok1i"]
 
 [node name="level_template" type="Node2D"]
+process_mode = 1
 script = ExtResource("1_qkx2g")
 
 [node name="level_objects" type="Node2D" parent="."]

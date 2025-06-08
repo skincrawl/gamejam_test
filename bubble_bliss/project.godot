@@ -15,6 +15,10 @@ run/main_scene="uid://4qcyhacocqsd"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="res://Resources/Audio/default_bus_layout.tres"
+
 [debug]
 
 gdscript/warnings/unused_signal=0
@@ -23,7 +27,6 @@ gdscript/warnings/unused_signal=0
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-window/size/mode=4
 window/stretch/mode="canvas_items"
 
 [input]

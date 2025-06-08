@@ -1,17 +1,22 @@
-[gd_resource type="Theme" load_steps=4 format=3 uid="uid://cfuny4aqpg8r2"]
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://cfuny4aqpg8r2"]
 
-[ext_resource type="FontFile" uid="uid://bqo873g641l6y" path="res://GameAssets/DynaPuff/static/DynaPuff-Regular.ttf" id="1_2mjru"]
+[ext_resource type="FontFile" uid="uid://bqo873g641l6y" path="res://Assets/Fonts/DynaPuff/static/DynaPuff-Regular.ttf" id="1_2mjru"]
 [ext_resource type="StyleBox" uid="uid://0gl8heukr1i4" path="res://Resources/Themes/StyleBoxes/button_style_box.tres" id="2_8q1lq"]
-[ext_resource type="FontFile" uid="uid://rao2pten5a5c" path="res://Assets/Fonts/DynaPuff-VariableFont_wdth,wght.ttf" id="3_weehl"]
+[ext_resource type="FontFile" uid="uid://rao2pten5a5c" path="res://Assets/Fonts/DynaPuff/DynaPuff-VariableFont_wdth,wght.ttf" id="3_2mjru"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2mjru"]
+bg_color = Color(0.6, 0.6, 0.6, 0.164706)
 
 [resource]
 Button/colors/font_color = Color(0.91, 0.91, 0.91, 1)
+Button/font_sizes/font_size = 52
 Button/fonts/font = ExtResource("1_2mjru")
 Button/styles/normal = ExtResource("2_8q1lq")
 Label/colors/font_color = Color(0.989175, 0.99, 0.9801, 1)
 Label/font_sizes/font_size = 34
-Label/fonts/font = ExtResource("3_weehl")
+Label/fonts/font = ExtResource("3_2mjru")
 MarginContainer/constants/margin_bottom = 60
 MarginContainer/constants/margin_left = 60
 MarginContainer/constants/margin_right = 60
 MarginContainer/constants/margin_top = 60
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_2mjru")

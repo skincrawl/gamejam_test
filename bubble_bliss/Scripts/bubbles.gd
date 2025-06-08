@@ -27,6 +27,9 @@ func _ready() -> void:
 	
 	add_to_group("Bubbles")
 	
+	hide()
+	process_mode = Node.PROCESS_MODE_DISABLED
+	
 	$bubble_top_layer.play("rolling")
 	$Bubbles.play("default")
 	
@@ -103,8 +106,12 @@ func _physics_process(_delta:float) -> void:
 
 func reset() -> void:
 	
+	# print("resetting bubbles")
+	
 	dead = false
 	linear_velocity = Vector2.ZERO
+	
+	global_position = Game.get_instance().current_level.checkpoint_manager.last_location
 	
 	rotation = 0.0
 	monkey_rotation = 0.0
@@ -161,3 +168,15 @@ func _on_bubble_top_layer_animation_finished() -> void:
 
 func _on_area_2d_body_entered(_body: Node2D) -> void:
 	$sfx.play()
+
+
+func level_starts() -> void:
+	
+	show()
+	process_mode = Node.PROCESS_MODE_PAUSABLE
+
+
+func level_ends() -> void:
+	
+	hide()
+	process_mode = Node.PROCESS_MODE_DISABLED
