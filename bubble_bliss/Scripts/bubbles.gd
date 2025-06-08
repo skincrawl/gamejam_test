@@ -168,3 +168,15 @@ func _on_bubble_top_layer_animation_finished() -> void:
 
 func _on_area_2d_body_entered(_body: Node2D) -> void:
 	$sfx.play()
+
+
+func level_starts() -> void:
+	
+	show()
+	process_mode = Node.PROCESS_MODE_PAUSABLE
+
+
+func level_ends() -> void:
+	
+	hide()
+	process_mode = Node.PROCESS_MODE_DISABLED

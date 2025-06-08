@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://dxiqrwxseeafo" path="res://Scripts/menus/pause_screen.gd" id="2_u63ji"]
 
 [node name="pause_screen" type="MarginContainer" node_paths=PackedStringArray("return_button")]
+process_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -65,11 +66,6 @@ layout_mode = 2
 size_flags_vertical = 3
 text = "Back to Menu"
 
-[node name="QuitButton" type="Button" parent="Pause/HBoxContainer/Buttons"]
-layout_mode = 2
-size_flags_vertical = 3
-text = "Quit"
-
 [node name="Dummy3" type="Control" parent="Pause/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -78,4 +74,3 @@ size_flags_vertical = 3
 [connection signal="pressed" from="Pause/HBoxContainer/Buttons/ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="Pause/HBoxContainer/Buttons/RetryButton" to="." method="_on_retry_button_pressed"]
 [connection signal="pressed" from="Pause/HBoxContainer/Buttons/MenuButton" to="." method="_on_menu_button_pressed"]
-[connection signal="pressed" from="Pause/HBoxContainer/Buttons/QuitButton" to="." method="_on_quit_button_pressed"]

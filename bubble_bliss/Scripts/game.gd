@@ -40,6 +40,10 @@ var current_level:Level
 var in_level:bool = false
 
 
+signal level_starts
+signal level_ends
+
+
 static func get_instance() -> Game:
 	return _instance
 
@@ -52,6 +56,7 @@ func _ready() -> void:
 	
 	_setup_menus()
 	
+	setup_level_signals()
 
 
 func _setup_menus() -> void:
@@ -82,17 +87,26 @@ func _setup_menus() -> void:
 	show_menu("main")
 
 
+func setup_level_signals() -> void:
+	
+	level_starts.connect(banana_mouse.level_starts)
+	level_starts.connect(bubbles.level_starts)
+	level_starts.connect(pause_screen.level_starts)
+	
+	level_ends.connect(banana_mouse.level_ends)
+	level_ends.connect(bubbles.level_ends)
+	level_ends.connect(pause_screen.level_ends)
+
+
 func lose():
 	
 	bubbles.reset()
 	bubbles.global_position = current_level.checkpoint_manager.last_location
 
 
-func hide_menu(_menu_name:String) -> void:
+func hide_menu() -> void:
 	
 	current_menu.hide()
-	current_menu = null
-	pass
 
 
 func show_menu(_menu_name:String) -> void:
@@ -103,17 +117,10 @@ func show_menu(_menu_name:String) -> void:
 	# Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	
 	if not current_menu == null:
-		current_menu.hide()
-		current_menu.mouse_filter = Control.MOUSE_FILTER_IGNORE
-		current_menu.process_mode = Node.PROCESS_MODE_DISABLED
+		current_menu.hide_menu()
 	
 	current_menu = menus[_menu_name]
-	current_menu.show()
-	current_menu.mouse_filter = Control.MOUSE_FILTER_PASS
-	current_menu.process_mode = Node.PROCESS_MODE_INHERIT
-	
-	if _menu_name == "loading_screen":
-		$Menus/LoadingScreen.show()
+	current_menu.show_menu()
 
 
 func start_level(level_name:String) -> void:
@@ -171,14 +178,14 @@ func _on_no_longer_in_level() -> void:
 	$music_player.play()
 	
 	level_GUI.hide()
-	banana_mouse.hide()
-	banana_mouse.process_mode = Node.PROCESS_MODE_DISABLED
-	bubbles.hide()
-	bubbles.process_mode = Node.PROCESS_MODE_DISABLED
 	
 	in_level = false
 	current_level.queue_free()
 	current_level = null
+	
+	show_menu("main")
+	
+	level_ends.emit()
 
 
 func _on_scene_loaded(_scene: PackedScene) -> void:
@@ -191,11 +198,8 @@ func _on_scene_loaded(_scene: PackedScene) -> void:
 	
 	in_level = true
 	
-	bubbles.show()
-	bubbles.process_mode = Node.PROCESS_MODE_PAUSABLE
-	
 	level_GUI.show()
-	banana_mouse.show()
-	banana_mouse.process_mode = Node.PROCESS_MODE_PAUSABLE
 	
 	add_child(current_level)
+	
+	level_starts.emit()

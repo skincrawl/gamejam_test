@@ -12,6 +12,7 @@ const SLOWDOWN_SPEED:float = 90.0
 var speed:float = 0.0
 
 
+# Hiding the banana mouse in the main menu and disabling processing for it
 func _ready() -> void:
 	
 	hide()
@@ -44,3 +45,15 @@ func _physics_process(_delta:float) -> void:
 		$Part/Node2D/CPUParticles2D.emitting = false
 	
 	rotation += deg_to_rad(speed)
+
+
+func level_starts() -> void:
+	
+	show()
+	process_mode = Node.PROCESS_MODE_PAUSABLE
+
+
+func level_ends() -> void:
+	
+	hide()
+	process_mode = Node.PROCESS_MODE_DISABLED

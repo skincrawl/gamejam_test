@@ -226,6 +226,7 @@ text = "Level
 Select"
 
 [connection signal="finished" from="pop" to="." method="_on_pop_finished"]
+[connection signal="pressed" from="start_button" to="." method="button_was_pressed"]
 [connection signal="pressed" from="how_to_play_button" to="." method="button_was_pressed"]
 [connection signal="pressed" from="about_us_button" to="." method="button_was_pressed"]
 [connection signal="pressed" from="settings_button" to="." method="button_was_pressed"]

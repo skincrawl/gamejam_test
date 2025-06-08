@@ -28,3 +28,26 @@ func _on_return_pressed() -> void:
 	process_mode = Node.PROCESS_MODE_DISABLED
 	
 	return_pressed.emit("main")
+
+
+# A function to show this menu and set any other settings that
+# need to be set when this menu is shown. For example mouse mode and 
+# process mode.
+func show_menu() -> void:
+	
+	show()
+	
+	mouse_filter = Control.MOUSE_FILTER_PASS
+	process_mode = Node.PROCESS_MODE_INHERIT
+
+
+# The same as show_menu, except the opposite.
+func hide_menu() -> void:
+	
+	hide()
+	
+	mouse_filter = Control.MOUSE_FILTER_IGNORE
+	
+	if menu_name == "pause_screen":
+		print("not disabling process on the pause screen")
+		return
