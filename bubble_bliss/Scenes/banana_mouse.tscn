@@ -21,7 +21,7 @@ animations = [{
 }]
 
 [node name="banana_mouse" type="AnimatedSprite2D"]
-process_mode = 3
+process_mode = 1
 sprite_frames = SubResource("SpriteFrames_83y1t")
 script = ExtResource("2_c0gge")
 

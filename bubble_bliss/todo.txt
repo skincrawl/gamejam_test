@@ -76,6 +76,7 @@ Audio
 -SFX are too quiet
 -Dart gun sounds
 -More yum yum sounds
+-The music restarts when retrying a level
 
 
 Promo

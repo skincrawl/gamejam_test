@@ -25,3 +25,17 @@ func _on_pop_finished() -> void:
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
 	
 	button_pressed.emit(button_action)
+
+
+func show_menu() -> void:
+	
+	super()
+	
+	process_mode = Node.PROCESS_MODE_INHERIT
+
+
+func hide_menu() -> void:
+	
+	super()
+	
+	process_mode = Node.PROCESS_MODE_DISABLED

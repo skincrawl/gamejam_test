@@ -1,51 +1,14 @@
-[gd_scene load_steps=11 format=3 uid="uid://yrcn2k3wrd71"]
+[gd_scene load_steps=5 format=3 uid="uid://yrcn2k3wrd71"]
 
-[ext_resource type="FontFile" uid="uid://behuf74h25j5t" path="res://GameAssets/DynaPuff/DynaPuff-VariableFont_wdth,wght.ttf" id="1_nxky1"]
-[ext_resource type="Script" uid="uid://cws3u5y3pcqng" path="res://Scripts/menus/menu.gd" id="2_cnd0h"]
-[ext_resource type="Texture2D" uid="uid://8pntxcrwopv7" path="res://Assets/Art/BG_Space.jpg" id="3_c6r4f"]
+[ext_resource type="FontFile" uid="uid://rao2pten5a5c" path="res://Assets/Fonts/DynaPuff/DynaPuff-VariableFont_wdth,wght.ttf" id="1_nxky1"]
+[ext_resource type="Script" uid="uid://c3jjvcp23kesm" path="res://Scripts/menus/narrative_screen.gd" id="2_5p7u4"]
 
 [sub_resource type="Theme" id="Theme_i2vsh"]
 Button/fonts/font = ExtResource("1_nxky1")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_72cta"]
-atlas = ExtResource("3_c6r4f")
-region = Rect2(0, 0, 1920, 1080)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8p14s"]
-atlas = ExtResource("3_c6r4f")
-region = Rect2(1920, 0, 1920, 1080)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ejipe"]
-atlas = ExtResource("3_c6r4f")
-region = Rect2(0, 1080, 1920, 1080)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_e4y81"]
-atlas = ExtResource("3_c6r4f")
-region = Rect2(1920, 1080, 1920, 1080)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_6y4pv"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_72cta")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8p14s")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ejipe")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_e4y81")
-}],
-"loop": true,
-"name": &"default",
-"speed": 4.0
-}]
-
 [sub_resource type="Theme" id="Theme_5ep5s"]
 
-[node name="narative_screen" type="Control" node_paths=PackedStringArray("return_button")]
+[node name="narrative_screen" type="Control" node_paths=PackedStringArray("return_button")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -54,16 +17,9 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 theme = SubResource("Theme_i2vsh")
-script = ExtResource("2_cnd0h")
-menu_name = "narrative"
+script = ExtResource("2_5p7u4")
+menu_name = "narrative_screen"
 return_button = NodePath("VBoxContainer/Return")
-
-[node name="bg" type="AnimatedSprite2D" parent="."]
-visible = false
-z_index = -10
-position = Vector2(960, 540)
-sprite_frames = SubResource("SpriteFrames_6y4pv")
-autoplay = "default"
 
 [node name="TextBoxAnchoring" type="Panel" parent="."]
 layout_mode = 1

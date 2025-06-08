@@ -1,0 +1,19 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://c6hbidcdv6q6u"]
+
+[ext_resource type="FontFile" uid="uid://bqo873g641l6y" path="res://Assets/Fonts/DynaPuff/static/DynaPuff-Regular.ttf" id="1_1q8hs"]
+[ext_resource type="StyleBox" uid="uid://0gl8heukr1i4" path="res://Resources/Themes/StyleBoxes/button_style_box.tres" id="2_kxv1o"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1q8hs"]
+bg_color = Color(0.6, 0.6, 0.6, 0.686275)
+
+[resource]
+Button/colors/font_color = Color(0.91, 0.91, 0.91, 1)
+Button/fonts/font = ExtResource("1_1q8hs")
+Button/styles/normal = ExtResource("2_kxv1o")
+Label/colors/font_color = Color(0.989175, 0.99, 0.9801, 1)
+Label/font_sizes/font_size = 34
+MarginContainer/constants/margin_bottom = 60
+MarginContainer/constants/margin_left = 60
+MarginContainer/constants/margin_right = 60
+MarginContainer/constants/margin_top = 60
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_1q8hs")
