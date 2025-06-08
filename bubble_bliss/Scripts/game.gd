@@ -55,8 +55,7 @@ func _init() -> void:
 func _ready() -> void:
 	
 	_setup_menus()
-	
-	setup_level_signals()
+	_setup_signals()
 
 
 func _setup_menus() -> void:
@@ -87,7 +86,7 @@ func _setup_menus() -> void:
 	show_menu("main")
 
 
-func setup_level_signals() -> void:
+func _setup_signals() -> void:
 	
 	level_starts.connect(banana_mouse.level_starts)
 	level_starts.connect(bubbles.level_starts)
@@ -96,6 +95,8 @@ func setup_level_signals() -> void:
 	level_ends.connect(banana_mouse.level_ends)
 	level_ends.connect(bubbles.level_ends)
 	level_ends.connect(pause_screen.level_ends)
+	
+	
 
 
 func lose():
@@ -113,9 +114,6 @@ func show_menu(_menu_name:String) -> void:
 	
 	# print("showing menu: ", _menu_name)
 	
-	# banana_mouse.process_mode = Node.PROCESS_MODE_DISABLED
-	# Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-	
 	if not current_menu == null:
 		current_menu.hide_menu()
 	
@@ -132,7 +130,7 @@ func start_level(level_name:String) -> void:
 	var full_path:String = levels_path + level_name + ".tscn"
 	
 	if not ResourceLoader.exists(full_path):
-		push_error("failed to load level: ", level_name)
+		# push_error("failed to load level: ", level_name)
 		return
 	
 	loading_screen.next_scene_path = full_path
@@ -172,6 +170,13 @@ func _on_main_menu_button_pressed(button_action: String) -> void:
 			pass
 
 
+# In case I ever need a separate function depending on how you exit the level
+# You can exit from the menu or by winning a stage
+func level_defeated() -> void:
+	
+	show_menu("main")
+
+
 func _on_no_longer_in_level() -> void:
 	
 	$music_player.stream = menu_music_intro
@@ -183,9 +188,9 @@ func _on_no_longer_in_level() -> void:
 	current_level.queue_free()
 	current_level = null
 	
-	show_menu("main")
-	
 	level_ends.emit()
+	
+	show_menu("main")
 
 
 func _on_scene_loaded(_scene: PackedScene) -> void:
@@ -195,6 +200,7 @@ func _on_scene_loaded(_scene: PackedScene) -> void:
 	current_level = _scene.instantiate()
 	
 	current_level.level_name = loading_screen.next_level_name
+	current_level.level_defeated.connect(_on_no_longer_in_level)
 	
 	in_level = true
 	

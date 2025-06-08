@@ -11,6 +11,7 @@ var dart_packed:PackedScene = preload("res://Scenes/level_objects/dart.tscn")
 @onready var spawn_pos:Marker2D = $level_objects/spawn_pos
 
 @onready var level_objects:Node2D = $level_objects
+@onready var goal:Goal = $level_objects/goal
 
 const LEVEL_MUSIC_VOLUME:float = -15.0
 const LOSE_TIME:float = 3.0
@@ -26,6 +27,7 @@ var collected_bananas:int = 0
 var next_level:Level
 
 signal shoot
+signal level_defeated
 
 
 func _ready() -> void:
@@ -33,7 +35,9 @@ func _ready() -> void:
 	game = Game.get_instance()
 	game.current_level = self
 	
-	process_mode = Node.PROCESS_MODE_PAUSABLE
+	goal.level_defeated.connect(_level_defeated)
+	
+	# process_mode = Node.PROCESS_MODE_PAUSABLE
 	
 	music_player.volume_db = LEVEL_MUSIC_VOLUME
 	music_player.stream = level_music
@@ -96,3 +100,8 @@ func banana_collected(_banana:Banana) -> void:
 func _on_shoot_timer_timeout() -> void:
 	
 	shoot.emit()
+
+
+func _level_defeated() -> void:
+	
+	level_defeated.emit()

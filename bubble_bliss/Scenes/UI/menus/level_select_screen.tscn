@@ -50,7 +50,7 @@ size_flags_vertical = 3
 
 [node name="level_2_button" parent="MarginContainer/VBoxContainer/GridContainer/MarginContainer2" instance=ExtResource("3_085hy")]
 layout_mode = 2
-text = "LEVEL 2"
+text = "TEST LEVEL 2"
 level_name = "test_level_1"
 
 [node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/VBoxContainer/GridContainer"]
@@ -60,7 +60,7 @@ size_flags_vertical = 3
 
 [node name="level_3_button" parent="MarginContainer/VBoxContainer/GridContainer/MarginContainer3" instance=ExtResource("3_085hy")]
 layout_mode = 2
-text = "LEVEL 3"
+text = "TEST LEVEL 3"
 level_name = "test_level_2"
 
 [node name="MarginContainer4" type="MarginContainer" parent="MarginContainer/VBoxContainer/GridContainer"]
@@ -70,7 +70,7 @@ size_flags_vertical = 3
 
 [node name="level_4_button" parent="MarginContainer/VBoxContainer/GridContainer/MarginContainer4" instance=ExtResource("3_085hy")]
 layout_mode = 2
-text = "LEVEL 4"
+text = "TEST LEVEL 4"
 level_name = "test_level_3"
 
 [node name="MarginContainer5" type="MarginContainer" parent="MarginContainer/VBoxContainer/GridContainer"]
@@ -80,7 +80,7 @@ size_flags_vertical = 3
 
 [node name="level_5_button" parent="MarginContainer/VBoxContainer/GridContainer/MarginContainer5" instance=ExtResource("3_085hy")]
 layout_mode = 2
-text = "LEVEL 5"
+text = "TEST LEVEL 5"
 level_name = "test_level_4"
 
 [node name="MarginContainer6" type="MarginContainer" parent="MarginContainer/VBoxContainer/GridContainer"]
@@ -90,8 +90,7 @@ size_flags_vertical = 3
 
 [node name="level_6_button" parent="MarginContainer/VBoxContainer/GridContainer/MarginContainer6" instance=ExtResource("3_085hy")]
 layout_mode = 2
-text = "MIIKA LEVEL 1"
-level_name = "miika_level_1"
+text = "COMING SOON"
 
 [node name="MarginContainer7" type="MarginContainer" parent="MarginContainer/VBoxContainer/GridContainer"]
 layout_mode = 2

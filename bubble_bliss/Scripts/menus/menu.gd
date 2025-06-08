@@ -37,6 +37,8 @@ func show_menu() -> void:
 	
 	show()
 	
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	
 	mouse_filter = Control.MOUSE_FILTER_PASS
 	process_mode = Node.PROCESS_MODE_INHERIT
 
@@ -47,7 +49,3 @@ func hide_menu() -> void:
 	hide()
 	
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
-	
-	if menu_name == "pause_screen":
-		print("not disabling process on the pause screen")
-		return
